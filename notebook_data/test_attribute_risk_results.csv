@@ -1,0 +1,4 @@
+attribute_id,project,risk,rationale
+htan2:AbNameReportedonDataset,HTAN2,Low,"The attribute records the antibody name (technical reagent metadata). It does not contain personal identifiers, quasi-identifiers, or sensitive clinical/behavioral information, so it is non-personal technical metadata."
+htan:AbNameReportedonDataset,HTAN,Low,"This is a technical reagent metadata field (antibody name). It does not constitute personal, contact, location, financial, or sensitive clinical data and thus poses low re-identification/privacy risk."
+el:AccessReqs,EL,NeedsReview,"Description is 'TBD' and there are no validation rules or valid values provided, so the attribute scope and sensitivity are unclear; insufficient information to classify."
