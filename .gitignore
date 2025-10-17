@@ -2,3 +2,4 @@
 __pycache__/
 *.pyc
 .env
+notebook_data/annotation_template_attributes_batch_errors.jsonl
