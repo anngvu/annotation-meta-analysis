@@ -1,0 +1,33 @@
+template_id,display_name,species,file_type,configured_template_role,description
+Metadata,metadata,Not specified,Various,N/A,"Any file that contains information about how data was collected, generated, or processed; information that describes another set of data."
+Analysis,analysis,Not specified,Various,N/A,"Any file derived from analysis such that the analysis annotations might apply, possibly disease-related"
+ExperimentalData,experimentalData,Multi-species,Various,N/A,"Any file derived from or pertaining to a scientific experiment. experimentalData annotations should be applied, possibly disease-related"
+Assay16SrRNAseqMetadataTemplate,assay_16SrRNAseq_metadata_template,Not specified,N/A,Record,SysBio 16SrRNAseq metadata template schema
+AssayATACSeqMetadataTemplate,assay_ATACSeq_metadata_template,Not specified,N/A,Record,SysBio ATACseq metadata template schema
+AssayAutoradMetadataTemplate,assay_autorad_metadata_template,Not specified,N/A,Record,SysBio autoradiography metadata template schema
+AssayBisulfiteSeqMetadataTemplate,assay_bisulfiteSeq_metadata_template,Not specified,N/A,Record,SysBio bisulfiteSeq (aka WGBS) metadata template schema
+AssayChIPSeqMetadataTemplate,assay_ChIPSeq_metadata_template,Not specified,N/A,Record,SysBio ChIPSeq metadata template schema
+AssayHICMetadataTemplate,assay_HIC_metadata_template,Not specified,N/A,Record,SysBio HI-C metadata template schema
+AssayMetabolomicsMetadataTemplate,assay_metabolomics_metadata_template,Not specified,N/A,Record,SysBio metabolomics metadata template schema
+AssayMethylationArrayMetadataTemplate,assay_methylationArray_metadata_template,Not specified,N/A,Record,SysBio methylationArray metadata template schema
+AssayMRIMetadataTemplate,assay_MRI_metadata_template,Not specified,N/A,Record,SysBio MRI metadata template schema
+AssayNanostringMetadataTemplate,assay_nanostring_metadata_template,Not specified,N/A,Record,SysBio nanostring metadata template schema
+AssayPETMetadataTemplate,assay_PET_metadata_template,Not specified,N/A,Record,SysBio PET metadata template schema
+AssayRnaArrayMetadataTemplate,assay_rnaArray_metadata_template,Not specified,N/A,Record,SysBio rnaArray metadata template schema
+AssayRnaSeqMetadataTemplate,assay_rnaSeq_metadata_template,Not specified,N/A,Record,SysBio rnaSeq metadata template schema
+AssayScrnaSeqMetadataTemplate,assay_scrnaSeq_metadata_template,Not specified,N/A,Record,SysBio scrnaSeq metadata template schema
+AssaySnpArrayMetadataTemplate,assay_snpArray_metadata_template,Not specified,N/A,Record,SysBio snpArray metadata template schema
+AssaySpatialTranscriptomicsMetadataTemplate,assay_spatialTranscriptomics_metadata_template,Not specified,N/A,Record,SysBio spatial transcriptomics metadata template schema
+AssaySTARRSeqMetadataTemplate,assay_STARRSeq_metadata_template,Not specified,N/A,Record,SysBio STARRSeq metadata template schema
+AssayTMTquantitationMetadataTemplate,assay_TMTquantitation_metadata_template,Not specified,N/A,Record,SysBio TMTquantitation (aka proteomics) metadata template schema
+AssayWholeExomeSeqMetadataTemplate,assay_wholeExomeSeq_metadata_template,Not specified,N/A,Record,SysBio wholeExomeSeq metadata template schema
+AssayWholeGenomeSeqMetadataTemplate,assay_wholeGenomeSeq_metadata_template,Not specified,N/A,Record,SysBio wholeGenomeSeq (aka WGS) metadata template schema
+BiospecimenDrosophilaMetadataTemplate,biospecimen_drosophila_metadata_template,Not specified,N/A,Record,SysBio drosophila biospecimen metadata template schema
+BiospecimenInvitroMetadataTemplate,biospecimen_invitro_metadata_template,Not specified,N/A,Record,SysBio in vitro biospecimen metadata template schema
+BiospecimenMetadataTemplate,biospecimen_metadata_template,Not specified,N/A,Record,SysBio AD biospecimen metadata template schema
+FileAnnotationTemplate,file_annotation_template,Not specified,Various,Annotation,AD file annotation template schema
+IndividualAnimalMetadataTemplate,individual_animal_metadata_template,Animal model,N/A,Record,SysBio individual animal metadata template schema
+IndividualAnimalMODEL-ADMetadataTemplate,individual_animal_MODEL-AD_metadata_template,Animal model,N/A,Record,individual animal metadata template schema for MODEL-AD Consortium
+IndividualHumanMetadataTemplate,individual_human_metadata_template,Human,N/A,Record,SysBio AD individual human metadata template schema
+ModeladStrainAnimalMetadataTemplate,modelad_strain_animal_metadata_template,Not specified,N/A,Record,SysBio modelad strain animal metadata template schema
+NeuropathMetadataTemplate,neuropath_metadata_template,Not specified,N/A,Record,SysBio neuropath metadata template schema

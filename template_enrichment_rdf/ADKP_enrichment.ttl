@@ -1,0 +1,75 @@
+@prefix adkp: <https://dca.app.sagebionetworks.org/ADKP/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+adkp:Metadata a dca:UnconfiguredTemplate .
+adkp:Metadata dca:fileType "Various" .
+
+adkp:Analysis a dca:UnconfiguredTemplate .
+adkp:Analysis dca:fileType "Various" .
+
+adkp:ExperimentalData a dca:UnconfiguredTemplate .
+adkp:ExperimentalData dca:species "Multi-species" .
+adkp:ExperimentalData dca:fileType "Various" .
+
+adkp:Assay16SrRNAseqMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayATACSeqMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayAutoradMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayBisulfiteSeqMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayChIPSeqMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayHICMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayMetabolomicsMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayMethylationArrayMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayMRIMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayNanostringMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayPETMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayRnaArrayMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayRnaSeqMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayScrnaSeqMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssaySnpArrayMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssaySpatialTranscriptomicsMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssaySTARRSeqMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayTMTquantitationMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayWholeExomeSeqMetadataTemplate a dca:RecordTemplate .
+
+adkp:AssayWholeGenomeSeqMetadataTemplate a dca:RecordTemplate .
+
+adkp:BiospecimenDrosophilaMetadataTemplate a dca:RecordTemplate .
+
+adkp:BiospecimenInvitroMetadataTemplate a dca:RecordTemplate .
+
+adkp:BiospecimenMetadataTemplate a dca:RecordTemplate .
+
+adkp:FileAnnotationTemplate a dca:AnnotationTemplate .
+adkp:FileAnnotationTemplate dca:fileType "Various" .
+
+adkp:IndividualAnimalMetadataTemplate a dca:RecordTemplate .
+adkp:IndividualAnimalMetadataTemplate dca:species "Animal model" .
+
+adkp:IndividualAnimalMODEL-ADMetadataTemplate a dca:RecordTemplate .
+adkp:IndividualAnimalMODEL-ADMetadataTemplate dca:species "Animal model" .
+
+adkp:IndividualHumanMetadataTemplate a dca:RecordTemplate .
+adkp:IndividualHumanMetadataTemplate dca:species "Human" .
+
+adkp:ModeladStrainAnimalMetadataTemplate a dca:RecordTemplate .
+
+adkp:NeuropathMetadataTemplate a dca:RecordTemplate .

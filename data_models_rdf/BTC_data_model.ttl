@@ -1,0 +1,4117 @@
+@prefix btc: <https://dca.app.sagebionetworks.org/BTC/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<schema:Text> a schema:DataType, rdfs:Class ;
+    rdfs:label "Text" ;
+    rdfs:comment "Data type: Text." .
+
+<schema:Number> a schema:DataType, rdfs:Class ;
+    rdfs:label "Number" ;
+    rdfs:comment "Data type: Number." .
+
+<schema:Integer> a rdfs:Class ;
+    rdfs:label "Integer" ;
+    rdfs:comment "Data type: Integer." ;
+    rdfs:subClassOf <schema:Number> .
+
+<schema:Thing> a rdfs:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "Thing" .
+
+btc:BiologicalEntity a rdfs:Class ;
+    rdfs:label "BiologicalEntity" ;
+    rdfs:subClassOf <schema:Thing> .
+
+btc:OntologyClass a rdfs:Class ;
+    rdfs:label "OntologyClass" ;
+    rdfs:comment "a concept or class in an ontology, vocabulary or thesaurus" ;
+    rdfs:subClassOf <schema:Thing> .
+
+btc:RelationshipType a rdfs:Class ;
+    rdfs:label "RelationshipType" ;
+    rdfs:comment "An OWL property used as an edge label" ;
+    rdfs:subClassOf btc:OntologyClass .
+
+btc:GeneOntologyClass a rdfs:Class ;
+    rdfs:label "GeneOntologyClass" ;
+    rdfs:comment "an ontology class that describes a functional aspect of a gene, gene prodoct or complex" ;
+    rdfs:subClassOf btc:OntologyClass .
+
+btc:OrganismTaxon a rdfs:Class ;
+    rdfs:label "OrganismTaxon" ;
+    rdfs:subClassOf btc:OntologyClass .
+
+btc:OrganismalEntity a rdfs:Class ;
+    rdfs:label "OrganismalEntity" ;
+    rdfs:comment "A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities" ;
+    rdfs:subClassOf btc:BiologicalEntity .
+
+btc:IndividualOrganism a rdfs:Class ;
+    rdfs:label "IndividualOrganism" ;
+    rdfs:subClassOf btc:OrganismalEntity .
+
+btc:Case a rdfs:Class ;
+    rdfs:label "Case" ;
+    rdfs:comment "An individual organism that has a patient role in some clinical context." ;
+    rdfs:subClassOf btc:IndividualOrganism .
+
+btc:PopulationOfIndividualOrganisms a rdfs:Class ;
+    rdfs:label "PopulationOfIndividualOrganisms" ;
+    rdfs:subClassOf btc:OrganismalEntity .
+
+btc:Biosample a rdfs:Class ;
+    rdfs:label "Biosample" ;
+    rdfs:subClassOf btc:OrganismalEntity .
+
+btc:DiseaseOrPhenotypicFeature a rdfs:Class ;
+    rdfs:label "DiseaseOrPhenotypicFeature" ;
+    rdfs:comment "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate." ;
+    rdfs:subClassOf btc:BiologicalEntity .
+
+btc:Disease a rdfs:Class ;
+    rdfs:label "Disease" ;
+    rdfs:subClassOf btc:DiseaseOrPhenotypicFeature .
+
+btc:PhenotypicFeature a rdfs:Class ;
+    rdfs:label "PhenotypicFeature" ;
+    rdfs:subClassOf btc:DiseaseOrPhenotypicFeature .
+
+btc:Environment a rdfs:Class ;
+    rdfs:label "Environment" ;
+    rdfs:comment "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes" ;
+    rdfs:subClassOf btc:BiologicalEntity .
+
+btc:InformationContentEntity a rdfs:Class ;
+    rdfs:label "InformationContentEntity" ;
+    rdfs:comment "a piece of information that typically describes some piece of biology or is used as support." ;
+    rdfs:subClassOf <schema:Thing> .
+
+btc:ConfidenceLevel a rdfs:Class ;
+    rdfs:label "ConfidenceLevel" ;
+    rdfs:comment "Level of confidence in a statement" ;
+    rdfs:subClassOf btc:InformationContentEntity .
+
+btc:EvidenceType a rdfs:Class ;
+    rdfs:label "EvidenceType" ;
+    rdfs:comment "Class of evidence that supports an association" ;
+    rdfs:subClassOf btc:InformationContentEntity .
+
+btc:Publication a rdfs:Class ;
+    rdfs:label "Publication" ;
+    rdfs:comment "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals." ;
+    rdfs:subClassOf btc:InformationContentEntity .
+
+btc:MolecularEntity a rdfs:Class ;
+    rdfs:label "MolecularEntity" ;
+    rdfs:comment "A gene, gene product, small molecule or macromolecule (including protein complex)" ;
+    rdfs:subClassOf btc:BiologicalEntity .
+
+btc:ChemicalSubstance a rdfs:Class ;
+    rdfs:label "ChemicalSubstance" ;
+    rdfs:comment "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part" ;
+    rdfs:subClassOf btc:MolecularEntity .
+
+btc:Drug a rdfs:Class ;
+    rdfs:label "Drug" ;
+    rdfs:comment "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease" ;
+    rdfs:subClassOf btc:ChemicalSubstance .
+
+btc:Metabolite a rdfs:Class ;
+    rdfs:label "Metabolite" ;
+    rdfs:comment "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites." ;
+    rdfs:subClassOf btc:ChemicalSubstance .
+
+btc:AnatomicalEntity a rdfs:Class ;
+    rdfs:label "AnatomicalEntity" ;
+    rdfs:comment "A subcellular location, cell type or gross anatomical part" ;
+    rdfs:subClassOf btc:OrganismalEntity .
+
+btc:LifeStage a rdfs:Class ;
+    rdfs:label "LifeStage" ;
+    rdfs:comment "A stage of development or growth of an organism, including post-natal adult stages" ;
+    rdfs:subClassOf btc:OrganismalEntity .
+
+btc:PlanetaryEntity a rdfs:Class ;
+    rdfs:label "PlanetaryEntity" ;
+    rdfs:comment "Any entity or process that exists at the level of the whole planet" ;
+    rdfs:subClassOf <schema:Thing> .
+
+btc:EnvironmentalProcess a rdfs:Class ;
+    rdfs:label "EnvironmentalProcess" ;
+    rdfs:subClassOf btc:PlanetaryEntity .
+
+btc:EnvironmentalFeature a rdfs:Class ;
+    rdfs:label "EnvironmentalFeature" ;
+    rdfs:subClassOf btc:PlanetaryEntity .
+
+btc:ClinicalEntity a rdfs:Class ;
+    rdfs:label "ClinicalEntity" ;
+    rdfs:comment "Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities" ;
+    rdfs:subClassOf <schema:Thing> .
+
+btc:ClinicalTrial a rdfs:Class ;
+    rdfs:label "ClinicalTrial" ;
+    rdfs:subClassOf btc:ClinicalEntity .
+
+btc:ClinicalIntervention a rdfs:Class ;
+    rdfs:label "ClinicalIntervention" ;
+    rdfs:subClassOf btc:ClinicalEntity .
+
+btc:Device a rdfs:Class ;
+    rdfs:label "Device" ;
+    rdfs:comment "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment" ;
+    rdfs:subClassOf <schema:Thing> .
+
+btc:GenomicEntity a rdfs:Class ;
+    rdfs:label "GenomicEntity" ;
+    rdfs:comment "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)" ;
+    rdfs:subClassOf btc:MolecularEntity .
+
+btc:Genome a rdfs:Class ;
+    rdfs:label "Genome" ;
+    rdfs:comment "A genome is the sum of genetic material within a cell or virion." ;
+    rdfs:subClassOf btc:GenomicEntity .
+
+btc:Transcript a rdfs:Class ;
+    rdfs:label "Transcript" ;
+    rdfs:comment "An RNA synthesized on a DNA or RNA template by an RNA polymerase" ;
+    rdfs:subClassOf btc:GenomicEntity .
+
+btc:Exon a rdfs:Class ;
+    rdfs:label "Exon" ;
+    rdfs:comment "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing" ;
+    rdfs:subClassOf btc:GenomicEntity .
+
+btc:CodingSequence a rdfs:Class ;
+    rdfs:label "CodingSequence" ;
+    rdfs:subClassOf btc:GenomicEntity .
+
+btc:MacromolecularMachine a rdfs:Class ;
+    rdfs:label "MacromolecularMachine" ;
+    rdfs:comment "A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this." ;
+    rdfs:subClassOf btc:GenomicEntity .
+
+btc:GeneOrGeneProduct a rdfs:Class ;
+    rdfs:label "GeneOrGeneProduct" ;
+    rdfs:comment "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another" ;
+    rdfs:subClassOf btc:MacromolecularMachine .
+
+btc:Gene a rdfs:Class ;
+    rdfs:label "Gene" ;
+    rdfs:subClassOf btc:GeneOrGeneProduct .
+
+btc:GeneProduct a rdfs:Class ;
+    rdfs:label "GeneProduct" ;
+    rdfs:comment "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules" ;
+    rdfs:subClassOf btc:GeneOrGeneProduct .
+
+btc:Protein a rdfs:Class ;
+    rdfs:label "Protein" ;
+    rdfs:comment "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA" ;
+    rdfs:subClassOf btc:GeneProduct .
+
+btc:GeneProductIsoform a rdfs:Class ;
+    rdfs:label "GeneProductIsoform" ;
+    rdfs:comment "This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms." ;
+    rdfs:subClassOf btc:GeneProduct .
+
+btc:ProteinIsoform a rdfs:Class ;
+    rdfs:label "ProteinIsoform" ;
+    rdfs:comment "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/" ;
+    rdfs:subClassOf btc:Protein .
+
+btc:RnaProduct a rdfs:Class ;
+    rdfs:label "RnaProduct" ;
+    rdfs:subClassOf btc:GeneProduct .
+
+btc:RnaProductIsoform a rdfs:Class ;
+    rdfs:label "RnaProductIsoform" ;
+    rdfs:comment "Represents a protein that is a specific isoform of the canonical or reference RNA" ;
+    rdfs:subClassOf btc:RnaProduct .
+
+btc:NoncodingRnaProduct a rdfs:Class ;
+    rdfs:label "NoncodingRnaProduct" ;
+    rdfs:subClassOf btc:RnaProduct .
+
+btc:Microrna a rdfs:Class ;
+    rdfs:label "Microrna" ;
+    rdfs:subClassOf btc:NoncodingRnaProduct .
+
+btc:MacromolecularComplex a rdfs:Class ;
+    rdfs:label "MacromolecularComplex" ;
+    rdfs:subClassOf btc:MacromolecularMachine .
+
+btc:GeneFamily a rdfs:Class ;
+    rdfs:label "GeneFamily" ;
+    rdfs:comment "any grouping of multiple genes or gene products related by common descent" ;
+    rdfs:subClassOf btc:MolecularEntity .
+
+btc:Genotype a rdfs:Class ;
+    rdfs:label "Genotype" ;
+    rdfs:comment "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background" ;
+    rdfs:subClassOf btc:GenomicEntity .
+
+btc:Haplotype a rdfs:Class ;
+    rdfs:label "Haplotype" ;
+    rdfs:comment "A set of zero or more Alleles on a single instance of a Sequence[VMC]" ;
+    rdfs:subClassOf btc:GenomicEntity .
+
+btc:SequenceVariant a rdfs:Class ;
+    rdfs:label "SequenceVariant" ;
+    rdfs:comment "An allele that varies in its sequence from what is considered the reference allele at that locus." ;
+    rdfs:subClassOf btc:GenomicEntity .
+
+btc:DrugExposure a rdfs:Class ;
+    rdfs:label "DrugExposure" ;
+    rdfs:comment "A drug exposure is an intake of a particular chemical substance" ;
+    rdfs:subClassOf btc:Environment .
+
+btc:Treatment a rdfs:Class ;
+    rdfs:label "Treatment" ;
+    rdfs:comment "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'" ;
+    rdfs:subClassOf btc:Environment .
+
+btc:GeographicLocation a rdfs:Class ;
+    rdfs:label "GeographicLocation" ;
+    rdfs:comment "a location that can be described in lat/long coordinates" ;
+    rdfs:subClassOf btc:PlanetaryEntity .
+
+btc:GeographicLocationAtTime a rdfs:Class ;
+    rdfs:label "GeographicLocationAtTime" ;
+    rdfs:comment "a location that can be described in lat/long coordinates, for a particular time" ;
+    rdfs:subClassOf btc:GeographicLocation .
+
+btc:Occurrent a rdfs:Class ;
+    rdfs:label "Occurrent" ;
+    rdfs:comment "A processual entity" ;
+    rdfs:subClassOf <schema:Thing> .
+
+btc:BiologicalProcessOrActivity a rdfs:Class ;
+    rdfs:label "BiologicalProcessOrActivity" ;
+    rdfs:comment "Either an individual molecular activity, or a collection of causally connected molecular activities" ;
+    rdfs:subClassOf btc:BiologicalEntity .
+
+btc:MolecularActivity a rdfs:Class ;
+    rdfs:label "MolecularActivity" ;
+    rdfs:comment "An execution of a molecular function carried out by a gene product or macromolecular complex." ;
+    rdfs:subClassOf btc:BiologicalProcessOrActivity .
+
+btc:ActivityAndBehavior a rdfs:Class ;
+    rdfs:label "ActivityAndBehavior" ;
+    rdfs:comment "Activity or behavior of any independent integral living, organization or mechanical actor in the world" ;
+    rdfs:subClassOf btc:Occurrent .
+
+btc:Procedure a rdfs:Class ;
+    rdfs:label "Procedure" ;
+    rdfs:comment "A series of actions conducted in a certain order or manner" ;
+    rdfs:subClassOf btc:Occurrent .
+
+btc:Phenomenon a rdfs:Class ;
+    rdfs:label "Phenomenon" ;
+    rdfs:comment "a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question" ;
+    rdfs:subClassOf btc:Occurrent .
+
+btc:BiologicalProcess a rdfs:Class ;
+    rdfs:label "BiologicalProcess" ;
+    rdfs:comment "One or more causally connected executions of molecular functions" ;
+    rdfs:subClassOf btc:BiologicalProcessOrActivity .
+
+btc:Pathway a rdfs:Class ;
+    rdfs:label "Pathway" ;
+    rdfs:subClassOf btc:BiologicalProcess .
+
+btc:PhysiologicalProcess a rdfs:Class ;
+    rdfs:label "PhysiologicalProcess" ;
+    rdfs:subClassOf btc:BiologicalProcess .
+
+btc:CellularComponent a rdfs:Class ;
+    rdfs:label "CellularComponent" ;
+    rdfs:comment "A location in or around a cell" ;
+    rdfs:subClassOf btc:AnatomicalEntity .
+
+btc:Cell a rdfs:Class ;
+    rdfs:label "Cell" ;
+    rdfs:subClassOf btc:AnatomicalEntity .
+
+btc:CellLine a rdfs:Class ;
+    rdfs:label "CellLine" ;
+    rdfs:subClassOf btc:Biosample .
+
+btc:GrossAnatomicalStructure a rdfs:Class ;
+    rdfs:label "GrossAnatomicalStructure" ;
+    rdfs:subClassOf btc:AnatomicalEntity .
+
+btc:ensembl a <rdf:Property> ;
+    rdfs:label "ensembl" ;
+    rdfs:comment "Ensembl ID for gene, protein or transcript" .
+
+btc:hgnc a <rdf:Property> ;
+    rdfs:label "hgnc" ;
+    rdfs:comment "HGNC ID for gene" .
+
+btc:entrez a <rdf:Property> ;
+    rdfs:label "entrez" ;
+    rdfs:comment "Entrez ID for gene" .
+
+btc:refseq a <rdf:Property> ;
+    rdfs:label "refseq" ;
+    rdfs:comment "Refseq ID for gene, protein or transcript" .
+
+btc:omim a <rdf:Property> ;
+    rdfs:label "omim" ;
+    rdfs:comment "Refseq ID for gene, protein or transcript" .
+
+btc:umls a <rdf:Property> ;
+    rdfs:label "umls" ;
+    rdfs:comment "Refseq ID for gene, protein or transcript" .
+
+btc:homologousTo a <rdf:Property> ;
+    rdfs:label "homologousTo" ;
+    rdfs:comment "Shared ancestry between protein or gene" .
+
+btc:molecularlyInteractsWith a <rdf:Property> ;
+    rdfs:label "molecularlyInteractsWith" .
+
+btc:geneticallyInteractsWith a <rdf:Property> ;
+    rdfs:label "geneticallyInteractsWith" ;
+    rdfs:comment "holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality." .
+
+btc:affectsAbundanceOf a <rdf:Property> ;
+    rdfs:label "affectsAbundanceOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest" .
+
+btc:increasesAbundanceOf a <rdf:Property> ;
+    rdfs:label "increasesAbundanceOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest" .
+
+btc:decreasesAbundanceOf a <rdf:Property> ;
+    rdfs:label "decreasesAbundanceOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest" .
+
+btc:affectsActivityOf a <rdf:Property> ;
+    rdfs:label "affectsActivityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest" .
+
+btc:increasesActivityOf a <rdf:Property> ;
+    rdfs:label "increasesActivityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest" .
+
+btc:decreasesActivityOf a <rdf:Property> ;
+    rdfs:label "decreasesActivityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest" .
+
+btc:affectsExpressionOf a <rdf:Property> ;
+    rdfs:label "affectsExpressionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest" .
+
+btc:increasesExpressionOf a <rdf:Property> ;
+    rdfs:label "increasesExpressionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest" .
+
+btc:decreasesExpressionOf a <rdf:Property> ;
+    rdfs:label "decreasesExpressionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest" .
+
+btc:affectsFoldingOf a <rdf:Property> ;
+    rdfs:label "affectsFoldingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other " .
+
+btc:increasesFoldingOf a <rdf:Property> ;
+    rdfs:label "increasesFoldingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other " .
+
+btc:decreasesFoldingOf a <rdf:Property> ;
+    rdfs:label "decreasesFoldingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other " .
+
+btc:affectsLocalizationOf a <rdf:Property> ;
+    rdfs:label "affectsLocalizationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest" .
+
+btc:increasesLocalizationOf a <rdf:Property> ;
+    rdfs:label "increasesLocalizationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest" .
+
+btc:decreasesLocalizationOf a <rdf:Property> ;
+    rdfs:label "decreasesLocalizationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest" .
+
+btc:affectsMetabolicProcessingOf a <rdf:Property> ;
+    rdfs:label "affectsMetabolicProcessingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest" .
+
+btc:increasesMetabolicProcessingOf a <rdf:Property> ;
+    rdfs:label "increasesMetabolicProcessingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest" .
+
+btc:decreasesMetabolicProcessingOf a <rdf:Property> ;
+    rdfs:label "decreasesMetabolicProcessingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest" .
+
+btc:affectsMolecularModificationOf a <rdf:Property> ;
+    rdfs:label "affectsMolecularModificationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" .
+
+btc:increasesMolecularModificationOf a <rdf:Property> ;
+    rdfs:label "increasesMolecularModificationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" .
+
+btc:decreasesMolecularModificationOf a <rdf:Property> ;
+    rdfs:label "decreasesMolecularModificationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" .
+
+btc:affectsSynthesisOf a <rdf:Property> ;
+    rdfs:label "affectsSynthesisOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other" .
+
+btc:increasesSynthesisOf a <rdf:Property> ;
+    rdfs:label "increasesSynthesisOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other" .
+
+btc:decreasesSynthesisOf a <rdf:Property> ;
+    rdfs:label "decreasesSynthesisOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other" .
+
+btc:affectsDegradationOf a <rdf:Property> ;
+    rdfs:label "affectsDegradationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest" .
+
+btc:increasesDegradationOf a <rdf:Property> ;
+    rdfs:label "increasesDegradationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest" .
+
+btc:decreasesDegradationOf a <rdf:Property> ;
+    rdfs:label "decreasesDegradationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest" .
+
+btc:affectsMutationRateOf a <rdf:Property> ;
+    rdfs:label "affectsMutationRateOf" ;
+    rdfs:comment "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest" .
+
+btc:increasesMutationRateOf a <rdf:Property> ;
+    rdfs:label "increasesMutationRateOf" ;
+    rdfs:comment "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest" .
+
+btc:decreasesMutationRateOf a <rdf:Property> ;
+    rdfs:label "decreasesMutationRateOf" ;
+    rdfs:comment "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest" .
+
+btc:affectsResponseTo a <rdf:Property> ;
+    rdfs:label "affectsResponseTo" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" .
+
+btc:increasesResponseTo a <rdf:Property> ;
+    rdfs:label "increasesResponseTo" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" .
+
+btc:decreasesResponseTo a <rdf:Property> ;
+    rdfs:label "decreasesResponseTo" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" .
+
+btc:affectsSplicingOf a <rdf:Property> ;
+    rdfs:label "affectsSplicingOf" ;
+    rdfs:comment "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA" .
+
+btc:increasesSplicingOf a <rdf:Property> ;
+    rdfs:label "increasesSplicingOf" ;
+    rdfs:comment "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA" .
+
+btc:decreasesSplicingOf a <rdf:Property> ;
+    rdfs:label "decreasesSplicingOf" ;
+    rdfs:comment "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA" .
+
+btc:affectsStabilityOf a <rdf:Property> ;
+    rdfs:label "affectsStabilityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest" .
+
+btc:increasesStabilityOf a <rdf:Property> ;
+    rdfs:label "increasesStabilityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest" .
+
+btc:decreasesStabilityOf a <rdf:Property> ;
+    rdfs:label "decreasesStabilityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest" .
+
+btc:affectsTransportOf a <rdf:Property> ;
+    rdfs:label "affectsTransportOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest" .
+
+btc:increasesTransportOf a <rdf:Property> ;
+    rdfs:label "increasesTransportOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest" .
+
+btc:decreasesTransportOf a <rdf:Property> ;
+    rdfs:label "decreasesTransportOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest" .
+
+btc:affectsSecretionOf a <rdf:Property> ;
+    rdfs:label "affectsSecretionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ" .
+
+btc:increasesSecretionOf a <rdf:Property> ;
+    rdfs:label "increasesSecretionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ" .
+
+btc:decreasesSecretionOf a <rdf:Property> ;
+    rdfs:label "decreasesSecretionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ" .
+
+btc:affectsUptakeOf a <rdf:Property> ;
+    rdfs:label "affectsUptakeOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ" .
+
+btc:increasesUptakeOf a <rdf:Property> ;
+    rdfs:label "increasesUptakeOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ" .
+
+btc:decreasesUptakeOf a <rdf:Property> ;
+    rdfs:label "decreasesUptakeOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ" .
+
+<https://dca.app.sagebionetworks.org/BTC/regulates,ProcessToProcess> a <rdf:Property> ;
+    rdfs:label "regulates,ProcessToProcess" .
+
+<https://dca.app.sagebionetworks.org/BTC/regulates,EntityToEntity> a <rdf:Property> ;
+    rdfs:label "regulates,EntityToEntity" .
+
+btc:hasGeneProduct a <rdf:Property> ;
+    rdfs:label "hasGeneProduct" ;
+    rdfs:comment "holds between a gene and a transcribed and/or translated product generated from it" .
+
+btc:inPathwayWith a <rdf:Property> ;
+    rdfs:label "inPathwayWith" ;
+    rdfs:comment "holds between two genes or gene products that are part of in the same biological pathway" .
+
+btc:inComplexWith a <rdf:Property> ;
+    rdfs:label "inComplexWith" ;
+    rdfs:comment "holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex" .
+
+btc:inCellPopulationWith a <rdf:Property> ;
+    rdfs:label "inCellPopulationWith" ;
+    rdfs:comment "holds between two genes or gene products that are expressed in the same cell type or population " .
+
+btc:geneAssociatedWithCondition a <rdf:Property> ;
+    rdfs:label "geneAssociatedWithCondition" ;
+    rdfs:comment "holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with" .
+
+btc:treats a <rdf:Property> ;
+    rdfs:label "treats" ;
+    rdfs:comment "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat" .
+
+btc:correlatedWith a <rdf:Property> ;
+    rdfs:label "correlatedWith" ;
+    rdfs:comment "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." .
+
+btc:hasBiomarker a <rdf:Property> ;
+    rdfs:label "hasBiomarker" ;
+    rdfs:comment "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." .
+
+btc:biomarkerFor a <rdf:Property> ;
+    rdfs:label "biomarkerFor" ;
+    rdfs:comment "holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature." .
+
+btc:expressedIn a <rdf:Property> ;
+    rdfs:label "expressedIn" ;
+    rdfs:comment "holds between a gene or gene product and an anatomical entity in which it is expressed" .
+
+btc:expresses a <rdf:Property> ;
+    rdfs:label "expresses" ;
+    rdfs:comment "holds between an anatomical entity and gene or gene product that is expressed there" .
+
+btc:hasPhenotype a <rdf:Property> ;
+    rdfs:label "hasPhenotype" ;
+    rdfs:comment "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). " .
+
+btc:precedes a <rdf:Property> ;
+    rdfs:label "precedes" ;
+    rdfs:comment "holds between two processes, where one completes before the other begins" .
+
+btc:subclassOf a <rdf:Property> ;
+    rdfs:label "subclassOf" ;
+    rdfs:comment "holds between two classes where the domain class is a specialization of the range class" .
+
+btc:Assay a rdfs:Class ;
+    rdfs:label "Assay" ;
+    rdfs:comment "A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.[OBI_0000070]" ;
+    rdfs:subClassOf <schema:Thing> ;
+    dca:displayName "Assay" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Device a rdfs:Class ;
+    rdfs:label "Device" ;
+    rdfs:comment "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment\"" ;
+    rdfs:subClassOf btc:Assay ;
+    dca:displayName "Device" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Sequencing a rdfs:Class ;
+    rdfs:label "Sequencing" ;
+    rdfs:comment "Module for next generation sequencing assays" ;
+    rdfs:subClassOf btc:Assay ;
+    dca:displayName "Sequencing" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Component a rdfs:Class ;
+    rdfs:label "Component" ;
+    rdfs:comment "Category of metadata (e.g. Diagnosis, Biospecimen, scRNA-seq Level 1, etc.); provide the same one for all items/rows." ;
+    rdfs:subClassOf <schema:Thing> ;
+    dca:displayName "Component" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:File a rdfs:Class ;
+    rdfs:label "File" ;
+    rdfs:comment "A type of Information Content Entity specific to OS" ;
+    rdfs:subClassOf btc:InformationContentEntity ;
+    dca:displayName "File" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:filename a <rdf:Property> ;
+    rdfs:label "filename" ;
+    rdfs:comment "Name of a file" ;
+    dca:displayName "Filename" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:fileFormat a <rdf:Property> ;
+    rdfs:label "fileFormat" ;
+    rdfs:comment "Format of a file (e.g. txt, csv, fastq, bam, etc.)" ;
+    dca:displayName "File Format" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:Checksum a rdfs:Class ;
+    rdfs:label "Checksum" ;
+    rdfs:comment "MD5 checksum of the BAM file" ;
+    rdfs:subClassOf btc:InformationContentEntity ;
+    dca:displayName "Checksum" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:DataFileID a rdfs:Class ;
+    rdfs:label "DataFileID" ;
+    rdfs:comment "Self-identifier for this data file - HTAN ID of this file HTAN ID SOP (eg HTANx_yyy_zzz)" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "Data File ID" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:AssayType a rdfs:Class ;
+    rdfs:label "AssayType" ;
+    rdfs:comment "The type and level of assay this metadata applies to (e.g. RPPA, Nanostring DSP, etc.)" ;
+    rdfs:subClassOf btc:Assay ;
+    dca:displayName "Assay Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:BulkRNA-seqLevel1 a rdfs:Class ;
+    rdfs:label "BulkRNA-seqLevel1" ;
+    rdfs:comment "Bulk RNA-seq [EFO_0003738]" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Bulk RNA-seq Level 1" ;
+    dca:required false ;
+    dca:requiresDependency btc:Component, btc:filename, btc:fileFormat, btc:HTANParentBiospecimenID, btc:HTANDataFileID, btc:LibraryLayout, btc:ReadIndicator, btc:NucleicAcidSource, btc:SequencingPlatform, btc:SequencingBatchID, btc:ReadLength, btc:LibrarySelectionMethod, btc:LibraryPreparationKitName, btc:LibraryPreparationKitVendor, btc:LibraryPreparationKitVersion, btc:LibraryPreparationDaysfromIndex, btc:SpikeIn, btc:AdapterName, btc:AdapterSequence, btc:BaseCallerName, btc:BaseCallerVersion, btc:Flow, btc:CellBarcode, btc:FragmentMaximumLength, btc:FragmentMeanLength, btc:FragmentMinimumLength, btc:FragmentStandardDeviationLength, btc:LaneNumber, btc:LibraryStrand, btc:MultiplexBarcode, btc:SizeSelectionRange, btc:TargetDepth, btc:ToTrimAdapterSequence, btc:TranscriptIntegrityNumber, btc:RIN, btc:DV200, btc:AdapterContent, btc:BasicStatistics, btc:Encoding, btc:KmerContent, btc:OverrepresentedSequences, btc:PerBaseNContent, btc:PerBaseSequenceContent, btc:PerBaseSequenceQuality, btc:PerSequenceGCContent, btc:PerSequenceQualityScore, btc:PerTileSequenceQuality, btc:PercentGCContent, btc:SequenceDuplicationLevels, btc:SequenceLengthDistribution, btc:TotalReads, btc:QCWorkflowType, btc:QCWorkflowVersion, btc:QCWorkflowLink, btc:TestAttribute ;
+    dca:validationRules ( ) .
+
+btc:NucleicAcidSource a rdfs:Class ;
+    rdfs:label "NucleicAcidSource" ;
+    rdfs:comment "The source of the input nucleic molecule" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Nucleic Acid Source" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:LibraryLayout a rdfs:Class ;
+    rdfs:label "LibraryLayout" ;
+    rdfs:comment "Sequencing read type" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Library Layout" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:ReadIndicator a rdfs:Class ;
+    rdfs:label "ReadIndicator" ;
+    rdfs:comment "Indicate if this is Read 1 (R1) or Read 2 (R2)" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Read Indicator" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:CDNA a rdfs:Class ;
+    rdfs:label "CDNA" ;
+    rdfs:comment "Complementary DNA. A DNA copy of an mRNA or complex sample of mRNAs, made using reverse transcriptase" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "cDNA" ;
+    dca:required false ;
+    dca:requiresDependency btc:CDNAOffset, btc:CDNALength ;
+    dca:validationRules ( ) .
+
+btc:CDNAOffset a rdfs:Class ;
+    rdfs:label "CDNAOffset" ;
+    rdfs:comment "Offset in sequence for cDNA read (in bp): number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "cDNA Offset" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:CDNALength a rdfs:Class ;
+    rdfs:label "CDNALength" ;
+    rdfs:comment "Length of cDNA read (in bp): number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "cDNA Length" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:LibraryConstructionMethod a rdfs:Class ;
+    rdfs:label "LibraryConstructionMethod" ;
+    rdfs:comment "Process which results in the creation of a library from fragments of DNA using cloning vectors or oligonucleotides with the role of adaptors [OBI_0000711]" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Library Construction Method" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:LibrarySelectionMethod a rdfs:Class ;
+    rdfs:label "LibrarySelectionMethod" ;
+    rdfs:comment "How RNA molecules are isolated." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Library Selection Method" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:LibraryPreparationDaysfromIndex a rdfs:Class ;
+    rdfs:label "LibraryPreparationDaysfromIndex" ;
+    rdfs:comment "Number of days between sample for assay was received in lab and the libraries were prepared for sequencing [number]" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Library Preparation Days from Index" ;
+    dca:required false ;
+    dca:validationRules ( "int" ) .
+
+btc:SequencingLibraryConstructionDaysfromIndex a rdfs:Class ;
+    rdfs:label "SequencingLibraryConstructionDaysfromIndex" ;
+    rdfs:comment "Number of days between sample for assay was received in lab and day of sequencing library construction [number]" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Sequencing Library Construction Days from Index" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+btc:NucleicAcidCaptureDaysfromIndex a rdfs:Class ;
+    rdfs:label "NucleicAcidCaptureDaysfromIndex" ;
+    rdfs:comment "Number of days between sample for single cell assay was received in lab and day of nucleic acid capture part of library construction (in number of days since sample received in lab) [number]" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Nucleic Acid Capture Days from Index" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+btc:SequencingPlatform a rdfs:Class ;
+    rdfs:label "SequencingPlatform" ;
+    rdfs:comment "A platform is an object aggregate that is the set of instruments and software needed to perform a process [OBI_0000050]. Specific model of the sequencing instrument." ;
+    rdfs:subClassOf btc:Device ;
+    dca:displayName "Sequencing Platform" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:TechnicalReplicateGroup a rdfs:Class ;
+    rdfs:label "TechnicalReplicateGroup" ;
+    rdfs:comment "A common term for all files belonging to the same cell or library. Provide a numbering of each library prep batch (can differ from encapsulation and sequencing batch)" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Technical Replicate Group" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TotalNumberofInputCells a rdfs:Class ;
+    rdfs:label "TotalNumberofInputCells" ;
+    rdfs:comment "Number of cells loaded/placed on plates" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Total Number of Input Cells" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:SequencingBatchID a rdfs:Class ;
+    rdfs:label "SequencingBatchID" ;
+    rdfs:comment "Links samples to a specific local sequencer run. Can be string or 'null'" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Sequencing Batch ID" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:ReadLength a rdfs:Class ;
+    rdfs:label "ReadLength" ;
+    rdfs:comment "The length of the sequencing reads. Can be integer, null" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Read Length" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:TargetCaptureKit a rdfs:Class ;
+    rdfs:label "TargetCaptureKit" ;
+    rdfs:comment "Description that can uniquely identify a target capture kit. Suggested value is a combination of vendor, kit name, and kit version." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Target Capture Kit" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:LibrarySelectionMethod a rdfs:Class ;
+    rdfs:label "LibrarySelectionMethod" ;
+    rdfs:comment "How RNA molecules are isolated." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Library Selection Method" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:LibraryPreparationKitName a rdfs:Class ;
+    rdfs:label "LibraryPreparationKitName" ;
+    rdfs:comment "Name of Library Preparation Kit. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Library Preparation Kit Name" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:LibraryPreparationKitVendor a rdfs:Class ;
+    rdfs:label "LibraryPreparationKitVendor" ;
+    rdfs:comment "Vendor of Library Preparation Kit. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Library Preparation Kit Vendor" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:LibraryPreparationKitVersion a rdfs:Class ;
+    rdfs:label "LibraryPreparationKitVersion" ;
+    rdfs:comment "Version of Library Preparation Kit. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Library Preparation Kit Version" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:AdapterName a rdfs:Class ;
+    rdfs:label "AdapterName" ;
+    rdfs:comment "Name of the sequencing adapter. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Adapter Name" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:AdapterSequence a rdfs:Class ;
+    rdfs:label "AdapterSequence" ;
+    rdfs:comment "Base sequence of the sequencing adapter. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Adapter Sequence" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BaseCallerName a rdfs:Class ;
+    rdfs:label "BaseCallerName" ;
+    rdfs:comment "Name of the base caller. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Base Caller Name" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BaseCallerVersion a rdfs:Class ;
+    rdfs:label "BaseCallerVersion" ;
+    rdfs:comment "Version of the base caller. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Base Caller Version" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FlowCellBarcode a rdfs:Class ;
+    rdfs:label "FlowCellBarcode" ;
+    rdfs:comment "Flow cell barcode. Wrong or missing information may affect analysis results. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Flow Cell Barcode" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FragmentMaximumLength a rdfs:Class ;
+    rdfs:label "FragmentMaximumLength" ;
+    rdfs:comment "Maximum length of the sequenced fragments (e.g., as predicted by Agilent Bioanalyzer). Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Fragment Maximum Length" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FragmentMeanLength a rdfs:Class ;
+    rdfs:label "FragmentMeanLength" ;
+    rdfs:comment "Mean length of the sequenced fragments (e.g., as predicted by Agilent Bioanalyzer). Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Fragment Mean Length" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FragmentMinimumLength a rdfs:Class ;
+    rdfs:label "FragmentMinimumLength" ;
+    rdfs:comment "Minimum length of the sequenced fragments (e.g., as predicted by Agilent Bioanalyzer). Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Fragment Minimum Length" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FragmentStandardDeviationLength a rdfs:Class ;
+    rdfs:label "FragmentStandardDeviationLength" ;
+    rdfs:comment "Standard deviation of the sequenced fragments length (e.g., as predicted by Agilent Bioanalyzer). Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Fragment Standard Deviation Length" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:LaneNumber a rdfs:Class ;
+    rdfs:label "LaneNumber" ;
+    rdfs:comment "The basic machine unit for sequencing. For Illumina machines, this reflects the physical lane number. Wrong or missing information may affect analysis results. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Lane Number" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:LibraryStrand a rdfs:Class ;
+    rdfs:label "LibraryStrand" ;
+    rdfs:comment "Library stranded-ness." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Library Strand" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MultiplexBarcode a rdfs:Class ;
+    rdfs:label "MultiplexBarcode" ;
+    rdfs:comment "The barcode/index sequence used. Wrong or missing information may affect analysis results. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Multiplex Barcode" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SizeSelectionRange a rdfs:Class ;
+    rdfs:label "SizeSelectionRange" ;
+    rdfs:comment "Range of size selection. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Size Selection Range" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TargetDepth a rdfs:Class ;
+    rdfs:label "TargetDepth" ;
+    rdfs:comment "The targeted read depth prior to sequencing. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Target Depth" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ToTrimAdapterSequence a rdfs:Class ;
+    rdfs:label "ToTrimAdapterSequence" ;
+    rdfs:comment "Does the user suggest adapter trimming?" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "To Trim Adapter Sequence" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Yes-TrimAdapterSequence a rdfs:Class ;
+    rdfs:label "Yes-TrimAdapterSequence" ;
+    rdfs:comment "Trim adapter sequence" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Yes - Trim Adapter Sequence" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:AdapterTrimmerName a rdfs:Class ;
+    rdfs:label "AdapterTrimmerName" ;
+    rdfs:comment "Name of adapter trimmer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Adapter Trimmer Name" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:AdapterTrimmerVersion a rdfs:Class ;
+    rdfs:label "AdapterTrimmerVersion" ;
+    rdfs:comment "Version of the adapter trimmer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Adapter Trimmer Version" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:AdapterTrimmerOptions a rdfs:Class ;
+    rdfs:label "AdapterTrimmerOptions" ;
+    rdfs:comment "Options used by adapter trimmer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Adapter Trimmer Options" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TranscriptIntegrityNumber a rdfs:Class ;
+    rdfs:label "TranscriptIntegrityNumber" ;
+    rdfs:comment "Used to describe the quality of the starting material, esp. in regards to FFPE samples. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Transcript Integrity Number" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:RIN a rdfs:Class ;
+    rdfs:label "RIN" ;
+    rdfs:comment "A numerical assessment of the integrity of RNA based on the entire electrophoretic trace of the RNA sample including the presence or absence of degradation products. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "RIN" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:DV200 a rdfs:Class ;
+    rdfs:label "DV200" ;
+    rdfs:comment "Represents the percentage of RNA fragments that are >200 nucleotides in size. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "DV200" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:AdapterContent a rdfs:Class ;
+    rdfs:label "AdapterContent" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Adapter Content" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BasicStatistics a rdfs:Class ;
+    rdfs:label "BasicStatistics" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Basic Statistics" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Encoding a rdfs:Class ;
+    rdfs:label "Encoding" ;
+    rdfs:comment "Version of ASCII encoding of quality values found in the file. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Encoding" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:KmerContent a rdfs:Class ;
+    rdfs:label "KmerContent" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Kmer Content" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:OverrepresentedSequences a rdfs:Class ;
+    rdfs:label "OverrepresentedSequences" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Overrepresented Sequences" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PerBaseNContent a rdfs:Class ;
+    rdfs:label "PerBaseNContent" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Per Base N Content" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PerBaseSequenceContent a rdfs:Class ;
+    rdfs:label "PerBaseSequenceContent" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Per Base Sequence Content" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PerBaseSequenceQuality a rdfs:Class ;
+    rdfs:label "PerBaseSequenceQuality" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Per Base Sequence Quality" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PerSequenceGCContent a rdfs:Class ;
+    rdfs:label "PerSequenceGCContent" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Per Sequence GC Content" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PerSequenceQualityScore a rdfs:Class ;
+    rdfs:label "PerSequenceQualityScore" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Per Sequence Quality Score" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PerTileSequenceQuality a rdfs:Class ;
+    rdfs:label "PerTileSequenceQuality" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Per Tile Sequence Quality" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PercentGCContent a rdfs:Class ;
+    rdfs:label "PercentGCContent" ;
+    rdfs:comment "The overall %GC of all bases in all sequences. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Percent GC Content" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SequenceDuplicationLevels a rdfs:Class ;
+    rdfs:label "SequenceDuplicationLevels" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Sequence Duplication Levels" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SequenceLengthDistribution a rdfs:Class ;
+    rdfs:label "SequenceLengthDistribution" ;
+    rdfs:comment "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Sequence Length Distribution" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TotalReads a rdfs:Class ;
+    rdfs:label "TotalReads" ;
+    rdfs:comment "Total number of reads per sample. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Total Reads" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:WhitelistCellBarcodeFileLink a rdfs:Class ;
+    rdfs:label "WhitelistCellBarcodeFileLink" ;
+    rdfs:comment "Link to file listing all possible cell barcodes. URL" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Whitelist Cell Barcode File Link" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:CellBarcodeTag a rdfs:Class ;
+    rdfs:label "CellBarcodeTag" ;
+    rdfs:comment "SAM tag for cell barcode field; please provide a valid cell barcode tag" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Cell Barcode Tag" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:UMITag a rdfs:Class ;
+    rdfs:label "UMITag" ;
+    rdfs:comment "SAM tag for UMI field; please provide a valid UB, UMI" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "UMI Tag" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:AppliedHardTrimming a rdfs:Class ;
+    rdfs:label "AppliedHardTrimming" ;
+    rdfs:comment "Was Hard Trimming applied" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Applied Hard Trimming" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:Yes-AppliedHardTrimming a rdfs:Class ;
+    rdfs:label "Yes-AppliedHardTrimming" ;
+    rdfs:comment "Hard Trimming was applied" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Yes - Applied Hard Trimming" ;
+    dca:required false ;
+    dca:requiresDependency btc:AlignedReadLength ;
+    dca:validationRules ( ) .
+
+btc:AlignedReadLength a rdfs:Class ;
+    rdfs:label "AlignedReadLength" ;
+    rdfs:comment "Read length used for alignment if hard trimming was applied" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Aligned Read Length" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:ScRNAseqWorkflowType a rdfs:Class ;
+    rdfs:label "ScRNAseqWorkflowType" ;
+    rdfs:comment "Generic name for the workflow used to analyze a data set." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "scRNAseq Workflow Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:WorkflowType a rdfs:Class ;
+    rdfs:label "WorkflowType" ;
+    rdfs:comment "Generic name for the workflow used to analyze a data set." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Workflow Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:WorkflowVersion a rdfs:Class ;
+    rdfs:label "WorkflowVersion" ;
+    rdfs:comment "Major version of the workflow (e.g. Cell Ranger v3.1)" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Workflow Version" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:ScRNAseqWorkflowParametersDescription a rdfs:Class ;
+    rdfs:label "ScRNAseqWorkflowParametersDescription" ;
+    rdfs:comment "Parameters used to run the workflow. scRNA-seq level 3: e.g. Normalization and log transformation, ran empty drops or doublet detection, used filter on # genes/cell, etc. scRNA-seq Level 4: dimensionality reduction with PCA and 50 components, nearest-neighbor graph with k = 20 and Leiden clustering with resolution = 1, UMAP visualization using 50 PCA components, marker genes used to annotate cell types, information about droplet matrix (all barcodes) to cell matrix (only informative barcodes representing real cells) conversion" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "scRNAseq Workflow Parameters Description" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:ScATACseqWorkflowType a rdfs:Class ;
+    rdfs:label "ScATACseqWorkflowType" ;
+    rdfs:comment "Generic name for the workflow used to analyze a data set." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "scATACseq Workflow Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:ScATACseqWorkflowParametersDescription a rdfs:Class ;
+    rdfs:label "ScATACseqWorkflowParametersDescription" ;
+    rdfs:comment "Parameters used to run the scATAC-seq workflow." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "scATACseq Workflow Parameters Description" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:WorkflowParametersDescription a rdfs:Class ;
+    rdfs:label "WorkflowParametersDescription" ;
+    rdfs:comment "Parameters used to run the workflow." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Workflow Parameters Description" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:WorkflowLink a rdfs:Class ;
+    rdfs:label "WorkflowLink" ;
+    rdfs:comment "Link to workflow or command. DockStore.org recommended. URL" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Workflow Link" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:QCWorkflowType a rdfs:Class ;
+    rdfs:label "QCWorkflowType" ;
+    rdfs:comment "Generic name for the workflow used to analyze a data set. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "QC Workflow Type" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:QCWorkflowVersion a rdfs:Class ;
+    rdfs:label "QCWorkflowVersion" ;
+    rdfs:comment "Major version for a workflow. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "QC Workflow Version" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:QCWorkflowLink a rdfs:Class ;
+    rdfs:label "QCWorkflowLink" ;
+    rdfs:comment "Link to workflow used. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "QC Workflow Link" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:GermlineVariantsWorkflowURL a rdfs:Class ;
+    rdfs:label "GermlineVariantsWorkflowURL" ;
+    rdfs:comment "Link to workflow document, e.g. Github, DockStore.org recommended" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Germline Variants Workflow URL" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:GermlineVariantsWorkflowType a rdfs:Class ;
+    rdfs:label "GermlineVariantsWorkflowType" ;
+    rdfs:comment "Generic name for the workflow used to analyze a data set" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Germline Variants Workflow Type" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:OtherGermlineVariantsWorkflowType a rdfs:Class ;
+    rdfs:label "OtherGermlineVariantsWorkflowType" ;
+    rdfs:comment "Other Germline Variants Workflow Type" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Other Germline Variants Workflow Type" ;
+    dca:required false ;
+    dca:requiresDependency btc:CustomGermlineVariantsWorkflowType ;
+    dca:validationRules ( ) .
+
+btc:CustomGermlineVariantsWorkflowType a rdfs:Class ;
+    rdfs:label "CustomGermlineVariantsWorkflowType" ;
+    rdfs:comment "Specify the name of a custom alignment workflow" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Custom Germline Variants Workflow Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:SomaticVariantsWorkflowURL a rdfs:Class ;
+    rdfs:label "SomaticVariantsWorkflowURL" ;
+    rdfs:comment "Generic name for the workflow used to analyze a data set." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Somatic Variants Workflow URL" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:SomaticVariantsWorkflowType a rdfs:Class ;
+    rdfs:label "SomaticVariantsWorkflowType" ;
+    rdfs:comment "Generic name for the workflow used to analyze a data set." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Somatic Variants Workflow Type" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:OtherSomaticVariantsWorkflowType a rdfs:Class ;
+    rdfs:label "OtherSomaticVariantsWorkflowType" ;
+    rdfs:comment "Other Somatic Variants Workflow Type" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Other Somatic Variants Workflow Type" ;
+    dca:required false ;
+    dca:requiresDependency btc:CustomSomaticVariantsWorkflowType ;
+    dca:validationRules ( ) .
+
+btc:CustomSomaticVariantsWorkflowType a rdfs:Class ;
+    rdfs:label "CustomSomaticVariantsWorkflowType" ;
+    rdfs:comment "Specify the name of a custom workflow name" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Custom Somatic Variants Workflow Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:SomaticVariantsSampleType a rdfs:Class ;
+    rdfs:label "SomaticVariantsSampleType" ;
+    rdfs:comment "Is the sample case or control in somatic variant analysis" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Somatic Variants Sample Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:StructuralVariantWorkflowURL a rdfs:Class ;
+    rdfs:label "StructuralVariantWorkflowURL" ;
+    rdfs:comment "Link to workflow document. DockStore.org recommended. URL" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Structural Variant Workflow URL" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:StructuralVariantWorkflowType a rdfs:Class ;
+    rdfs:label "StructuralVariantWorkflowType" ;
+    rdfs:comment "Generic name for the workflow used to analyze a data set." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Structural Variant Workflow Type" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:OtherStructuralVariantWorkflowType a rdfs:Class ;
+    rdfs:label "OtherStructuralVariantWorkflowType" ;
+    rdfs:comment "Other Structural Variant Workflow Type" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Other Structural Variant Workflow Type" ;
+    dca:required false ;
+    dca:requiresDependency btc:CustomStructuralVariantWorkflowType ;
+    dca:validationRules ( ) .
+
+btc:CustomStructuralVariantWorkflowType a rdfs:Class ;
+    rdfs:label "CustomStructuralVariantWorkflowType" ;
+    rdfs:comment "Specify the name of a custom workflow name" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Custom Structural Variant Workflow Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:AlignmentWorkflowUrl a rdfs:Class ;
+    rdfs:label "AlignmentWorkflowUrl" ;
+    rdfs:comment "Link to workflow used for read alignment. DockStore.org recommended. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Alignment Workflow Url" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:AlignmentWorkflowType a rdfs:Class ;
+    rdfs:label "AlignmentWorkflowType" ;
+    rdfs:comment "Generic name for the workflow used to analyze a data set." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Alignment Workflow Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:OtherAlignmentWorkflow a rdfs:Class ;
+    rdfs:label "OtherAlignmentWorkflow" ;
+    rdfs:comment "Other Alignment Workflow" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Other Alignment Workflow" ;
+    dca:required false ;
+    dca:requiresDependency btc:CustomAlignmentWorkflow ;
+    dca:validationRules ( ) .
+
+btc:CustomAlignmentWorkflow a rdfs:Class ;
+    rdfs:label "CustomAlignmentWorkflow" ;
+    rdfs:comment "Specify the name of a custom alignment workflow" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Custom Alignment Workflow" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:MSIWorkflowLink a rdfs:Class ;
+    rdfs:label "MSIWorkflowLink" ;
+    rdfs:comment "Link to method workflow (or command) used in estimating the MSI. URL" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "MSI Workflow Link" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MSIScore a rdfs:Class ;
+    rdfs:label "MSIScore" ;
+    rdfs:comment "Numeric score denoting the aligned reads file's MSI score from MSIsensor. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "MSI Score" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MSIStatus a rdfs:Class ;
+    rdfs:label "MSIStatus" ;
+    rdfs:comment "MSIsensor determination of either microsatellite stability or instability." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "MSI Status" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:GenomicReference a rdfs:Class ;
+    rdfs:label "GenomicReference" ;
+    rdfs:comment "Exact version of the human genome reference used in the alignment of reads (e.g. https://www.gencodegenes.org/human/). URL" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Genomic Reference" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:GenomicReferenceURL a rdfs:Class ;
+    rdfs:label "GenomicReferenceURL" ;
+    rdfs:comment "Link to human genome sequence (e.g. ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/GRCh38.primary_assembly.genome.fa.gz)" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Genomic Reference URL" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:GenomeAnnotationURL a rdfs:Class ;
+    rdfs:label "GenomeAnnotationURL" ;
+    rdfs:comment "Link to the human genome annotation (GTF) file (e.g. ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/gencode.v34.annotation.gtf.gz)" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Genome Annotation URL" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:IndexFileName a rdfs:Class ;
+    rdfs:label "IndexFileName" ;
+    rdfs:comment "The name (or part of a name) of a file (of any type). String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Index File Name" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:AverageBaseQuality a rdfs:Class ;
+    rdfs:label "AverageBaseQuality" ;
+    rdfs:comment "Average base quality collected from samtools. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Average Base Quality" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:AverageInsertSize a rdfs:Class ;
+    rdfs:label "AverageInsertSize" ;
+    rdfs:comment "Average insert size collected from samtools. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Average Insert Size" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:AverageReadLength a rdfs:Class ;
+    rdfs:label "AverageReadLength" ;
+    rdfs:comment "Average read length collected from samtools. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Average Read Length" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Contamination a rdfs:Class ;
+    rdfs:label "Contamination" ;
+    rdfs:comment "Fraction of reads coming from cross-sample contamination collected from GATK4. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Contamination" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ContaminationError a rdfs:Class ;
+    rdfs:label "ContaminationError" ;
+    rdfs:comment "Estimation error of cross-sample contamination collected from GATK4. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Contamination Error" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MeanCoverage a rdfs:Class ;
+    rdfs:label "MeanCoverage" ;
+    rdfs:comment "Mean coverage for whole genome sequencing, or mean target coverage for whole exome and targeted sequencing, collected from Picard. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Mean Coverage" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PairsOnDiffCHR a rdfs:Class ;
+    rdfs:label "PairsOnDiffCHR" ;
+    rdfs:comment "Pairs on different chromosomes collected from samtools. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Pairs On Diff CHR" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TotalUniquelyMapped a rdfs:Class ;
+    rdfs:label "TotalUniquelyMapped" ;
+    rdfs:comment "Number of reads that map to genome. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Total Uniquely Mapped" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TotalUnmappedreads a rdfs:Class ;
+    rdfs:label "TotalUnmappedreads" ;
+    rdfs:comment "Number of reads that did not map to genome. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Total Unmapped reads" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ProportionReadsDuplicated a rdfs:Class ;
+    rdfs:label "ProportionReadsDuplicated" ;
+    rdfs:comment "Proportion of duplicated reads collected from samtools. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Proportion Reads Duplicated" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ProportionReadsMapped a rdfs:Class ;
+    rdfs:label "ProportionReadsMapped" ;
+    rdfs:comment "Proportion of mapped reads collected from samtools. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Proportion Reads Mapped" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ProportionTargetsNoCoverage a rdfs:Class ;
+    rdfs:label "ProportionTargetsNoCoverage" ;
+    rdfs:comment "Proportion of targets that did not reach 1X coverage over any base from Picard Tools. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Proportion Targets No Coverage" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ProportionBaseMismatch a rdfs:Class ;
+    rdfs:label "ProportionBaseMismatch" ;
+    rdfs:comment "Proportion of mismatched bases collected from samtools. Number" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Proportion Base Mismatch" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ProportionCoverage10x a rdfs:Class ;
+    rdfs:label "ProportionCoverage10x" ;
+    rdfs:comment "Proportion of all reference bases for whole genome sequencing, or targeted bases for whole exome and targeted sequencing, that achieves 10X or greater coverage from Picard Tools." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Proportion Coverage 10x" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ProportionMitochondrialReads a rdfs:Class ;
+    rdfs:label "ProportionMitochondrialReads" ;
+    rdfs:comment "Proportion of reads mapping to mitochondria." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Proportion Mitochondrial Reads" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ProportionCoverage30X a rdfs:Class ;
+    rdfs:label "ProportionCoverage30X" ;
+    rdfs:comment "Proportion of all reference bases for whole genome sequencing, or targeted bases for whole exome and targeted sequencing, that achieves 30X or greater coverage from Picard Tools." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Proportion Coverage 30X" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ShortReads a rdfs:Class ;
+    rdfs:label "ShortReads" ;
+    rdfs:comment "Number of reads that were too short. Integer" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Short Reads" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PseudoAlignmentUsed a rdfs:Class ;
+    rdfs:label "PseudoAlignmentUsed" ;
+    rdfs:comment "Pseudo aligners such as Kallisto or Salmon do not produce aligned reads BAM files. True indicates pseudoalignment was used." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Pseudo Alignment Used" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:SoftwareandVersion a rdfs:Class ;
+    rdfs:label "SoftwareandVersion" ;
+    rdfs:comment "Name of software used to generate expression values. String" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Software and Version" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:Yes-PseudoAlignmentUsed a rdfs:Class ;
+    rdfs:label "Yes-PseudoAlignmentUsed" ;
+    rdfs:comment "Pseudo aligner was used" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Yes - Pseudo Alignment Used" ;
+    dca:required false ;
+    dca:requiresDependency btc:WorkflowLink, btc:SoftwareandVersion, btc:GenomicReference, btc:GenomicReferenceURL ;
+    dca:validationRules ( ) .
+
+btc:GenomicReference a rdfs:Class ;
+    rdfs:label "GenomicReference" ;
+    rdfs:comment "Exact version of the human genome reference used in the alignment of reads (e.g. https://www.gencodegenes.org/human/)" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Genomic Reference" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:GenomicReferenceURL a rdfs:Class ;
+    rdfs:label "GenomicReferenceURL" ;
+    rdfs:comment "Link to human genome sequence (e.g. ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/GRCh38.primary_assembly.genome.fa.gz) [URL]" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Genomic Reference URL" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:DataCategory a rdfs:Class ;
+    rdfs:label "DataCategory" ;
+    rdfs:comment "Specific content type of the data file." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Data Category" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:ExpressionUnits a rdfs:Class ;
+    rdfs:label "ExpressionUnits" ;
+    rdfs:comment "How quantities are corrected for gene length" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Expression Units" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:FusionGeneDetected a rdfs:Class ;
+    rdfs:label "FusionGeneDetected" ;
+    rdfs:comment "Was a fusion gene identified?" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Fusion Gene Detected" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Yes-FusionGeneDetected a rdfs:Class ;
+    rdfs:label "Yes-FusionGeneDetected" ;
+    rdfs:comment "A fusion gene was detected" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Yes - Fusion Gene Detected" ;
+    dca:required false ;
+    dca:requiresDependency btc:FusionGeneIdentity ;
+    dca:validationRules ( ) .
+
+btc:FusionGeneIdentity a rdfs:Class ;
+    rdfs:label "FusionGeneIdentity" ;
+    rdfs:comment "The gene symbols of fused genes." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Fusion Gene Identity" ;
+    dca:required false ;
+    dca:validationRules ( "list like" ) .
+
+btc:OtherFusionGene a rdfs:Class ;
+    rdfs:label "OtherFusionGene" ;
+    rdfs:comment "Other fusion gene detected." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Other Fusion Gene" ;
+    dca:required false ;
+    dca:requiresDependency btc:SpecifyOtherFusionGene ;
+    dca:validationRules ( ) .
+
+btc:SpecifyOtherFusionGene a rdfs:Class ;
+    rdfs:label "SpecifyOtherFusionGene" ;
+    rdfs:comment "Specify fusion gene detected, if not in list" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Specify Other Fusion Gene" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MatrixType a rdfs:Class ;
+    rdfs:label "MatrixType" ;
+    rdfs:comment "Type of data stored in matrix." ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Matrix Type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+btc:LinkedMatrices a rdfs:Class ;
+    rdfs:label "LinkedMatrices" ;
+    rdfs:comment "All matrices associated with every part of a SingleCellExperiment object. Comma-delimited list of filenames" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Linked Matrices" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TestAttribute a rdfs:Class ;
+    rdfs:label "TestAttribute" ;
+    rdfs:comment "A test attribute" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Test Attribute" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TestAttribute2 a rdfs:Class ;
+    rdfs:label "TestAttribute2" ;
+    rdfs:comment "A second test attribute" ;
+    rdfs:subClassOf btc:Sequencing ;
+    dca:displayName "Test Attribute 2" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/1> a rdfs:Class ;
+    rdfs:label "1" ;
+    rdfs:comment "A valid value for the attribute Test Attribute" ;
+    rdfs:subClassOf <schema:Thing> ;
+    dca:displayName "1" ;
+    dca:required false ;
+    dca:requiresDependency btc:TestAttribute2 ;
+    dca:validationRules ( ) .
+
+btc:B a rdfs:Class ;
+    rdfs:label "B" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf <schema:Thing> ;
+    dca:displayName "b" ;
+    dca:required false ;
+    dca:requiresDependency btc:TestAttribute3 ;
+    dca:validationRules ( ) .
+
+btc:TestAttribute3 a rdfs:Class ;
+    rdfs:label "TestAttribute3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf <schema:Thing> ;
+    dca:displayName "Test Attribute 3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MockComponent a rdfs:Class ;
+    rdfs:label "MockComponent" ;
+    rdfs:comment "A mock component to demonstrate the use of the property \"DependsOn Component\"" ;
+    rdfs:subClassOf btc:Thing ;
+    dca:displayName "mockComponent" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Hdf5 a rdfs:Class ;
+    rdfs:label "Hdf5" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "hdf5" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bedgraph a rdfs:Class ;
+    rdfs:label "Bedgraph" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bedgraph" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Idx a rdfs:Class ;
+    rdfs:label "Idx" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "idx" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Idat a rdfs:Class ;
+    rdfs:label "Idat" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "idat" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bam a rdfs:Class ;
+    rdfs:label "Bam" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bam" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bai a rdfs:Class ;
+    rdfs:label "Bai" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bai" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Excel a rdfs:Class ;
+    rdfs:label "Excel" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "excel" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Powerpoint a rdfs:Class ;
+    rdfs:label "Powerpoint" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "powerpoint" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Tif a rdfs:Class ;
+    rdfs:label "Tif" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "tif" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Tiff a rdfs:Class ;
+    rdfs:label "Tiff" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "tiff" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:OME-TIFF a rdfs:Class ;
+    rdfs:label "OME-TIFF" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "OME-TIFF" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Png a rdfs:Class ;
+    rdfs:label "Png" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "png" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Doc a rdfs:Class ;
+    rdfs:label "Doc" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "doc" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Pdf a rdfs:Class ;
+    rdfs:label "Pdf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "pdf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Fasta a rdfs:Class ;
+    rdfs:label "Fasta" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "fasta" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Fastq a rdfs:Class ;
+    rdfs:label "Fastq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "fastq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Sam a rdfs:Class ;
+    rdfs:label "Sam" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "sam" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Vcf a rdfs:Class ;
+    rdfs:label "Vcf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "vcf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bcf a rdfs:Class ;
+    rdfs:label "Bcf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bcf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Maf a rdfs:Class ;
+    rdfs:label "Maf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "maf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bed a rdfs:Class ;
+    rdfs:label "Bed" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bed" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Chp a rdfs:Class ;
+    rdfs:label "Chp" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "chp" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Cel a rdfs:Class ;
+    rdfs:label "Cel" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "cel" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Sif a rdfs:Class ;
+    rdfs:label "Sif" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "sif" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Tsv a rdfs:Class ;
+    rdfs:label "Tsv" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "tsv" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Csv a rdfs:Class ;
+    rdfs:label "Csv" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "csv" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Txt a rdfs:Class ;
+    rdfs:label "Txt" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "txt" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Plink a rdfs:Class ;
+    rdfs:label "Plink" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "plink" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bigwig a rdfs:Class ;
+    rdfs:label "Bigwig" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bigwig" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Wiggle a rdfs:Class ;
+    rdfs:label "Wiggle" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "wiggle" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Gct a rdfs:Class ;
+    rdfs:label "Gct" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "gct" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bgzip a rdfs:Class ;
+    rdfs:label "Bgzip" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bgzip" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Zip a rdfs:Class ;
+    rdfs:label "Zip" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "zip" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Seg a rdfs:Class ;
+    rdfs:label "Seg" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "seg" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Html a rdfs:Class ;
+    rdfs:label "Html" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "html" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Mov a rdfs:Class ;
+    rdfs:label "Mov" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "mov" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Hyperlink a rdfs:Class ;
+    rdfs:label "Hyperlink" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "hyperlink" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Svs a rdfs:Class ;
+    rdfs:label "Svs" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "svs" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Md a rdfs:Class ;
+    rdfs:label "Md" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "md" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Flagstat a rdfs:Class ;
+    rdfs:label "Flagstat" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "flagstat" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Gtf a rdfs:Class ;
+    rdfs:label "Gtf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "gtf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Raw a rdfs:Class ;
+    rdfs:label "Raw" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "raw" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Msf a rdfs:Class ;
+    rdfs:label "Msf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "msf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Rmd a rdfs:Class ;
+    rdfs:label "Rmd" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "rmd" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BednarrowPeak a rdfs:Class ;
+    rdfs:label "BednarrowPeak" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bed narrowPeak" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BedbroadPeak a rdfs:Class ;
+    rdfs:label "BedbroadPeak" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bed broadPeak" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BedgappedPeak a rdfs:Class ;
+    rdfs:label "BedgappedPeak" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bed gappedPeak" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Avi a rdfs:Class ;
+    rdfs:label "Avi" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "avi" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Pzfx a rdfs:Class ;
+    rdfs:label "Pzfx" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "pzfx" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Fig a rdfs:Class ;
+    rdfs:label "Fig" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "fig" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Xml a rdfs:Class ;
+    rdfs:label "Xml" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "xml" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Tar a rdfs:Class ;
+    rdfs:label "Tar" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "tar" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Rscript a rdfs:Class ;
+    rdfs:label "Rscript" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "R script" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Abf a rdfs:Class ;
+    rdfs:label "Abf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "abf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bpm a rdfs:Class ;
+    rdfs:label "Bpm" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "bpm" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Dat a rdfs:Class ;
+    rdfs:label "Dat" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "dat" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Jpg a rdfs:Class ;
+    rdfs:label "Jpg" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "jpg" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Locs a rdfs:Class ;
+    rdfs:label "Locs" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "locs" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Sentrixdescriptorfile a rdfs:Class ;
+    rdfs:label "Sentrixdescriptorfile" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "Sentrix descriptor file" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Pythonscript a rdfs:Class ;
+    rdfs:label "Pythonscript" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "Python script" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Sav a rdfs:Class ;
+    rdfs:label "Sav" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "sav" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Gzip a rdfs:Class ;
+    rdfs:label "Gzip" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "gzip" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Sdf a rdfs:Class ;
+    rdfs:label "Sdf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "sdf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:RData a rdfs:Class ;
+    rdfs:label "RData" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "RData" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Hic a rdfs:Class ;
+    rdfs:label "Hic" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "hic" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Ab1 a rdfs:Class ;
+    rdfs:label "Ab1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "ab1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/7z> a rdfs:Class ;
+    rdfs:label "7z" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "7z" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Gff3 a rdfs:Class ;
+    rdfs:label "Gff3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "gff3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Json a rdfs:Class ;
+    rdfs:label "Json" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "json" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Sqlite a rdfs:Class ;
+    rdfs:label "Sqlite" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "sqlite" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Svg a rdfs:Class ;
+    rdfs:label "Svg" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "svg" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Sra a rdfs:Class ;
+    rdfs:label "Sra" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "sra" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Recal a rdfs:Class ;
+    rdfs:label "Recal" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "recal" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Tranches a rdfs:Class ;
+    rdfs:label "Tranches" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "tranches" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Mtx a rdfs:Class ;
+    rdfs:label "Mtx" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "mtx" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TagAlign a rdfs:Class ;
+    rdfs:label "TagAlign" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "tagAlign" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Dup a rdfs:Class ;
+    rdfs:label "Dup" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "dup" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:DICOM a rdfs:Class ;
+    rdfs:label "DICOM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "DICOM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Czi a rdfs:Class ;
+    rdfs:label "Czi" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "czi" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Mex a rdfs:Class ;
+    rdfs:label "Mex" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "mex" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Cloupe a rdfs:Class ;
+    rdfs:label "Cloupe" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "cloupe" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Am a rdfs:Class ;
+    rdfs:label "Am" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "am" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Cellam a rdfs:Class ;
+    rdfs:label "Cellam" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "cell am" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Mpg a rdfs:Class ;
+    rdfs:label "Mpg" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "mpg" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:M a rdfs:Class ;
+    rdfs:label "M" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "m" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MzML a rdfs:Class ;
+    rdfs:label "MzML" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "mzML" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Scn a rdfs:Class ;
+    rdfs:label "Scn" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:File ;
+    dca:displayName "scn" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:HTANParentBiospecimenID a rdfs:Class ;
+    rdfs:label "HTANParentBiospecimenID" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:BulkRNA-seqLevel1 ;
+    dca:displayName "HTAN Parent Biospecimen ID" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:HTANDataFileID a rdfs:Class ;
+    rdfs:label "HTANDataFileID" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:BulkRNA-seqLevel1 ;
+    dca:displayName "HTAN Data File ID" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SpikeIn a rdfs:Class ;
+    rdfs:label "SpikeIn" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:BulkRNA-seqLevel1 ;
+    dca:displayName "Spike In" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Flow a rdfs:Class ;
+    rdfs:label "Flow" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:BulkRNA-seqLevel1 ;
+    dca:displayName "Flow" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CellBarcode a rdfs:Class ;
+    rdfs:label "CellBarcode" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:BulkRNA-seqLevel1 ;
+    dca:displayName "Cell Barcode" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SingleCell a rdfs:Class ;
+    rdfs:label "SingleCell" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:NucleicAcidSource ;
+    dca:displayName "Single Cell" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BulkWholeCell a rdfs:Class ;
+    rdfs:label "BulkWholeCell" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:NucleicAcidSource ;
+    dca:displayName "Bulk Whole Cell" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SingleNucleus a rdfs:Class ;
+    rdfs:label "SingleNucleus" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:NucleicAcidSource ;
+    dca:displayName "Single Nucleus" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BulkNuclei a rdfs:Class ;
+    rdfs:label "BulkNuclei" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:NucleicAcidSource ;
+    dca:displayName "Bulk Nuclei" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PairedEnd a rdfs:Class ;
+    rdfs:label "PairedEnd" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryLayout ;
+    dca:displayName "Paired End" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SingleRead a rdfs:Class ;
+    rdfs:label "SingleRead" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryLayout ;
+    dca:displayName "Single Read" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Mid-length a rdfs:Class ;
+    rdfs:label "Mid-length" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryLayout ;
+    dca:displayName "Mid-length" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:LongRead a rdfs:Class ;
+    rdfs:label "LongRead" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryLayout ;
+    dca:displayName "Long Read" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:R1 a rdfs:Class ;
+    rdfs:label "R1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ReadIndicator ;
+    dca:displayName "R1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:R2 a rdfs:Class ;
+    rdfs:label "R2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ReadIndicator ;
+    dca:displayName "R2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/R1&R2> a rdfs:Class ;
+    rdfs:label "R1&R2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ReadIndicator ;
+    dca:displayName "R1&R2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Smart-seq2 a rdfs:Class ;
+    rdfs:label "Smart-seq2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "Smart-seq2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Smart-SeqV4 a rdfs:Class ;
+    rdfs:label "Smart-SeqV4" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "Smart-SeqV4" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/10xV1.0> a rdfs:Class ;
+    rdfs:label "10xV1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "10xV1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/10xV1.1> a rdfs:Class ;
+    rdfs:label "10xV1.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "10xV1.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/10xV2> a rdfs:Class ;
+    rdfs:label "10xV2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "10xV2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/10xV3> a rdfs:Class ;
+    rdfs:label "10xV3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "10xV3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/10xV3.1> a rdfs:Class ;
+    rdfs:label "10xV3.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "10xV3.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CEL-seq2 a rdfs:Class ;
+    rdfs:label "CEL-seq2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "CEL-seq2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Drop-seq a rdfs:Class ;
+    rdfs:label "Drop-seq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "Drop-seq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:InDropsV2 a rdfs:Class ;
+    rdfs:label "InDropsV2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "inDropsV2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:InDropsV3 a rdfs:Class ;
+    rdfs:label "InDropsV3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "inDropsV3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TruDrop a rdfs:Class ;
+    rdfs:label "TruDrop" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "TruDrop" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Sci-ATAC-seq a rdfs:Class ;
+    rdfs:label "Sci-ATAC-seq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryConstructionMethod ;
+    dca:displayName "sci-ATAC-seq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:HybridSelection a rdfs:Class ;
+    rdfs:label "HybridSelection" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibrarySelectionMethod ;
+    dca:displayName "Hybrid Selection" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PCR a rdfs:Class ;
+    rdfs:label "PCR" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibrarySelectionMethod ;
+    dca:displayName "PCR" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:AffinityEnrichment a rdfs:Class ;
+    rdfs:label "AffinityEnrichment" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibrarySelectionMethod ;
+    dca:displayName "Affinity Enrichment" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Other a rdfs:Class ;
+    rdfs:label "Other" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibrarySelectionMethod ;
+    dca:displayName "Other" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaNextSeq500 a rdfs:Class ;
+    rdfs:label "IlluminaNextSeq500" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina Next Seq 500" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaNextSeq550 a rdfs:Class ;
+    rdfs:label "IlluminaNextSeq550" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina Next Seq 550" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaNextSeq2500 a rdfs:Class ;
+    rdfs:label "IlluminaNextSeq2500" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina Next Seq 2500" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaNovaSeq6000 a rdfs:Class ;
+    rdfs:label "IlluminaNovaSeq6000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina NovaSeq 6000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaMiSeq a rdfs:Class ;
+    rdfs:label "IlluminaMiSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina MiSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/454GSFLXTitanium> a rdfs:Class ;
+    rdfs:label "454GSFLXTitanium" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "454 GS FLX Titanium" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ABSOLiD4ABSOLiD2 a rdfs:Class ;
+    rdfs:label "ABSOLiD4ABSOLiD2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "AB SOLiD 4 AB SOLiD 2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ABSOLiD3 a rdfs:Class ;
+    rdfs:label "ABSOLiD3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "AB SOLiD 3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CompleteGenomics a rdfs:Class ;
+    rdfs:label "CompleteGenomics" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Complete Genomics" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaHiSeqXTen a rdfs:Class ;
+    rdfs:label "IlluminaHiSeqXTen" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina HiSeq X Ten" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaHiSeqXFive a rdfs:Class ;
+    rdfs:label "IlluminaHiSeqXFive" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina HiSeq X Five" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaGenomeAnalyzerII a rdfs:Class ;
+    rdfs:label "IlluminaGenomeAnalyzerII" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina Genome Analyzer II" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaGenomeAnalyzerIIx a rdfs:Class ;
+    rdfs:label "IlluminaGenomeAnalyzerIIx" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina Genome Analyzer IIx" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaHiSeq2000 a rdfs:Class ;
+    rdfs:label "IlluminaHiSeq2000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina HiSeq 2000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaHiSeq2500 a rdfs:Class ;
+    rdfs:label "IlluminaHiSeq2500" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina HiSeq 2500" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaHiSeq4000 a rdfs:Class ;
+    rdfs:label "IlluminaHiSeq4000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina HiSeq 4000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IlluminaNextSeq a rdfs:Class ;
+    rdfs:label "IlluminaNextSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Illumina NextSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IonTorrentPGM a rdfs:Class ;
+    rdfs:label "IonTorrentPGM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Ion Torrent PGM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IonTorrentProton a rdfs:Class ;
+    rdfs:label "IonTorrentProton" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Ion Torrent Proton" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IonTorrentS5 a rdfs:Class ;
+    rdfs:label "IonTorrentS5" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Ion Torrent S5" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PacBioRS a rdfs:Class ;
+    rdfs:label "PacBioRS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "PacBio RS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:NovaSeq6000 a rdfs:Class ;
+    rdfs:label "NovaSeq6000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "NovaSeq 6000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:NovaSeqS4 a rdfs:Class ;
+    rdfs:label "NovaSeqS4" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "NovaSeqS4" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:UltimaGenomicsUG100 a rdfs:Class ;
+    rdfs:label "UltimaGenomicsUG100" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Ultima Genomics UG100" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:OxfordNanoporeminION a rdfs:Class ;
+    rdfs:label "OxfordNanoporeminION" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Oxford Nanopore minION" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:GridION a rdfs:Class ;
+    rdfs:label "GridION" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "GridION" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PromethION a rdfs:Class ;
+    rdfs:label "PromethION" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "PromethION" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PacBioSequel2 a rdfs:Class ;
+    rdfs:label "PacBioSequel2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "PacBio Sequel2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Revio a rdfs:Class ;
+    rdfs:label "Revio" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Revio" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Unknown a rdfs:Class ;
+    rdfs:label "Unknown" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "unknown" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:NotReported a rdfs:Class ;
+    rdfs:label "NotReported" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SequencingPlatform ;
+    dca:displayName "Not Reported" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:NotApplicable a rdfs:Class ;
+    rdfs:label "NotApplicable" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Not Applicable" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomTargetsFileProvided a rdfs:Class ;
+    rdfs:label "CustomTargetsFileProvided" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom Targets File Provided" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomAmpliSeqCancerHotspotGENIE-MDAAugmentedPanelv1-46Genes a rdfs:Class ;
+    rdfs:label "CustomAmpliSeqCancerHotspotGENIE-MDAAugmentedPanelv1-46Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom AmpliSeq Cancer Hotspot GENIE-MDA Augmented Panel v1 - 46 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomGENIE-DFCIOncoPanel-275Genes a rdfs:Class ;
+    rdfs:label "CustomGENIE-DFCIOncoPanel-275Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom GENIE-DFCI OncoPanel - 275 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomGENIE-DFCIOncopanel-300Genes a rdfs:Class ;
+    rdfs:label "CustomGENIE-DFCIOncopanel-300Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom GENIE-DFCI Oncopanel - 300 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomGENIE-DFCIOncopanel-447Genes a rdfs:Class ;
+    rdfs:label "CustomGENIE-DFCIOncopanel-447Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom GENIE-DFCI Oncopanel - 447 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomHaloPlexDLBCLPanel-370Genes a rdfs:Class ;
+    rdfs:label "CustomHaloPlexDLBCLPanel-370Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom HaloPlex DLBCL Panel - 370 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomIonAmpliSeqHotspotGENIE-MOSC3AugmentedPanel-74Genes a rdfs:Class ;
+    rdfs:label "CustomIonAmpliSeqHotspotGENIE-MOSC3AugmentedPanel-74Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom Ion AmpliSeq Hotspot GENIE-MOSC3 Augmented Panel - 74 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomLargeConstructCaptureTARGET-OSPanel-8Genes a rdfs:Class ;
+    rdfs:label "CustomLargeConstructCaptureTARGET-OSPanel-8Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom Large Construct Capture TARGET-OS Panel - 8 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomMSKIMPACTPanel-341Genes a rdfs:Class ;
+    rdfs:label "CustomMSKIMPACTPanel-341Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom MSK IMPACT Panel - 341 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomMSKIMPACTPanel-410Genes a rdfs:Class ;
+    rdfs:label "CustomMSKIMPACTPanel-410Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom MSK IMPACT Panel - 410 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomMSKIMPACTPanel-468Genes a rdfs:Class ;
+    rdfs:label "CustomMSKIMPACTPanel-468Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom MSK IMPACT Panel - 468 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomMyeloidGENIE-VICCPanel-37Genes a rdfs:Class ;
+    rdfs:label "CustomMyeloidGENIE-VICCPanel-37Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom Myeloid GENIE-VICC Panel - 37 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomPersonalisACEcpVAREPOP-APOLLOPanelv2 a rdfs:Class ;
+    rdfs:label "CustomPersonalisACEcpVAREPOP-APOLLOPanelv2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom Personalis ACEcp VAREPOP-APOLLO Panel v2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomPGDXSureSelectCancerSelectVAREPOP-APOLLOPanel-203Genes a rdfs:Class ;
+    rdfs:label "CustomPGDXSureSelectCancerSelectVAREPOP-APOLLOPanel-203Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom PGDX SureSelect CancerSelect VAREPOP-APOLLO Panel - 203 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomPGDXSureSelectCancerSelectVAREPOP-APOLLOPanel-88Genes a rdfs:Class ;
+    rdfs:label "CustomPGDXSureSelectCancerSelectVAREPOP-APOLLOPanel-88Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom PGDX SureSelect CancerSelect VAREPOP-APOLLO Panel - 88 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/CustomSeqCapEZHGSCVCRomev2.1ERAugmentedv1> a rdfs:Class ;
+    rdfs:label "CustomSeqCapEZHGSCVCRomev2.1ERAugmentedv1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom SeqCap EZ HGSC VCRome v2.1 ER Augmented v1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/CustomSeqCapEZHGSCVCRomev2.1ERAugmentedv2> a rdfs:Class ;
+    rdfs:label "CustomSeqCapEZHGSCVCRomev2.1ERAugmentedv2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom SeqCap EZ HGSC VCRome v2.1 ER Augmented v2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/CustomSeqCapEZTARGET-OSPanel-7.0Mb> a rdfs:Class ;
+    rdfs:label "CustomSeqCapEZTARGET-OSPanel-7.0Mb" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom SeqCap EZ TARGET-OS Panel - 7.0 Mb" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomSolidTumorGENIE-VICCPanel-34Genes a rdfs:Class ;
+    rdfs:label "CustomSolidTumorGENIE-VICCPanel-34Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom Solid Tumor GENIE-VICC Panel - 34 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/CustomSureSelectCGCI-BLGSPPanel-4.6Mb> a rdfs:Class ;
+    rdfs:label "CustomSureSelectCGCI-BLGSPPanel-4.6Mb" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom SureSelect CGCI-BLGSP Panel - 4.6 Mb" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/CustomSureSelectCGCI-HTMCP-CCKMT2DAndHotspotPanel-37.0Kb> a rdfs:Class ;
+    rdfs:label "CustomSureSelectCGCI-HTMCP-CCKMT2DAndHotspotPanel-37.0Kb" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom SureSelect CGCI-HTMCP-CC KMT2D And Hotspot Panel - 37.0 Kb" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/CustomSureSelectCGCI-HTMCP-CCPanel-19.7Mb> a rdfs:Class ;
+    rdfs:label "CustomSureSelectCGCI-HTMCP-CCPanel-19.7Mb" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom SureSelect CGCI-HTMCP-CC Panel - 19.7 Mb" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomSureSelectGENIE-UHNPanel-555Genes a rdfs:Class ;
+    rdfs:label "CustomSureSelectGENIE-UHNPanel-555Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom SureSelect GENIE-UHN Panel - 555 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/CustomSureSelectHumanAllExonv1.1Plus3Boosters> a rdfs:Class ;
+    rdfs:label "CustomSureSelectHumanAllExonv1.1Plus3Boosters" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom SureSelect Human All Exon v1.1 Plus 3 Boosters" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/CustomSureSelectTARGET-AMLNBLWTPanel-2.8Mb> a rdfs:Class ;
+    rdfs:label "CustomSureSelectTARGET-AMLNBLWTPanel-2.8Mb" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom SureSelect TARGET-AML_NBL_WT Panel - 2.8 Mb" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/CustomTwistBroadExomev1.0-35.0Mb> a rdfs:Class ;
+    rdfs:label "CustomTwistBroadExomev1.0-35.0Mb" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom Twist Broad Exome v1.0 - 35.0 Mb" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CustomTwistBroadPanCancerPanel-396Genes a rdfs:Class ;
+    rdfs:label "CustomTwistBroadPanCancerPanel-396Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Custom Twist Broad PanCancer Panel - 396 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FoundationMedicineT5aPanel-322Genes a rdfs:Class ;
+    rdfs:label "FoundationMedicineT5aPanel-322Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Foundation Medicine T5a Panel - 322 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FoundationMedicineT7Panel-429Genes a rdfs:Class ;
+    rdfs:label "FoundationMedicineT7Panel-429Genes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Foundation Medicine T7 Panel - 429 Genes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IonAmpliSeqCancerHotspotPanelv2 a rdfs:Class ;
+    rdfs:label "IonAmpliSeqCancerHotspotPanelv2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Ion AmpliSeq Cancer Hotspot Panel v2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IonAmpliSeqComprehensiveCancerPanel a rdfs:Class ;
+    rdfs:label "IonAmpliSeqComprehensiveCancerPanel" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Ion AmpliSeq Comprehensive Cancer Panel" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:NexteraDNAExome a rdfs:Class ;
+    rdfs:label "NexteraDNAExome" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Nextera DNA Exome" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/NexteraRapidCaptureExomev1.2> a rdfs:Class ;
+    rdfs:label "NexteraRapidCaptureExomev1.2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "Nextera Rapid Capture Exome v1.2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/SeqCapEZHGSCVCRomev2.1> a rdfs:Class ;
+    rdfs:label "SeqCapEZHGSCVCRomev2.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "SeqCap EZ HGSC VCRome v2.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/SeqCapEZHumanExomev2.0> a rdfs:Class ;
+    rdfs:label "SeqCapEZHumanExomev2.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "SeqCap EZ Human Exome v2.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/SeqCapEZHumanExomev3.0> a rdfs:Class ;
+    rdfs:label "SeqCapEZHumanExomev3.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "SeqCap EZ Human Exome v3.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SureSelectHumanAllExonv3 a rdfs:Class ;
+    rdfs:label "SureSelectHumanAllExonv3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "SureSelect Human All Exon v3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SureSelectHumanAllExonv4 a rdfs:Class ;
+    rdfs:label "SureSelectHumanAllExonv4" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "SureSelect Human All Exon v4" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SureSelectHumanAllExonv5 a rdfs:Class ;
+    rdfs:label "SureSelectHumanAllExonv5" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "SureSelect Human All Exon v5" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/SureSelectHumanAllExonv5+UTR> a rdfs:Class ;
+    rdfs:label "SureSelectHumanAllExonv5+UTR" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "SureSelect Human All Exon v5 + UTR" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TruSeqAmpliconCancerPanel a rdfs:Class ;
+    rdfs:label "TruSeqAmpliconCancerPanel" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "TruSeq Amplicon Cancer Panel" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TruSeqExomeEnrichment-62Mb a rdfs:Class ;
+    rdfs:label "TruSeqExomeEnrichment-62Mb" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "TruSeq Exome Enrichment - 62 Mb" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TruSeqRNAExome a rdfs:Class ;
+    rdfs:label "TruSeqRNAExome" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "TruSeq RNA Exome" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TruSightMyeloidSequencingPanel a rdfs:Class ;
+    rdfs:label "TruSightMyeloidSequencingPanel" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "TruSight Myeloid Sequencing Panel" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/XGenExomeResearchPanelv1.0> a rdfs:Class ;
+    rdfs:label "XGenExomeResearchPanelv1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TargetCaptureKit ;
+    dca:displayName "xGen Exome Research Panel v1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Poly-TEnrichment a rdfs:Class ;
+    rdfs:label "Poly-TEnrichment" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibrarySelectionMethod ;
+    dca:displayName "Poly-T Enrichment" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Random a rdfs:Class ;
+    rdfs:label "Random" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibrarySelectionMethod ;
+    dca:displayName "Random" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:RRNADepletion a rdfs:Class ;
+    rdfs:label "RRNADepletion" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibrarySelectionMethod ;
+    dca:displayName "rRNA Depletion" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MiRNASizeFractionation a rdfs:Class ;
+    rdfs:label "MiRNASizeFractionation" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibrarySelectionMethod ;
+    dca:displayName "miRNA Size Fractionation" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Unstranded a rdfs:Class ;
+    rdfs:label "Unstranded" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryStrand ;
+    dca:displayName "Unstranded" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FirstStranded a rdfs:Class ;
+    rdfs:label "FirstStranded" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryStrand ;
+    dca:displayName "First Stranded" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SecondStranded a rdfs:Class ;
+    rdfs:label "SecondStranded" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:LibraryStrand ;
+    dca:displayName "Second Stranded" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:No a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ToTrimAdapterSequence ;
+    dca:displayName "No" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FAIL a rdfs:Class ;
+    rdfs:label "FAIL" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AdapterContent ;
+    dca:displayName "FAIL" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:PASS a rdfs:Class ;
+    rdfs:label "PASS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AdapterContent ;
+    dca:displayName "PASS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:WARN a rdfs:Class ;
+    rdfs:label "WARN" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AdapterContent ;
+    dca:displayName "WARN" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CellRanger a rdfs:Class ;
+    rdfs:label "CellRanger" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "CellRanger" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:STARsolo a rdfs:Class ;
+    rdfs:label "STARsolo" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "STARsolo" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:HCAOptimus a rdfs:Class ;
+    rdfs:label "HCAOptimus" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "HCA Optimus" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:DropEST a rdfs:Class ;
+    rdfs:label "DropEST" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "dropEST" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SEQC a rdfs:Class ;
+    rdfs:label "SEQC" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "SEQC" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Cufflinks a rdfs:Class ;
+    rdfs:label "Cufflinks" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "Cufflinks" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:DEXSeq a rdfs:Class ;
+    rdfs:label "DEXSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "DEXSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:HTSeq-FPKM a rdfs:Class ;
+    rdfs:label "HTSeq-FPKM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "HTSeq - FPKM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Cellannotation a rdfs:Class ;
+    rdfs:label "Cellannotation" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "Cell annotation" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Differentiationtrajectoryanalysis a rdfs:Class ;
+    rdfs:label "Differentiationtrajectoryanalysis" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ScRNAseqWorkflowType ;
+    dca:displayName "Differentiation trajectory analysis" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:GATK4 a rdfs:Class ;
+    rdfs:label "GATK4" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:GermlineVariantsWorkflowType ;
+    dca:displayName "GATK4" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:None a rdfs:Class ;
+    rdfs:label "None" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:GermlineVariantsWorkflowType ;
+    dca:displayName "None" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CaVEMan a rdfs:Class ;
+    rdfs:label "CaVEMan" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SomaticVariantsWorkflowType ;
+    dca:displayName "CaVEMan" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MuTect2 a rdfs:Class ;
+    rdfs:label "MuTect2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SomaticVariantsWorkflowType ;
+    dca:displayName "MuTect2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MuSE a rdfs:Class ;
+    rdfs:label "MuSE" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SomaticVariantsWorkflowType ;
+    dca:displayName "MuSE" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Pindel a rdfs:Class ;
+    rdfs:label "Pindel" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SomaticVariantsWorkflowType ;
+    dca:displayName "Pindel" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SomaticSniper a rdfs:Class ;
+    rdfs:label "SomaticSniper" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SomaticVariantsWorkflowType ;
+    dca:displayName "SomaticSniper" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:VarScan2 a rdfs:Class ;
+    rdfs:label "VarScan2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SomaticVariantsWorkflowType ;
+    dca:displayName "VarScan2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CaseSample a rdfs:Class ;
+    rdfs:label "CaseSample" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SomaticVariantsSampleType ;
+    dca:displayName "Case Sample" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ControlSample a rdfs:Class ;
+    rdfs:label "ControlSample" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:SomaticVariantsSampleType ;
+    dca:displayName "Control Sample" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BRASS a rdfs:Class ;
+    rdfs:label "BRASS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:StructuralVariantWorkflowType ;
+    dca:displayName "BRASS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CNV a rdfs:Class ;
+    rdfs:label "CNV" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:StructuralVariantWorkflowType ;
+    dca:displayName "CNV" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:CNVkit a rdfs:Class ;
+    rdfs:label "CNVkit" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:StructuralVariantWorkflowType ;
+    dca:displayName "CNVkit" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BWA a rdfs:Class ;
+    rdfs:label "BWA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BWA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BWAwithBQSR a rdfs:Class ;
+    rdfs:label "BWAwithBQSR" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BWA with BQSR" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BWA-aln a rdfs:Class ;
+    rdfs:label "BWA-aln" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BWA-aln" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BWA-mem a rdfs:Class ;
+    rdfs:label "BWA-mem" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BWA-mem" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BWAwithMarkDuplicatesandBQSR a rdfs:Class ;
+    rdfs:label "BWAwithMarkDuplicatesandBQSR" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BWA with Mark Duplicates and BQSR" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:STAR2-Pass a rdfs:Class ;
+    rdfs:label "STAR2-Pass" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "STAR 2-Pass" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:STAR2-PassChimeric a rdfs:Class ;
+    rdfs:label "STAR2-PassChimeric" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "STAR 2-Pass Chimeric" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:STAR2-PassGenome a rdfs:Class ;
+    rdfs:label "STAR2-PassGenome" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "STAR 2-Pass Genome" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:STAR2-PassTranscriptome a rdfs:Class ;
+    rdfs:label "STAR2-PassTranscriptome" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "STAR 2-Pass Transcriptome" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bowtie a rdfs:Class ;
+    rdfs:label "Bowtie" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "Bowtie" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bismark a rdfs:Class ;
+    rdfs:label "Bismark" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "Bismark" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:GSNAP a rdfs:Class ;
+    rdfs:label "GSNAP" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "GSNAP" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BSMAP a rdfs:Class ;
+    rdfs:label "BSMAP" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BSMAP" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BSmooth a rdfs:Class ;
+    rdfs:label "BSmooth" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BSmooth" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BS-Seeker2 a rdfs:Class ;
+    rdfs:label "BS-Seeker2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BS-Seeker2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BS-Seeker a rdfs:Class ;
+    rdfs:label "BS-Seeker" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BS-Seeker" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:RMAP a rdfs:Class ;
+    rdfs:label "RMAP" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "RMAP" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MethylCoder a rdfs:Class ;
+    rdfs:label "MethylCoder" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "MethylCoder" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BRAT-BW a rdfs:Class ;
+    rdfs:label "BRAT-BW" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BRAT-BW" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Pash a rdfs:Class ;
+    rdfs:label "Pash" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "Pash" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Segemehl a rdfs:Class ;
+    rdfs:label "Segemehl" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "Segemehl" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Bisulfighter a rdfs:Class ;
+    rdfs:label "Bisulfighter" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "Bisulfighter" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BatMeth a rdfs:Class ;
+    rdfs:label "BatMeth" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BatMeth" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:LAST a rdfs:Class ;
+    rdfs:label "LAST" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "LAST" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ERNE-BS5 a rdfs:Class ;
+    rdfs:label "ERNE-BS5" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "ERNE-BS5" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:B-SOLANA a rdfs:Class ;
+    rdfs:label "B-SOLANA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "B-SOLANA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SOCS-B a rdfs:Class ;
+    rdfs:label "SOCS-B" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "SOCS-B" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BWA-meth a rdfs:Class ;
+    rdfs:label "BWA-meth" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:AlignmentWorkflowType ;
+    dca:displayName "BWA-meth" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MSI a rdfs:Class ;
+    rdfs:label "MSI" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:MSIStatus ;
+    dca:displayName "MSI" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MSI-low a rdfs:Class ;
+    rdfs:label "MSI-low" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:MSIStatus ;
+    dca:displayName "MSI-low" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MSI-high a rdfs:Class ;
+    rdfs:label "MSI-high" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:MSIStatus ;
+    dca:displayName "MSI-high" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:MSS a rdfs:Class ;
+    rdfs:label "MSS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:MSIStatus ;
+    dca:displayName "MSS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:GeneExpression a rdfs:Class ;
+    rdfs:label "GeneExpression" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:DataCategory ;
+    dca:displayName "Gene Expression" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TranscriptExpression a rdfs:Class ;
+    rdfs:label "TranscriptExpression" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:DataCategory ;
+    dca:displayName "Transcript Expression" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ExonExpressionQuantification a rdfs:Class ;
+    rdfs:label "ExonExpressionQuantification" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:DataCategory ;
+    dca:displayName "Exon Expression Quantification" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:GeneExpressionQuantification a rdfs:Class ;
+    rdfs:label "GeneExpressionQuantification" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:DataCategory ;
+    dca:displayName "Gene Expression Quantification" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:IsoformExpressionQuantification a rdfs:Class ;
+    rdfs:label "IsoformExpressionQuantification" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:DataCategory ;
+    dca:displayName "Isoform Expression Quantification" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SpliceJunctionQuantification a rdfs:Class ;
+    rdfs:label "SpliceJunctionQuantification" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:DataCategory ;
+    dca:displayName "Splice Junction Quantification" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:TPM a rdfs:Class ;
+    rdfs:label "TPM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ExpressionUnits ;
+    dca:displayName "TPM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:RPKM a rdfs:Class ;
+    rdfs:label "RPKM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ExpressionUnits ;
+    dca:displayName "RPKM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:FPKM a rdfs:Class ;
+    rdfs:label "FPKM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ExpressionUnits ;
+    dca:displayName "FPKM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:Counts a rdfs:Class ;
+    rdfs:label "Counts" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ExpressionUnits ;
+    dca:displayName "Counts" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:NA a rdfs:Class ;
+    rdfs:label "NA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:ExpressionUnits ;
+    dca:displayName "NA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:EWS-FLI a rdfs:Class ;
+    rdfs:label "EWS-FLI" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:FusionGeneIdentity ;
+    dca:displayName "EWS-FLI" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:EWS-ERG a rdfs:Class ;
+    rdfs:label "EWS-ERG" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:FusionGeneIdentity ;
+    dca:displayName "EWS-ERG" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SYT-SSX1 a rdfs:Class ;
+    rdfs:label "SYT-SSX1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:FusionGeneIdentity ;
+    dca:displayName "SYT-SSX1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:SYT-SSX2 a rdfs:Class ;
+    rdfs:label "SYT-SSX2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:FusionGeneIdentity ;
+    dca:displayName "SYT-SSX2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:EWS-WT1 a rdfs:Class ;
+    rdfs:label "EWS-WT1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:FusionGeneIdentity ;
+    dca:displayName "EWS-WT1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:RawCounts a rdfs:Class ;
+    rdfs:label "RawCounts" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:MatrixType ;
+    dca:displayName "Raw Counts" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:NormalizedCounts a rdfs:Class ;
+    rdfs:label "NormalizedCounts" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:MatrixType ;
+    dca:displayName "Normalized Counts" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:ScaledCounts a rdfs:Class ;
+    rdfs:label "ScaledCounts" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:MatrixType ;
+    dca:displayName "Scaled Counts" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:BatchCorrectedCounts a rdfs:Class ;
+    rdfs:label "BatchCorrectedCounts" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:MatrixType ;
+    dca:displayName "Batch Corrected Counts" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/2> a rdfs:Class ;
+    rdfs:label "2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TestAttribute ;
+    dca:displayName "2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/BTC/3> a rdfs:Class ;
+    rdfs:label "3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TestAttribute ;
+    dca:displayName "3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:A a rdfs:Class ;
+    rdfs:label "A" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TestAttribute2 ;
+    dca:displayName "a" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+btc:C a rdfs:Class ;
+    rdfs:label "C" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf btc:TestAttribute2 ;
+    dca:displayName "c" ;
+    dca:required false ;
+    dca:validationRules ( ) .

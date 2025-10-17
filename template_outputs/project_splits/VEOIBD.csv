@@ -1,0 +1,146 @@
+Project,Attribute,Attribute ID,Range,Validation Rules
+VEOIBD,adalimumab,bts:Adalimumab,text,
+VEOIBD,adalimumab_change,bts:AdalimumabChange,text,
+VEOIBD,adalimumab_use,bts:AdalimumabUse,text,
+VEOIBD,alignment_reference,bts:AlignmentReference,enum: 10xCellRangerHumanGRCh382020-A | 10xCellRangerHumanGRCh382024-A,
+VEOIBD,amoxicillin,bts:Amoxicillin,text,
+VEOIBD,amoxicillin_change,bts:AmoxicillinChange,text,
+VEOIBD,amoxicillin_use,bts:AmoxicillinUse,text,
+VEOIBD,assay,bts:Assay,enum: CyTOF | LC-MS/MS | RNASeq | ScRNASeq | WES | WGS,
+VEOIBD,assay_metadata_synID,bts:AssayMetadataSynID,text,validation=regex search ^syn[0-9]{8} error
+VEOIBD,avg_reads_cell,bts:AvgReadsCell,text,validation=int
+VEOIBD,azathioprine,bts:Azathioprine,text,
+VEOIBD,azathioprine_change,bts:AzathioprineChange,text,
+VEOIBD,azathioprine_use,bts:AzathioprineUse,text,
+VEOIBD,balsalazide,bts:Balsalazide,text,
+VEOIBD,balsalazide_change,bts:BalsalazideChange,text,
+VEOIBD,balsalazide_use,bts:BalsalazideUse,text,
+VEOIBD,biospecimen_metadata_synID,bts:BiospecimenMetadataSynID,text,validation=regex search ^syn[0-9]{8} error
+VEOIBD,cell_count_1mL,bts:CellCount1mL,text,validation=int
+VEOIBD,cellranger_output_class,bts:CellrangerOutputClass,enum: FilteredFeatureBcMatrix | MoleculeInfo | RawFeatureBcMatrix,
+VEOIBD,certolizumab,bts:Certolizumab,text,
+VEOIBD,certolizumab_change,bts:CertolizumabChange,text,
+VEOIBD,certolizumab_use,bts:CertolizumabUse,text,
+VEOIBD,cholestyr,bts:Cholestyr,text,
+VEOIBD,cholestyr_change,bts:CholestyrChange,text,
+VEOIBD,cholestyr_use,bts:CholestyrUse,text,
+VEOIBD,ciproflox,bts:Ciproflox,text,
+VEOIBD,ciproflox_change,bts:CiprofloxChange,text,
+VEOIBD,ciproflox_use,bts:CiprofloxUse,text,
+VEOIBD,Component,bts:Component,text,
+VEOIBD,confident_exonic,bts:ConfidentExonic,text,validation=num
+VEOIBD,confident_intergenic,bts:ConfidentIntergenic,text,validation=num
+VEOIBD,confident_intronic,bts:ConfidentIntronic,text,validation=num
+VEOIBD,confident_reads,bts:ConfidentReads,text,validation=num
+VEOIBD,confident_transcriptome,bts:ConfidentTranscriptome,text,validation=num
+VEOIBD,cyclospa,bts:Cyclospa,text,
+VEOIBD,cyclospa_change,bts:CyclospaChange,text,
+VEOIBD,cyclospa_use,bts:CyclospaUse,text,
+VEOIBD,data_generator,bts:DataGenerator,enum: BCH | CSMC | HSC | LMU | MSSM | OXF,
+VEOIBD,data_level,bts:DataLevel,enum: 1 | 2 | 3 | 4,
+VEOIBD,data_type,bts:DataType,enum: Cytometry | Functionalstudy | Genomics | Lipidomics | Metabolomics | Microbiome | Proteomics | Transcriptomics,
+VEOIBD,digestion_cdna_date,bts:DigestionCdnaDate,text,validation=date
+VEOIBD,estimated_cells,bts:EstimatedCells,text,validation=int
+VEOIBD,file_format,bts:FileFormat,enum: .h5 | .h5ad | Bam | Csv | Fastq | Pdf | Tar.gz | Tsv | Txt | Xlsx,
+VEOIBD,Filename,bts:Filename,text,validation=str
+VEOIBD,fk506,bts:Fk506,text,
+VEOIBD,fk506_change,bts:Fk506Change,text,
+VEOIBD,fk506_use,bts:Fk506Use,text,
+VEOIBD,fragment_size_bp,bts:FragmentSizeBp,text,validation=int
+VEOIBD,genes_detected,bts:GenesDetected,text,validation=int
+VEOIBD,gex_con_ng_uL,bts:GexConNgUL,text,validation=float
+VEOIBD,golimumab,bts:Golimumab,text,
+VEOIBD,golimumab_change,bts:GolimumabChange,text,
+VEOIBD,golimumab_use,bts:GolimumabUse,text,
+VEOIBD,i5_index,bts:I5Index,text,validation=str
+VEOIBD,i7_index,bts:I7Index,text,validation=str
+VEOIBD,individual_id,bts:IndividualId,text,validation={'ClinicalMetadataTemplate': 'unique error'}
+VEOIBD,infliximab,bts:Infliximab,text,
+VEOIBD,infliximab_change,bts:InfliximabChange,text,
+VEOIBD,infliximab_use,bts:InfliximabUse,text,
+VEOIBD,intrasterd,bts:Intrasterd,text,
+VEOIBD,intrasterd_change,bts:IntrasterdChange,text,
+VEOIBD,intrasterd_use,bts:IntrasterdUse,text,
+VEOIBD,lenalidomide,bts:Lenalidomide,text,
+VEOIBD,lenalidomide_change,bts:LenalidomideChange,text,
+VEOIBD,lenalidomide_use,bts:LenalidomideUse,text,
+VEOIBD,library_date,bts:LibraryDate,text,validation=date
+VEOIBD,library_prep_method,bts:LibraryPrepMethod,enum: 10xChromium3GEX | 10xChromium3GEXv3.1 | 10xChromium5GEX | 10xChromiumFlex | 10xUniversal3GEX | 10xUniversal5GEX | CEL-Seq2 | ChromiumNextGEMChipG | ChromiumSingleCellHumanBCRAmplificationKit | ChromiumSingleCellHumanTCRAmplificationKit | ChromiumscATACKitv2 | FluidigmC1HT | In-houselibraryprep | NEBNextHumanImmuneSequencingKit | NEBNextUltraIIDirectionalRNALibrary | NexteraXT | NexteraXTDNA | QIAseqmiRNALibrary | SMART-SeqHumanBCRwithUMI | SMART-SeqHumanTCRwithUMI | SMART-Seqv4UltraLowInputRNA | SMARTerStrandedTotalRNAv2 | TakaraHumanBCRprofilingforIllumina | TakaraHumanTCRprofilingforIllumina | TakaraHumanTCRv2profilingforIllumina | TakaraHumanscTCRprofilingforIllumina | TruSeqStrandedmRNA,
+VEOIBD,median_genes_cell,bts:MedianGenesCell,text,validation=int
+VEOIBD,median_UMI_cell,bts:MedianUMICell,text,validation=int
+VEOIBD,mercap6,bts:Mercap6,text,
+VEOIBD,mercap6_change,bts:Mercap6Change,text,
+VEOIBD,mercap6_use,bts:Mercap6Use,text,
+VEOIBD,mesalamine,bts:Mesalamine,text,
+VEOIBD,mesalamine_change,bts:MesalamineChange,text,
+VEOIBD,mesalamine_use,bts:MesalamineUse,text,
+VEOIBD,methotrex,bts:Methotrex,text,
+VEOIBD,methotrex_change,bts:MethotrexChange,text,
+VEOIBD,methotrex_use,bts:MethotrexUse,text,
+VEOIBD,metronida,bts:Metronida,text,
+VEOIBD,metronida_change,bts:MetronidaChange,text,
+VEOIBD,metronida_use,bts:MetronidaUse,text,
+VEOIBD,natalizumab,bts:Natalizumab,text,
+VEOIBD,natalizumab_change,bts:NatalizumabChange,text,
+VEOIBD,natalizumab_use,bts:NatalizumabUse,text,
+VEOIBD,olsalazine,bts:Olsalazine,text,
+VEOIBD,olsalazine_change,bts:OlsalazineChange,text,
+VEOIBD,olsalazine_use,bts:OlsalazineUse,text,
+VEOIBD,omega3,bts:Omega3,text,
+VEOIBD,omega3_change,bts:Omega3Change,text,
+VEOIBD,omega3_use,bts:Omega3Use,text,
+VEOIBD,oralenteric,bts:Oralenteric,text,
+VEOIBD,oralenteric_change,bts:OralentericChange,text,
+VEOIBD,oralenteric_use,bts:OralentericUse,text,
+VEOIBD,oralsterd,bts:Oralsterd,text,
+VEOIBD,oralsterd_change,bts:OralsterdChange,text,
+VEOIBD,oralsterd_use,bts:OralsterdUse,text,
+VEOIBD,percent_cell_viability,bts:PercentCellViability,text,validation=float | inRange 0 100 error
+VEOIBD,platform,bts:Platform,enum: Agilent44Karray | BGISEQ-500 | Biocratesp180 | BiographmCT | BionanoIrys | BrukerAvanceIII | ConfocalImaging | DNBSEQ | DdSEQSingle-CellIsolator | GAIIx | HiSeq1000 | HiSeq2000 | HiSeq2500 | HiSeq3000 | HiSeq4000 | HiSeqX | Illumina1M | IlluminaH650 | IlluminaHumanHT-12V30R1 | IlluminaHumanHap300 | IlluminaHumanHap650Yv3A | IlluminaHumanMethylation450 | IlluminaHumanOmni1-Quadv1.0 | IlluminaInfinium-HumanMethylation450-BeadChip | IlluminaInfiniumGSAMD-24v2-0 | IlluminaMethylationEPIC | IlluminaMiSeq | IlluminaMouseWG-6v2.0expressionbeadchip | IlluminaNovaSeq6000 | IlluminaNovaseq6000 | IlluminaOmni2.5-8 | IlluminaOmni2.5-8V1.1 | IlluminaOmni2.5-8V1.3 | IlluminaOmni2pt5M | IlluminaOmni5-Quad | IlluminaOmni5M | IlluminaWholeGenomeDASL | InfiniumGlobalDiversityArray-8 | InfiniumHumanOmniExpressExome | InfiniumOmni2.5Exome-8v1.1 | InfiniumOmni2.5Exome-8v1.3 | InfiniumOmni2.5Exome-8v1.4 | InfiniumOmni2.5Exome-8v1.5 | InfiniumPsychArrayBeadChip | LTQOrbitrapXL | LluminaInfiniumGeneralScreeningArray24-Kitv3.0 | MiSeq | NanostringnCounter | NanostringnCounterMouseADPanel | NextSeq2000 | ... (+20 more),
+VEOIBD,probiotic,bts:Probiotic,text,
+VEOIBD,probiotic_change,bts:ProbioticChange,text,
+VEOIBD,probiotic_use,bts:ProbioticUse,text,
+VEOIBD,Q30_bc,bts:Q30Bc,text,validation=num
+VEOIBD,Q30_read,bts:Q30Read,text,validation=num
+VEOIBD,Q30_UMI,bts:Q30UMI,text,validation=num
+VEOIBD,reads_antisense,bts:ReadsAntisense,text,validation=num
+VEOIBD,reads_in_cells,bts:ReadsInCells,text,validation=int
+VEOIBD,reads_mapped,bts:ReadsMapped,text,validation=int
+VEOIBD,rectalstrd,bts:Rectalstrd,text,
+VEOIBD,rectalstrd_change,bts:RectalstrdChange,text,
+VEOIBD,rectalstrd_use,bts:RectalstrdUse,text,
+VEOIBD,resource_type,bts:ResourceType,enum: Experimentaldata | Metadata | Report,
+VEOIBD,rifampin,bts:Rifampin,text,
+VEOIBD,rifampin_change,bts:RifampinChange,text,
+VEOIBD,rifampin_use,bts:RifampinUse,text,
+VEOIBD,sample_id,bts:SampleId,text,validation={'BiospecimenMetadataTemplate': 'unique error'}
+VEOIBD,sequencing_saturation,bts:SequencingSaturation,text,validation=num
+VEOIBD,software_and_version,bts:SoftwareAndVersion,enum: CellRangerv3.0.0 | CellRangerv3.0.1 | CellRangerv3.0.2 | CellRangerv3.1.0 | CellRangerv4.0.0 | CellRangerv5.0.0 | CellRangerv5.0.1 | CellRangerv6.0.0 | CellRangerv6.0.1 | CellRangerv6.0.2 | CellRangerv6.1.0 | CellRangerv6.1.1 | CellRangerv6.1.2 | CellRangerv7.0.0 | CellRangerv7.0.1 | CellRangerv7.1.0 | CellRangerv7.2.0 | CellRangerv8.0.0 | CellRangerv8.0.1 | CellRangerv9.0.0,
+VEOIBD,specimen_modality,bts:SpecimenModality,enum: Multispecimen | Singlespecimen,
+VEOIBD,sulfasa,bts:Sulfasa,text,
+VEOIBD,sulfasa_change,bts:SulfasaChange,text,
+VEOIBD,sulfasa_use,bts:SulfasaUse,text,
+VEOIBD,thalidomide,bts:Thalidomide,text,
+VEOIBD,thalidomide_change,bts:ThalidomideChange,text,
+VEOIBD,thalidomide_use,bts:ThalidomideUse,text,
+VEOIBD,tocilizumab,bts:Tocilizumab,text,
+VEOIBD,tocilizumab_change,bts:TocilizumabChange,text,
+VEOIBD,tocilizumab_use,bts:TocilizumabUse,text,
+VEOIBD,total_reads,bts:TotalReads,text,validation=int
+VEOIBD,trimethop,bts:Trimethop,text,
+VEOIBD,trimethop_change,bts:TrimethopChange,text,
+VEOIBD,trimethop_use,bts:TrimethopUse,text,
+VEOIBD,ursodiol,bts:Ursodiol,text,
+VEOIBD,ursodiol_change,bts:UrsodiolChange,text,
+VEOIBD,ursodiol_use,bts:UrsodiolUse,text,
+VEOIBD,ustekinumab,bts:Ustekinumab,text,
+VEOIBD,ustekinumab_change,bts:UstekinumabChange,text,
+VEOIBD,ustekinumab_use,bts:UstekinumabUse,text,
+VEOIBD,valid_bc,bts:ValidBc,text,validation=num
+VEOIBD,valid_UMI,bts:ValidUMI,text,validation=num
+VEOIBD,vancomycin,bts:Vancomycin,text,
+VEOIBD,vancomycin_change,bts:VancomycinChange,text,
+VEOIBD,vancomycin_use,bts:VancomycinUse,text,
+VEOIBD,vedolizumab,bts:Vedolizumab,text,
+VEOIBD,vedolizumab_change,bts:VedolizumabChange,text,
+VEOIBD,vedolizumab_use,bts:VedolizumabUse,text,

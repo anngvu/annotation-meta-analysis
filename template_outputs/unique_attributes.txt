@@ -1,0 +1,1286 @@
+10xVisiumAuxiliaryFiles Key
+10xVisiumRNALevel2 Key
+10xVisiumRNALevel3_id
+10xVisiumRNALevel3 Key
+10xVisiumRNALevel4_id
+Ab Name Reported on Dataset
+accessReqs
+ackContext
+acknowledgment
+acquisitionBatchID
+acquisitionBatchSize
+acquisitionBatchSizeUnit
+acquisitionMode
+acquisitionSoftware
+acquistionSoftwareVersion
+adalimumab
+adalimumab_change
+adalimumab_use
+Adapter Content
+Adapter Name
+AdapterName
+adapters
+Adapter Sequence
+AdapterSequence
+AdjacentSampleIDs
+adjustedCovariates
+ADNC
+age
+ageAssessment
+ageAssessmentUnits
+ageUnit
+algorithm
+alignedReadLength
+Aligned Read Length
+alignment_reference
+Alignment Workflow Type
+Alignment Workflow Url
+aliquotID
+alt_HS_S
+alt_LEWY_full
+AltSampleID
+amoxicillin
+amoxicillin_change
+amoxicillin_use
+AMY_A
+AMY_ANY
+AMY_THAL
+analysisType
+Analyte Type
+antibody
+antibodyAmount
+antibodyAmountUnits
+antibodyID
+Antibody Name
+AntibodyName
+Antibody Notes
+Antibody Role
+appliedHardTrimming
+Applied Hard Trimming
+AppliedHardTrimming
+arrayBatch
+arrayInformation
+arrayManufacturer
+assay
+assay_metadata_synID
+assayTarget
+Assay Type
+assemblyName
+assemblyQual
+assemblySoftware
+Associated mRNA Library Data File ID
+associatedResource
+Attribute
+author
+auxiliaryAsset
+averageBaseQuality
+Average Base Quality
+averageInsertSize
+Average Insert Size
+averageReadLength
+Average Read Length
+avg_reads_cell
+azathioprine
+azathioprine_change
+azathioprine_use
+backgroundTrait
+balsalazide
+balsalazide_change
+balsalazide_use
+Barcode Folder File List
+Barcode Folder Synapse ID
+Base Caller Name
+Base Caller Version
+Basic Statistics
+batch
+batchChannel
+Batch Correction Method
+batchID
+BatchID
+batchLabel
+batchSize
+batchSizeUnit
+Beadchip Array
+Beads Total
+bindingDensity
+biospecimenID
+Biospecimen Key
+biospecimen_metadata_synID
+Biotin Enrichment
+Bisulfite Conversion
+BisulfiteConversionKit
+bisulfiteConversionKitID
+Blacklist Ratio
+Blacklist Region Fragments
+bodySite
+Braak
+brainWeight
+B_SCORE
+Bulk Methylation Assay Type
+BulkMethylationAssayType
+Bulk Methylation Genomic Reference
+captureArea
+Capture Area
+catalogNumber
+Catalog Number
+CatalogNumber
+CDLB
+CDNALength
+CDNAOffset
+CDS avg_read_length
+CDS bases
+CDS coverage
+CDS custom_assembly_fasta_file_for_alignment
+CDS design_description
+CDS instrument_model
+CDS library_id
+CDS library_layout
+CDS library_selection
+CDS library_source
+CDS library_strategy
+CDS number_of_reads
+CDS platform
+CDS reference_genome_assembly
+CDS sequence_alignment_software
+Cell Barcode
+Cell Barcode Length
+CellBarcodeLength
+Cell Barcode Offset
+CellBarcodeOffset
+Cell Barcode Tag
+CellBarcodeTag
+cell_count_1mL
+cellID
+Cell Median Number Genes
+CellMedianNumberGenes
+Cell Median Number Reads
+CellMedianNumberReads
+cellranger_output_class
+Cell Total
+CellTotal
+cellType
+CERAD
+certolizumab
+certolizumab_change
+certolizumab_use
+channel
+Channel Antibody Catalog Number
+Channel Antibody Clone
+Channel Antibody Lot
+Channel Antibody Name
+Channel Antibody Role
+Channel Antibody Vendor
+Channel Cycle Number
+Channel Emission Bandwidth
+Channel Emission Wavelength
+Channel Excitation Bandwidth
+Channel Excitation Wavelength
+Channel Fluorophore
+Channel ID
+ChannelID
+Channel Identifier
+Channel Metadata Filename
+ChannelMetadataFilename
+Channel Metal Isotope
+Channel Metal Symbol
+Channel Name
+ChannelName
+Channel Oligo Barcode Lower Strand
+Channel Oligo Barcode Upper Strand
+Channel Passed QC
+ChannelPassedQC
+Channel Probe Concentration
+Channel Probe Dilution Ratio
+Channel Resource ID
+Channel Sub-cycle Number
+Channel Target Name
+checkSum
+Checksum
+Chimeric Read-Pairs
+chipID
+chipPosition
+cholestyr
+cholestyr_change
+cholestyr_use
+chromatinAmount
+chromatinAmountUnits
+chromosome
+ciproflox
+ciproflox_change
+ciproflox_use
+citation
+Clonality
+Clone
+cohort
+Comment
+comments
+Commit SHA
+Component
+compoundDose
+compoundDoseUnit
+compoundName
+Concentration
+concentrationMaterial
+concentrationMaterialUnit
+concentrationNaCl
+concentrationNaClUnit
+confident_exonic
+confident_intergenic
+confident_intronic
+confident_reads
+confident_transcriptome
+conservationMethod
+consortium
+Contamination
+Contamination Error
+contrastAgent
+controlType
+conversionRatio
+conversionRatioUnits
+CosMx Assay Type
+CosMx Bundle Contents
+Crosslinking Condtion
+Cryopreserved Cells in Sample
+CryopreservedCellsinSample
+CVD_ART
+CVD_ART_ANY
+CVD_ATH
+CVD_ATH_ANY
+CVD_CAA
+CVD_CAA_ANY
+CVD_S
+Cycle Number
+CycleNumber
+cyclospa
+cyclospa_change
+cyclospa_use
+databaseLibrary
+databaseName
+databaseSource
+databaseVersion
+databaseWeblink
+Data Category
+DataCategory
+dataCollectionMode
+Data Collection Mode
+dataFile
+dataFormat
+data_generator
+data_level
+dataLevel
+DatasetView Key
+dataSubtype
+data_type
+dataType
+dataTypeAll
+Data Use Codes
+Decoded Transcripts
+DetailedSampleID
+diagnosis
+diagnosisStatus
+digestion_cdna_date
+digestionMethod
+digestionReagent
+Dilution
+DimensionOrder
+directionalBSseqLibrary
+dissociationMethod
+Dissociation Method
+DissociationMethod
+DMCallingTool
+DMC Calling Tool
+DMC Calling Workflow URL
+DMC data file format
+DMR Calling Tool
+DMR Calling Workflow URL
+DMR data file Format
+dnaBatch
+dnaBatchID
+dnaBatchSize
+dnaBatchSizeUnit
+DNA Digestion Condition
+DNAextraction
+dnaExtractionMethod
+DNA Input Amount
+DNase Sensitive Region Fragments
+documentation
+Duplicate Read-Pairs
+Duplicate Removal Software
+DV200
+EducationalResource Key
+EM beam current
+EM contrast type
+EM dwell or exposure time
+EM instrument
+Emission Bandwidth
+EmissionBandwidth
+Emission Wavelength
+EmissionWavelength
+EM method
+Empty Well Barcode
+EM signal or contrast mech
+EM signal processing
+EM spot size
+EM stage tilt
+EM voltage
+Encoding
+endBias
+End Bias
+EndBias
+Enhancer Region Fragments
+enrichment
+enrichmentMethod
+enrichmentStrategy
+entity
+entityID
+environment
+ERStatus
+estimated_cells
+ethnicGroupCode
+ethnicity
+Excitation Bandwidth
+ExcitationBandwidth
+Excitation Wavelength
+ExcitationWavelength
+experimentalBatchSize
+experimentalBatchSizeUnit
+experimentalCondition
+experimentalDesign
+experimentalFactor
+experimentalTimepoint
+Experiment IF Channels
+experimentType
+expressionUnit
+Expression Units
+extractionMethod
+familyStudyParticipant
+Feature Barcode Library Type
+featureReferenceID
+Feature Reference Id
+fieldStrength
+File Alias
+File Assay
+File Description
+File Design
+file_format
+fileFormat
+File Format
+FileFormat
+File Level
+File Longitudinal Event Type
+File Longitudinal Group
+File Longitudinal Sequence Identifier
+File Longitudinal Sequential Time Elapsed
+File Longitudinal Time Elapsed Unit
+File Longitudinal Total Time Elapsed
+Filename
+File Species
+File Tissue
+File Tumor Type
+File Url
+FileView_id
+fk506
+fk506_change
+fk506_use
+Flow
+Flow Cell Barcode
+Fluorophore
+format
+FOV number
+FOVnumber
+FOVX
+FOVXUnit
+FOVY
+FOVYUnit
+fractionIdentifier
+fragmentation
+Fragment Maximum Length
+Fragment Mean Length
+Fragment Minimum Length
+fragment_size_bp
+Fragment Standard Deviation Length
+Frame Averaging
+FrameAveraging
+Fusion Gene Detected
+Fusion Gene Identity
+gasFlowTemperature
+gasFlowTemperatureUnit
+gDNAconc
+GENCODE Gene Symbol Target
+genePerturbationTechnology
+genePerturbationType
+genePerturbed
+geneRLF
+genes_detected
+geneticBackground
+geneticMutations
+Genome Annotation URL
+GenomeAnnotationURL
+genomicReference
+Genomic Reference
+GenomicReference
+genomicReferenceLink
+Genomic Reference URL
+GenomicReferenceURL
+genotypeTechnology
+GeoMx DSP Assay Type
+GeoMx DSP Genomic Reference
+GeoMx DSP Library Preparation Kit Vendor
+GeoMx DSP Library Preparation Kit Version
+GeoMx DSP NGS Library Preparation Kit Name
+GeoMx DSP NGS Library Selection Method
+GeoMx DSP NGS Sequencing Platform
+GeoMx DSP Unique Probe Count
+GeoMx DSP Unique Target Count
+GeoMx DSP Workflow Link
+GeoMx DSP Workflow Parameter Description
+GeoMx DSP Workflow Type
+GeoMx Imaging Channel Names
+Germline Variants Workflow Type
+Germline Variants Workflow URL
+gex_con_ng_uL
+globinRemoval
+golimumab
+golimumab_change
+golimumab_use
+GQN
+grant
+grantNumber
+hasAlgorithm
+hasAssayControl
+hasEnvironment
+hasIonizationSource
+hasLibrary
+hasNotebook
+hasOpertaingSystem
+hasParameters
+hasProgrammingLanguage
+hasProtocol
+hasScript
+hasSettings
+hasSoftware
+HEMOR
+HER2Status
+HS_L
+HS_S
+HTAN Channel Metadata ID
+HTAN Data File ID
+HTAN Parent Biospecimen ID
+HTAN Parent Channel Metadata ID
+HTAN Parent Data File ID
+HTAN Participant ID
+HTAN RPPA Antibody Table
+HTAN RPPA Antibody Table ID
+i5_index
+i7_index
+Image Assay Type
+Image Channel Size
+Image Dimension Order
+Image FOV Index
+Image FOV Size X
+Image FOV Size X Unit
+Image FOV Size Y
+Image FOV Size Y Unit
+Image Frame Averaging
+Image ID
+ImageID
+Image Identifier
+Image Immersion Type
+Image Lense Aperture
+Image Nominal Magnification
+Image Number of Features
+Image Number of Objects
+Image Number of Timepoints
+Image Object Class
+Image Object Class Description
+Image Objective
+Image Parameter file
+Image Physical Size X
+Image Physical Size X Unit
+Image Physical Size Y
+Image Physical Size Y Unit
+Image Physical Size Z
+Image Physical Size Z Unit
+Image Pixels BigEndian
+Image Pixel Type
+Image Plane Count
+Image Platform Manufacturer
+Image Platform Model
+Image Protocol Link
+Image Pyramidal
+imageReorientation
+Image Re-orientation
+Image Segmentation Data Type
+Image Software
+Image Summary Statistic
+Image Timeseries
+Image Working Distance
+Image Working Distance Unit
+Image X Pixels
+Image Y Pixels
+Image Z Pixels
+Image Z stack
+Imaging Assay Type
+ImagingAssayType
+ImagingChannel_id
+ImagingChannel Key
+ImagingLevel1_id
+ImagingLevel1 Key
+ImagingLevel2_id
+ImagingLevel2 Key
+ImagingLevel3Image Key
+ImagingLevel3Segments_id
+ImagingLevel3Segments Key
+ImagingLevel4_id
+Imaging Object Class
+Imaging Object Class Description
+Imaging Segmentation Data Type
+Imaging Summary Statistic
+immersion
+Immersion
+imputation
+imputationPanel
+imputationSoftware
+Index File Name
+individual_id
+individualID
+INFA
+infliximab
+infliximab_change
+infliximab_use
+Input Cells and Nuclei
+InputCellsandNuclei
+inputTotalRNA
+instrumentModel
+INT
+Internal Ab ID
+intrasterd
+intrasterd_change
+intrasterd_use
+ionMode
+ionProperty
+isCellLine
+isFeatured
+isFilteredReads
+Is lowest level
+isModelSystem
+isMultiSpecimen
+isobaricLabelingReagent
+isReleased
+isStranded
+Kmer Content
+labelFreeQuantitation
+labelQuantitation
+lambdaDNAconc
+Lambda methylation ratio
+Lambdamethylationratio
+Lane Number
+LaneNumber
+Laterality
+LC Column Vendor and Model
+LC Flow Rate
+LC Gradient
+LC ID Value
+LC Instrument Vendor and Model
+LC Length Value
+LC Mobile Phase A
+LC Mobile Phase B
+LC Resin
+LC Temp Value
+lenalidomide
+lenalidomide_change
+lenalidomide_use
+lensAperture
+LensNA
+lensVoltages
+lensVoltagesUnit
+LEWY_ANY
+LEWY_full
+LEWY_grp
+libLayout
+library
+libraryBatch
+libraryBatchID
+Library Construction Method
+LibraryConstructionMethod
+library_date
+libraryID
+libraryKitID
+Library Layout
+LibraryLayout
+libraryPrep
+libraryPreparationDaysFromIndex
+Library Preparation Days from Index
+Library Preparation Kit Name
+Library Preparation Kit Vendor
+Library Preparation Kit Version
+libraryPreparationMethod
+LibraryPrepKitName
+LibraryPrepKitVendor
+LibraryPrepKitVersion
+library_prep_method
+Library Selection Method
+LibrarySelectionMethod
+libraryStrand
+Library Strand
+libraryType
+libraryVersion
+libReadsSeqd
+libSize
+libVector
+License
+ligand
+Ligation Condition
+Linked Matrices
+LinkedMatrices
+Loop Calling
+Loop Window
+Lot
+lotNumber
+LowMapQ
+MACS2 End
+MACS2 Fold Change
+MACS2 Name
+MACS2 Neg Log10 pvalue Summit
+MACS2 Neg Log10 qvalue Summit
+MACS2 Relative Summit Position
+MACS2 Score
+MACS2 Seqnames
+MACS2 Start
+MACS2 Strand
+MACS2 Width
+MapQ30
+Mass Range High Value
+Mass Range Low Value
+Mass Spectrometry Auxiliary File
+Matched Spatial Barcode Tag
+materialType
+Matrix Type
+MatrixType
+mayoDx
+meanCoverage
+Mean Coverage
+meanGCContent
+meanReadsPerSpatialSpot
+Mean Reads per Spatial Spot
+Mean Total Transcripts per Area
+measurementTechnique
+Median Fraction of Reads in Annotated cis DNA Elements
+Median Fraction of Reads in Peaks
+medianGenes
+median_genes_cell
+medianNumberGenesPerSpatialSpot
+Median Number Genes per Spatial Spot
+Median Passing Read Percentage
+Median Percentage of Mitochondrial Reads per Nucleus
+median_UMI_cell
+medianUMICountsPerSpot
+Median UMI Counts per Spot
+medianUMIs
+Median UMIs per Cell Number
+MedianUMIsperCellNumber
+mercap6
+mercap6_change
+mercap6_use
+MERFISH Codebook File
+MERFISH Positions File
+mesalamine
+mesalamine_change
+mesalamine_use
+metaboliteType
+metadataType
+Metal Isotope Element
+MetalIsotopeElement
+Metal Isotope Mass
+MetalIsotopeMass
+methods
+methotrex
+methotrex_change
+methotrex_use
+metronida
+metronida_change
+metronida_use
+MICR
+Microarray Label
+Microarray Molecule
+Microarray Platform ID
+Microarray Protocol Auxiliary File
+Microarray Value Definition
+Micro-region Seq Platform
+Microscope
+mid
+Mitochondrial Read-Pairs
+modelSystemName
+ModelSystemType
+modelType
+modificationParameters
+MRISequence
+MRItype
+msAnalyteType
+MS Assay Category
+msAssayTechnique
+MS-based Assay Type
+MS-based Targeted
+MS Batch ID
+MS Instrument Metadata File
+MS Instrument Vendor and Model
+MSI Score
+MSI Status
+MSI Workflow Link
+MS Labeling
+MS Scan Mode
+MS Source
+msTarget
+multiconsensusStudyFileID
+Multiplex Barcode
+nanostringBatch
+NanoStringGeoMxAuxiliaryFiles Key
+NanoStringGeoMxDSPImaging_id
+NanoStringGeoMxDSPLevel1_id
+NanoStringGeoMxDSPLevel1 Key
+NanoStringGeoMxDSPLevel2_id
+NanoStringGeoMxDSPLevel2 Key
+NanoStringGeoMxDSPLevel3_id
+NanoStringGeoMXROISegmentAnnotation Key
+natalizumab
+natalizumab_change
+natalizumab_use
+nCount Peaks
+nCount RNA
+newsRelease
+nf1Genotype
+nf2Genotype
+nFeature Peaks
+nFeature RNA
+NGS Aligned reads
+NGS Deduplicated reads
+NGS Library Layout
+NGS Library Preparation Days from Index
+NGS Library Preparation Kit Name
+NGS Library Preparation Kit Vendor
+NGS Library Preparation Kit Version
+NGS Library Selection Method
+NGS Library Source
+NGS Library Strategy
+NGS MapQ30
+NGS Matrix Type
+NGS Raw reads
+NGS Read Indicator
+NGS Read Length
+NGS RNA DV200
+NGS RNA End Bias
+NGS RNA Reverse Transcription Primer
+NGS RNA RIN
+NGS Sequencing Coverage
+NGS Sequencing Design Description
+NGS Sequencing Library Construction Days from Index
+NGS Sequencing Platform
+NGS Stitched reads
+NGS Target Sequencing Depth
+NGS Trimmed reads
+NGS Unique Bases
+NGS Unique Probe Count
+NGS Unique Target Count
+nominalMagnification
+NominalMagnification
+Normalization Method
+notebook
+nucleAcidExt
+Nuclei Barcode Length
+NucleiBarcodeLength
+Nuclei Barcode Read
+NucleiBarcodeRead
+Nucleic Acid Capture Days from Index
+nucleicAcidSource
+Nucleic Acid Source
+NucleicAcidSource
+Nuclei Permeabilization Method
+Nucleosome Percentile
+Nucleosome Signal
+Nucleus Identifier
+NucleusIdentifier
+numberCells
+numberContig
+numberIndividuals
+Number of Features
+Number of FOVs
+Number of Objects
+objective
+Objective
+Oligo Barcode Lower Strand
+OligoBarcodeLowerStrand
+Oligo Barcode Upper Strand
+OligoBarcodeUpperStrand
+olsalazine
+olsalazine_change
+olsalazine_use
+omega3
+omega3_change
+omega3_use
+On Target Fragments
+operatingSystem
+oralenteric
+oralenteric_change
+oralenteric_use
+oralsterd
+oralsterd_change
+oralsterd_use
+organ
+Overrepresented Sequences
+Pairs On Diff CHR
+pairsOnDifferentChr
+Panel Name
+Parameter file
+parameters
+parentSpecimenID
+ParticipantID
+Passed Filters
+Passed QC
+PassedQC
+pcrCycles
+Pct Reads in Peaks
+peakCallingAlgorithm
+Peak Region Cutsites
+Peak Region Fragments
+Peaks Calling Software
+Per Base N Content
+Per Base Sequence Content
+Per Base Sequence Quality
+percent_cell_viability
+Percent GC Content
+Percent of Transcripts within Cells
+permeabilizationOnTime
+Permeabilization Time
+Per Sequence GC Content
+Per Sequence Quality Score
+Per Tile Sequence Quality
+pH
+Phosphoprotein Flag
+Phospho Site
+PhysicalSizeX
+PhysicalSizeXUnit
+PhysicalSizeY
+PhysicalSizeYUnit
+PhysicalSizeZ
+PhysicalSizeZUnit
+Pixels BigEndian
+PixelsBigEndian
+PixelType
+PlaneCount
+plateName
+plateWell
+platform
+platformLocation
+PMI
+pmiUnits
+Polarity
+Pre-processing Completed
+Pre-processing Required
+probiotic
+probiotic_change
+probiotic_use
+processingBatchID
+processingBatchSize
+processingBatchSizeUnit
+program
+programmingLanguage
+progressReportNumber
+projectFullName
+projectShortName
+Promoter Region Fragments
+Proportion Base Mismatch
+proportionCoverage10x
+Proportion Coverage 10x
+proportionCoverage30x
+Proportion Coverage 30X
+Proportion Mitochondrial Reads
+Proportion of Minimum CpG Coverage 10X
+ProportionofMinimumCpGCoverage10X
+Proportion Reads Duplicated
+proportionReadsMapped
+Proportion Reads Mapped
+Proportion Reads Mapped to Transcriptome
+Proportion Targets No Coverage
+proteinExtractSource
+protocol
+protocolAssay
+protocolLink
+Protocol Link
+ProtocolLink
+protocolPurpose
+PRStatus
+Pseudo Alignment Used
+PublicationView Key
+pUC19 methylation ratio
+PUC19methylationratio
+Pyramid
+Q30_bc
+Q30_read
+Q30_UMI
+QC Workflow Link
+QC Workflow Type
+QC Workflow Version
+quantationStrategy
+race
+ratio260over230
+ratio260over280
+Read1
+Read2
+ReadContent
+readDepth
+readIndicator
+Read Indicator
+ReadIndicator
+readLength
+Read Length
+readLengthUnits
+readmeFile
+readPair
+reads_antisense
+readsDuplicatedPercent
+reads_in_cells
+reads_mapped
+readsMappedPercent
+readsMappedToTranscriptome
+readStrandOrigin
+REAG
+reagentCatalogNumber
+reagentContact
+reagentIDs
+reagentLotNumber
+reagentManufacturer
+reagentName
+reagentWeblink
+recordingSource
+rectalstrd
+rectalstrd_change
+rectalstrd_use
+referenceSet
+referenceTranscriptID
+registryAbbreviation
+relatedStudies
+Replicate Type
+reportedTrait
+reporterGene
+reporterSubstance
+repositoryName
+resolution
+Resolution
+resource_type
+resourceType
+resultType
+resultUnit
+reverseTranscriptionPrimer
+Reverse Transcription Primer
+ReverseTranscriptionPrimer
+ribosomalDepletion
+rifampin
+rifampin_change
+rifampin_use
+RIN
+rnaBatch
+rnaBatchID
+rnaBatchSize
+rnaBatchSizeUnit
+ROI name
+ROI Tag
+RPPA Dilution
+RPPA Validation Status
+RRID identifier
+RRIDidentifier
+runID
+Run ID
+runtimePlatform
+runType
+sampleBarcode
+sampleBatchID
+sampleBatchSize
+sampleBatchSizeUnit
+sample_id
+SampleID
+sampleIntroduction
+sampleManifestSynID
+samplePreparation
+samplePrepProtocol
+SampleSite
+sampleType
+scanID
+scATACseq Library Layout
+scATAC-seq Object ID
+scATACseq Read1
+scATACseq Read2
+scATACseq Read3
+scATACseq Workflow Parameters Description
+scATACseq Workflow Type
+scmCseq Read1
+scmCseq Read2
+scmCseq Read3
+script
+scRNAseq Workflow Parameters Description
+ScRNAseqWorkflowParametersDescription
+scRNAseq Workflow Type
+ScRNAseqWorkflowType
+SentrixID
+SentrixRowColumn
+seqMethod
+seqPlatform
+sequenceAnalysis
+Sequence Duplication Levels
+Sequence Length Distribution
+sequencingBatch
+sequencingBatchID
+Sequencing Batch ID
+sequencingBatchSize
+sequencingBatchSizeUnit
+SequencingLevel1_id
+SequencingLevel1 Key
+SequencingLevel2_id
+SequencingLevel2 Key
+SequencingLevel3_id
+sequencingLibraryConstructionDaysFromIndex
+Sequencing Library Construction Days from Index
+sequencingPlatform
+Sequencing Platform
+SequencingPlatform
+SequencingRNALevel1_id
+sequencing_saturation
+sequencingSaturation
+Sequencing Saturation
+settings
+Seurat Clusters
+sex
+Short Reads
+Single Cell Barcode Method Applied
+Single Cell Dissociation Days from Index
+Single Cell Isolation Method
+SingleCellIsolationMethod
+Single Nucleus Buffer
+SingleNucleusBuffer
+Single Nucleus Capture
+SizeC
+Size Selection Range
+SizeT
+SizeX
+SizeY
+SizeZ
+slideID
+Slide ID
+Slide-seq Bead File Type
+Slide-seq Fragment Size
+Slide-seq Workflow Parameter Description
+Slide-seq Workflow Type
+slideVersion
+Slide Version
+software
+software_and_version
+softwareAndVersion
+Software and Version
+SoftwareandVersion
+softwareName
+Somatic Variants Sample Type
+Somatic Variants Workflow Type
+Somatic Variants Workflow URL
+sop
+Source Key
+sourceMatID
+Spatial Barcode and UMI
+spatialBarcodeLength
+Spatial Barcode Length
+spatialBarcodeOffset
+Spatial Barcode Offset
+spatialBarcodeTag
+Spatial Barcode Tag
+spatialLibraryConstructionMethod
+Spatial Library Construction Method
+spatialRead1
+Spatial Read1
+spatialRead2
+Spatial Read2
+species
+Species
+speciesGroup
+specimenID
+specimen_modality
+specimenModality
+specimenPreparationMethod
+specimenType
+spectrometerFrequency
+Spike In
+SpikeIn
+Spike In Concentration
+spotsUnderTissue
+Spots under tissue
+stage
+statisticalModel
+stockNumber
+strainCommonName
+strainOfficialName
+Stripe Calling
+Stripe Window
+Structural Variant Workflow Type
+Structural Variant Workflow URL
+study
+studyAbstract
+studyDescription
+studyFocus
+studyKey
+Study Key
+studyMetadata
+studyName
+studyType
+studyWiki
+Sub Cycle Number
+SubCycleNumber
+sulfasa
+sulfasa_change
+sulfasa_use
+summaryFile
+summaryStatisticsAssembly
+Surface area
+Synapse ID of GeoMx DSP PKC File
+Synapse ID of GeoMx DSP ROI Segment Annotation File
+Synapse ID of GeoMx Lab Worksheet File
+Target Capture Kit
+targetCaptureKitID
+targetDepth
+Target Depth
+TargetDepth
+Targeted Genome
+targetGene
+Target Name
+TargetName
+targetPanel
+targetPanelSize
+targetPanelSynID
+TDP_3
+TDP43
+TDP_5
+Technical Replicate Group
+TechnicalReplicateGroup
+technologyPlatformVersion
+Test Attribute
+thalidomide
+thalidomide_change
+thalidomide_use
+Threshold for Minimum Passing Reads
+Tile overlap X
+Tile overlap Y
+timepointUnit
+title
+TMTType
+tocilizumab
+tocilizumab_change
+tocilizumab_use
+Tool
+ToolView Key
+Total DNA Input
+Total Negative Probe Counts
+Total Number of Cells
+Total Number of Input Cells
+TotalNumberofInputCells
+Total Number of Passing Nuclei
+Total Number of Targets
+Total Read-Pairs
+total_reads
+totalReads
+Total Reads
+Total Uniquely Mapped
+Total Unmapped reads
+To Trim Adapter Sequence
+Transcript Integrity Number
+Transcripts per Cell
+transcriptType
+transposaseBatch
+Transposition Reaction
+TranspositionReaction
+treatmentAmountUnit
+treatmentAmountValue
+treatmentDurationUnit
+treatmentDurationValue
+treatmentIDs
+treatmentName
+treatmentTemperatureUnit
+treatmentTemperatureValue
+trimethop
+trimethop_change
+trimethop_use
+Trimmer
+Tseries
+TSS Enrichment
+TSS Fragments
+TSS Percentile
+tumorType
+UMI Barcode Length
+UMIBarcodeLength
+UMI Barcode Offset
+UMIBarcodeOffset
+UMI Tag
+UMITag
+UNIPROT Protein ID Target
+Unique Genes
+Unmapped Read-Pairs
+ursodiol
+ursodiol_change
+ursodiol_use
+useReadMeFile
+useReagent
+useSummaryFile
+useTreatment
+ustekinumab
+ustekinumab_change
+ustekinumab_use
+vacuumPressure
+vacuumPressureUnit
+validBarcodeReads
+Valid Barcodes Cell Number
+ValidBarcodesCellNumber
+valid_bc
+validHiCContacts
+valid_UMI
+valueReported
+vancomycin
+vancomycin_change
+vancomycin_use
+variantCount
+vedolizumab
+vedolizumab_change
+vedolizumab_use
+vendor
+Vendor
+Visium Capture Area
+Visium File Type
+Visium Mean Reads per Spatial Spot
+Visium Median Number Genes per Spatial Spot
+Visium Median UMI Counts per Spot
+Visium Proportion Reads Mapped
+Visium Proportion Reads Mapped to Transcriptome
+Visium Run ID
+Visium Spots under tissue
+Visium Workflow Parameters Description
+Visium Workflow Type
+WBVD
+Well Index
+Whitelist Cell Barcode File Link
+WhitelistCellBarcodeFileLink
+whitelistSpatialBarcodeFileLink
+Whitelist Spatial Barcode File Link
+WMR
+WMRCAL
+workflow
+workflowFormat
+workflowLink
+Workflow Link
+WorkflowLink
+Workflow Parameter Description
+Workflow Type
+workflowVersion
+Workflow Version
+WorkflowVersion
+workingDistance
+WorkingDistance
+workingDistanceUnit
+WorkingDistanceUnit
+Xenium Bundle Contents
+Xenium HE image HTAN File ID
+Xenium IF image HTAN File ID
+Zstack

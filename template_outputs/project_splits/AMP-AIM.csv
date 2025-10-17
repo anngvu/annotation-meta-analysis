@@ -1,0 +1,14 @@
+Project,Attribute,Attribute ID,Range,Validation Rules
+AMP-AIM,assay,bts:Assay,enum: ASAPSeq | CE-MS | CITESeq | CosMX | CyTOF | Featurebarcodesequencing | Flowcytometry | H&E | Imagingmasscytometry | Imagingmassspectrometry | LC-MS/MS | MultiplexedELISA | NULISA | OlinkExploreHT | RNASeq | SNParray | ScRNASeq | ScVDJSeq | SerialIHC | SnATACSeq | SnRNASeq | SomaScan | VDJSeq | WES | WGS | Xenium,validation=list like error
+AMP-AIM,Component,bts:Component,text,
+AMP-AIM,dataLevel,bts:DataLevel,enum: 1 | 2 | 3 | 4 | 5,
+AMP-AIM,fileFormat,bts:FileFormat,enum: Bai | Bam | Bed | Bim | Csv | Docx | Dose | Erate | Fam | Fastq | Fcs | Geojson | H5 | H5ad | Info | Mtx | Omiq | Parquet | Pdf | Rds | Rec | Tar.gz | Tbi | Tgz | Tsv | Txt | Vcf | Xls | Xlsx | Zip,
+AMP-AIM,Filename,bts:Filename,text,
+AMP-AIM,platform,bts:Platform,enum: ChromiumController | ChromiumX | ChromiumXo | ChromiumiX | CyTOFXT | HeliosMassCytometer | Hyperion | IlluminaHiSeq2500 | IlluminaMiSeq | IlluminaNextSeq500 | IlluminaNovaSeq6000 | IlluminaNovaSeqX | None | VisiumCytAssist | Xenium,validation=list like error
+AMP-AIM,resourceType,bts:ResourceType,enum: Code | Experimentaldata | Metadata,
+AMP-AIM,sampleManifestSynID,bts:SampleManifestSynID,text,validation=regex search ^syn[0-9]{8} error
+AMP-AIM,softwareAndVersion,bts:SoftwareAndVersion,enum: CellRangerv3.0.0 | CellRangerv3.0.1 | CellRangerv3.0.2 | CellRangerv3.1.0 | CellRangerv4.0.0 | CellRangerv5.0.0 | CellRangerv5.0.1 | CellRangerv6.0.0 | CellRangerv6.0.1 | CellRangerv6.0.2 | CellRangerv6.1.0 | CellRangerv6.1.1 | CellRangerv6.1.2 | CellRangerv7.0.0 | CellRangerv7.0.1 | CellRangerv7.1.0 | CellRangerv7.2.0 | CellRangerv8.0.0 | CellRangerv8.0.1 | CellRangerv9.0.0 | None | OMIQ | OMIQ2024-12 | OlinkNPX | SpaceRanger3.0.0 | SpaceRanger3.0.1 | SpaceRanger3.1.0 | SpaceRanger3.1.1 | SpaceRanger3.1.2,
+AMP-AIM,specimenModality,bts:SpecimenModality,enum: Multispecimen | Singlespecimen,
+AMP-AIM,targetPanel,bts:TargetPanel,enum: MDIPA | None | OlinkExploreHTv2024-10-31,
+AMP-AIM,targetPanelSize,bts:TargetPanelSize,text,validation=int error
+AMP-AIM,targetPanelSynID,bts:TargetPanelSynID,text,validation=regex search ^syn[0-9]{8} error

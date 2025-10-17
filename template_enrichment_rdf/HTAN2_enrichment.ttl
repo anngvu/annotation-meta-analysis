@@ -1,0 +1,346 @@
+@prefix htan2: <https://dca.app.sagebionetworks.org/HTAN2/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+htan2:Patient a dca:UnconfiguredTemplate .
+
+htan2:Demographics a dca:RecordTemplate .
+
+htan2:FamilyHistory a dca:RecordTemplate .
+
+htan2:Exposure a dca:RecordTemplate .
+
+htan2:FollowUp a dca:RecordTemplate .
+
+htan2:Diagnosis a dca:RecordTemplate .
+
+htan2:Therapy a dca:RecordTemplate .
+
+htan2:MolecularTest a dca:RecordTemplate .
+
+htan2:CDSSequencingTemplate a dca:AnnotationTemplate .
+htan2:CDSSequencingTemplate dca:fileType "Various" .
+
+htan2:CDNA a dca:UnconfiguredTemplate .
+
+htan2:Biospecimen a dca:RecordTemplate .
+
+htan2:ClinicalDataTier2 a dca:RecordTemplate .
+
+htan2:SRRSClinicalDataTier2 a dca:RecordTemplate .
+
+htan2:LungCancerTier3 a dca:RecordTemplate .
+
+htan2:ColorectalCancerTier3 a dca:RecordTemplate .
+
+htan2:BreastCancerTier3 a dca:RecordTemplate .
+
+htan2:NeuroblastomaandGliomaTier3 a dca:RecordTemplate .
+
+htan2:AcuteLymphoblasticLeukemiaTier3 a dca:RecordTemplate .
+
+htan2:OvarianCancerTier3 a dca:RecordTemplate .
+
+htan2:ProstateCancerTier3 a dca:RecordTemplate .
+
+htan2:SarcomaTier3 a dca:RecordTemplate .
+
+htan2:PancreaticCancerTier3 a dca:RecordTemplate .
+
+htan2:MelanomaTier3 a dca:RecordTemplate .
+
+htan2:SRRSBiospecimen a dca:RecordTemplate .
+
+htan2:OtherAssay a dca:AnnotationTemplate .
+htan2:OtherAssay dca:fileType "Various" .
+
+htan2:ExSeqMinimal a dca:AnnotationTemplate .
+htan2:ExSeqMinimal dca:fileType "Various" .
+
+htan2:ScRNA-seqLevel1 a dca:AnnotationTemplate .
+htan2:ScRNA-seqLevel1 dca:fileType "FASTQ" .
+
+htan2:ScRNA-seqLevel2 a dca:AnnotationTemplate .
+htan2:ScRNA-seqLevel2 dca:fileType "FASTQ" .
+
+htan2:ScRNA-seqLevel3 a dca:AnnotationTemplate .
+htan2:ScRNA-seqLevel3 dca:fileType "FASTQ" .
+
+htan2:ScRNA-seqLevel4 a dca:AnnotationTemplate .
+htan2:ScRNA-seqLevel4 dca:fileType "FASTQ" .
+
+htan2:Slide-seqLevel1 a dca:AnnotationTemplate .
+htan2:Slide-seqLevel1 dca:fileType "Various" .
+
+htan2:SpatialBarcodeandUMI a dca:UnconfiguredTemplate .
+htan2:SpatialBarcodeandUMI dca:fileType "Document" .
+
+htan2:Slide-seqLevel2 a dca:AnnotationTemplate .
+htan2:Slide-seqLevel2 dca:fileType "Various" .
+
+htan2:Slide-seqLevel3 a dca:AnnotationTemplate .
+htan2:Slide-seqLevel3 dca:fileType "Various" .
+
+htan2:BulkRNA-seqLevel1 a dca:AnnotationTemplate .
+htan2:BulkRNA-seqLevel1 dca:fileType "FASTQ" .
+
+htan2:BulkRNA-seqLevel2 a dca:AnnotationTemplate .
+htan2:BulkRNA-seqLevel2 dca:fileType "FASTQ" .
+
+htan2:BulkRNA-seqLevel3 a dca:AnnotationTemplate .
+htan2:BulkRNA-seqLevel3 dca:fileType "FASTQ" .
+
+htan2:BulkWESLevel1 a dca:AnnotationTemplate .
+htan2:BulkWESLevel1 dca:fileType "FASTQ" .
+
+htan2:BulkWESLevel2 a dca:AnnotationTemplate .
+htan2:BulkWESLevel2 dca:fileType "FASTQ" .
+
+htan2:BulkWESLevel3 a dca:AnnotationTemplate .
+htan2:BulkWESLevel3 dca:fileType "FASTQ" .
+
+htan2:MicroarrayLevel1 a dca:AnnotationTemplate .
+htan2:MicroarrayLevel1 dca:fileType "Various" .
+
+htan2:MicroarrayLevel2 a dca:AnnotationTemplate .
+htan2:MicroarrayLevel2 dca:fileType "Various" .
+
+htan2:ScATAC-seqLevel1 a dca:AnnotationTemplate .
+htan2:ScATAC-seqLevel1 dca:fileType "Various" .
+
+htan2:MedianFractionofReadsinPeaks a dca:UnconfiguredTemplate .
+
+htan2:MedianFractionofReadsinAnnotatedcisDNAElements a dca:UnconfiguredTemplate .
+
+htan2:ScATAC-seqLevel2 a dca:AnnotationTemplate .
+htan2:ScATAC-seqLevel2 dca:fileType "Various" .
+
+htan2:ScATAC-seqLevel3 a dca:AnnotationTemplate .
+htan2:ScATAC-seqLevel3 dca:fileType "Various" .
+
+htan2:ScmC-seqLevel1 a dca:AnnotationTemplate .
+htan2:ScmC-seqLevel1 dca:fileType "Various" .
+
+htan2:ScmC-seqLevel2 a dca:AnnotationTemplate .
+htan2:ScmC-seqLevel2 dca:fileType "Various" .
+
+htan2:ScATAC-seqLevel4 a dca:AnnotationTemplate .
+htan2:ScATAC-seqLevel4 dca:fileType "Various" .
+
+htan2:ScDNA-seqLevel1 a dca:AnnotationTemplate .
+htan2:ScDNA-seqLevel1 dca:fileType "Various" .
+
+htan2:ScDNA-seqLevel2 a dca:AnnotationTemplate .
+htan2:ScDNA-seqLevel2 dca:fileType "Various" .
+
+htan2:MultiplexedCITE-seqLevel1 a dca:AnnotationTemplate .
+htan2:MultiplexedCITE-seqLevel1 dca:fileType "Various" .
+
+htan2:MultiplexedCITE-seqLevel2 a dca:AnnotationTemplate .
+htan2:MultiplexedCITE-seqLevel2 dca:fileType "Various" .
+
+htan2:MultiplexedCITE-seqLevel3 a dca:AnnotationTemplate .
+htan2:MultiplexedCITE-seqLevel3 dca:fileType "Various" .
+
+htan2:MultiplexedCITE-seqLevel4 a dca:AnnotationTemplate .
+htan2:MultiplexedCITE-seqLevel4 dca:fileType "Various" .
+
+htan2:BulkMethylation-seqLevel1 a dca:AnnotationTemplate .
+htan2:BulkMethylation-seqLevel1 dca:fileType "FASTQ" .
+
+htan2:BulkMethylationAssayType a dca:UnconfiguredTemplate .
+htan2:BulkMethylationAssayType dca:fileType "FASTQ" .
+
+htan2:BulkMethylation-seqLevel2 a dca:AnnotationTemplate .
+htan2:BulkMethylation-seqLevel2 dca:fileType "FASTQ" .
+
+htan2:BulkMethylation-seqLevel3 a dca:AnnotationTemplate .
+htan2:BulkMethylation-seqLevel3 dca:fileType "FASTQ" .
+
+htan2:ImagingLevel1 a dca:AnnotationTemplate .
+htan2:ImagingLevel1 dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+htan2:ImagingLevel2 a dca:AnnotationTemplate .
+htan2:ImagingLevel2 dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+htan2:FOVX a dca:UnconfiguredTemplate .
+
+htan2:FOVY a dca:UnconfiguredTemplate .
+
+htan2:PhysicalSizeX a dca:UnconfiguredTemplate .
+
+htan2:PhysicalSizeY a dca:UnconfiguredTemplate .
+
+htan2:PhysicalSizeZ a dca:UnconfiguredTemplate .
+
+htan2:ImagingLevel3Segmentation a dca:AnnotationTemplate .
+htan2:ImagingLevel3Segmentation dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+htan2:ImagingLevel3Image a dca:AnnotationTemplate .
+htan2:ImagingLevel3Image dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+htan2:ImagingLevel3Channels a dca:RecordTemplate .
+
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-RNA-seqLevel1> a dca:AnnotationTemplate .
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-RNA-seqLevel1> dca:fileType "FASTQ" .
+
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-RNA-seqLevel2> a dca:AnnotationTemplate .
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-RNA-seqLevel2> dca:fileType "FASTQ" .
+
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-AuxiliaryFiles> a dca:AnnotationTemplate .
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-AuxiliaryFiles> dca:fileType "Various" .
+
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-RNA-seqLevel3> a dca:AnnotationTemplate .
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-RNA-seqLevel3> dca:fileType "FASTQ" .
+
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-RNA-seqLevel4> a dca:AnnotationTemplate .
+<https://dca.app.sagebionetworks.org/HTAN2/10xVisiumSpatialTranscriptomics-RNA-seqLevel4> dca:fileType "FASTQ" .
+
+htan2:NanoStringGeoMxDSPSpatialTranscriptomicsLevel1 a dca:AnnotationTemplate .
+htan2:NanoStringGeoMxDSPSpatialTranscriptomicsLevel1 dca:fileType "Various" .
+
+htan2:NanoStringGeoMxDSPROIRCCSegmentAnnotationMetadata a dca:RecordTemplate .
+
+htan2:NanoStringGeoMxDSPROIDCCSegmentAnnotationMetadata a dca:RecordTemplate .
+
+htan2:NanoStringGeoMxDSPSpatialTranscriptomicsLevel3 a dca:AnnotationTemplate .
+htan2:NanoStringGeoMxDSPSpatialTranscriptomicsLevel3 dca:fileType "Various" .
+
+htan2:HI-C-seqLevel1 a dca:AnnotationTemplate .
+htan2:HI-C-seqLevel1 dca:fileType "Various" .
+
+htan2:HI-C-seqLevel2 a dca:AnnotationTemplate .
+htan2:HI-C-seqLevel2 dca:fileType "Various" .
+
+htan2:HI-C-seqLevel3 a dca:AnnotationTemplate .
+htan2:HI-C-seqLevel3 dca:fileType "Various" .
+
+htan2:ImagingLevel4 a dca:AnnotationTemplate .
+htan2:ImagingLevel4 dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+htan2:SRRSImagingLevel2 a dca:AnnotationTemplate .
+htan2:SRRSImagingLevel2 dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+<https://dca.app.sagebionetworks.org/HTAN2/10XGenomicsXeniumISSExperiment> a dca:AnnotationTemplate .
+<https://dca.app.sagebionetworks.org/HTAN2/10XGenomicsXeniumISSExperiment> dca:fileType "Various" .
+
+htan2:RPPALevel2 a dca:AnnotationTemplate .
+htan2:RPPALevel2 dca:fileType "Various" .
+
+htan2:HTANRPPAAntibodyTable a dca:AnnotationTemplate .
+htan2:HTANRPPAAntibodyTable dca:species "Multi-species" .
+htan2:HTANRPPAAntibodyTable dca:fileType "Various" .
+
+htan2:PhosphoSite a dca:UnconfiguredTemplate .
+htan2:PhosphoSite dca:fileType "Document" .
+
+htan2:RPPALevel3 a dca:AnnotationTemplate .
+htan2:RPPALevel3 dca:fileType "Various" .
+
+htan2:RPPALevel4 a dca:AnnotationTemplate .
+htan2:RPPALevel4 dca:fileType "Various" .
+
+htan2:NanostringCosMxSMIExperiment a dca:AnnotationTemplate .
+htan2:NanostringCosMxSMIExperiment dca:fileType "Various" .
+
+htan2:MassSpectrometryLevel1 a dca:AnnotationTemplate .
+htan2:MassSpectrometryLevel1 dca:fileType "Various" .
+
+htan2:MassSpectrometryLevel2 a dca:AnnotationTemplate .
+htan2:MassSpectrometryLevel2 dca:fileType "Various" .
+
+htan2:MassSpectrometryAuxiliaryFile a dca:UnconfiguredTemplate .
+
+htan2:MassSpectrometryLevel3 a dca:AnnotationTemplate .
+htan2:MassSpectrometryLevel3 dca:fileType "Various" .
+
+htan2:MassSpectrometryLevel4 a dca:AnnotationTemplate .
+htan2:MassSpectrometryLevel4 dca:fileType "Various" .
+
+htan2:No-ChannelFailedQC a dca:UnconfiguredTemplate .
+
+<https://dca.app.sagebionetworks.org/HTAN2/Other/multiplechannelQCfaliuretypes> a dca:UnconfiguredTemplate .
+
+htan2:No-ChannelsQC a dca:UnconfiguredTemplate .
+
+htan2:ImagingObjectClassOther a dca:UnconfiguredTemplate .
+htan2:ImagingObjectClassOther dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+htan2:CellBarcodeandUMI a dca:UnconfiguredTemplate .
+htan2:CellBarcodeandUMI dca:fileType "Document" .
+
+htan2:CEL-seq2 a dca:UnconfiguredTemplate .
+htan2:CEL-seq2 dca:fileType "Various" .
+
+htan2:Featurebarcoding a dca:UnconfiguredTemplate .
+htan2:Featurebarcoding dca:fileType "Various" .
+
+htan2:ERCC a dca:UnconfiguredTemplate .
+
+htan2:Yes-AppliedHardTrimming a dca:UnconfiguredTemplate .
+
+htan2:Yes-PseudoAlignmentUsed a dca:UnconfiguredTemplate .
+
+htan2:Yes-FusionGeneDetected a dca:UnconfiguredTemplate .
+
+htan2:OtherFusionGene a dca:UnconfiguredTemplate .
+
+htan2:TissueBiospecimenType a dca:UnconfiguredTemplate .
+
+htan2:BloodBiospecimenType a dca:UnconfiguredTemplate .
+
+htan2:AnalyteBiospecimenType a dca:UnconfiguredTemplate .
+
+htan2:UrineBiospecimenType a dca:UnconfiguredTemplate .
+
+htan2:BoneMarrowBiospecimenType a dca:UnconfiguredTemplate .
+
+htan2:TotalVolume a dca:UnconfiguredTemplate .
+
+htan2:BiospecimenDimension1 a dca:UnconfiguredTemplate .
+
+htan2:OtherAcquisitionMethod a dca:UnconfiguredTemplate .
+
+htan2:Alive a dca:UnconfiguredTemplate .
+
+htan2:Dead a dca:UnconfiguredTemplate .
+
+htan2:MedicallyUnderservedArea-Yes a dca:UnconfiguredTemplate .
+
+htan2:Yes-CancerHistoryRelative a dca:UnconfiguredTemplate .
+
+htan2:Yes-SmokingExposure a dca:UnconfiguredTemplate .
+
+htan2:Yes-AlcoholExposure a dca:UnconfiguredTemplate .
+
+htan2:Marijuanasmoke a dca:UnconfiguredTemplate .
+
+htan2:Yes-ProgressionorRecurrence a dca:UnconfiguredTemplate .
+
+htan2:Yes-AnaplasiaPresent a dca:UnconfiguredTemplate .
+
+htan2:Yes-VascularInvasionPresent a dca:UnconfiguredTemplate .
+
+htan2:PublicationManifest a dca:RecordTemplate .
+
+htan2:AccessoryManifest a dca:RecordTemplate .
+
+htan2:Yes-Islowestlevel a dca:UnconfiguredTemplate .
+
+htan2:ElectronMicroscopyLevel1 a dca:AnnotationTemplate .
+htan2:ElectronMicroscopyLevel1 dca:fileType "Various" .
+
+htan2:ElectronMicroscopyLevel2 a dca:AnnotationTemplate .
+htan2:ElectronMicroscopyLevel2 dca:fileType "Various" .
+
+htan2:ElectronMicroscopyLevel3 a dca:AnnotationTemplate .
+htan2:ElectronMicroscopyLevel3 dca:fileType "Various" .
+
+htan2:ElectronMicroscopyLevel4 a dca:AnnotationTemplate .
+htan2:ElectronMicroscopyLevel4 dca:fileType "Various" .
+
+htan2:ParticipantVitalStatusUpdate a dca:RecordTemplate .
+
+htan2:PrecancerDiagnosis a dca:RecordTemplate .
+
+htan2:Yes-PrecancerCase a dca:UnconfiguredTemplate .

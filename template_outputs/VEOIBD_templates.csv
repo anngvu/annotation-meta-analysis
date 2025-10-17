@@ -1,0 +1,15 @@
+template_id,display_name,species,file_type,configured_template_role,description
+ScRNASeqAssayMetadataTemplate,scRNASeq Assay Metadata Template,Not specified,FASTQ,N/A,Template for collecting metadata about scRNA-seq data.
+ScRNASeqLevel3FileAnnotationsTemplate,scRNASeq Level 3 File Annotations Template,Not specified,FASTQ,N/A,A template for collecting file-level metadata for scRNA-seq level 3 files including .h5 and tar.gz archives
+ScRNASeqLevel1FileAnnotationsTemplate,scRNASeq Level 1 File Annotations Template,Not specified,FASTQ,N/A,"A template for collecting file-level metadata for scRNA-seq fastq files (i.e., level 1 data)."
+MedicationHistoryMetadataTemplate,Medication History Metadata Template,Not specified,N/A,Record,VEOIBD Medication History Metadata Template
+BiospecimenMetadataTemplate,Biospecimen Metadata Template,Not specified,N/A,Record,VEOIBD Biospecimen Metadata Template
+ClinicalMetadataTemplate,Clinical Metadata Template,Not specified,N/A,Record,VEOIBD Clinical Metadata Template
+Patient,patient,Not specified,N/A,N/A,"VEOIBD patient, is a model component"
+Clinical,clinical,Not specified,N/A,N/A,"Patient clinical, is a model component"
+Biospecimen,biospecimen,Not specified,N/A,N/A,"Patient biological entity, is a model component"
+Biopsy,biopsy,Not specified,N/A,N/A,TBD
+Medication,medication,Not specified,N/A,N/A,"Patient medication history, is a model component"
+Demographics,demographics,Not specified,N/A,N/A,"Patient demographics, is a model component"
+MetadataFileAnnotations,metadata_file_annotations,Not specified,N/A,N/A,Metadata files include clinical and biospecimen metadata
+Singlespecimen,single specimen,Not specified,N/A,N/A,An experimental data file that contains data points generated from a single biospecimen. Is a valid value of SpecimenModality that triggers conditional dependencies for other attributes.

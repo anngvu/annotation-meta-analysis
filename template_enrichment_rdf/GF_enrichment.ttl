@@ -1,0 +1,97 @@
+@prefix gf: <https://dca.app.sagebionetworks.org/GF/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+gf:Yes-AlcoholExposure a dca:UnconfiguredTemplate .
+
+gf:Yes-CancerHistoryRelative a dca:UnconfiguredTemplate .
+
+gf:CEL-seq2 a dca:UnconfiguredTemplate .
+
+gf:Yes-SmokingExposure a dca:UnconfiguredTemplate .
+
+gf:TotalVolume a dca:UnconfiguredTemplate .
+
+gf:Biospecimen a dca:UnconfiguredTemplate .
+
+gf:TissueBiospecimenType a dca:UnconfiguredTemplate .
+
+gf:BloodBiospecimenType a dca:UnconfiguredTemplate .
+
+gf:AnalyteBiospecimenType a dca:UnconfiguredTemplate .
+
+gf:BoneMarrowBiospecimenType a dca:UnconfiguredTemplate .
+
+gf:UrineBiospecimenType a dca:UnconfiguredTemplate .
+
+gf:OvarianAtlasCohort a dca:UnconfiguredTemplate .
+
+gf:BiospecimenDimension1 a dca:UnconfiguredTemplate .
+
+gf:ImagingLevel2 a dca:AnnotationTemplate .
+gf:ImagingLevel2 dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+gf:PublicationTemplate a dca:UnconfiguredTemplate .
+
+gf:Exposure a dca:UnconfiguredTemplate .
+
+gf:Patient a dca:UnconfiguredTemplate .
+
+gf:MolecularTest a dca:UnconfiguredTemplate .
+
+gf:FamilyHistory a dca:UnconfiguredTemplate .
+
+gf:PatientExtended a dca:UnconfiguredTemplate .
+
+gf:ScRNA-seqLevel3 a dca:AnnotationTemplate .
+gf:ScRNA-seqLevel3 dca:fileType "FASTQ" .
+
+gf:SingleCellSequencing a dca:UnconfiguredTemplate .
+gf:SingleCellSequencing dca:fileType "Various" .
+
+gf:BulkMethylation-seqLevel3 a dca:UnconfiguredTemplate .
+gf:BulkMethylation-seqLevel3 dca:fileType "FASTQ" .
+
+gf:File a dca:UnconfiguredTemplate .
+gf:File dca:fileType "Various" .
+
+gf:ScRNA-seqLevel1 a dca:AnnotationTemplate .
+gf:ScRNA-seqLevel1 dca:fileType "FASTQ" .
+
+gf:BreastCancerPatient a dca:UnconfiguredTemplate .
+
+gf:ScRNA-seqLevel2 a dca:AnnotationTemplate .
+gf:ScRNA-seqLevel2 dca:fileType "FASTQ" .
+
+gf:Yes-VascularInvasionPresent a dca:UnconfiguredTemplate .
+
+gf:SequencingData a dca:UnconfiguredTemplate .
+gf:SequencingData dca:fileType "Various" .
+
+gf:ScATAC-seqLevel1 a dca:AnnotationTemplate .
+gf:ScATAC-seqLevel1 dca:fileType "Various" .
+
+gf:BulkMethylation-seqLevel1 a dca:UnconfiguredTemplate .
+gf:BulkMethylation-seqLevel1 dca:fileType "FASTQ" .
+
+gf:ImagingLevel2Channels a dca:AnnotationTemplate .
+gf:ImagingLevel2Channels dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+gf:SampleCoreTemplate a dca:UnconfiguredTemplate .
+gf:SampleCoreTemplate dca:fileType "Various" .
+
+gf:BulkMethylation-seqLevel2 a dca:UnconfiguredTemplate .
+gf:BulkMethylation-seqLevel2 dca:fileType "FASTQ" .
+
+gf:Yes-ProgressionorRecurrence a dca:UnconfiguredTemplate .
+
+gf:OvarianCancerPatient a dca:UnconfiguredTemplate .
+
+gf:BulkDNA-seqLevel1 a dca:UnconfiguredTemplate .
+
+gf:CohortCoreTemplate a dca:RecordTemplate .
+
+gf:ScRNA-seqLevel4 a dca:AnnotationTemplate .
+gf:ScRNA-seqLevel4 dca:fileType "FASTQ" .
+
+gf:Demographics a dca:UnconfiguredTemplate .

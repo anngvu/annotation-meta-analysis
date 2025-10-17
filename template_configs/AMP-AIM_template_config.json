@@ -1,0 +1,21 @@
+{
+  "manifest_schemas": [
+    {
+      "display_name": "CyTOF SDP Annotation Template",
+      "schema_name": "CyTOFSDPAnnotationTemplate",
+      "type": "file"
+    }, 
+    {
+      "display_name": "Olink Assay Metadata Template",
+      "schema_name": "OlinkAssayMetadataTemplate",
+      "type": "record"
+    }, 
+    {
+      "display_name": "Olink File Annotation Template",
+      "schema_name": "OlinkFileAnnotationTemplate",
+      "type": "file"
+    }
+  ],
+  "service_version": "",
+  "schema_version": ""
+}

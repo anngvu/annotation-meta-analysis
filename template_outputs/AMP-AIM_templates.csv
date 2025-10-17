@@ -1,0 +1,21 @@
+template_id,display_name,species,file_type,configured_template_role,description
+SDPTestTemplate,SDP Test Template,Not specified,Various,N/A,A component for use as a mock template for defining file annotation metadata for an SDP.
+CyTOFSDPAnnotationTemplate,CyTOF SDP Annotation Template,Not specified,Various,Annotation,"A component for collecting file-level metadata, i.e., annotations, for AMP AIM CyTOF standard data package (SDP)."
+OlinkAssayMetadataTemplate,Olink Assay Metadata Template,Not specified,N/A,Record,A component for collecting assay-level metadata that will be propagated to file-level annotations. Olink assay metadata should be provided for each data level.
+OlinkFileAnnotationTemplate,Olink File Annotation Template,Not specified,Various,Annotation,"A component for collecting file-level metadata, i.e., annotations, for AMP AIM Olink standard data packages (SDP)."
+Rds,rds,Not specified,N/A,N/A,Is a valid value of `fileFormat` that triggers conditional dependencies for additional attributes.
+BiospecimenMetadataTemplate,Biospecimen Metadata Template,Not specified,N/A,N/A,Metadata about biospecimens collected from study subjects
+ClinicalMetadataTemplate,Clinical Metadata Template,Not specified,N/A,N/A,A template outlining clinical metadata to collect for study subjects.
+Patient,Patient,Not specified,N/A,N/A,Patient Component
+Clinical,Clinical,Not specified,N/A,N/A,Clinical Component
+Biospecimen,Biospecimen,Not specified,N/A,N/A,A patient biological sample
+PsO,PsO,Not specified,N/A,N/A,A valid value of `diagnosis` that triggers conditional dependencies for additional attributes.
+Experimentaldata,experimental data,Not specified,Document,N/A,Any file that contains machine or code generated data that is experimentally derived. Is a valid value of Resource Type and when selected triggers conditional dependencies for additional attributes.
+Synovialfluid,synovial fluid,Not specified,N/A,N/A,Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes.
+Skinbiopsy,skin biopsy,Not specified,N/A,N/A,Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes.
+Saliva,saliva,Not specified,N/A,N/A,Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes.
+Skinswab,skin swab,Not specified,N/A,N/A,Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes.
+Synovialtissue,synovial tissue,Not specified,N/A,N/A,Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes.
+Flow-sortedcells,flow-sorted cells,Not specified,N/A,N/A,A valid value of `biospecimenSubtype` that triggers conditional dependencies for additional attributes.
+Singlespecimen,single specimen,Not specified,N/A,N/A,An experimental data file that contains data points generated from a single biospecimen. Is a valid value of SpecimenModality that triggers conditional dependencies for other attributes.
+Diabetes,diabetes,Not specified,N/A,N/A,A valid value of `comorbidities` that triggers conditional dependencies for additional attributes.

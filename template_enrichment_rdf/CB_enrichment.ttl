@@ -1,0 +1,7 @@
+@prefix cb: <https://dca.app.sagebionetworks.org/CB/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+cb:FiletoIndividualMap a dca:UnconfiguredTemplate .
+
+cb:IndividualMetadata a dca:UnconfiguredTemplate .

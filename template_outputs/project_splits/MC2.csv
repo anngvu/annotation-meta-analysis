@@ -1,0 +1,172 @@
+Project,Attribute,Attribute ID,Range,Validation Rules
+MC2,10xVisiumAuxiliaryFiles Key,bts:10xVisiumAuxiliaryFilesKey,text,validation=matchAtLeastOne 10xVisiumAuxiliaryFiles.10xVisiumAuxiliaryFiles_id Value
+MC2,10xVisiumRNALevel2 Key,bts:10xVisiumRNALevel2Key,text,validation=matchAtLeastOne 10xVisiumRNALevel2.10xVisiumRNALevel2_id Value
+MC2,10xVisiumRNALevel3 Key,bts:10xVisiumRNALevel3Key,text,validation=matchAtLeastOne 10xVisiumRNALevel3.10xVisiumRNALevel3_id Value
+MC2,10xVisiumRNALevel3_id,bts:10xVisiumRNALevel3Id,text,validation=unique
+MC2,10xVisiumRNALevel4_id,bts:10xVisiumRNALevel4Id,text,validation=unique
+MC2,Biospecimen Key,bts:BiospecimenKey,text,validation=matchAtLeastOne Biospecimen.Biospecimen_id Value
+MC2,Channel Antibody Catalog Number,bts:ChannelAntibodyCatalogNumber,text,
+MC2,Channel Antibody Clone,bts:ChannelAntibodyClone,text,
+MC2,Channel Antibody Lot,bts:ChannelAntibodyLot,text,
+MC2,Channel Antibody Name,bts:ChannelAntibodyName,text,
+MC2,Channel Antibody Role,bts:ChannelAntibodyRole,enum: Primary | Secondary,
+MC2,Channel Antibody Vendor,bts:ChannelAntibodyVendor,text,
+MC2,Channel Cycle Number,bts:ChannelCycleNumber,text,
+MC2,Channel Emission Bandwidth,bts:ChannelEmissionBandwidth,text,
+MC2,Channel Emission Wavelength,bts:ChannelEmissionWavelength,text,
+MC2,Channel Excitation Bandwidth,bts:ChannelExcitationBandwidth,text,
+MC2,Channel Excitation Wavelength,bts:ChannelExcitationWavelength,text,
+MC2,Channel Fluorophore,bts:ChannelFluorophore,text,
+MC2,Channel Identifier,bts:ChannelIdentifier,text,
+MC2,Channel Metal Isotope,bts:ChannelMetalIsotope,text,
+MC2,Channel Metal Symbol,bts:ChannelMetalSymbol,enum: Ac | Ag | Al | Am | Ar | As | At | Au | B | Ba | Be | Bh | Bi | Bk | Br | C | Ca | Cd | Ce | Cf | Cl | Cn | Co | Cr | Cs | Cu | Db | Ds | Dy | Er | Es | Eu | F | Fe | Fl | Fm | Fr | Ga | Gd | Ge | H | He | Hf | Hg | Ho | Hs | I | In | Ir | K | ... (+67 more),
+MC2,Channel Name,bts:ChannelName,text,
+MC2,Channel Oligo Barcode Lower Strand,bts:ChannelOligoBarcodeLowerStrand,text,
+MC2,Channel Oligo Barcode Upper Strand,bts:ChannelOligoBarcodeUpperStrand,text,
+MC2,Channel Passed QC,bts:ChannelPassedQC,enum: No-ChannelFailedQC | Yes,
+MC2,Channel Probe Concentration,bts:ChannelProbeConcentration,text,
+MC2,Channel Probe Dilution Ratio,bts:ChannelProbeDilutionRatio,text,
+MC2,Channel Resource ID,bts:ChannelResourceID,text,
+MC2,Channel Sub-cycle Number,bts:ChannelSub-cycleNumber,text,
+MC2,Channel Target Name,bts:ChannelTargetName,text,
+MC2,Component,bts:Component,text,
+MC2,Data Use Codes,bts:DataUseCodes,enum: CC | COL | DS | DUM | GRU | GS | GSO | HMB | IRB | IS | MOR | NCU | NMDS | NPOA | NPU | NPUNCU | NRES | POA | PS | PUB | RS | RTN | TS | US,validation=list like
+MC2,DatasetView Key,bts:DatasetViewKey,text,validation=matchAtLeastOne DatasetView.DatasetView_id Value
+MC2,EducationalResource Key,bts:EducationalResourceKey,text,validation=matchAtLeastOne EducationalResource.EducationalResource_id Value
+MC2,File Alias,bts:FileAlias,text,validation=unique
+MC2,File Assay,bts:FileAssay,enum: 10-cellRNASequencing | 10xMultiome | 16SRibosomalGeneSequencingAssay | 3'RNA-seq | 3C | 3C-qPCR | 3DBioprinting | 3DCellCulture | 4C | 5C | ATAC-Seq | ATPBioluminescenceAssay | AffinityPurificationMassSpectrometry | AlcianBlueStainingMethod | Allograft | AmpliconSequencing | AngiogenesisAssay | AntitumorDrugScreeningAssay | ApoptosisAssay | ArtificialIntelligence | AtomicAbsorptionSpectrophotometry | AtomicAbsorptionSpectroscopy | AtomicForceMicroscopy | Autoradiography | Barcode-Seq | BicinchoninicAcidAssay | BindingAssay | Bio-LayerInterferometry | BioelectrochemicalAnalysis | BioluminescenceImaging | BisulfiteSequencing | BrightfieldMicroscopy | BrillouinMicroscopy | CASFISH | CDNAArray | CITE-seq | CLIP-qPCR | CRISPR | CUT&RUN | CUT&Tag-Sequencing | Cell-freeCirculatingTumorDNAAssay | Cell-spreadingAssay | CellAdhesionAssay | CellCulture | CellCycleAssay | CellFractionation | CellProliferationAssay | CellTiter-GloLuminescentCellViabilityAssay | CellViabilityAssay | CerenkovLuminescenceImaging | ... (+329 more),
+MC2,File Description,bts:FileDescription,text,validation=str
+MC2,File Design,bts:FileDesign,text,validation=str
+MC2,File Format,bts:FileFormat,enum: AVI | BAI | BAM | BED | BIGWIG | BPM | Bed12 | Bedgraph | CDS | CHP | CLS | COOL | CSV | Cel | Cloupe | DAE | DB | DSStore | Docx | FASTA | FASTQ | FCS | FIG | FREQ | GCG | GCT | GCTx | GFF3 | GTF | GZIPFormat | H5 | H5AD | HDF | HDF5 | HTML | IDAT | JPG | JSON | LIF | MAP | MAT | MATLABscript | MGF | MSF | MTX | Maf | MzIdentML | MzXML | PDF | PKL | ... (+30 more),
+MC2,File Level,bts:FileLevel,enum: Auxiliary | Level1 | Level2 | Level3 | Level4 | NotApplicable,
+MC2,File Longitudinal Event Type,bts:FileLongitudinalEventType,text,validation=str
+MC2,File Longitudinal Group,bts:FileLongitudinalGroup,text,validation=str
+MC2,File Longitudinal Sequence Identifier,bts:FileLongitudinalSequenceIdentifier,text,validation=int
+MC2,File Longitudinal Sequential Time Elapsed,bts:FileLongitudinalSequentialTimeElapsed,text,validation=num
+MC2,File Longitudinal Time Elapsed Unit,bts:FileLongitudinalTimeElapsedUnit,text,validation=str
+MC2,File Longitudinal Total Time Elapsed,bts:FileLongitudinalTotalTimeElapsed,text,validation=num
+MC2,File Species,bts:FileSpecies,enum: AfricanBushElephant | Armadillo | AsianElephant | Boar | Cat | Chicken | Cow | Dog | Escherichiacoli | FruitFly | GuineaPig | Horse | Human | HumanCellLine | HumanPatient | Mouse | Multispecies | Opossum | Rabbit | Rat | Rhesusmonkey | Sheep | Trichoplaxadhaerens | Unknown | Unspecified | Worm | Yeast | Zebrafish,validation=list like
+MC2,File Tissue,bts:FileTissue,enum: AbdominalEsophagus | AdiposeTissue | AdrenalGland | Alveolus | Aorta | Artery | AscendingColon | BileDuct | Bladder | Blood | BloodVessel | Bone | BoneMarrow | Brain | Breast | Caecum | Cancer-AssociatedFibroblast | Cardia | Cartilage | CervixUteri | Choroid | Colon | ConnectiveandSoftTissue | Cornea | Duodenum | Ear | Embryo | EmbryonicHeart | Endocervix | Endometrium | Endothelium | Epithelium | Esophagus | Eye | FallopianTube | Foreskin | FrontalLobe | GastroesophagealJunction | GastrointestinalTract | Genitourinary | Gonad | HairFollicle | HeadandNeck | Heart | HeartMuscle | HematopoieticSystem | Hippocampus | Intestine | Intra-AbdominalLymphNodes | IntrathoracicLymphNodes | ... (+64 more),validation=list like
+MC2,File Tumor Type,bts:FileTumorType,enum: AcinarCellCarcinoma | AcuteLymphoblasticLeukemia | AcuteMonocyticLeukemia | AcuteMyeloidLeukemia | AcutePromyelocyticLeukemia | Adenocarcinoma | Angiosarcoma | Astrocytoma | AtypicalTeratoid/RhabdoidTumor | B-CellNon-HodgkinLymphoma | BAcuteLymphoblasticLeukemia | BarrettEsophagus | Basal-LikeBreastCarcinoma | BasalCellNeoplasm | BiliaryTractCarcinoma | BladderCarcinoma | BladderNeoplasm | BoneNeoplasm | BrainNeoplasm | BreastAdenocarcinoma | BreastCarcinoma | BreastNeoplasm | Carcinoma | CarcinomaInSitu | Castration-ResistantProstateCarcinoma | CellularSchwannoma | CentralNervousSystemCavernousHemangioma | CentralNervousSystemNeoplasm | CerebellarNeoplasm | CervicalCarcinoma | CervicalNeoplasm | CervicalSmallCellCarcinoma | Cholangiocarcinoma | Chondroblastoma | Choriocarcinoma | ChronicLymphocyticLeukemia | ChronicMyeloidLeukemia | ClearCellRenalCellCarcinoma | ColonAdenocarcinoma | ColonCarcinoma | ColorectalAdenocarcinoma | ColorectalAdenoma | ColorectalCarcinoma | ColorectalNeoplasm | CombinedHepatocellularCarcinomaandCholangiocarcinoma | Craniopharyngioma | CutaneousMelanoma | CutaneousTCellLymphoma | DiffuseLargeB-CellLymphoma | DuctalBreastCarcinomaInSitu | ... (+136 more),validation=list like
+MC2,File Url,bts:FileUrl,text,validation=url
+MC2,Filename,bts:Filename,text,validation=str
+MC2,FileView_id,bts:FileViewId,text,validation=unique
+MC2,Genomic Reference,bts:GenomicReference,text,validation=str
+MC2,GeoMx DSP Assay Type,bts:GeoMxDSPAssayType,enum: ProteinNGS | ProteinnCounter | RNANGS | RNAnCounter,
+MC2,GeoMx Imaging Channel Names,bts:GeoMxImagingChannelNames,text,validation=list like
+MC2,Image Assay Type,bts:ImageAssayType,enum: CODEX | CyCIF | ExSeq | GeoMX-DSP | H&E | IHC | IMC | MERFISH | MIBI | MIHC | MxIF | NotApplicable | RareCyteOrion | SABER | T-CyCIF,
+MC2,Image Channel Size,bts:ImageChannelSize,text,
+MC2,Image Dimension Order,bts:ImageDimensionOrder,text,
+MC2,Image FOV Index,bts:ImageFOVIndex,text,
+MC2,Image FOV Size X,bts:ImageFOVSizeX,text,
+MC2,Image FOV Size X Unit,bts:ImageFOVSizeXUnit,text,
+MC2,Image FOV Size Y,bts:ImageFOVSizeY,text,
+MC2,Image FOV Size Y Unit,bts:ImageFOVSizeYUnit,text,
+MC2,Image Frame Averaging,bts:ImageFrameAveraging,text,
+MC2,Image Identifier,bts:ImageIdentifier,text,
+MC2,Image Immersion Type,bts:ImageImmersionType,enum: Air | Oil | Other | Water,
+MC2,Image Lense Aperture,bts:ImageLenseAperture,text,
+MC2,Image Nominal Magnification,bts:ImageNominalMagnification,text,
+MC2,Image Number of Features,bts:ImageNumberofFeatures,text,validation=num
+MC2,Image Number of Objects,bts:ImageNumberofObjects,text,validation=num
+MC2,Image Number of Timepoints,bts:ImageNumberofTimepoints,text,
+MC2,Image Object Class,bts:ImageObjectClass,enum: Cytoplasm | Nucleus | Other | PlasmaMembrane | Spot | WholeCell,validation=str
+MC2,Image Object Class Description,bts:ImageObjectClassDescription,text,validation=str
+MC2,Image Objective,bts:ImageObjective,text,
+MC2,Image Parameter file,bts:ImageParameterfile,text,
+MC2,Image Physical Size X,bts:ImagePhysicalSizeX,text,
+MC2,Image Physical Size X Unit,bts:ImagePhysicalSizeXUnit,text,
+MC2,Image Physical Size Y,bts:ImagePhysicalSizeY,text,
+MC2,Image Physical Size Y Unit,bts:ImagePhysicalSizeYUnit,text,
+MC2,Image Physical Size Z,bts:ImagePhysicalSizeZ,text,
+MC2,Image Physical Size Z Unit,bts:ImagePhysicalSizeZUnit,text,
+MC2,Image Pixel Type,bts:ImagePixelType,text,
+MC2,Image Pixels BigEndian,bts:ImagePixelsBigEndian,text,
+MC2,Image Plane Count,bts:ImagePlaneCount,text,
+MC2,Image Platform Manufacturer,bts:ImagePlatformManufacturer,text,
+MC2,Image Platform Model,bts:ImagePlatformModel,text,
+MC2,Image Protocol Link,bts:ImageProtocolLink,text,
+MC2,Image Pyramidal,bts:ImagePyramidal,text,
+MC2,Image Segmentation Data Type,bts:ImageSegmentationDataType,enum: Mask | Outline | Point | Polygon | ProbabilityMap,validation=str
+MC2,Image Software,bts:ImageSoftware,text,
+MC2,Image Summary Statistic,bts:ImageSummaryStatistic,enum: Mean | Median | NotSpecified,
+MC2,Image Timeseries,bts:ImageTimeseries,text,
+MC2,Image Working Distance,bts:ImageWorkingDistance,text,
+MC2,Image Working Distance Unit,bts:ImageWorkingDistanceUnit,enum: Cm | Mm | Nm | Å | Μm,
+MC2,Image X Pixels,bts:ImageXPixels,text,
+MC2,Image Y Pixels,bts:ImageYPixels,text,
+MC2,Image Z Pixels,bts:ImageZPixels,text,
+MC2,Image Z stack,bts:ImageZstack,text,
+MC2,ImagingChannel Key,bts:ImagingChannelKey,text,validation=matchAtLeastOne ImagingChannel.ImagingChannel_id Value
+MC2,ImagingChannel_id,bts:ImagingChannelId,text,
+MC2,ImagingLevel1 Key,bts:ImagingLevel1Key,text,validation=matchAtLeastOne ImagingLevel1.ImagingLevel1_id Value
+MC2,ImagingLevel1_id,bts:ImagingLevel1Id,text,
+MC2,ImagingLevel2 Key,bts:ImagingLevel2Key,text,validation=matchAtLeastOne ImagingLevel2.ImagingLevel2_id Value
+MC2,ImagingLevel2_id,bts:ImagingLevel2Id,text,
+MC2,ImagingLevel3Image Key,bts:ImagingLevel3ImageKey,text,validation=matchAtLeastOne ImagingLevel3Image.ImagingLevel3Image_id Value
+MC2,ImagingLevel3Segments Key,bts:ImagingLevel3SegmentsKey,text,validation=matchAtLeastOne ImagingLevel3Segments.ImagingLevel3Segments_id Value
+MC2,ImagingLevel3Segments_id,bts:ImagingLevel3SegmentsId,text,
+MC2,ImagingLevel4_id,bts:ImagingLevel4Id,text,
+MC2,NanoStringGeoMxAuxiliaryFiles Key,bts:NanoStringGeoMxAuxiliaryFilesKey,text,validation=matchAtLeastOne NanoStringGeoMxAuxiliaryFiles.NanoStringGeoMxAuxiliaryFiles_id Value
+MC2,NanoStringGeoMxDSPImaging_id,bts:NanoStringGeoMxDSPImagingId,text,validation=unique
+MC2,NanoStringGeoMxDSPLevel1 Key,bts:NanoStringGeoMxDSPLevel1Key,text,validation=matchAtLeastOne NanoStringGeoMxDSPLevel1.NanoStringGeoMxDSPLevel1_id Value
+MC2,NanoStringGeoMxDSPLevel1_id,bts:NanoStringGeoMxDSPLevel1Id,text,validation=unique
+MC2,NanoStringGeoMxDSPLevel2 Key,bts:NanoStringGeoMxDSPLevel2Key,text,validation=matchAtLeastOne NanoStringGeoMxDSPLevel2.NanoStringGeoMxDSPLevel2_id Value
+MC2,NanoStringGeoMxDSPLevel2_id,bts:NanoStringGeoMxDSPLevel2Id,text,validation=unique
+MC2,NanoStringGeoMxDSPLevel3_id,bts:NanoStringGeoMxDSPLevel3Id,text,validation=unique
+MC2,NanoStringGeoMXROISegmentAnnotation Key,bts:NanoStringGeoMXROISegmentAnnotationKey,text,validation=matchAtLeastOne NanoStringGeoMXROISegmentAnnotation.NanoStringGeoMXROISegmentAnnotation_id Value
+MC2,NGS Aligned reads,bts:NGSAlignedreads,text,validation=num
+MC2,NGS Deduplicated reads,bts:NGSDeduplicatedreads,text,validation=num
+MC2,NGS Library Layout,bts:NGSLibraryLayout,enum: Paired-end | Single-end,validation=str
+MC2,NGS Library Preparation Days from Index,bts:NGSLibraryPreparationDaysfromIndex,text,validation=regex match \d+$|Not\sApplicable$|unknown$
+MC2,NGS Library Preparation Kit Name,bts:NGSLibraryPreparationKitName,text,validation=str
+MC2,NGS Library Preparation Kit Vendor,bts:NGSLibraryPreparationKitVendor,text,validation=str
+MC2,NGS Library Preparation Kit Version,bts:NGSLibraryPreparationKitVersion,text,validation=str
+MC2,NGS Library Selection Method,bts:NGSLibrarySelectionMethod,enum: 5-methylcytidineantibody | CAGE | CDNA | CDNAOligoDT | CDNARandomPriming | CF-H | CF-M | CF-S | CF-T | ChIP | DNAse | HMPR | HybridSelection | InverserRNA | MBD2proteinmethyl-CpGbindingdomain | MDA | MF | MNase | MSLL | Oligo-dT | Other | PCR | Padlockprobescapturemethod | PolyA | RACE | RANDOM | RANDOMPCR | RT-PCR | ReducedRepresentation | Repeatfractionation | RestrictionDigest | Sizefractionation | Unspecified,validation=str
+MC2,NGS Library Source,bts:NGSLibrarySource,enum: GENOMIC | GENOMICSINGLECELL | METAGENOMIC | METATRANSCRIPTOMIC | OTHER | SYNTHETIC | TRANSCRIPTOMIC | TRANSCRIPTOMICSINGLECELL | VIRALRNA,validation=str
+MC2,NGS Library Strategy,bts:NGSLibraryStrategy,enum: AMPLICON | ATAC-seq | Bisulfite-Seq | CLONE | CLONEEND | CTS | ChIA-PET | ChIP-Seq | DNase-Hypersensitivity | EST | FAIRE-seq | FINISHING | FL-cDNA | Hi-C | MBD-Seq | MNase-Seq | MRE-Seq | MeDIP-Seq | MiRNA-Seq | NcRNA-Seq | OTHER | POOLCLONE | RAD-Seq | RIP-Seq | RNA-Seq | SELEX | SsRNA-seq | Synthetic-Long-Read | Targeted-Capture | TetheredChromatinConformationCapture | Tn-Seq | WCS | WGA | WGS | WXS,validation=str
+MC2,NGS MapQ30,bts:NGSMapQ30,text,validation=num
+MC2,NGS Matrix Type,bts:NGSMatrixType,enum: BatchCorrectedCounts | NormalizedCounts | RawCounts | ScaledCounts,
+MC2,NGS Raw reads,bts:NGSRawreads,text,validation=num
+MC2,NGS Read Indicator,bts:NGSReadIndicator,enum: I1 | Other | R1 | R1&R2 | R2,validation=str
+MC2,NGS Read Length,bts:NGSReadLength,text,validation=num
+MC2,NGS RNA DV200,bts:NGSRNADV200,text,validation=num
+MC2,NGS RNA End Bias,bts:NGSRNAEndBias,enum: 3Prime | 5Prime | FullLengthTranscript,validation=str
+MC2,NGS RNA Reverse Transcription Primer,bts:NGSRNAReverseTranscriptionPrimer,enum: Featurebarcoding | Oligo-dT | Poly-dT | Random,validation=str
+MC2,NGS RNA RIN,bts:NGSRNARIN,text,validation=num
+MC2,NGS Sequencing Coverage,bts:NGSSequencingCoverage,text,validation=num
+MC2,NGS Sequencing Design Description,bts:NGSSequencingDesignDescription,text,validation=str
+MC2,NGS Sequencing Library Construction Days from Index,bts:NGSSequencingLibraryConstructionDaysfromIndex,text,validation=regex match \d+$|Not\sApplicable$|unknown$
+MC2,NGS Sequencing Platform,bts:NGSSequencingPlatform,enum: 454GS | 454GS20 | 454GSFLX | 454GSFLX+ | 454GSFLXTitanium | 454GSJunior | AB310GeneticAnalyzer | AB3130GeneticAnalyzer | AB3130xLGeneticAnalyzer | AB3500GeneticAnalyzer | AB3500xLGeneticAnalyzer | AB3730GeneticAnalyzer | AB3730xLGeneticAnalyzer | AB5500GeneticAnalyzer | AB5500x-WlGeneticAnalyzer | AB5500xlGeneticAnalyzer | ABSOLiD3PlusSystem | ABSOLiD4System | ABSOLiD4hqSystem | ABSOLiDPISystem | ABSOLiDSystem | ABSOLiDSystem2.0 | ABSOLiDSystem3.0 | BGISEQ-500 | CompleteGenomics | DNBSEQ-G400 | DNBSEQ-G50 | DNBSEQ-T7 | HelicosHeliScope | IlluminaGenomeAnalyzer | IlluminaGenomeAnalyzerII | IlluminaGenomeAnalyzerIIx | IlluminaHiScanSQ | IlluminaHiSeq1000 | IlluminaHiSeq1500 | IlluminaHiSeq2000 | IlluminaHiSeq2500 | IlluminaHiSeq3000 | IlluminaHiSeq4000 | IlluminaHiSeqXFive | IlluminaHiSeqXTen | IlluminaMiSeq | IlluminaMiniSeq | IlluminaNextSeq | IlluminaNextSeq1000 | IlluminaNextSeq2000 | IlluminaNextSeq2500 | IlluminaNextSeq500 | IlluminaNextSeq550 | IlluminaNovaSeq6000 | ... (+15 more),validation=str
+MC2,NGS Stitched reads,bts:NGSStitchedreads,text,validation=num
+MC2,NGS Target Sequencing Depth,bts:NGSTargetSequencingDepth,text,
+MC2,NGS Trimmed reads,bts:NGSTrimmedreads,text,validation=num
+MC2,NGS Unique Bases,bts:NGSUniqueBases,text,validation=num
+MC2,NGS Unique Probe Count,bts:NGSUniqueProbeCount,text,validation=num
+MC2,NGS Unique Target Count,bts:NGSUniqueTargetCount,text,validation=num
+MC2,PublicationView Key,bts:PublicationViewKey,text,validation=matchAtLeastOne PublicationView.PublicationView_id Value
+MC2,SequencingLevel1 Key,bts:SequencingLevel1Key,text,validation=matchAtLeastOne SequencingLevel1.SequencingLevel1_id Value
+MC2,SequencingLevel1_id,bts:SequencingLevel1Id,text,validation=unique
+MC2,SequencingLevel2 Key,bts:SequencingLevel2Key,text,validation=matchAtLeastOne SequencingLevel2.SequencingLevel2_id Value
+MC2,SequencingLevel2_id,bts:SequencingLevel2Id,text,validation=unique
+MC2,SequencingLevel3_id,bts:SequencingLevel3Id,text,validation=unique
+MC2,SequencingRNALevel1_id,bts:SequencingRNALevel1Id,text,validation=unique
+MC2,Software and Version,bts:SoftwareandVersion,text,validation=str
+MC2,Source Key,bts:SourceKey,text,
+MC2,Study Key,bts:StudyKey,text,validation=matchAtLeastOne Study.Study_id Value
+MC2,ToolView Key,bts:ToolViewKey,text,validation=matchAtLeastOne ToolView.ToolView_id Value
+MC2,Visium Capture Area,bts:VisiumCaptureArea,enum: A | A1 | B | B1 | C | C1 | D | D1,validation=str
+MC2,Visium File Type,bts:VisiumFileType,enum: Barcodes | Detectedimagepng | Detectedjpg | Features | Fiducialimagejpg | Fiducialimagepng | Filteredmex | Highresimage | Jsonscalefactors | Lowresimage | Probedatasetcsv | Qcresulthtml | Referencejpg | Referencepng | TissuePositions | Unfilteredmex,validation=str
+MC2,Visium Mean Reads per Spatial Spot,bts:VisiumMeanReadsperSpatialSpot,text,validation=num
+MC2,Visium Median Number Genes per Spatial Spot,bts:VisiumMedianNumberGenesperSpatialSpot,text,validation=num
+MC2,Visium Median UMI Counts per Spot,bts:VisiumMedianUMICountsperSpot,text,validation=num
+MC2,Visium Proportion Reads Mapped,bts:VisiumProportionReadsMapped,text,validation=num
+MC2,Visium Proportion Reads Mapped to Transcriptome,bts:VisiumProportionReadsMappedtoTranscriptome,text,validation=num
+MC2,Visium Run ID,bts:VisiumRunID,text,validation=unique
+MC2,Visium Spots under tissue,bts:VisiumSpotsundertissue,text,validation=num
+MC2,Visium Workflow Parameters Description,bts:VisiumWorkflowParametersDescription,text,validation=str
+MC2,Visium Workflow Type,bts:VisiumWorkflowType,text,validation=str
+MC2,Workflow Link,bts:WorkflowLink,text,validation=url
+MC2,Workflow Parameter Description,bts:WorkflowParameterDescription,text,validation=str
+MC2,Workflow Type,bts:WorkflowType,text,validation=str
+MC2,Workflow Version,bts:WorkflowVersion,text,validation=str

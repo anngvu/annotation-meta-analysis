@@ -1,0 +1,9 @@
+template_id,display_name,species,file_type,configured_template_role,description
+BulkRNA-seqLevel1,Bulk RNA-seq Level 1,Not specified,FASTQ,Annotation,Bulk RNA-seq [EFO_0003738]
+CDNA,cDNA,Not specified,N/A,N/A,"Complementary DNA. A DNA copy of an mRNA or complex sample of mRNAs, made using reverse transcriptase"
+Yes-AppliedHardTrimming,Yes - Applied Hard Trimming,Not specified,N/A,N/A,Hard Trimming was applied
+Yes-PseudoAlignmentUsed,Yes - Pseudo Alignment Used,Not specified,N/A,N/A,Pseudo aligner was used
+Yes-FusionGeneDetected,Yes - Fusion Gene Detected,Not specified,N/A,N/A,A fusion gene was detected
+OtherFusionGene,Other Fusion Gene,Not specified,N/A,N/A,Other fusion gene detected.
+1,1,Not specified,N/A,N/A,A valid value for the attribute Test Attribute
+B,b,Not specified,N/A,N/A,TBD

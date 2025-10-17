@@ -1,0 +1,20 @@
+@prefix btc: <https://dca.app.sagebionetworks.org/BTC/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+btc:BulkRNA-seqLevel1 a dca:AnnotationTemplate .
+btc:BulkRNA-seqLevel1 dca:fileType "FASTQ" .
+
+btc:CDNA a dca:UnconfiguredTemplate .
+
+btc:Yes-AppliedHardTrimming a dca:UnconfiguredTemplate .
+
+btc:Yes-PseudoAlignmentUsed a dca:UnconfiguredTemplate .
+
+btc:Yes-FusionGeneDetected a dca:UnconfiguredTemplate .
+
+btc:OtherFusionGene a dca:UnconfiguredTemplate .
+
+<https://dca.app.sagebionetworks.org/BTC/1> a dca:UnconfiguredTemplate .
+
+btc:B a dca:UnconfiguredTemplate .

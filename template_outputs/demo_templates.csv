@@ -1,0 +1,10 @@
+template_id,display_name,species,data_type,file_type,configured_template_role,description
+Patient,Patient,Not specified,Clinical data,N/A,Record,TBD
+Cancer,Cancer,Not specified,Unknown,N/A,N/A,TBD
+Biospecimen,Biospecimen,Not specified,Clinical data,N/A,Record,TBD
+BulkRNA-seqAssay,Bulk RNA-seq Assay,Not specified,Metadata,FASTQ,Annotation,TBD
+BAM,BAM,Not specified,Unknown,N/A,N/A,TBD
+CRAM,CRAM,Not specified,Unknown,N/A,N/A,TBD
+CSV/TSV,CSV/TSV,Not specified,Unknown,N/A,N/A,TBD
+OtherAssay,Other Assay,Not specified,Metadata,Various,Annotation,Metadata applying to any assay without standard descriptors.
+MockComponent,MockComponent,Not specified,Clinical data,N/A,Record,TBD

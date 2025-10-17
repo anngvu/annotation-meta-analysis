@@ -1,0 +1,91 @@
+@prefix mc2: <https://dca.app.sagebionetworks.org/MC2/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+mc2:Biospecimen a dca:RecordTemplate .
+
+mc2:Individual a dca:UnconfiguredTemplate .
+
+mc2:Model a dca:UnconfiguredTemplate .
+
+mc2:Collection a dca:UnconfiguredTemplate .
+mc2:Collection dca:fileType "Various" .
+
+mc2:Consortium a dca:UnconfiguredTemplate .
+
+mc2:DatasetView a dca:RecordTemplate .
+
+mc2:Study a dca:RecordTemplate .
+
+mc2:EducationalResource a dca:RecordTemplate .
+
+mc2:GrantView a dca:UnconfiguredTemplate .
+
+mc2:FileView a dca:AnnotationTemplate .
+mc2:FileView dca:fileType "Various" .
+
+mc2:NanoStringGeoMxAuxiliaryFiles a dca:UnconfiguredTemplate .
+
+mc2:NanoStringGeoMxDSPImaging a dca:UnconfiguredTemplate .
+mc2:NanoStringGeoMxDSPImaging dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+mc2:NanoStringGeoMxDSPLevel1 a dca:RecordTemplate .
+
+mc2:NanoStringGeoMXROISegmentAnnotation a dca:RecordTemplate .
+
+mc2:NanoStringGeoMxDSPLevel2 a dca:RecordTemplate .
+
+mc2:NanoStringGeoMxDSPLevel3 a dca:RecordTemplate .
+
+mc2:ImagingChannel a dca:UnconfiguredTemplate .
+mc2:ImagingChannel dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+mc2:ImagingLevel1 a dca:UnconfiguredTemplate .
+mc2:ImagingLevel1 dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+mc2:ImagingLevel2 a dca:UnconfiguredTemplate .
+mc2:ImagingLevel2 dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+mc2:ImagingLevel3Segments a dca:UnconfiguredTemplate .
+mc2:ImagingLevel3Segments dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+mc2:ImagingLevel4 a dca:UnconfiguredTemplate .
+mc2:ImagingLevel4 dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+mc2:Institution a dca:UnconfiguredTemplate .
+
+mc2:PersonView a dca:UnconfiguredTemplate .
+
+mc2:ProjectView a dca:UnconfiguredTemplate .
+
+mc2:PublicationView a dca:RecordTemplate .
+
+mc2:SequencingLevel1 a dca:UnconfiguredTemplate .
+mc2:SequencingLevel1 dca:fileType "Various" .
+
+mc2:SequencingLevel2 a dca:UnconfiguredTemplate .
+mc2:SequencingLevel2 dca:fileType "Various" .
+
+mc2:SequencingLevel3 a dca:UnconfiguredTemplate .
+mc2:SequencingLevel3 dca:fileType "Various" .
+
+mc2:SequencingRNALevel1 a dca:UnconfiguredTemplate .
+mc2:SequencingRNALevel1 dca:fileType "Various" .
+
+mc2:DataDSP a dca:RecordTemplate .
+
+mc2:Theme a dca:UnconfiguredTemplate .
+
+mc2:ToolView a dca:RecordTemplate .
+
+<https://dca.app.sagebionetworks.org/MC2/10xVisiumAuxiliaryFiles> a dca:UnconfiguredTemplate .
+
+<https://dca.app.sagebionetworks.org/MC2/10xVisiumRNALevel1> a dca:UnconfiguredTemplate .
+
+<https://dca.app.sagebionetworks.org/MC2/10xVisiumRNALevel2> a dca:UnconfiguredTemplate .
+
+<https://dca.app.sagebionetworks.org/MC2/10xVisiumRNALevel3> a dca:UnconfiguredTemplate .
+<https://dca.app.sagebionetworks.org/MC2/10xVisiumRNALevel3> dca:fileType "Various" .
+
+<https://dca.app.sagebionetworks.org/MC2/10xVisiumRNALevel4> a dca:UnconfiguredTemplate .
+<https://dca.app.sagebionetworks.org/MC2/10xVisiumRNALevel4> dca:fileType "Various" .

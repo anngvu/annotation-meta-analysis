@@ -1,0 +1,60 @@
+template_id,display_name,species,file_type,configured_template_role,description
+PublicationTemplate,PublicationTemplate,Not specified,N/A,N/A,A generalized data model template for Publications to be hopefully used across dccs
+MassSpecAssayTemplate,MassSpecAssayTemplate,Multi-species,Various,N/A,Template for raw mass spec-based proteomics data.
+ProteinAssayTemplate,ProteinAssayTemplate,Multi-species,Various,N/A,Abstract template for data from some assay of protein structure and function. Data should be instantiated with more specific template.
+ClinicalAssayTemplate,ClinicalAssayTemplate,Multi-species,Various,Annotation,"General template for typically tabular **individual-level** data. This can include repeated measures and a drug treatment context.
+"
+BiologicalAssayDataTemplate,BiologicalAssayDataTemplate,Multi-species,Various,N/A,"A template defining basic metadata on deposited data artifacts (i.e. files) from experimental assays involving biosamples.  This is an abstract template; ""real"" template subclasses define additional properties appropriate for the type of data file (e.g. imaging vs sequencing).
+"
+ScRNASeqTemplate,ScRNASeqTemplate,Multi-species,Various,Annotation,Template for describing raw data from single-cell RNA-seq.
+ScSequencingAssayTemplate,ScSequencingAssayTemplate,Multi-species,Various,N/A,"General template for raw RNA/DNA data, i.e. sequence data from a sequencing assay."
+GeneralMeasureDataTemplate,GeneralMeasureDataTemplate,Multi-species,Various,N/A,"General template for data in tabular form that aggregates tissue-level or cellular-level data.
+"
+MaterialScienceAssayTemplate,MaterialScienceAssayTemplate,Not specified,Various,N/A,General template for describing data for a materials science assay.
+NonBiologicalAssayDataTemplate,NonBiologicalAssayDataTemplate,Not specified,Various,N/A,"Describes data artifacts (i.e. files) from an experimental/physical-sciences assay  where input specimens are more at the level of synthesized molecules or inorganic materials.
+"
+RNASeqTemplate,RNASeqTemplate,Multi-species,Various,Annotation,Template for describing raw data from (bulk) RNA-sequencing
+BulkSequencingAssayTemplate,BulkSequencingAssayTemplate,Multi-species,Various,N/A,"General template for raw (level 1) RNA/DNA data, i.e. sequence data from a sequencing assay."
+BiospecimenTemplate,BiospecimenTemplate,Not specified,N/A,N/A,"Specimen-level data, whether from human or animal."
+PortalStudy,PortalStudy,Not specified,N/A,N/A,"//nf.synapse.org/Explore/Studies.
+"
+ImagingAssayTemplate,ImagingAssayTemplate,Multi-species,Image files (DICOM/TIFF/etc.),Annotation,General template for describing imaging data.
+PortalPublication,PortalPublication,Not specified,N/A,N/A,A slightly more specialized publication concept intended for the specific scope of the NF Portal.
+GenomicsAssayTemplateExtended,GenomicsAssayTemplateExtended,Multi-species,Various,Annotation,Genomics assay template but with additional experiment data.
+GenomicsAssayTemplate,GenomicsAssayTemplate,Multi-species,Various,Annotation,"Alias to BulkSequencingAssayTemplate, use for sequence data on a large scale when there is no template available that is more specific."
+ProteinArrayTemplate,ProteinArrayTemplate,Multi-species,Various,N/A,Template for array- and immuno-based proteomics data.
+PdxGenomicsAssayTemplate,PdxGenomicsAssayTemplate,Human,N/A,N/A,"Raw genomics data from patient-derived xenograft (PDX) experiment, with additional PDX-relevant metadata."
+EpigenomicsAssayTemplate,EpigenomicsAssayTemplate,Multi-species,Various,N/A,Template for describing raw data from epigenetics sequencing assays such as bisulfite sequencing.
+LightScatteringAssayTemplate,LightScatteringAssayTemplate,Not specified,Various,Annotation,Template for dynamic or static light scattering data adapted from ISA-TAB-Nano specs.
+ProcessedAlignedReadsTemplate,ProcessedAlignedReadsTemplate,Multi-species,Processed data,Annotation,"Template for describing aligned reads (e.g. BAM/CRAM files) from a sequencing assay. The QC meta are extracted from samtools stats when available and are the same metrics preferred by GDC. 
+"
+ChIPSeqTemplate,ChIPSeqTemplate,Multi-species,Various,Annotation,"Template for describing raw data from ChIP-Seq assays, typically used to identify DNA-protein interactions."
+EpidemiologyDataTemplate,EpidemiologyDataTemplate,Not specified,N/A,N/A,"For aggregated data from defined populations or cohorts, used in/derived from epidemiology studies."
+HumanCohortTemplate,HumanCohortTemplate,Human,N/A,Record,"Data of biosamples from human patients. Adapted from Table 2 of http://nrs.harvard.edu/urn-3:HUL.InstRepos:32725809. This template should be used when biosamples are from NF patients to provides a more valuable characterization and make additional gene-phenotype insights possible.
+"
+ProtocolTemplate,ProtocolTemplate,Not specified,PDF/Document,Annotation,//bioschemas.org/profiles/LabProtocol/0.7-DRAFT.
+ProcessedExpressionTemplate,ProcessedExpressionTemplate,Multi-species,Processed data,Annotation,Template for quantified gene/protein expression data that are still represented as one file per sample.
+GenomicsArrayTemplate,GenomicsArrayTemplate,Multi-species,Various,N/A,"A template for describing raw data from array-based genomics/epigenomics, e.g. CEL files."
+GeneticsAssayTemplate,GeneticsAssayTemplate,Multi-species,Various,N/A,"Template for relatively raw data of RNA/DNA structure and expression.  This is an abstract template encapsulating data from low-throughput to high-throughput assays,  sequencing-based or non-sequencing based (e.g. microarrays, optical genome mapping).  In practice, data are more specifically typed and matched to one of the templates below.
+"
+ProteomicsAssayTemplate,ProteomicsAssayTemplate,Multi-species,Mass spec data,Annotation,Alias to MassSpecAssayTemplate for backwards-compatibility.
+WGSTemplate,WGSTemplate,Multi-species,Various,Annotation,Template for describing raw data from Whole Genome Sequencing (WGS)
+ProcessedMergedDataTemplate,ProcessedMergedDataTemplate,Not specified,N/A,N/A,"Further processed data with multiple samples aggregated into one file. This may be also be known as level-4 data. Unlike level-2 and level-3 data, individual-level attributes such as age and sex are no longer surfaced on the data file directly.
+"
+UpdateMilestoneReport,UpdateMilestoneReport,Not specified,PDF/Document,Annotation,Metadata template for updating milestone report values in NF studies -- currently a supported feature for NTAP and GFF.
+MethylationArrayTemplate,MethylationArrayTemplate,Multi-species,IDAT,Annotation,Template for raw data files (idat) from DNA methylation arrays.
+PharmacokineticsAssayTemplate,PharmacokineticsAssayTemplate,Multi-species,Various,Annotation,Generic template for describing data from a pharmacokinetics assay.
+ElectrophysiologyAssayTemplate,ElectrophysiologyAssayTemplate,Multi-species,Various,N/A,Template for raw electrophysiology data (electrical recordings).
+MicroscopyAssayTemplate,MicroscopyAssayTemplate,Multi-species,Various,N/A,Template for data from a microscopy data.
+ImmunoMicroscopyTemplate,ImmunoMicroscopyTemplate,Multi-species,Various,N/A,Template for describing immunofluorescence or immunohistochemistry images.
+AnimalIndividualTemplate,AnimalIndividualTemplate,Human,N/A,N/A,Template for non-human individual-level data.
+PlateBasedReporterAssayTemplate,PlateBasedReporterAssayTemplate,Multi-species,PDF/Document,Annotation,Generic template for describing data from a plate-based reporter assay.
+MRIAssayTemplate,MRIAssayTemplate,Multi-species,Image files (DICOM/TIFF/etc.),Annotation,Template for describing MRI data.
+WESTemplate,WESTemplate,Multi-species,Various,Annotation,Template for describing raw data from Whole Exome Sequencing (WES/WXS)
+SourceCodeTemplate,SourceCodeTemplate,Not specified,Various,N/A,Template for describing scripts or software code.
+BehavioralAssayTemplate,BehavioralAssayTemplate,Multi-species,Various,Annotation,"Template for behavioral assay data from model organisms measuring behaviors such as feeding, learning, memory, motor coordination, and activity patterns."
+EpigeneticsAssayTemplate,EpigeneticsAssayTemplate,Multi-species,FASTQ,Annotation,Alias for EpigenomicsAssayTemplate for backwards-compatibility.
+ProcessedVariantCallsTemplate,ProcessedVariantCallsTemplate,Multi-species,Processed data,Annotation,Template for describing either simple germline/somatic variant calls output data (VCF/MAF) as well as structural variants (e.g. CNVs).
+PortalDataset,PortalDataset,Multi-species,N/A,N/A,"//nf.synapse.org/Explore/Datasets.
+"
+FlowCytometryTemplate,FlowCytometryTemplate,Multi-species,FCS,Annotation,Template for flow cytometry assay

@@ -1,0 +1,38 @@
+template_id,display_name,species,file_type,configured_template_role,description
+Biospecimen,biospecimen,Not specified,N/A,Record,TBD
+Individual,individual,Not specified,N/A,N/A,TBD
+Model,model,Not specified,N/A,N/A,TBD
+Collection,Collection,Not specified,Various,N/A,The set of metadata entries associated with a Study. A collection defines which resources should be grouped for sharing and reuse.
+Consortium,consortium,Not specified,N/A,N/A,TBD
+DatasetView,Dataset View,Not specified,N/A,Record,The denormalized manifest for dataset submission.
+Study,study,Not specified,N/A,Record,TBD
+EducationalResource,Educational Resource,Not specified,N/A,Record,Manifest for describing educational resources.
+GrantView,Grant View,Not specified,N/A,N/A,The denormalized manifest for grant submission.
+FileView,File View,Not specified,Various,Annotation,The denormalized manifest for file submission.
+NanoStringGeoMxAuxiliaryFiles,NanoString GeoMx Auxiliary Files,Not specified,N/A,N/A,Contains identifiers for auxiliary files associated with Nanostring GeoMx Spatial Profiling experiments.
+NanoStringGeoMxDSPImaging,NanoString GeoMx DSP Imaging,Not specified,Image files (DICOM/TIFF/etc.),N/A,Images acquired by the GeoMx instrument
+NanoStringGeoMxDSPLevel1,NanoString GeoMx DSP Level 1,Not specified,N/A,Record,Raw sequencing files from GeoMX experiments
+NanoStringGeoMXROISegmentAnnotation,NanoString GeoMX ROI Segment Annotation,Not specified,N/A,Record,GeoMx ROI and Segment Metadata Attributes. The assayed biospecimen should be reported one per row with the associated ROI and AOI coordinates.
+NanoStringGeoMxDSPLevel2,NanoString GeoMx DSP Level 2,Not specified,N/A,Record,Processed count conversion (DCC/RCC) files from GeoMX experiments
+NanoStringGeoMxDSPLevel3,NanoString GeoMx DSP Level 3,Not specified,N/A,Record,Files contain processed count data from the NanoString GeoMx DSP Pipeline.
+ImagingChannel,Imaging Channel,Not specified,Image files (DICOM/TIFF/etc.),N/A,Channel-level Metadata Attributes
+ImagingLevel1,Imaging Level 1,Not specified,Image files (DICOM/TIFF/etc.),N/A,Raw imaging data
+ImagingLevel2,Imaging Level 2,Not specified,Image files (DICOM/TIFF/etc.),N/A,Raw and pre-processed image data
+ImagingLevel3Segments,Imaging Level 3 Segments,Not specified,Image files (DICOM/TIFF/etc.),N/A,Image segmentation mask information
+ImagingLevel4,Imaging Level 4,Not specified,Image files (DICOM/TIFF/etc.),N/A,Derived imaging data or object by feature array
+Institution,Institution,Not specified,N/A,N/A,Institutions participating in consortia activities
+PersonView,Person View,Not specified,N/A,N/A,The denormalized manifest for person submission.
+ProjectView,Project View,Not specified,N/A,N/A,The denormalized manifest for project submission.
+PublicationView,Publication View,Not specified,N/A,Record,The denormalized manifest for publication submission.
+SequencingLevel1,Sequencing Level 1,Not specified,Various,N/A,Unaligned/unprocessed sequencing data
+SequencingLevel2,Sequencing Level 2,Not specified,Various,N/A,Sequencing data that has been aligned with a reference genome.
+SequencingLevel3,Sequencing Level 3,Not specified,Various,N/A,Sequencing data that has been aligned with a reference genome.
+SequencingRNALevel1,Sequencing RNA Level 1,Not specified,Various,N/A,Unaligned/unprocessed RNA sequencing data
+DataDSP,DataDSP,Not specified,N/A,Record,Dataset sharing plan information. Used to indicate planned usage of MC2 Center supported Synapse projects.
+Theme,Theme,Not specified,N/A,N/A,Themes associated with resources derived from consortia activities
+ToolView,Tool View,Not specified,N/A,Record,The denormalized manifest for tool submission.
+10xVisiumAuxiliaryFiles,10x Visium Auxiliary Files,Not specified,N/A,N/A,"Auxiliary data associated with spot/slide analysis (aligned Images, quality control files, etc)  from Spatial Transcriptomics."
+10xVisiumRNALevel1,10x Visium RNA Level 1,Not specified,N/A,N/A,Files contain raw RNA-seq data associated with spot/slide data.
+10xVisiumRNALevel2,10x Visium RNA Level 2,Not specified,N/A,N/A,Alignment workflows downstream of Spatial Transcriptomics RNA-seq Level 1.
+10xVisiumRNALevel3,10x Visium RNA Level 3,Not specified,Various,N/A,Processed data files based on Spatial Transcriptomics RNA-seq Level 2 and Spatial Transcriptomics Auxiliary files.
+10xVisiumRNALevel4,10x Visium RNA Level 4,Not specified,Various,N/A,Processed data files based on Spatial Transcriptomics RNA-seq Level 3.

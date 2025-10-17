@@ -1,0 +1,824 @@
+@prefix cb: <https://dca.app.sagebionetworks.org/CB/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<schema:Text> a schema:DataType, rdfs:Class ;
+    rdfs:label "Text" ;
+    rdfs:comment "Data type: Text." .
+
+<schema:Number> a schema:DataType, rdfs:Class ;
+    rdfs:label "Number" ;
+    rdfs:comment "Data type: Number." .
+
+<schema:Integer> a rdfs:Class ;
+    rdfs:label "Integer" ;
+    rdfs:comment "Data type: Integer." ;
+    rdfs:subClassOf <schema:Number> .
+
+<schema:Thing> a rdfs:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "Thing" .
+
+cb:BiologicalEntity a rdfs:Class ;
+    rdfs:label "BiologicalEntity" ;
+    rdfs:subClassOf <schema:Thing> .
+
+cb:OntologyClass a rdfs:Class ;
+    rdfs:label "OntologyClass" ;
+    rdfs:comment "a concept or class in an ontology, vocabulary or thesaurus" ;
+    rdfs:subClassOf <schema:Thing> .
+
+cb:RelationshipType a rdfs:Class ;
+    rdfs:label "RelationshipType" ;
+    rdfs:comment "An OWL property used as an edge label" ;
+    rdfs:subClassOf cb:OntologyClass .
+
+cb:GeneOntologyClass a rdfs:Class ;
+    rdfs:label "GeneOntologyClass" ;
+    rdfs:comment "an ontology class that describes a functional aspect of a gene, gene prodoct or complex" ;
+    rdfs:subClassOf cb:OntologyClass .
+
+cb:OrganismTaxon a rdfs:Class ;
+    rdfs:label "OrganismTaxon" ;
+    rdfs:subClassOf cb:OntologyClass .
+
+cb:OrganismalEntity a rdfs:Class ;
+    rdfs:label "OrganismalEntity" ;
+    rdfs:comment "A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities" ;
+    rdfs:subClassOf cb:BiologicalEntity .
+
+cb:IndividualOrganism a rdfs:Class ;
+    rdfs:label "IndividualOrganism" ;
+    rdfs:subClassOf cb:OrganismalEntity .
+
+cb:Case a rdfs:Class ;
+    rdfs:label "Case" ;
+    rdfs:comment "An individual organism that has a patient role in some clinical context." ;
+    rdfs:subClassOf cb:IndividualOrganism .
+
+cb:PopulationOfIndividualOrganisms a rdfs:Class ;
+    rdfs:label "PopulationOfIndividualOrganisms" ;
+    rdfs:subClassOf cb:OrganismalEntity .
+
+cb:Biosample a rdfs:Class ;
+    rdfs:label "Biosample" ;
+    rdfs:subClassOf cb:OrganismalEntity .
+
+cb:DiseaseOrPhenotypicFeature a rdfs:Class ;
+    rdfs:label "DiseaseOrPhenotypicFeature" ;
+    rdfs:comment "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate." ;
+    rdfs:subClassOf cb:BiologicalEntity .
+
+cb:Disease a rdfs:Class ;
+    rdfs:label "Disease" ;
+    rdfs:subClassOf cb:DiseaseOrPhenotypicFeature .
+
+cb:PhenotypicFeature a rdfs:Class ;
+    rdfs:label "PhenotypicFeature" ;
+    rdfs:subClassOf cb:DiseaseOrPhenotypicFeature .
+
+cb:Environment a rdfs:Class ;
+    rdfs:label "Environment" ;
+    rdfs:comment "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes" ;
+    rdfs:subClassOf cb:BiologicalEntity .
+
+cb:InformationContentEntity a rdfs:Class ;
+    rdfs:label "InformationContentEntity" ;
+    rdfs:comment "a piece of information that typically describes some piece of biology or is used as support." ;
+    rdfs:subClassOf <schema:Thing> .
+
+cb:ConfidenceLevel a rdfs:Class ;
+    rdfs:label "ConfidenceLevel" ;
+    rdfs:comment "Level of confidence in a statement" ;
+    rdfs:subClassOf cb:InformationContentEntity .
+
+cb:EvidenceType a rdfs:Class ;
+    rdfs:label "EvidenceType" ;
+    rdfs:comment "Class of evidence that supports an association" ;
+    rdfs:subClassOf cb:InformationContentEntity .
+
+cb:Publication a rdfs:Class ;
+    rdfs:label "Publication" ;
+    rdfs:comment "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals." ;
+    rdfs:subClassOf cb:InformationContentEntity .
+
+cb:MolecularEntity a rdfs:Class ;
+    rdfs:label "MolecularEntity" ;
+    rdfs:comment "A gene, gene product, small molecule or macromolecule (including protein complex)" ;
+    rdfs:subClassOf cb:BiologicalEntity .
+
+cb:ChemicalSubstance a rdfs:Class ;
+    rdfs:label "ChemicalSubstance" ;
+    rdfs:comment "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part" ;
+    rdfs:subClassOf cb:MolecularEntity .
+
+cb:Drug a rdfs:Class ;
+    rdfs:label "Drug" ;
+    rdfs:comment "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease" ;
+    rdfs:subClassOf cb:ChemicalSubstance .
+
+cb:Metabolite a rdfs:Class ;
+    rdfs:label "Metabolite" ;
+    rdfs:comment "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites." ;
+    rdfs:subClassOf cb:ChemicalSubstance .
+
+cb:AnatomicalEntity a rdfs:Class ;
+    rdfs:label "AnatomicalEntity" ;
+    rdfs:comment "A subcellular location, cell type or gross anatomical part" ;
+    rdfs:subClassOf cb:OrganismalEntity .
+
+cb:LifeStage a rdfs:Class ;
+    rdfs:label "LifeStage" ;
+    rdfs:comment "A stage of development or growth of an organism, including post-natal adult stages" ;
+    rdfs:subClassOf cb:OrganismalEntity .
+
+cb:PlanetaryEntity a rdfs:Class ;
+    rdfs:label "PlanetaryEntity" ;
+    rdfs:comment "Any entity or process that exists at the level of the whole planet" ;
+    rdfs:subClassOf <schema:Thing> .
+
+cb:EnvironmentalProcess a rdfs:Class ;
+    rdfs:label "EnvironmentalProcess" ;
+    rdfs:subClassOf cb:PlanetaryEntity .
+
+cb:EnvironmentalFeature a rdfs:Class ;
+    rdfs:label "EnvironmentalFeature" ;
+    rdfs:subClassOf cb:PlanetaryEntity .
+
+cb:ClinicalEntity a rdfs:Class ;
+    rdfs:label "ClinicalEntity" ;
+    rdfs:comment "Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities" ;
+    rdfs:subClassOf <schema:Thing> .
+
+cb:ClinicalTrial a rdfs:Class ;
+    rdfs:label "ClinicalTrial" ;
+    rdfs:subClassOf cb:ClinicalEntity .
+
+cb:ClinicalIntervention a rdfs:Class ;
+    rdfs:label "ClinicalIntervention" ;
+    rdfs:subClassOf cb:ClinicalEntity .
+
+cb:Device a rdfs:Class ;
+    rdfs:label "Device" ;
+    rdfs:comment "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment" ;
+    rdfs:subClassOf <schema:Thing> .
+
+cb:GenomicEntity a rdfs:Class ;
+    rdfs:label "GenomicEntity" ;
+    rdfs:comment "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)" ;
+    rdfs:subClassOf cb:MolecularEntity .
+
+cb:Genome a rdfs:Class ;
+    rdfs:label "Genome" ;
+    rdfs:comment "A genome is the sum of genetic material within a cell or virion." ;
+    rdfs:subClassOf cb:GenomicEntity .
+
+cb:Transcript a rdfs:Class ;
+    rdfs:label "Transcript" ;
+    rdfs:comment "An RNA synthesized on a DNA or RNA template by an RNA polymerase" ;
+    rdfs:subClassOf cb:GenomicEntity .
+
+cb:Exon a rdfs:Class ;
+    rdfs:label "Exon" ;
+    rdfs:comment "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing" ;
+    rdfs:subClassOf cb:GenomicEntity .
+
+cb:CodingSequence a rdfs:Class ;
+    rdfs:label "CodingSequence" ;
+    rdfs:subClassOf cb:GenomicEntity .
+
+cb:MacromolecularMachine a rdfs:Class ;
+    rdfs:label "MacromolecularMachine" ;
+    rdfs:comment "A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this." ;
+    rdfs:subClassOf cb:GenomicEntity .
+
+cb:GeneOrGeneProduct a rdfs:Class ;
+    rdfs:label "GeneOrGeneProduct" ;
+    rdfs:comment "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another" ;
+    rdfs:subClassOf cb:MacromolecularMachine .
+
+cb:Gene a rdfs:Class ;
+    rdfs:label "Gene" ;
+    rdfs:subClassOf cb:GeneOrGeneProduct .
+
+cb:GeneProduct a rdfs:Class ;
+    rdfs:label "GeneProduct" ;
+    rdfs:comment "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules" ;
+    rdfs:subClassOf cb:GeneOrGeneProduct .
+
+cb:Protein a rdfs:Class ;
+    rdfs:label "Protein" ;
+    rdfs:comment "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA" ;
+    rdfs:subClassOf cb:GeneProduct .
+
+cb:GeneProductIsoform a rdfs:Class ;
+    rdfs:label "GeneProductIsoform" ;
+    rdfs:comment "This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms." ;
+    rdfs:subClassOf cb:GeneProduct .
+
+cb:ProteinIsoform a rdfs:Class ;
+    rdfs:label "ProteinIsoform" ;
+    rdfs:comment "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/" ;
+    rdfs:subClassOf cb:Protein .
+
+cb:RnaProduct a rdfs:Class ;
+    rdfs:label "RnaProduct" ;
+    rdfs:subClassOf cb:GeneProduct .
+
+cb:RnaProductIsoform a rdfs:Class ;
+    rdfs:label "RnaProductIsoform" ;
+    rdfs:comment "Represents a protein that is a specific isoform of the canonical or reference RNA" ;
+    rdfs:subClassOf cb:RnaProduct .
+
+cb:NoncodingRnaProduct a rdfs:Class ;
+    rdfs:label "NoncodingRnaProduct" ;
+    rdfs:subClassOf cb:RnaProduct .
+
+cb:Microrna a rdfs:Class ;
+    rdfs:label "Microrna" ;
+    rdfs:subClassOf cb:NoncodingRnaProduct .
+
+cb:MacromolecularComplex a rdfs:Class ;
+    rdfs:label "MacromolecularComplex" ;
+    rdfs:subClassOf cb:MacromolecularMachine .
+
+cb:GeneFamily a rdfs:Class ;
+    rdfs:label "GeneFamily" ;
+    rdfs:comment "any grouping of multiple genes or gene products related by common descent" ;
+    rdfs:subClassOf cb:MolecularEntity .
+
+cb:Genotype a rdfs:Class ;
+    rdfs:label "Genotype" ;
+    rdfs:comment "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background" ;
+    rdfs:subClassOf cb:GenomicEntity .
+
+cb:Haplotype a rdfs:Class ;
+    rdfs:label "Haplotype" ;
+    rdfs:comment "A set of zero or more Alleles on a single instance of a Sequence[VMC]" ;
+    rdfs:subClassOf cb:GenomicEntity .
+
+cb:SequenceVariant a rdfs:Class ;
+    rdfs:label "SequenceVariant" ;
+    rdfs:comment "An allele that varies in its sequence from what is considered the reference allele at that locus." ;
+    rdfs:subClassOf cb:GenomicEntity .
+
+cb:DrugExposure a rdfs:Class ;
+    rdfs:label "DrugExposure" ;
+    rdfs:comment "A drug exposure is an intake of a particular chemical substance" ;
+    rdfs:subClassOf cb:Environment .
+
+cb:Treatment a rdfs:Class ;
+    rdfs:label "Treatment" ;
+    rdfs:comment "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'" ;
+    rdfs:subClassOf cb:Environment .
+
+cb:GeographicLocation a rdfs:Class ;
+    rdfs:label "GeographicLocation" ;
+    rdfs:comment "a location that can be described in lat/long coordinates" ;
+    rdfs:subClassOf cb:PlanetaryEntity .
+
+cb:GeographicLocationAtTime a rdfs:Class ;
+    rdfs:label "GeographicLocationAtTime" ;
+    rdfs:comment "a location that can be described in lat/long coordinates, for a particular time" ;
+    rdfs:subClassOf cb:GeographicLocation .
+
+cb:Occurrent a rdfs:Class ;
+    rdfs:label "Occurrent" ;
+    rdfs:comment "A processual entity" ;
+    rdfs:subClassOf <schema:Thing> .
+
+cb:BiologicalProcessOrActivity a rdfs:Class ;
+    rdfs:label "BiologicalProcessOrActivity" ;
+    rdfs:comment "Either an individual molecular activity, or a collection of causally connected molecular activities" ;
+    rdfs:subClassOf cb:BiologicalEntity .
+
+cb:MolecularActivity a rdfs:Class ;
+    rdfs:label "MolecularActivity" ;
+    rdfs:comment "An execution of a molecular function carried out by a gene product or macromolecular complex." ;
+    rdfs:subClassOf cb:BiologicalProcessOrActivity .
+
+cb:ActivityAndBehavior a rdfs:Class ;
+    rdfs:label "ActivityAndBehavior" ;
+    rdfs:comment "Activity or behavior of any independent integral living, organization or mechanical actor in the world" ;
+    rdfs:subClassOf cb:Occurrent .
+
+cb:Procedure a rdfs:Class ;
+    rdfs:label "Procedure" ;
+    rdfs:comment "A series of actions conducted in a certain order or manner" ;
+    rdfs:subClassOf cb:Occurrent .
+
+cb:Phenomenon a rdfs:Class ;
+    rdfs:label "Phenomenon" ;
+    rdfs:comment "a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question" ;
+    rdfs:subClassOf cb:Occurrent .
+
+cb:BiologicalProcess a rdfs:Class ;
+    rdfs:label "BiologicalProcess" ;
+    rdfs:comment "One or more causally connected executions of molecular functions" ;
+    rdfs:subClassOf cb:BiologicalProcessOrActivity .
+
+cb:Pathway a rdfs:Class ;
+    rdfs:label "Pathway" ;
+    rdfs:subClassOf cb:BiologicalProcess .
+
+cb:PhysiologicalProcess a rdfs:Class ;
+    rdfs:label "PhysiologicalProcess" ;
+    rdfs:subClassOf cb:BiologicalProcess .
+
+cb:CellularComponent a rdfs:Class ;
+    rdfs:label "CellularComponent" ;
+    rdfs:comment "A location in or around a cell" ;
+    rdfs:subClassOf cb:AnatomicalEntity .
+
+cb:Cell a rdfs:Class ;
+    rdfs:label "Cell" ;
+    rdfs:subClassOf cb:AnatomicalEntity .
+
+cb:CellLine a rdfs:Class ;
+    rdfs:label "CellLine" ;
+    rdfs:subClassOf cb:Biosample .
+
+cb:GrossAnatomicalStructure a rdfs:Class ;
+    rdfs:label "GrossAnatomicalStructure" ;
+    rdfs:subClassOf cb:AnatomicalEntity .
+
+cb:ensembl a <rdf:Property> ;
+    rdfs:label "ensembl" ;
+    rdfs:comment "Ensembl ID for gene, protein or transcript" .
+
+cb:hgnc a <rdf:Property> ;
+    rdfs:label "hgnc" ;
+    rdfs:comment "HGNC ID for gene" .
+
+cb:entrez a <rdf:Property> ;
+    rdfs:label "entrez" ;
+    rdfs:comment "Entrez ID for gene" .
+
+cb:refseq a <rdf:Property> ;
+    rdfs:label "refseq" ;
+    rdfs:comment "Refseq ID for gene, protein or transcript" .
+
+cb:omim a <rdf:Property> ;
+    rdfs:label "omim" ;
+    rdfs:comment "Refseq ID for gene, protein or transcript" .
+
+cb:umls a <rdf:Property> ;
+    rdfs:label "umls" ;
+    rdfs:comment "Refseq ID for gene, protein or transcript" .
+
+cb:homologousTo a <rdf:Property> ;
+    rdfs:label "homologousTo" ;
+    rdfs:comment "Shared ancestry between protein or gene" .
+
+cb:molecularlyInteractsWith a <rdf:Property> ;
+    rdfs:label "molecularlyInteractsWith" .
+
+cb:geneticallyInteractsWith a <rdf:Property> ;
+    rdfs:label "geneticallyInteractsWith" ;
+    rdfs:comment "holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality." .
+
+cb:affectsAbundanceOf a <rdf:Property> ;
+    rdfs:label "affectsAbundanceOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest" .
+
+cb:increasesAbundanceOf a <rdf:Property> ;
+    rdfs:label "increasesAbundanceOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest" .
+
+cb:decreasesAbundanceOf a <rdf:Property> ;
+    rdfs:label "decreasesAbundanceOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest" .
+
+cb:affectsActivityOf a <rdf:Property> ;
+    rdfs:label "affectsActivityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest" .
+
+cb:increasesActivityOf a <rdf:Property> ;
+    rdfs:label "increasesActivityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest" .
+
+cb:decreasesActivityOf a <rdf:Property> ;
+    rdfs:label "decreasesActivityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest" .
+
+cb:affectsExpressionOf a <rdf:Property> ;
+    rdfs:label "affectsExpressionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest" .
+
+cb:increasesExpressionOf a <rdf:Property> ;
+    rdfs:label "increasesExpressionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest" .
+
+cb:decreasesExpressionOf a <rdf:Property> ;
+    rdfs:label "decreasesExpressionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest" .
+
+cb:affectsFoldingOf a <rdf:Property> ;
+    rdfs:label "affectsFoldingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other " .
+
+cb:increasesFoldingOf a <rdf:Property> ;
+    rdfs:label "increasesFoldingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other " .
+
+cb:decreasesFoldingOf a <rdf:Property> ;
+    rdfs:label "decreasesFoldingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other " .
+
+cb:affectsLocalizationOf a <rdf:Property> ;
+    rdfs:label "affectsLocalizationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest" .
+
+cb:increasesLocalizationOf a <rdf:Property> ;
+    rdfs:label "increasesLocalizationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest" .
+
+cb:decreasesLocalizationOf a <rdf:Property> ;
+    rdfs:label "decreasesLocalizationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest" .
+
+cb:affectsMetabolicProcessingOf a <rdf:Property> ;
+    rdfs:label "affectsMetabolicProcessingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest" .
+
+cb:increasesMetabolicProcessingOf a <rdf:Property> ;
+    rdfs:label "increasesMetabolicProcessingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest" .
+
+cb:decreasesMetabolicProcessingOf a <rdf:Property> ;
+    rdfs:label "decreasesMetabolicProcessingOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest" .
+
+cb:affectsMolecularModificationOf a <rdf:Property> ;
+    rdfs:label "affectsMolecularModificationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" .
+
+cb:increasesMolecularModificationOf a <rdf:Property> ;
+    rdfs:label "increasesMolecularModificationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" .
+
+cb:decreasesMolecularModificationOf a <rdf:Property> ;
+    rdfs:label "decreasesMolecularModificationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" .
+
+cb:affectsSynthesisOf a <rdf:Property> ;
+    rdfs:label "affectsSynthesisOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other" .
+
+cb:increasesSynthesisOf a <rdf:Property> ;
+    rdfs:label "increasesSynthesisOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other" .
+
+cb:decreasesSynthesisOf a <rdf:Property> ;
+    rdfs:label "decreasesSynthesisOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other" .
+
+cb:affectsDegradationOf a <rdf:Property> ;
+    rdfs:label "affectsDegradationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest" .
+
+cb:increasesDegradationOf a <rdf:Property> ;
+    rdfs:label "increasesDegradationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest" .
+
+cb:decreasesDegradationOf a <rdf:Property> ;
+    rdfs:label "decreasesDegradationOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest" .
+
+cb:affectsMutationRateOf a <rdf:Property> ;
+    rdfs:label "affectsMutationRateOf" ;
+    rdfs:comment "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest" .
+
+cb:increasesMutationRateOf a <rdf:Property> ;
+    rdfs:label "increasesMutationRateOf" ;
+    rdfs:comment "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest" .
+
+cb:decreasesMutationRateOf a <rdf:Property> ;
+    rdfs:label "decreasesMutationRateOf" ;
+    rdfs:comment "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest" .
+
+cb:affectsResponseTo a <rdf:Property> ;
+    rdfs:label "affectsResponseTo" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" .
+
+cb:increasesResponseTo a <rdf:Property> ;
+    rdfs:label "increasesResponseTo" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" .
+
+cb:decreasesResponseTo a <rdf:Property> ;
+    rdfs:label "decreasesResponseTo" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" .
+
+cb:affectsSplicingOf a <rdf:Property> ;
+    rdfs:label "affectsSplicingOf" ;
+    rdfs:comment "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA" .
+
+cb:increasesSplicingOf a <rdf:Property> ;
+    rdfs:label "increasesSplicingOf" ;
+    rdfs:comment "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA" .
+
+cb:decreasesSplicingOf a <rdf:Property> ;
+    rdfs:label "decreasesSplicingOf" ;
+    rdfs:comment "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA" .
+
+cb:affectsStabilityOf a <rdf:Property> ;
+    rdfs:label "affectsStabilityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest" .
+
+cb:increasesStabilityOf a <rdf:Property> ;
+    rdfs:label "increasesStabilityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest" .
+
+cb:decreasesStabilityOf a <rdf:Property> ;
+    rdfs:label "decreasesStabilityOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest" .
+
+cb:affectsTransportOf a <rdf:Property> ;
+    rdfs:label "affectsTransportOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest" .
+
+cb:increasesTransportOf a <rdf:Property> ;
+    rdfs:label "increasesTransportOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest" .
+
+cb:decreasesTransportOf a <rdf:Property> ;
+    rdfs:label "decreasesTransportOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest" .
+
+cb:affectsSecretionOf a <rdf:Property> ;
+    rdfs:label "affectsSecretionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ" .
+
+cb:increasesSecretionOf a <rdf:Property> ;
+    rdfs:label "increasesSecretionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ" .
+
+cb:decreasesSecretionOf a <rdf:Property> ;
+    rdfs:label "decreasesSecretionOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ" .
+
+cb:affectsUptakeOf a <rdf:Property> ;
+    rdfs:label "affectsUptakeOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ" .
+
+cb:increasesUptakeOf a <rdf:Property> ;
+    rdfs:label "increasesUptakeOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ" .
+
+cb:decreasesUptakeOf a <rdf:Property> ;
+    rdfs:label "decreasesUptakeOf" ;
+    rdfs:comment "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ" .
+
+<https://dca.app.sagebionetworks.org/CB/regulates,ProcessToProcess> a <rdf:Property> ;
+    rdfs:label "regulates,ProcessToProcess" .
+
+<https://dca.app.sagebionetworks.org/CB/regulates,EntityToEntity> a <rdf:Property> ;
+    rdfs:label "regulates,EntityToEntity" .
+
+cb:hasGeneProduct a <rdf:Property> ;
+    rdfs:label "hasGeneProduct" ;
+    rdfs:comment "holds between a gene and a transcribed and/or translated product generated from it" .
+
+cb:inPathwayWith a <rdf:Property> ;
+    rdfs:label "inPathwayWith" ;
+    rdfs:comment "holds between two genes or gene products that are part of in the same biological pathway" .
+
+cb:inComplexWith a <rdf:Property> ;
+    rdfs:label "inComplexWith" ;
+    rdfs:comment "holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex" .
+
+cb:inCellPopulationWith a <rdf:Property> ;
+    rdfs:label "inCellPopulationWith" ;
+    rdfs:comment "holds between two genes or gene products that are expressed in the same cell type or population " .
+
+cb:geneAssociatedWithCondition a <rdf:Property> ;
+    rdfs:label "geneAssociatedWithCondition" ;
+    rdfs:comment "holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with" .
+
+cb:treats a <rdf:Property> ;
+    rdfs:label "treats" ;
+    rdfs:comment "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat" .
+
+cb:correlatedWith a <rdf:Property> ;
+    rdfs:label "correlatedWith" ;
+    rdfs:comment "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." .
+
+cb:hasBiomarker a <rdf:Property> ;
+    rdfs:label "hasBiomarker" ;
+    rdfs:comment "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." .
+
+cb:biomarkerFor a <rdf:Property> ;
+    rdfs:label "biomarkerFor" ;
+    rdfs:comment "holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature." .
+
+cb:expressedIn a <rdf:Property> ;
+    rdfs:label "expressedIn" ;
+    rdfs:comment "holds between a gene or gene product and an anatomical entity in which it is expressed" .
+
+cb:expresses a <rdf:Property> ;
+    rdfs:label "expresses" ;
+    rdfs:comment "holds between an anatomical entity and gene or gene product that is expressed there" .
+
+cb:hasPhenotype a <rdf:Property> ;
+    rdfs:label "hasPhenotype" ;
+    rdfs:comment "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). " .
+
+cb:precedes a <rdf:Property> ;
+    rdfs:label "precedes" ;
+    rdfs:comment "holds between two processes, where one completes before the other begins" .
+
+cb:subclassOf a <rdf:Property> ;
+    rdfs:label "subclassOf" ;
+    rdfs:comment "holds between two classes where the domain class is a specialization of the range class" .
+
+cb:Assay a rdfs:Class ;
+    rdfs:label "Assay" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:Template ;
+    dca:displayName "Assay" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:dataProperty a <rdf:Property> ;
+    rdfs:label "dataProperty" ;
+    rdfs:comment "teesting in schematic" ;
+    dca:displayName "DataProperty" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:Diagnosis a rdfs:Class ;
+    rdfs:label "Diagnosis" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:DataProperty ;
+    dca:displayName "Diagnosis" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:FiletoIndividualMap a rdfs:Class ;
+    rdfs:label "FiletoIndividualMap" ;
+    rdfs:comment "Template that maps each individual to a file in synapse" ;
+    rdfs:subClassOf cb:Template ;
+    dca:displayName "File to Individual Map" ;
+    dca:required false ;
+    dca:requiresDependency cb:FileName, cb:IndividualId, cb:Component ;
+    dca:validationRules ( ) .
+
+cb:IndividualMetadata a rdfs:Class ;
+    rdfs:label "IndividualMetadata" ;
+    rdfs:comment "Information related to the individual" ;
+    rdfs:subClassOf <schema:Thing> ;
+    dca:displayName "Individual Metadata" ;
+    dca:required false ;
+    dca:requiresDependency cb:Component, cb:IndividualId, cb:MinAge, cb:MaxAge, cb:Sex, cb:Study, cb:Diagnosis ;
+    dca:validationRules ( ) .
+
+cb:LLFS a rdfs:Class ;
+    rdfs:label "LLFS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:ValidValue ;
+    dca:displayName "LLFS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:schema a <rdf:Property> ;
+    rdfs:label "schema" ;
+    rdfs:comment "Schema property used in parent column" ;
+    dca:displayName "Schema" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:Study a rdfs:Class ;
+    rdfs:label "Study" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:DataProperty ;
+    dca:displayName "Study" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:Template a rdfs:Class ;
+    rdfs:label "Template" ;
+    rdfs:comment "templalpte for dca" ;
+    rdfs:subClassOf <schema:Thing> ;
+    dca:displayName "Template" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:validValue a <rdf:Property> ;
+    rdfs:label "validValue" ;
+    rdfs:comment "Valid value to be added to columns" ;
+    dca:displayName "ValidValue" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:FileName a rdfs:Class ;
+    rdfs:label "FileName" ;
+    rdfs:comment "Name of the file" ;
+    rdfs:subClassOf cb:DataProperty ;
+    dca:displayName "fileName" ;
+    dca:required true ;
+    dca:validationRules ( "str" ) .
+
+cb:IndividualId a rdfs:Class ;
+    rdfs:label "IndividualId" ;
+    rdfs:comment "Unique individual identifier defined by the contributor" ;
+    rdfs:subClassOf cb:DataProperty ;
+    dca:displayName "individualId" ;
+    dca:required true ;
+    dca:validationRules ( "str" ) .
+
+cb:MaxAge a rdfs:Class ;
+    rdfs:label "MaxAge" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:DataProperty ;
+    dca:displayName "maxAge" ;
+    dca:required false ;
+    dca:validationRules ( "int" ) .
+
+cb:MinAge a rdfs:Class ;
+    rdfs:label "MinAge" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:DataProperty ;
+    dca:displayName "minAge" ;
+    dca:required false ;
+    dca:validationRules ( "int" ) .
+
+cb:SnpArray a rdfs:Class ;
+    rdfs:label "SnpArray" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:ValidValue ;
+    dca:displayName "snpArray" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:WholeGenomeSeq a rdfs:Class ;
+    rdfs:label "WholeGenomeSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:ValidValue ;
+    dca:displayName "wholeGenomeSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:dataType a <rdf:Property> ;
+    rdfs:label "dataType" ;
+    rdfs:comment "TBD" ;
+    dca:displayName "DataType" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:dataType a <rdf:Property> ;
+    rdfs:label "dataType" ;
+    rdfs:comment "TBD" ;
+    dca:displayName "DataType" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:Component a rdfs:Class ;
+    rdfs:label "Component" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:FiletoIndividualMap ;
+    dca:displayName "Component" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:Sex a rdfs:Class ;
+    rdfs:label "Sex" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:IndividualMetadata ;
+    dca:displayName "Sex" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:ILO a rdfs:Class ;
+    rdfs:label "ILO" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:Study ;
+    dca:displayName "ILO" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:LC a rdfs:Class ;
+    rdfs:label "LC" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:Study ;
+    dca:displayName "LC" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+cb:LG a rdfs:Class ;
+    rdfs:label "LG" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:Study ;
+    dca:displayName "LG" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/CB/'wholeGenomeSeq> a rdfs:Class ;
+    rdfs:label "'wholeGenomeSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf cb:WholeGenomeSeq ;
+    dca:displayName "'wholeGenomeSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .

@@ -1,0 +1,177 @@
+@prefix nf-osi: <https://dca.app.sagebionetworks.org/NF-OSI/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+nf-osi:PublicationTemplate a dca:UnconfiguredTemplate .
+
+nf-osi:MassSpecAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:MassSpecAssayTemplate dca:species "Multi-species" .
+nf-osi:MassSpecAssayTemplate dca:fileType "Various" .
+
+nf-osi:ProteinAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:ProteinAssayTemplate dca:species "Multi-species" .
+nf-osi:ProteinAssayTemplate dca:fileType "Various" .
+
+nf-osi:ClinicalAssayTemplate a dca:AnnotationTemplate .
+nf-osi:ClinicalAssayTemplate dca:species "Multi-species" .
+nf-osi:ClinicalAssayTemplate dca:fileType "Various" .
+
+nf-osi:BiologicalAssayDataTemplate a dca:UnconfiguredTemplate .
+nf-osi:BiologicalAssayDataTemplate dca:species "Multi-species" .
+nf-osi:BiologicalAssayDataTemplate dca:fileType "Various" .
+
+nf-osi:ScRNASeqTemplate a dca:AnnotationTemplate .
+nf-osi:ScRNASeqTemplate dca:species "Multi-species" .
+nf-osi:ScRNASeqTemplate dca:fileType "Various" .
+
+nf-osi:ScSequencingAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:ScSequencingAssayTemplate dca:species "Multi-species" .
+nf-osi:ScSequencingAssayTemplate dca:fileType "Various" .
+
+nf-osi:GeneralMeasureDataTemplate a dca:UnconfiguredTemplate .
+nf-osi:GeneralMeasureDataTemplate dca:species "Multi-species" .
+nf-osi:GeneralMeasureDataTemplate dca:fileType "Various" .
+
+nf-osi:MaterialScienceAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:MaterialScienceAssayTemplate dca:fileType "Various" .
+
+nf-osi:NonBiologicalAssayDataTemplate a dca:UnconfiguredTemplate .
+nf-osi:NonBiologicalAssayDataTemplate dca:fileType "Various" .
+
+nf-osi:RNASeqTemplate a dca:AnnotationTemplate .
+nf-osi:RNASeqTemplate dca:species "Multi-species" .
+nf-osi:RNASeqTemplate dca:fileType "Various" .
+
+nf-osi:BulkSequencingAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:BulkSequencingAssayTemplate dca:species "Multi-species" .
+nf-osi:BulkSequencingAssayTemplate dca:fileType "Various" .
+
+nf-osi:BiospecimenTemplate a dca:UnconfiguredTemplate .
+
+nf-osi:PortalStudy a dca:UnconfiguredTemplate .
+
+nf-osi:ImagingAssayTemplate a dca:AnnotationTemplate .
+nf-osi:ImagingAssayTemplate dca:species "Multi-species" .
+nf-osi:ImagingAssayTemplate dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+nf-osi:PortalPublication a dca:UnconfiguredTemplate .
+
+nf-osi:GenomicsAssayTemplateExtended a dca:AnnotationTemplate .
+nf-osi:GenomicsAssayTemplateExtended dca:species "Multi-species" .
+nf-osi:GenomicsAssayTemplateExtended dca:fileType "Various" .
+
+nf-osi:GenomicsAssayTemplate a dca:AnnotationTemplate .
+nf-osi:GenomicsAssayTemplate dca:species "Multi-species" .
+nf-osi:GenomicsAssayTemplate dca:fileType "Various" .
+
+nf-osi:ProteinArrayTemplate a dca:UnconfiguredTemplate .
+nf-osi:ProteinArrayTemplate dca:species "Multi-species" .
+nf-osi:ProteinArrayTemplate dca:fileType "Various" .
+
+nf-osi:PdxGenomicsAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:PdxGenomicsAssayTemplate dca:species "Human" .
+
+nf-osi:EpigenomicsAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:EpigenomicsAssayTemplate dca:species "Multi-species" .
+nf-osi:EpigenomicsAssayTemplate dca:fileType "Various" .
+
+nf-osi:LightScatteringAssayTemplate a dca:AnnotationTemplate .
+nf-osi:LightScatteringAssayTemplate dca:fileType "Various" .
+
+nf-osi:ProcessedAlignedReadsTemplate a dca:AnnotationTemplate .
+nf-osi:ProcessedAlignedReadsTemplate dca:species "Multi-species" .
+nf-osi:ProcessedAlignedReadsTemplate dca:fileType "Processed data" .
+
+nf-osi:ChIPSeqTemplate a dca:AnnotationTemplate .
+nf-osi:ChIPSeqTemplate dca:species "Multi-species" .
+nf-osi:ChIPSeqTemplate dca:fileType "Various" .
+
+nf-osi:EpidemiologyDataTemplate a dca:UnconfiguredTemplate .
+
+nf-osi:HumanCohortTemplate a dca:RecordTemplate .
+nf-osi:HumanCohortTemplate dca:species "Human" .
+
+nf-osi:ProtocolTemplate a dca:AnnotationTemplate .
+nf-osi:ProtocolTemplate dca:fileType "PDF/Document" .
+
+nf-osi:ProcessedExpressionTemplate a dca:AnnotationTemplate .
+nf-osi:ProcessedExpressionTemplate dca:species "Multi-species" .
+nf-osi:ProcessedExpressionTemplate dca:fileType "Processed data" .
+
+nf-osi:GenomicsArrayTemplate a dca:UnconfiguredTemplate .
+nf-osi:GenomicsArrayTemplate dca:species "Multi-species" .
+nf-osi:GenomicsArrayTemplate dca:fileType "Various" .
+
+nf-osi:GeneticsAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:GeneticsAssayTemplate dca:species "Multi-species" .
+nf-osi:GeneticsAssayTemplate dca:fileType "Various" .
+
+nf-osi:ProteomicsAssayTemplate a dca:AnnotationTemplate .
+nf-osi:ProteomicsAssayTemplate dca:species "Multi-species" .
+nf-osi:ProteomicsAssayTemplate dca:fileType "Mass spec data" .
+
+nf-osi:WGSTemplate a dca:AnnotationTemplate .
+nf-osi:WGSTemplate dca:species "Multi-species" .
+nf-osi:WGSTemplate dca:fileType "Various" .
+
+nf-osi:ProcessedMergedDataTemplate a dca:UnconfiguredTemplate .
+
+nf-osi:UpdateMilestoneReport a dca:AnnotationTemplate .
+nf-osi:UpdateMilestoneReport dca:fileType "PDF/Document" .
+
+nf-osi:MethylationArrayTemplate a dca:AnnotationTemplate .
+nf-osi:MethylationArrayTemplate dca:species "Multi-species" .
+nf-osi:MethylationArrayTemplate dca:fileType "IDAT" .
+
+nf-osi:PharmacokineticsAssayTemplate a dca:AnnotationTemplate .
+nf-osi:PharmacokineticsAssayTemplate dca:species "Multi-species" .
+nf-osi:PharmacokineticsAssayTemplate dca:fileType "Various" .
+
+nf-osi:ElectrophysiologyAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:ElectrophysiologyAssayTemplate dca:species "Multi-species" .
+nf-osi:ElectrophysiologyAssayTemplate dca:fileType "Various" .
+
+nf-osi:MicroscopyAssayTemplate a dca:UnconfiguredTemplate .
+nf-osi:MicroscopyAssayTemplate dca:species "Multi-species" .
+nf-osi:MicroscopyAssayTemplate dca:fileType "Various" .
+
+nf-osi:ImmunoMicroscopyTemplate a dca:UnconfiguredTemplate .
+nf-osi:ImmunoMicroscopyTemplate dca:species "Multi-species" .
+nf-osi:ImmunoMicroscopyTemplate dca:fileType "Various" .
+
+nf-osi:AnimalIndividualTemplate a dca:UnconfiguredTemplate .
+nf-osi:AnimalIndividualTemplate dca:species "Human" .
+
+nf-osi:PlateBasedReporterAssayTemplate a dca:AnnotationTemplate .
+nf-osi:PlateBasedReporterAssayTemplate dca:species "Multi-species" .
+nf-osi:PlateBasedReporterAssayTemplate dca:fileType "PDF/Document" .
+
+nf-osi:MRIAssayTemplate a dca:AnnotationTemplate .
+nf-osi:MRIAssayTemplate dca:species "Multi-species" .
+nf-osi:MRIAssayTemplate dca:fileType "Image files (DICOM/TIFF/etc.)" .
+
+nf-osi:WESTemplate a dca:AnnotationTemplate .
+nf-osi:WESTemplate dca:species "Multi-species" .
+nf-osi:WESTemplate dca:fileType "Various" .
+
+nf-osi:SourceCodeTemplate a dca:UnconfiguredTemplate .
+nf-osi:SourceCodeTemplate dca:fileType "Various" .
+
+nf-osi:BehavioralAssayTemplate a dca:AnnotationTemplate .
+nf-osi:BehavioralAssayTemplate dca:species "Multi-species" .
+nf-osi:BehavioralAssayTemplate dca:fileType "Various" .
+
+nf-osi:EpigeneticsAssayTemplate a dca:AnnotationTemplate .
+nf-osi:EpigeneticsAssayTemplate dca:species "Multi-species" .
+nf-osi:EpigeneticsAssayTemplate dca:fileType "FASTQ" .
+
+nf-osi:ProcessedVariantCallsTemplate a dca:AnnotationTemplate .
+nf-osi:ProcessedVariantCallsTemplate dca:species "Multi-species" .
+nf-osi:ProcessedVariantCallsTemplate dca:fileType "Processed data" .
+
+nf-osi:PortalDataset a dca:UnconfiguredTemplate .
+nf-osi:PortalDataset dca:species "Multi-species" .
+
+nf-osi:FlowCytometryTemplate a dca:AnnotationTemplate .
+nf-osi:FlowCytometryTemplate dca:species "Multi-species" .
+nf-osi:FlowCytometryTemplate dca:fileType "FCS" .

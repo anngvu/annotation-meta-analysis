@@ -1,0 +1,41 @@
+template_id,display_name,species,file_type,configured_template_role,description
+Yes-AlcoholExposure,Yes - Alcohol Exposure,Not specified,N/A,N/A,TBD
+Yes-CancerHistoryRelative,Yes - Cancer History Relative,Not specified,N/A,N/A,TBD
+CEL-seq2,CEL-seq2,Not specified,N/A,N/A,TBD
+Yes-SmokingExposure,Yes - Smoking Exposure,Not specified,N/A,N/A,TBD
+TotalVolume,TotalVolume,Not specified,N/A,N/A,TBD
+Biospecimen,Biospecimen,Not specified,N/A,N/A,TBD
+TissueBiospecimenType,Tissue Biospecimen Type,Not specified,N/A,N/A,TBD
+BloodBiospecimenType,Blood Biospecimen Type,Not specified,N/A,N/A,TBD
+AnalyteBiospecimenType,Analyte Biospecimen Type,Not specified,N/A,N/A,TBD
+BoneMarrowBiospecimenType,Bone Marrow Biospecimen Type,Not specified,N/A,N/A,TBD
+UrineBiospecimenType,Urine Biospecimen Type,Not specified,N/A,N/A,TBD
+OvarianAtlasCohort,Ovarian Atlas Cohort,Not specified,N/A,N/A,Group of individuals featured in the ovarian precancer atlas.
+BiospecimenDimension1,BiospecimenDimension1,Not specified,N/A,N/A,TBD
+ImagingLevel2,ImagingLevel2,Not specified,Image files (DICOM/TIFF/etc.),Annotation,TBD
+PublicationTemplate,PublicationTemplate,Not specified,N/A,N/A,TBD
+Exposure,Exposure,Not specified,N/A,N/A,TBD
+Patient,Patient,Not specified,N/A,N/A,TBD
+MolecularTest,MolecularTest,Not specified,N/A,N/A,TBD
+FamilyHistory,FamilyHistory,Not specified,N/A,N/A,TBD
+PatientExtended,PatientExtended,Not specified,N/A,N/A,TBD
+ScRNA-seqLevel3,ScRNA-seqLevel3,Not specified,FASTQ,Annotation,TBD
+SingleCellSequencing,SingleCellSequencing,Not specified,Various,N/A,TBD
+BulkMethylation-seqLevel3,BulkMethylation-seqLevel3,Not specified,FASTQ,N/A,"Sample level summary data for bulk methylation sequencing, such as t-SNE plot coordinates, etc."
+File,File,Not specified,Various,N/A,"Basic metadata for a file entity that contains data (whether sequencing, imaging, etc.) will inherit."
+ScRNA-seqLevel1,ScRNA-seqLevel1,Not specified,FASTQ,Annotation,TBD
+BreastCancerPatient,BreastCancerPatient,Not specified,N/A,N/A,TBD
+ScRNA-seqLevel2,ScRNA-seqLevel2,Not specified,FASTQ,Annotation,TBD
+Yes-VascularInvasionPresent,Yes-VascularInvasionPresent,Not specified,N/A,N/A,TBD
+SequencingData,SequencingData,Not specified,Various,N/A,"Base template for some type of sequencing data file, for which below properties are relevant/in common."
+ScATAC-seqLevel1,ScATAC-seqLevel1,Not specified,Various,Annotation,TBD
+BulkMethylation-seqLevel1,BulkMethylation-seqLevel1,Not specified,FASTQ,N/A,"Raw data for bulk methylation sequencing, such as FASTQs and unaligned BAMs"
+ImagingLevel2Channels,ImagingLevel2Channels,Not specified,Image files (DICOM/TIFF/etc.),Annotation,TBD
+SampleCoreTemplate,SampleCoreTemplate,Not specified,Various,N/A,TBD
+BulkMethylation-seqLevel2,BulkMethylation-seqLevel2,Not specified,FASTQ,N/A,"Aligned primary data for bulk methylation sequencing, such as gene expression matrix files, VCFs, etc."
+Yes-ProgressionorRecurrence,Yes-ProgressionorRecurrence,Not specified,N/A,N/A,TBD
+OvarianCancerPatient,OvarianCancerPatient,Not specified,N/A,N/A,TBD
+BulkDNA-seqLevel1,BulkDNA-seqLevel1,Not specified,N/A,N/A,TBD
+CohortCoreTemplate,CohortCoreTemplate,Not specified,N/A,Record,TBD
+ScRNA-seqLevel4,ScRNA-seqLevel4,Not specified,FASTQ,Annotation,TBD
+Demographics,Demographics,Not specified,N/A,N/A,TBD

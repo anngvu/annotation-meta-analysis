@@ -1,0 +1,3796 @@
+@prefix veoibd: <https://dca.app.sagebionetworks.org/VEOIBD/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+veoibd:ScRNASeqAssayMetadataTemplate a rdfs:Class ;
+    rdfs:label "ScRNASeqAssayMetadataTemplate" ;
+    rdfs:comment "Template for collecting metadata about scRNA-seq data." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "scRNASeq Assay Metadata Template" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component, veoibd:DataGenerator, veoibd:SampleId, veoibd:Assay, veoibd:LibraryPrepMethod, veoibd:LibraryDate, veoibd:DigestionCdnaDate, veoibd:Platform, veoibd:I7Index, veoibd:I5Index, veoibd:GexConNgUL, veoibd:FragmentSizeBp, veoibd:TotalReads, veoibd:PercentCellViability, veoibd:CellCount1mL, veoibd:SoftwareAndVersion, veoibd:AlignmentReference, veoibd:SequencingSaturation, veoibd:EstimatedCells, veoibd:AvgReadsCell, veoibd:ReadsInCells, veoibd:ValidBc, veoibd:Q30Bc, veoibd:Q30Read, veoibd:Q30UMI, veoibd:ValidUMI, veoibd:MedianUMICell, veoibd:MedianGenesCell, veoibd:GenesDetected, veoibd:ReadsMapped, veoibd:ConfidentReads, veoibd:ConfidentIntergenic, veoibd:ConfidentIntronic, veoibd:ConfidentExonic, veoibd:ConfidentTranscriptome, veoibd:ReadsAntisense ;
+    dca:validationRules ( ) .
+
+veoibd:Component a rdfs:Class ;
+    rdfs:label "Component" ;
+    rdfs:comment "Category of metadata; provide the same one for all items/rows." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "Component" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:DataGenerator a rdfs:Class ;
+    rdfs:label "DataGenerator" ;
+    rdfs:comment "Institution that generated the data, i.e. the data processors" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "data_generator" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:SampleId a rdfs:Class ;
+    rdfs:label "SampleId" ;
+    rdfs:comment "Unique sample identifier, formatted as `'individual_id'_'participant_id'_'collection_num'_'type_key'_'sample_num'`" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "sample_id" ;
+    dca:required true ;
+    dca:validationRules ( "BiospecimenMetadataTemplate" ) .
+
+veoibd:Assay a rdfs:Class ;
+    rdfs:label "Assay" ;
+    rdfs:comment "The technology used to generate the data." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "assay" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:LibraryPrepMethod a rdfs:Class ;
+    rdfs:label "LibraryPrepMethod" ;
+    rdfs:comment "Sequencing library preparation method or kit used to create the library. If no commercially available kit was used, please select 'in-house library prep'." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "library_prep_method" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:LibraryDate a rdfs:Class ;
+    rdfs:label "LibraryDate" ;
+    rdfs:comment "Date of library generation YYYY-MM-DD" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "library_date" ;
+    dca:required true ;
+    dca:validationRules ( "date" ) .
+
+veoibd:DigestionCdnaDate a rdfs:Class ;
+    rdfs:label "DigestionCdnaDate" ;
+    rdfs:comment "Date of cDNA digestion YYYY-MM-DD" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "digestion_cdna_date" ;
+    dca:required true ;
+    dca:validationRules ( "date" ) .
+
+veoibd:Platform a rdfs:Class ;
+    rdfs:label "Platform" ;
+    rdfs:comment "The specific version (manufacturer, model, etc.) of a technology that is used to carry out a laboratory or computational experiment." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "platform" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:I7Index a rdfs:Class ;
+    rdfs:label "I7Index" ;
+    rdfs:comment "Illumina-compatible library multiplex barcode" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "i7_index" ;
+    dca:required true ;
+    dca:validationRules ( "str" ) .
+
+veoibd:I5Index a rdfs:Class ;
+    rdfs:label "I5Index" ;
+    rdfs:comment "Illumina-compatible library multiplex barcode" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "i5_index" ;
+    dca:required true ;
+    dca:validationRules ( "str" ) .
+
+veoibd:GexConNgUL a rdfs:Class ;
+    rdfs:label "GexConNgUL" ;
+    rdfs:comment "Library concentration ng/uL" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "gex_con_ng_uL" ;
+    dca:required true ;
+    dca:validationRules ( "float" ) .
+
+veoibd:FragmentSizeBp a rdfs:Class ;
+    rdfs:label "FragmentSizeBp" ;
+    rdfs:comment "Average fragment size of library in base pairs" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "fragment_size_bp" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:TotalReads a rdfs:Class ;
+    rdfs:label "TotalReads" ;
+    rdfs:comment "Total number of reads in fastq" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "total_reads" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:PercentCellViability a rdfs:Class ;
+    rdfs:label "PercentCellViability" ;
+    rdfs:comment "Percent of viable cells in input cell sample" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "percent_cell_viability" ;
+    dca:required true ;
+    dca:validationRules ( "float" "inRange 0 100 error" ) .
+
+veoibd:CellCount1mL a rdfs:Class ;
+    rdfs:label "CellCount1mL" ;
+    rdfs:comment "Number of cells in 1 mL of suspension" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "cell_count_1mL" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:SoftwareAndVersion a rdfs:Class ;
+    rdfs:label "SoftwareAndVersion" ;
+    rdfs:comment "Relevant software and version used to collect and process data." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "software_and_version" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:AlignmentReference a rdfs:Class ;
+    rdfs:label "AlignmentReference" ;
+    rdfs:comment "The genomic/transcriptomic reference used for performing read alignment against." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "alignment_reference" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:SequencingSaturation a rdfs:Class ;
+    rdfs:label "SequencingSaturation" ;
+    rdfs:comment "Fraction of reads originating from an already-observed UMI. Is a function of library complexity and sequencing depth calculated as the ratio of the number of confidently-mapped reads with a valid cell-barcode and valid UMI divided by the subset of those reads that had a non-unique combination of cell-barcode, UMI, gene." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "sequencing_saturation" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:EstimatedCells a rdfs:Class ;
+    rdfs:label "EstimatedCells" ;
+    rdfs:comment "Number of cells estimated by Cell Ranger software" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "estimated_cells" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:AvgReadsCell a rdfs:Class ;
+    rdfs:label "AvgReadsCell" ;
+    rdfs:comment "total_reads/estimated_cells as calculated by Cell Ranger" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "avg_reads_cell" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:ReadsInCells a rdfs:Class ;
+    rdfs:label "ReadsInCells" ;
+    rdfs:comment "Fraction of reads from droplets predicted by Cell Ranger to contain a cell" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "reads_in_cells" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:ValidBc a rdfs:Class ;
+    rdfs:label "ValidBc" ;
+    rdfs:comment "Fraction of reads with cell-barcodes that match the whitelist." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "valid_bc" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:Q30Bc a rdfs:Class ;
+    rdfs:label "Q30Bc" ;
+    rdfs:comment "Fraction of bases with Q-score ≥30 in the cell barcode sequences. This is the i7 index (I1) read for the Single Cell 3' v1 chemistry and the R1 read for the Single Cell 3' v2 chemistry." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "Q30_bc" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:Q30Read a rdfs:Class ;
+    rdfs:label "Q30Read" ;
+    rdfs:comment "Q30 Bases in RNA; Fraction of bases with Q-score at least 30 in the RNA read sequences. This is Illumina R1 for the Single Cell 3' v1 chemistry and Illumina R2 for the Single Cell 3' v2 chemistry." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "Q30_read" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:Q30UMI a rdfs:Class ;
+    rdfs:label "Q30UMI" ;
+    rdfs:comment "Q30 Bases in UMI; Fraction of bases with Q-score at least 30 in the UMI sequences. This is the R2 read for the Single Cell 3' v1 chemistry and the R1 read for the Single Cell 3' v2 chemistry." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "Q30_UMI" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:ValidUMI a rdfs:Class ;
+    rdfs:label "ValidUMI" ;
+    rdfs:comment "Fraction of UMI that match expected whitelist of UMI as calculated by Cell Ranger" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "valid_UMI" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:MedianUMICell a rdfs:Class ;
+    rdfs:label "MedianUMICell" ;
+    rdfs:comment "Total Genes Detected Median UMI Counts per Cell; The number of genes with at least one UMI count in any cell." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "median_UMI_cell" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:MedianGenesCell a rdfs:Class ;
+    rdfs:label "MedianGenesCell" ;
+    rdfs:comment "Median number of read pairs sequenced from the cells assigned to this sample. In case of multiplexing, only cell-associated barcodes assigned exactly one CMO can be assigned to a sample" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "median_genes_cell" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:GenesDetected a rdfs:Class ;
+    rdfs:label "GenesDetected" ;
+    rdfs:comment "The number of genes with at least one UMI count in any cell" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "genes_detected" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:ReadsMapped a rdfs:Class ;
+    rdfs:label "ReadsMapped" ;
+    rdfs:comment "Fraction of reads that are mapped to the genome" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "reads_mapped" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:ConfidentReads a rdfs:Class ;
+    rdfs:label "ConfidentReads" ;
+    rdfs:comment "Reads mapped confidently to genome; Fraction of reads that mapped uniquely to a genome. A gene mapped to exonic loci from a single gene and also to non-exonic loci is considered uniquely mapped to one of the exonic loci" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "confident_reads" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:ConfidentIntergenic a rdfs:Class ;
+    rdfs:label "ConfidentIntergenic" ;
+    rdfs:comment "Fraction of reads that mapped uniquely to an intergenic region of the genome" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "confident_intergenic" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:ConfidentIntronic a rdfs:Class ;
+    rdfs:label "ConfidentIntronic" ;
+    rdfs:comment "Fraction of reads that mapped uniquely to an intronic region of the genome" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "confident_intronic" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:ConfidentExonic a rdfs:Class ;
+    rdfs:label "ConfidentExonic" ;
+    rdfs:comment "Fraction of reads that mapped uniquely to an exonic region of the genome" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "confident_exonic" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:ConfidentTranscriptome a rdfs:Class ;
+    rdfs:label "ConfidentTranscriptome" ;
+    rdfs:comment "Reads mapped confidently to transcriptome; Fraction of reads that mapped to a unique gene in the transcriptome. The read must be consistent with annotated splice junctions. These reads are considered for UMI counting" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "confident_transcriptome" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:ReadsAntisense a rdfs:Class ;
+    rdfs:label "ReadsAntisense" ;
+    rdfs:comment "Fraction of reads confidently mapped to the transcriptome, but on the opposite strand of their annotated gene. A read is counted as antisense if it has any alignments that are consistent with an exon of a transcript but antisense to it, and has no sense alignments" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "reads_antisense" ;
+    dca:required true ;
+    dca:validationRules ( "num" ) .
+
+veoibd:ScRNASeqLevel3FileAnnotationsTemplate a rdfs:Class ;
+    rdfs:label "ScRNASeqLevel3FileAnnotationsTemplate" ;
+    rdfs:comment "A template for collecting file-level metadata for scRNA-seq level 3 files including .h5 and tar.gz archives" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "scRNASeq Level 3 File Annotations Template" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component, veoibd:Filename, veoibd:FileFormat, veoibd:Assay, veoibd:ResourceType, veoibd:SpecimenModality, veoibd:DataLevel, veoibd:DataType, veoibd:CellrangerOutputClass, veoibd:BiospecimenMetadataSynID, veoibd:AssayMetadataSynID ;
+    dca:validationRules ( ) .
+
+veoibd:Filename a rdfs:Class ;
+    rdfs:label "Filename" ;
+    rdfs:comment "Name of a file" ;
+    rdfs:subClassOf veoibd:FileMetadata ;
+    dca:displayName "Filename" ;
+    dca:required true ;
+    dca:validationRules ( "str" ) .
+
+veoibd:FileFormat a rdfs:Class ;
+    rdfs:label "FileFormat" ;
+    rdfs:comment "Defined format of the data file, typically corresponding to extension, but sometimes indicating more general group of files produced by the same tool or software" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "file_format" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:ResourceType a rdfs:Class ;
+    rdfs:label "ResourceType" ;
+    rdfs:comment "The type of resource being stored and annotated" ;
+    rdfs:subClassOf veoibd:FileAnnotations ;
+    dca:displayName "resource_type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:SpecimenModality a rdfs:Class ;
+    rdfs:label "SpecimenModality" ;
+    rdfs:comment "Label assigned to experimental data files indicating whether the data contained corresponds to a single or multiple biospecimens" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "specimen_modality" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:DataLevel a rdfs:Class ;
+    rdfs:label "DataLevel" ;
+    rdfs:comment "The processing level of the data." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "data_level" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:DataType a rdfs:Class ;
+    rdfs:label "DataType" ;
+    rdfs:comment "High-level classification of the type of data contained in the file, loosely related to the experimental method or biological entity that is being profiled." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "data_type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:CellrangerOutputClass a rdfs:Class ;
+    rdfs:label "CellrangerOutputClass" ;
+    rdfs:comment "This attribute labels files according to the Cell Ranger output folder from which they were derived." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "cellranger_output_class" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:BiospecimenMetadataSynID a rdfs:Class ;
+    rdfs:label "BiospecimenMetadataSynID" ;
+    rdfs:comment "The synID biospecimen metadata file containing information about the samples profiled" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "biospecimen_metadata_synID" ;
+    dca:required false ;
+    dca:validationRules ( "regex search ^syn[0-9]{8} error" ) .
+
+veoibd:AssayMetadataSynID a rdfs:Class ;
+    rdfs:label "AssayMetadataSynID" ;
+    rdfs:comment "The synID scRNA-seq assay metadata file corresponding to this data file." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "assay_metadata_synID" ;
+    dca:required false ;
+    dca:validationRules ( "regex search ^syn[0-9]{8} error" ) .
+
+veoibd:ScRNASeqLevel1FileAnnotationsTemplate a rdfs:Class ;
+    rdfs:label "ScRNASeqLevel1FileAnnotationsTemplate" ;
+    rdfs:comment "A template for collecting file-level metadata for scRNA-seq fastq files (i.e., level 1 data)." ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "scRNASeq Level 1 File Annotations Template" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component, veoibd:Filename, veoibd:FileFormat, veoibd:Assay, veoibd:ResourceType, veoibd:SpecimenModality, veoibd:DataLevel, veoibd:DataType, veoibd:BiospecimenMetadataSynID, veoibd:AssayMetadataSynID ;
+    dca:validationRules ( ) .
+
+veoibd:MedicationHistoryMetadataTemplate a rdfs:Class ;
+    rdfs:label "MedicationHistoryMetadataTemplate" ;
+    rdfs:comment "VEOIBD Medication History Metadata Template" ;
+    rdfs:subClassOf veoibd:ManifestTemplate ;
+    dca:displayName "Medication History Metadata Template" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component, veoibd:IndividualId, veoibd:Mesalamine, veoibd:MesalamineUse, veoibd:MesalamineChange, veoibd:Sulfasa, veoibd:SulfasaUse, veoibd:SulfasaChange, veoibd:Balsalazide, veoibd:BalsalazideUse, veoibd:BalsalazideChange, veoibd:Olsalazine, veoibd:OlsalazineUse, veoibd:OlsalazineChange, veoibd:Mercap6, veoibd:Mercap6Use, veoibd:Mercap6Change, veoibd:Azathioprine, veoibd:AzathioprineUse, veoibd:AzathioprineChange, veoibd:Methotrex, veoibd:MethotrexUse, veoibd:MethotrexChange, veoibd:Fk506, veoibd:Fk506Use, veoibd:Fk506Change, veoibd:Cyclospa, veoibd:CyclospaUse, veoibd:CyclospaChange, veoibd:Thalidomide, veoibd:ThalidomideUse, veoibd:ThalidomideChange, veoibd:Lenalidomide, veoibd:LenalidomideUse, veoibd:LenalidomideChange, veoibd:Infliximab, veoibd:InfliximabUse, veoibd:InfliximabChange, veoibd:Adalimumab, veoibd:AdalimumabUse, veoibd:AdalimumabChange, veoibd:Certolizumab, veoibd:CertolizumabUse, veoibd:CertolizumabChange, veoibd:Golimumab, veoibd:GolimumabUse, veoibd:GolimumabChange, veoibd:Natalizumab, veoibd:NatalizumabUse, veoibd:NatalizumabChange, veoibd:Tocilizumab, veoibd:TocilizumabUse, veoibd:TocilizumabChange, veoibd:Vedolizumab, veoibd:VedolizumabUse, veoibd:VedolizumabChange, veoibd:Ustekinumab, veoibd:UstekinumabUse, veoibd:UstekinumabChange, veoibd:Oralenteric, veoibd:OralentericUse, veoibd:OralentericChange, veoibd:Rectalstrd, veoibd:RectalstrdUse, veoibd:RectalstrdChange, veoibd:Oralsterd, veoibd:OralsterdUse, veoibd:OralsterdChange, veoibd:Intrasterd, veoibd:IntrasterdUse, veoibd:IntrasterdChange, veoibd:Metronida, veoibd:MetronidaUse, veoibd:MetronidaChange, veoibd:Ciproflox, veoibd:CiprofloxUse, veoibd:CiprofloxChange, veoibd:Trimethop, veoibd:TrimethopUse, veoibd:TrimethopChange, veoibd:Amoxicillin, veoibd:AmoxicillinUse, veoibd:AmoxicillinChange, veoibd:Vancomycin, veoibd:VancomycinUse, veoibd:VancomycinChange, veoibd:Ursodiol, veoibd:UrsodiolUse, veoibd:UrsodiolChange, veoibd:Cholestyr, veoibd:CholestyrUse, veoibd:CholestyrChange, veoibd:Rifampin, veoibd:RifampinUse, veoibd:RifampinChange, veoibd:Omega3, veoibd:Omega3Use, veoibd:Omega3Change, veoibd:Probiotic, veoibd:ProbioticUse, veoibd:ProbioticChange ;
+    dca:validationRules ( ) .
+
+veoibd:IndividualId a rdfs:Class ;
+    rdfs:label "IndividualId" ;
+    rdfs:comment "A unique identifier for every enrolled individual, formatted as `'site''local_id'_'participant_id'`, e.g., BCH00001_0" ;
+    rdfs:subClassOf veoibd:Patient ;
+    dca:displayName "individual_id" ;
+    dca:required true ;
+    dca:validationRules ( "ClinicalMetadataTemplate" ) .
+
+veoibd:Mesalamine a rdfs:Class ;
+    rdfs:label "Mesalamine" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "mesalamine" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MesalamineUse a rdfs:Class ;
+    rdfs:label "MesalamineUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "mesalamine_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MesalamineChange a rdfs:Class ;
+    rdfs:label "MesalamineChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "mesalamine_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Sulfasa a rdfs:Class ;
+    rdfs:label "Sulfasa" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "sulfasa" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SulfasaUse a rdfs:Class ;
+    rdfs:label "SulfasaUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "sulfasa_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SulfasaChange a rdfs:Class ;
+    rdfs:label "SulfasaChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "sulfasa_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Balsalazide a rdfs:Class ;
+    rdfs:label "Balsalazide" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "balsalazide" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BalsalazideUse a rdfs:Class ;
+    rdfs:label "BalsalazideUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "balsalazide_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BalsalazideChange a rdfs:Class ;
+    rdfs:label "BalsalazideChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "balsalazide_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Olsalazine a rdfs:Class ;
+    rdfs:label "Olsalazine" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "olsalazine" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OlsalazineUse a rdfs:Class ;
+    rdfs:label "OlsalazineUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "olsalazine_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OlsalazineChange a rdfs:Class ;
+    rdfs:label "OlsalazineChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "olsalazine_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Mercap6 a rdfs:Class ;
+    rdfs:label "Mercap6" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "mercap6" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Mercap6Use a rdfs:Class ;
+    rdfs:label "Mercap6Use" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "mercap6_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Mercap6Change a rdfs:Class ;
+    rdfs:label "Mercap6Change" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "mercap6_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Azathioprine a rdfs:Class ;
+    rdfs:label "Azathioprine" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "azathioprine" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:AzathioprineUse a rdfs:Class ;
+    rdfs:label "AzathioprineUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "azathioprine_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:AzathioprineChange a rdfs:Class ;
+    rdfs:label "AzathioprineChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "azathioprine_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Methotrex a rdfs:Class ;
+    rdfs:label "Methotrex" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "methotrex" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MethotrexUse a rdfs:Class ;
+    rdfs:label "MethotrexUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "methotrex_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MethotrexChange a rdfs:Class ;
+    rdfs:label "MethotrexChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "methotrex_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Fk506 a rdfs:Class ;
+    rdfs:label "Fk506" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "fk506" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Fk506Use a rdfs:Class ;
+    rdfs:label "Fk506Use" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "fk506_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Fk506Change a rdfs:Class ;
+    rdfs:label "Fk506Change" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "fk506_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Cyclospa a rdfs:Class ;
+    rdfs:label "Cyclospa" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "cyclospa" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CyclospaUse a rdfs:Class ;
+    rdfs:label "CyclospaUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "cyclospa_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CyclospaChange a rdfs:Class ;
+    rdfs:label "CyclospaChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "cyclospa_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Thalidomide a rdfs:Class ;
+    rdfs:label "Thalidomide" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "thalidomide" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ThalidomideUse a rdfs:Class ;
+    rdfs:label "ThalidomideUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "thalidomide_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ThalidomideChange a rdfs:Class ;
+    rdfs:label "ThalidomideChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "thalidomide_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Lenalidomide a rdfs:Class ;
+    rdfs:label "Lenalidomide" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "lenalidomide" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:LenalidomideUse a rdfs:Class ;
+    rdfs:label "LenalidomideUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "lenalidomide_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:LenalidomideChange a rdfs:Class ;
+    rdfs:label "LenalidomideChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "lenalidomide_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Infliximab a rdfs:Class ;
+    rdfs:label "Infliximab" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "infliximab" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:InfliximabUse a rdfs:Class ;
+    rdfs:label "InfliximabUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "infliximab_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:InfliximabChange a rdfs:Class ;
+    rdfs:label "InfliximabChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "infliximab_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Adalimumab a rdfs:Class ;
+    rdfs:label "Adalimumab" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "adalimumab" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:AdalimumabUse a rdfs:Class ;
+    rdfs:label "AdalimumabUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "adalimumab_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:AdalimumabChange a rdfs:Class ;
+    rdfs:label "AdalimumabChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "adalimumab_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Certolizumab a rdfs:Class ;
+    rdfs:label "Certolizumab" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "certolizumab" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CertolizumabUse a rdfs:Class ;
+    rdfs:label "CertolizumabUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "certolizumab_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CertolizumabChange a rdfs:Class ;
+    rdfs:label "CertolizumabChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "certolizumab_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Golimumab a rdfs:Class ;
+    rdfs:label "Golimumab" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "golimumab" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:GolimumabUse a rdfs:Class ;
+    rdfs:label "GolimumabUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "golimumab_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:GolimumabChange a rdfs:Class ;
+    rdfs:label "GolimumabChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "golimumab_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Natalizumab a rdfs:Class ;
+    rdfs:label "Natalizumab" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "natalizumab" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NatalizumabUse a rdfs:Class ;
+    rdfs:label "NatalizumabUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "natalizumab_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NatalizumabChange a rdfs:Class ;
+    rdfs:label "NatalizumabChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "natalizumab_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Tocilizumab a rdfs:Class ;
+    rdfs:label "Tocilizumab" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "tocilizumab" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TocilizumabUse a rdfs:Class ;
+    rdfs:label "TocilizumabUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "tocilizumab_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TocilizumabChange a rdfs:Class ;
+    rdfs:label "TocilizumabChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "tocilizumab_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Vedolizumab a rdfs:Class ;
+    rdfs:label "Vedolizumab" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "vedolizumab" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:VedolizumabUse a rdfs:Class ;
+    rdfs:label "VedolizumabUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "vedolizumab_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:VedolizumabChange a rdfs:Class ;
+    rdfs:label "VedolizumabChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "vedolizumab_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Ustekinumab a rdfs:Class ;
+    rdfs:label "Ustekinumab" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "ustekinumab" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:UstekinumabUse a rdfs:Class ;
+    rdfs:label "UstekinumabUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "ustekinumab_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:UstekinumabChange a rdfs:Class ;
+    rdfs:label "UstekinumabChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "ustekinumab_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Oralenteric a rdfs:Class ;
+    rdfs:label "Oralenteric" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "oralenteric" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OralentericUse a rdfs:Class ;
+    rdfs:label "OralentericUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "oralenteric_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OralentericChange a rdfs:Class ;
+    rdfs:label "OralentericChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "oralenteric_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Rectalstrd a rdfs:Class ;
+    rdfs:label "Rectalstrd" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "rectalstrd" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RectalstrdUse a rdfs:Class ;
+    rdfs:label "RectalstrdUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "rectalstrd_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RectalstrdChange a rdfs:Class ;
+    rdfs:label "RectalstrdChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "rectalstrd_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Oralsterd a rdfs:Class ;
+    rdfs:label "Oralsterd" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "oralsterd" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OralsterdUse a rdfs:Class ;
+    rdfs:label "OralsterdUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "oralsterd_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OralsterdChange a rdfs:Class ;
+    rdfs:label "OralsterdChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "oralsterd_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Intrasterd a rdfs:Class ;
+    rdfs:label "Intrasterd" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "intrasterd" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IntrasterdUse a rdfs:Class ;
+    rdfs:label "IntrasterdUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "intrasterd_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IntrasterdChange a rdfs:Class ;
+    rdfs:label "IntrasterdChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "intrasterd_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Metronida a rdfs:Class ;
+    rdfs:label "Metronida" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "metronida" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MetronidaUse a rdfs:Class ;
+    rdfs:label "MetronidaUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "metronida_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MetronidaChange a rdfs:Class ;
+    rdfs:label "MetronidaChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "metronida_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Ciproflox a rdfs:Class ;
+    rdfs:label "Ciproflox" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "ciproflox" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CiprofloxUse a rdfs:Class ;
+    rdfs:label "CiprofloxUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "ciproflox_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CiprofloxChange a rdfs:Class ;
+    rdfs:label "CiprofloxChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "ciproflox_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Trimethop a rdfs:Class ;
+    rdfs:label "Trimethop" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "trimethop" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TrimethopUse a rdfs:Class ;
+    rdfs:label "TrimethopUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "trimethop_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TrimethopChange a rdfs:Class ;
+    rdfs:label "TrimethopChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "trimethop_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Amoxicillin a rdfs:Class ;
+    rdfs:label "Amoxicillin" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "amoxicillin" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:AmoxicillinUse a rdfs:Class ;
+    rdfs:label "AmoxicillinUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "amoxicillin_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:AmoxicillinChange a rdfs:Class ;
+    rdfs:label "AmoxicillinChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "amoxicillin_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Vancomycin a rdfs:Class ;
+    rdfs:label "Vancomycin" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "vancomycin" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:VancomycinUse a rdfs:Class ;
+    rdfs:label "VancomycinUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "vancomycin_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:VancomycinChange a rdfs:Class ;
+    rdfs:label "VancomycinChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "vancomycin_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Ursodiol a rdfs:Class ;
+    rdfs:label "Ursodiol" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "ursodiol" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:UrsodiolUse a rdfs:Class ;
+    rdfs:label "UrsodiolUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "ursodiol_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:UrsodiolChange a rdfs:Class ;
+    rdfs:label "UrsodiolChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "ursodiol_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Cholestyr a rdfs:Class ;
+    rdfs:label "Cholestyr" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "cholestyr" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CholestyrUse a rdfs:Class ;
+    rdfs:label "CholestyrUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "cholestyr_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CholestyrChange a rdfs:Class ;
+    rdfs:label "CholestyrChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "cholestyr_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Rifampin a rdfs:Class ;
+    rdfs:label "Rifampin" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "rifampin" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RifampinUse a rdfs:Class ;
+    rdfs:label "RifampinUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "rifampin_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RifampinChange a rdfs:Class ;
+    rdfs:label "RifampinChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "rifampin_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Omega3 a rdfs:Class ;
+    rdfs:label "Omega3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "omega3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Omega3Use a rdfs:Class ;
+    rdfs:label "Omega3Use" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "omega3_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Omega3Change a rdfs:Class ;
+    rdfs:label "Omega3Change" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "omega3_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Probiotic a rdfs:Class ;
+    rdfs:label "Probiotic" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "probiotic" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ProbioticUse a rdfs:Class ;
+    rdfs:label "ProbioticUse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "probiotic_use" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ProbioticChange a rdfs:Class ;
+    rdfs:label "ProbioticChange" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Medication ;
+    dca:displayName "probiotic_change" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ManifestTemplate a rdfs:Class ;
+    rdfs:label "ManifestTemplate" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "ManifestTemplate" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BiospecimenMetadataTemplate a rdfs:Class ;
+    rdfs:label "BiospecimenMetadataTemplate" ;
+    rdfs:comment "VEOIBD Biospecimen Metadata Template" ;
+    rdfs:subClassOf veoibd:ManifestTemplate ;
+    dca:displayName "Biospecimen Metadata Template" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component, veoibd:SampleId, veoibd:IndividualId, veoibd:CollectionId, veoibd:Site, veoibd:LocalId, veoibd:ParticipantId, veoibd:CollectionNum, veoibd:TypeKey, veoibd:SampleType, veoibd:SampleKey, veoibd:SampleNum, veoibd:VialLabel, veoibd:Project, veoibd:CollectionAge, veoibd:Inflammation, veoibd:SpecimenAreaBiopsy, veoibd:Media, veoibd:Volume ;
+    dca:validationRules ( ) .
+
+veoibd:CollectionId a rdfs:Class ;
+    rdfs:label "CollectionId" ;
+    rdfs:comment "collection identifier" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "collection_id" ;
+    dca:required true ;
+    dca:validationRules ( "regex search [A-Z]{3}[0-9]{5}_[0-9]{1}_[0-9]{2} error" ) .
+
+veoibd:Site a rdfs:Class ;
+    rdfs:label "Site" ;
+    rdfs:comment "site identifier indicating which institute oversaw the enrollment and sample collection of the patient." ;
+    rdfs:subClassOf veoibd:Patient ;
+    dca:displayName "site" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:LocalId a rdfs:Class ;
+    rdfs:label "LocalId" ;
+    rdfs:comment "local identifier (max of 5 digits)" ;
+    rdfs:subClassOf veoibd:Patient ;
+    dca:displayName "local_id" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:ParticipantId a rdfs:Class ;
+    rdfs:label "ParticipantId" ;
+    rdfs:comment "Integer code indicating the participant identity or familial relation to proband. 0 = proband; 1 = control; 2 = mother; 3 = father, ≥ 4 = sibling/secondary family" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "participant_id" ;
+    dca:required true ;
+    dca:validationRules ( "regex search [0-9] error" ) .
+
+veoibd:CollectionNum a rdfs:Class ;
+    rdfs:label "CollectionNum" ;
+    rdfs:comment "ordinal code assigned to each specimen to distinquish between different collection dates" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "collection_num" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:TypeKey a rdfs:Class ;
+    rdfs:label "TypeKey" ;
+    rdfs:comment "rc2 tissue sample identifier (PB = PBMCs, BX = biopsy, SM = serum, PG = PAXgene tube, PL = plasma, WB = whole blood, DN = DNA, EO = epithelial organoid, RT = resected tissue, BO = bone marrow organoid, UK = unknown)" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "type_key" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:SampleType a rdfs:Class ;
+    rdfs:label "SampleType" ;
+    rdfs:comment "rc2 sample type" ;
+    rdfs:subClassOf veoibd:Biospecimen ;
+    dca:displayName "sample_type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:SampleKey a rdfs:Class ;
+    rdfs:label "SampleKey" ;
+    rdfs:comment "rc2 sample key (see RC2 Biopsys and Blood Flowcharts)" ;
+    rdfs:subClassOf veoibd:Biospecimen ;
+    dca:displayName "sample_key" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:SampleNum a rdfs:Class ;
+    rdfs:label "SampleNum" ;
+    rdfs:comment "identifying number of sample collected (unique biopsy count # from same region or unique vial count of blood component)" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "sample_num" ;
+    dca:required true ;
+    dca:validationRules ( "int" ) .
+
+veoibd:VialLabel a rdfs:Class ;
+    rdfs:label "VialLabel" ;
+    rdfs:comment "lable on vial" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "vial_label" ;
+    dca:required true ;
+    dca:validationRules ( "str" ) .
+
+veoibd:Project a rdfs:Class ;
+    rdfs:label "Project" ;
+    rdfs:comment "project identifier" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "project" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:CollectionAge a rdfs:Class ;
+    rdfs:label "CollectionAge" ;
+    rdfs:comment "age at time of collection in years" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "collection_age" ;
+    dca:required false ;
+    dca:validationRules ( "num" ) .
+
+veoibd:Inflammation a rdfs:Class ;
+    rdfs:label "Inflammation" ;
+    rdfs:comment "inflammation status" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "inflammation" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SpecimenAreaBiopsy a rdfs:Class ;
+    rdfs:label "SpecimenAreaBiopsy" ;
+    rdfs:comment "biopsy location" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "specimen_area_biopsy" ;
+    dca:required false ;
+    dca:validationRules ( "list like error" ) .
+
+veoibd:Media a rdfs:Class ;
+    rdfs:label "Media" ;
+    rdfs:comment "type of media" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "media" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Volume a rdfs:Class ;
+    rdfs:label "Volume" ;
+    rdfs:comment "volume in mL" ;
+    rdfs:subClassOf veoibd:Biospecimen ;
+    dca:displayName "volume" ;
+    dca:required false ;
+    dca:validationRules ( "num" ) .
+
+veoibd:ClinicalMetadataTemplate a rdfs:Class ;
+    rdfs:label "ClinicalMetadataTemplate" ;
+    rdfs:comment "VEOIBD Clinical Metadata Template" ;
+    rdfs:subClassOf veoibd:ManifestTemplate ;
+    dca:displayName "Clinical Metadata Template" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component, veoibd:IndividualId, veoibd:FamilyId, veoibd:Site, veoibd:LocalId, veoibd:ParticipantId, veoibd:ParticipantRole, veoibd:Sex, veoibd:AgeAtDiagnosis, veoibd:GiPhenotype, veoibd:Project, veoibd:Immunodeficiency, veoibd:Autoimmune, veoibd:DiseaseActivityLocation, veoibd:UpperDiseaseType, veoibd:DiseaseActivityBehavior, veoibd:GrowthDelay, veoibd:PerianalInvolvement, veoibd:GiSurgeries, veoibd:ExtraintestinalManifestations, veoibd:IbdHistory, veoibd:Consanguinity, veoibd:Race, veoibd:Ethnicity, veoibd:JewishOrigin, veoibd:Breastfed, veoibd:ExternalShare ;
+    dca:validationRules ( ) .
+
+veoibd:FamilyId a rdfs:Class ;
+    rdfs:label "FamilyId" ;
+    rdfs:comment "family identifier" ;
+    rdfs:subClassOf veoibd:Patient ;
+    dca:displayName "family_id" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:ParticipantRole a rdfs:Class ;
+    rdfs:label "ParticipantRole" ;
+    rdfs:comment "participant role" ;
+    rdfs:subClassOf veoibd:Patient ;
+    dca:displayName "participant_role" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:Sex a rdfs:Class ;
+    rdfs:label "Sex" ;
+    rdfs:comment "biological sex" ;
+    rdfs:subClassOf veoibd:Patient ;
+    dca:displayName "sex" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:AgeAtDiagnosis a rdfs:Class ;
+    rdfs:label "AgeAtDiagnosis" ;
+    rdfs:comment "age at diagnosis in years" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "age_at_diagnosis" ;
+    dca:required false ;
+    dca:validationRules ( "num" ) .
+
+veoibd:GiPhenotype a rdfs:Class ;
+    rdfs:label "GiPhenotype" ;
+    rdfs:comment "GI phenotype" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "gi_phenotype" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:Immunodeficiency a rdfs:Class ;
+    rdfs:label "Immunodeficiency" ;
+    rdfs:comment "immunodeficiency diagnosis" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "immunodeficiency" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Autoimmune a rdfs:Class ;
+    rdfs:label "Autoimmune" ;
+    rdfs:comment "autoimmune diagonsis" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "autoimmune" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:DiseaseActivityLocation a rdfs:Class ;
+    rdfs:label "DiseaseActivityLocation" ;
+    rdfs:comment "disease activity location" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "disease_activity_location" ;
+    dca:required false ;
+    dca:validationRules ( "list like error" ) .
+
+veoibd:UpperDiseaseType a rdfs:Class ;
+    rdfs:label "UpperDiseaseType" ;
+    rdfs:comment "upper disease type" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "upper_disease_type" ;
+    dca:required false ;
+    dca:validationRules ( "list like error" ) .
+
+veoibd:DiseaseActivityBehavior a rdfs:Class ;
+    rdfs:label "DiseaseActivityBehavior" ;
+    rdfs:comment "disease activity behavior" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "disease_activity_behavior" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:GrowthDelay a rdfs:Class ;
+    rdfs:label "GrowthDelay" ;
+    rdfs:comment "growth delay" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "growth_delay" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PerianalInvolvement a rdfs:Class ;
+    rdfs:label "PerianalInvolvement" ;
+    rdfs:comment "perianal involvment" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "perianal_involvement" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:GiSurgeries a rdfs:Class ;
+    rdfs:label "GiSurgeries" ;
+    rdfs:comment "GI surguries" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "gi_surgeries" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ExtraintestinalManifestations a rdfs:Class ;
+    rdfs:label "ExtraintestinalManifestations" ;
+    rdfs:comment "history of extra intestinal manifestations" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "extraintestinal_manifestations" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IbdHistory a rdfs:Class ;
+    rdfs:label "IbdHistory" ;
+    rdfs:comment "family history of ibd" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "ibd_history" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Consanguinity a rdfs:Class ;
+    rdfs:label "Consanguinity" ;
+    rdfs:comment "history of consagunity" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "consanguinity" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Race a rdfs:Class ;
+    rdfs:label "Race" ;
+    rdfs:comment "race" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "race" ;
+    dca:required false ;
+    dca:validationRules ( "list like error" ) .
+
+veoibd:Ethnicity a rdfs:Class ;
+    rdfs:label "Ethnicity" ;
+    rdfs:comment "ethnicity" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "ethnicity" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:JewishOrigin a rdfs:Class ;
+    rdfs:label "JewishOrigin" ;
+    rdfs:comment "jewish ancestry" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "jewish_origin" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Breastfed a rdfs:Class ;
+    rdfs:label "Breastfed" ;
+    rdfs:comment "history of breast feeding" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "breastfed" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ExternalShare a rdfs:Class ;
+    rdfs:label "ExternalShare" ;
+    rdfs:comment "Per ICF, data can be shared externally with scientific research community" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "external_share" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:DataCode a rdfs:Class ;
+    rdfs:label "DataCode" ;
+    rdfs:comment "A two letter label specifying the type of data generated. SR = scRNA-seq, BR = bulk RNA-seq, CY = CyTOF, PT = proteomics, FS = functional study, MT = metabolomics, WE = whole exome sequencing, WG = whole genome sequencing Type of sequencing library" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "data_code" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:SR a rdfs:Class ;
+    rdfs:label "SR" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataCode ;
+    dca:displayName "SR" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BR a rdfs:Class ;
+    rdfs:label "BR" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataCode ;
+    dca:displayName "BR" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CY a rdfs:Class ;
+    rdfs:label "CY" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataCode ;
+    dca:displayName "CY" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PT a rdfs:Class ;
+    rdfs:label "PT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataCode ;
+    dca:displayName "PT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:FS a rdfs:Class ;
+    rdfs:label "FS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataCode ;
+    dca:displayName "FS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MT a rdfs:Class ;
+    rdfs:label "MT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataCode ;
+    dca:displayName "MT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:WE a rdfs:Class ;
+    rdfs:label "WE" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataCode ;
+    dca:displayName "WE" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:WG a rdfs:Class ;
+    rdfs:label "WG" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataCode ;
+    dca:displayName "WG" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:HiSeqX a rdfs:Class ;
+    rdfs:label "HiSeqX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "HiSeqX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:HiSeq4000 a rdfs:Class ;
+    rdfs:label "HiSeq4000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "HiSeq4000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Illumina1M a rdfs:Class ;
+    rdfs:label "Illumina1M" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_1M" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:HiSeq3000 a rdfs:Class ;
+    rdfs:label "HiSeq3000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "HiSeq3000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:HiSeq2500 a rdfs:Class ;
+    rdfs:label "HiSeq2500" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "HiSeq2500" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:DNBSEQ a rdfs:Class ;
+    rdfs:label "DNBSEQ" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "DNBSEQ" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:HiSeq1000 a rdfs:Class ;
+    rdfs:label "HiSeq1000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "HiSeq1000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:GAIIx a rdfs:Class ;
+    rdfs:label "GAIIx" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "GAIIx" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaH650 a rdfs:Class ;
+    rdfs:label "IlluminaH650" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_h650" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:DdSEQSingle-CellIsolator a rdfs:Class ;
+    rdfs:label "DdSEQSingle-CellIsolator" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "ddSEQ Single-Cell Isolator" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ConfocalImaging a rdfs:Class ;
+    rdfs:label "ConfocalImaging" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "confocalImaging" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BrukerAvanceIII a rdfs:Class ;
+    rdfs:label "BrukerAvanceIII" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Bruker Avance III" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BionanoIrys a rdfs:Class ;
+    rdfs:label "BionanoIrys" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Bionano Irys" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BiographmCT a rdfs:Class ;
+    rdfs:label "BiographmCT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Biograph mCT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:HiSeq2000 a rdfs:Class ;
+    rdfs:label "HiSeq2000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "HiSeq2000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/IlluminaHumanOmni1-Quadv1.0> a rdfs:Class ;
+    rdfs:label "IlluminaHumanOmni1-Quadv1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_HumanOmni1-Quadv1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaOmni5M a rdfs:Class ;
+    rdfs:label "IlluminaOmni5M" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_Omni5M" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/IlluminaMouseWG-6v2.0expressionbeadchip> a rdfs:Class ;
+    rdfs:label "IlluminaMouseWG-6v2.0expressionbeadchip" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina MouseWG-6 v2.0 expression beadchip" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaNovaseq6000 a rdfs:Class ;
+    rdfs:label "IlluminaNovaseq6000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "IlluminaNovaseq6000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaWholeGenomeDASL a rdfs:Class ;
+    rdfs:label "IlluminaWholeGenomeDASL" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "IlluminaWholeGenomeDASL" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:InfiniumGlobalDiversityArray-8 a rdfs:Class ;
+    rdfs:label "InfiniumGlobalDiversityArray-8" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Infinium Global Diversity Array-8" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaInfinium-HumanMethylation450-BeadChip a rdfs:Class ;
+    rdfs:label "IlluminaInfinium-HumanMethylation450-BeadChip" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_Infinium-HumanMethylation450-BeadChip" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaInfiniumGSAMD-24v2-0 a rdfs:Class ;
+    rdfs:label "IlluminaInfiniumGSAMD-24v2-0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "IlluminaInfiniumGSAMD-24v2-0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaMethylationEPIC a rdfs:Class ;
+    rdfs:label "IlluminaMethylationEPIC" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "IlluminaMethylationEPIC" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PacBioRSII a rdfs:Class ;
+    rdfs:label "PacBioRSII" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "PacBioRSII" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaHumanMethylation450 a rdfs:Class ;
+    rdfs:label "IlluminaHumanMethylation450" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "IlluminaHumanMethylation450" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaHumanHT-12V30R1 a rdfs:Class ;
+    rdfs:label "IlluminaHumanHT-12V30R1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "IlluminaHumanHT-12_V3_0_R1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaHumanHap650Yv3A a rdfs:Class ;
+    rdfs:label "IlluminaHumanHap650Yv3A" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "IlluminaHumanHap650Yv3_A" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaHumanHap300 a rdfs:Class ;
+    rdfs:label "IlluminaHumanHap300" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "IlluminaHumanHap300" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaOmni5-Quad a rdfs:Class ;
+    rdfs:label "IlluminaOmni5-Quad" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_Omni5-Quad" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Biocratesp180 a rdfs:Class ;
+    rdfs:label "Biocratesp180" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Biocrates p180" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaOmni2pt5M a rdfs:Class ;
+    rdfs:label "IlluminaOmni2pt5M" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_Omni2pt5M" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/IlluminaOmni2.5-8V1.3> a rdfs:Class ;
+    rdfs:label "IlluminaOmni2.5-8V1.3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_Omni2.5-8_v1.3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/IlluminaOmni2.5-8V1.1> a rdfs:Class ;
+    rdfs:label "IlluminaOmni2.5-8V1.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_Omni2.5-8_v1.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/IlluminaOmni2.5-8> a rdfs:Class ;
+    rdfs:label "IlluminaOmni2.5-8" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina_Omni2.5-8" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/LluminaInfiniumGeneralScreeningArray24-Kitv3.0> a rdfs:Class ;
+    rdfs:label "LluminaInfiniumGeneralScreeningArray24-Kitv3.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "llumina Infinium General Screening Array 24-Kit v3.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BGISEQ-500 a rdfs:Class ;
+    rdfs:label "BGISEQ-500" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "BGISEQ-500" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Perlegen300Karray a rdfs:Class ;
+    rdfs:label "Perlegen300Karray" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Perlegen300Karray" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Orbitrap a rdfs:Class ;
+    rdfs:label "Orbitrap" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "orbitrap" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:XevoTQ-S a rdfs:Class ;
+    rdfs:label "XevoTQ-S" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Xevo TQ-S" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Agilent44Karray a rdfs:Class ;
+    rdfs:label "Agilent44Karray" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Agilent44Karray" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NextSeq2000 a rdfs:Class ;
+    rdfs:label "NextSeq2000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "NextSeq2000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NextSeq500 a rdfs:Class ;
+    rdfs:label "NextSeq500" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "NextSeq500" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NanostringnCounterMouseADPanel a rdfs:Class ;
+    rdfs:label "NanostringnCounterMouseADPanel" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "NanostringnCounter_MouseADPanel" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NanostringnCounter a rdfs:Class ;
+    rdfs:label "NanostringnCounter" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "NanostringnCounter" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MiSeq a rdfs:Class ;
+    rdfs:label "MiSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "MiSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:LTQOrbitrapXL a rdfs:Class ;
+    rdfs:label "LTQOrbitrapXL" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "LTQOrbitrapXL" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:InfiniumPsychArrayBeadChip a rdfs:Class ;
+    rdfs:label "InfiniumPsychArrayBeadChip" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "InfiniumPsychArrayBeadChip" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/InfiniumOmni2.5Exome-8v1.5> a rdfs:Class ;
+    rdfs:label "InfiniumOmni2.5Exome-8v1.5" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Infinium Omni2.5Exome-8 v1.5" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/InfiniumOmni2.5Exome-8v1.4> a rdfs:Class ;
+    rdfs:label "InfiniumOmni2.5Exome-8v1.4" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Infinium Omni2.5Exome-8 v1.4" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/InfiniumOmni2.5Exome-8v1.3> a rdfs:Class ;
+    rdfs:label "InfiniumOmni2.5Exome-8v1.3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Infinium Omni2.5Exome-8 v1.3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/InfiniumOmni2.5Exome-8v1.1> a rdfs:Class ;
+    rdfs:label "InfiniumOmni2.5Exome-8v1.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Infinium Omni2.5Exome-8 v1.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:InfiniumHumanOmniExpressExome a rdfs:Class ;
+    rdfs:label "InfiniumHumanOmniExpressExome" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Infinium HumanOmniExpressExome" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OrbiTrapFusion a rdfs:Class ;
+    rdfs:label "OrbiTrapFusion" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "OrbiTrap Fusion" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OrbitrapFusionLumos a rdfs:Class ;
+    rdfs:label "OrbitrapFusionLumos" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Orbitrap Fusion Lumos" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OlinkTarget96 a rdfs:Class ;
+    rdfs:label "OlinkTarget96" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Olink Target 96" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Triplequadrupole a rdfs:Class ;
+    rdfs:label "Triplequadrupole" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "triple quadrupole" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PacBioSequelII a rdfs:Class ;
+    rdfs:label "PacBioSequelII" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "PacBio Sequel II" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:XevoG2QTOF a rdfs:Class ;
+    rdfs:label "XevoG2QTOF" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Xevo G2 QTOF" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PsychChip a rdfs:Class ;
+    rdfs:label "PsychChip" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "PsychChip" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaNovaSeq6000 a rdfs:Class ;
+    rdfs:label "IlluminaNovaSeq6000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Illumina NovaSeq 6000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:QExactiveHF a rdfs:Class ;
+    rdfs:label "QExactiveHF" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Q Exactive HF" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:QExactive a rdfs:Class ;
+    rdfs:label "QExactive" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Q Exactive" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Time-of-flight a rdfs:Class ;
+    rdfs:label "Time-of-flight" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "time-of-flight" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SimoaHD-1Analyzer a rdfs:Class ;
+    rdfs:label "SimoaHD-1Analyzer" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Simoa HD-1 Analyzer" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SignaPremierAIR3T a rdfs:Class ;
+    rdfs:label "SignaPremierAIR3T" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Signa Premier AIR 3T" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IlluminaMiSeq a rdfs:Class ;
+    rdfs:label "IlluminaMiSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "IlluminaMiSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SequenomMultiplex a rdfs:Class ;
+    rdfs:label "SequenomMultiplex" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "SequenomMultiplex" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Quadrupoletime-of-flight a rdfs:Class ;
+    rdfs:label "Quadrupoletime-of-flight" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "quadrupole time-of-flight" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:QExactivePlus a rdfs:Class ;
+    rdfs:label "QExactivePlus" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Platform ;
+    dca:displayName "Q Exactive Plus" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Fastq a rdfs:Class ;
+    rdfs:label "Fastq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName "fastq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Bam a rdfs:Class ;
+    rdfs:label "Bam" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName "bam" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Csv a rdfs:Class ;
+    rdfs:label "Csv" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName "csv" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Xlsx a rdfs:Class ;
+    rdfs:label "Xlsx" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName "xlsx" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Txt a rdfs:Class ;
+    rdfs:label "Txt" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName "txt" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Pdf a rdfs:Class ;
+    rdfs:label "Pdf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName "pdf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Tsv a rdfs:Class ;
+    rdfs:label "Tsv" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName "tsv" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/.h5> a rdfs:Class ;
+    rdfs:label ".h5" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName ".h5" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/Tar.gz> a rdfs:Class ;
+    rdfs:label "Tar.gz" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName "tar.gz" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/.h5ad> a rdfs:Class ;
+    rdfs:label ".h5ad" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:FileFormat ;
+    dca:displayName ".h5ad" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Experimentaldata a rdfs:Class ;
+    rdfs:label "Experimentaldata" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ResourceType ;
+    dca:displayName "experimental data" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Metadata a rdfs:Class ;
+    rdfs:label "Metadata" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ResourceType ;
+    dca:displayName "metadata" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Report a rdfs:Class ;
+    rdfs:label "Report" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ResourceType ;
+    dca:displayName "report" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:FileAnnotations a rdfs:Class ;
+    rdfs:label "FileAnnotations" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "File_Annotations" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MetadataType a rdfs:Class ;
+    rdfs:label "MetadataType" ;
+    rdfs:comment "For files of dataSubtype: metadata, a description of the type of metadata in the file." ;
+    rdfs:subClassOf veoibd:FileAnnotations ;
+    dca:displayName "metadata_type" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+veoibd:Assaymetadata a rdfs:Class ;
+    rdfs:label "Assaymetadata" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:MetadataType ;
+    dca:displayName "assay metadata" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Biospecimenmetadata a rdfs:Class ;
+    rdfs:label "Biospecimenmetadata" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:MetadataType ;
+    dca:displayName "biospecimen metadata" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Datadictionary a rdfs:Class ;
+    rdfs:label "Datadictionary" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:MetadataType ;
+    dca:displayName "data dictionary" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Individual a rdfs:Class ;
+    rdfs:label "Individual" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:MetadataType ;
+    dca:displayName "individual" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Protocol a rdfs:Class ;
+    rdfs:label "Protocol" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:MetadataType ;
+    dca:displayName "protocol" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Qualityassessment a rdfs:Class ;
+    rdfs:label "Qualityassessment" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:MetadataType ;
+    dca:displayName "quality assessment" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Ibd a rdfs:Class ;
+    rdfs:label "Ibd" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantRole ;
+    dca:displayName "ibd" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NonIbd a rdfs:Class ;
+    rdfs:label "NonIbd" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantRole ;
+    dca:displayName "non_ibd" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Mother a rdfs:Class ;
+    rdfs:label "Mother" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantRole ;
+    dca:displayName "mother" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Father a rdfs:Class ;
+    rdfs:label "Father" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantRole ;
+    dca:displayName "father" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Sibling a rdfs:Class ;
+    rdfs:label "Sibling" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantRole ;
+    dca:displayName "sibling" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SecondDegree a rdfs:Class ;
+    rdfs:label "SecondDegree" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantRole ;
+    dca:displayName "second_degree" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Patient a rdfs:Class ;
+    rdfs:label "Patient" ;
+    rdfs:comment "VEOIBD patient, is a model component" ;
+    rdfs:subClassOf veoibd:IndividualOrganism ;
+    dca:displayName "patient" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component, veoibd:IndividualId, veoibd:LocalId, veoibd:Site ;
+    dca:validationRules ( ) .
+
+veoibd:Male a rdfs:Class ;
+    rdfs:label "Male" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Sex ;
+    dca:displayName "male" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Female a rdfs:Class ;
+    rdfs:label "Female" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Sex ;
+    dca:displayName "female" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CD a rdfs:Class ;
+    rdfs:label "CD" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:GiPhenotype ;
+    dca:displayName "CD" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:UC a rdfs:Class ;
+    rdfs:label "UC" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:GiPhenotype ;
+    dca:displayName "UC" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:IBDU a rdfs:Class ;
+    rdfs:label "IBDU" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:GiPhenotype ;
+    dca:displayName "IBDU" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CTL a rdfs:Class ;
+    rdfs:label "CTL" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:GiPhenotype ;
+    dca:displayName "CTL" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Other a rdfs:Class ;
+    rdfs:label "Other" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Project, veoibd:GiPhenotype ;
+    dca:displayName "other" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Clinical a rdfs:Class ;
+    rdfs:label "Clinical" ;
+    rdfs:comment "Patient clinical, is a model component" ;
+    rdfs:subClassOf veoibd:Patient ;
+    dca:displayName "clinical" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component ;
+    dca:validationRules ( ) .
+
+veoibd:No a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Immunodeficiency, veoibd:Autoimmune, veoibd:GrowthDelay, veoibd:PerianalInvolvement, veoibd:ExtraintestinalManifestations, veoibd:GiSurgeries, veoibd:IbdHistory, veoibd:Consanguinity, veoibd:JewishOrigin, veoibd:Breastfed, veoibd:ExternalShare ;
+    dca:displayName "no" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Yes a rdfs:Class ;
+    rdfs:label "Yes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Immunodeficiency, veoibd:Autoimmune, veoibd:GrowthDelay, veoibd:PerianalInvolvement, veoibd:ExtraintestinalManifestations, veoibd:GiSurgeries, veoibd:IbdHistory, veoibd:Consanguinity, veoibd:JewishOrigin, veoibd:Breastfed, veoibd:ExternalShare ;
+    dca:displayName "yes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Unknown a rdfs:Class ;
+    rdfs:label "Unknown" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Immunodeficiency, veoibd:Autoimmune, veoibd:GrowthDelay, veoibd:PerianalInvolvement, veoibd:ExtraintestinalManifestations, veoibd:GiSurgeries, veoibd:IbdHistory, veoibd:Consanguinity, veoibd:Ethnicity, veoibd:JewishOrigin, veoibd:Breastfed, veoibd:ExternalShare, veoibd:Inflammation, veoibd:Project, veoibd:Race, veoibd:DiseaseActivityBehavior, veoibd:SampleType ;
+    dca:displayName "unknown" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:L1 a rdfs:Class ;
+    rdfs:label "L1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityLocation ;
+    dca:displayName "L1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:L2 a rdfs:Class ;
+    rdfs:label "L2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityLocation ;
+    dca:displayName "L2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:L3 a rdfs:Class ;
+    rdfs:label "L3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityLocation ;
+    dca:displayName "L3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:L4 a rdfs:Class ;
+    rdfs:label "L4" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityLocation ;
+    dca:displayName "L4" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:E1 a rdfs:Class ;
+    rdfs:label "E1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityLocation ;
+    dca:displayName "E1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:E2 a rdfs:Class ;
+    rdfs:label "E2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityLocation ;
+    dca:displayName "E2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:E3 a rdfs:Class ;
+    rdfs:label "E3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityLocation ;
+    dca:displayName "E3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:E4 a rdfs:Class ;
+    rdfs:label "E4" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityLocation ;
+    dca:displayName "E4" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:L4A a rdfs:Class ;
+    rdfs:label "L4A" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:UpperDiseaseType ;
+    dca:displayName "L4A" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:L4B a rdfs:Class ;
+    rdfs:label "L4B" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:UpperDiseaseType ;
+    dca:displayName "L4B" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NeverSevere a rdfs:Class ;
+    rdfs:label "NeverSevere" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityBehavior ;
+    dca:displayName "never_severe" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:EverSevere a rdfs:Class ;
+    rdfs:label "EverSevere" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityBehavior ;
+    dca:displayName "ever_severe" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NonstricturingNonpenetrating a rdfs:Class ;
+    rdfs:label "NonstricturingNonpenetrating" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityBehavior ;
+    dca:displayName "nonstricturing_nonpenetrating" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Stricturing a rdfs:Class ;
+    rdfs:label "Stricturing" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityBehavior ;
+    dca:displayName "stricturing" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Penetrating a rdfs:Class ;
+    rdfs:label "Penetrating" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityBehavior ;
+    dca:displayName "penetrating" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PenetratingAndStricturing a rdfs:Class ;
+    rdfs:label "PenetratingAndStricturing" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DiseaseActivityBehavior ;
+    dca:displayName "penetrating_and_stricturing" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:White a rdfs:Class ;
+    rdfs:label "White" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Race ;
+    dca:displayName "white" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Black a rdfs:Class ;
+    rdfs:label "Black" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Race ;
+    dca:displayName "black" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Asian a rdfs:Class ;
+    rdfs:label "Asian" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Race ;
+    dca:displayName "asian" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NativeAmerican a rdfs:Class ;
+    rdfs:label "NativeAmerican" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Race ;
+    dca:displayName "native_american" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PacificIslander a rdfs:Class ;
+    rdfs:label "PacificIslander" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Race ;
+    dca:displayName "pacific_islander" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Hispanic a rdfs:Class ;
+    rdfs:label "Hispanic" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Ethnicity ;
+    dca:displayName "hispanic" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NotHispanic a rdfs:Class ;
+    rdfs:label "NotHispanic" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Ethnicity ;
+    dca:displayName "not_hispanic" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:A a rdfs:Class ;
+    rdfs:label "A" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleKey ;
+    dca:displayName "A" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:B a rdfs:Class ;
+    rdfs:label "B" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleKey ;
+    dca:displayName "B" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:C a rdfs:Class ;
+    rdfs:label "C" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleKey ;
+    dca:displayName "C" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:D a rdfs:Class ;
+    rdfs:label "D" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleKey ;
+    dca:displayName "D" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:E a rdfs:Class ;
+    rdfs:label "E" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleKey ;
+    dca:displayName "E" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:F a rdfs:Class ;
+    rdfs:label "F" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleKey ;
+    dca:displayName "F" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:G a rdfs:Class ;
+    rdfs:label "G" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleKey ;
+    dca:displayName "G" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:H a rdfs:Class ;
+    rdfs:label "H" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleKey ;
+    dca:displayName "H" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Biospecimen a rdfs:Class ;
+    rdfs:label "Biospecimen" ;
+    rdfs:comment "Patient biological entity, is a model component" ;
+    rdfs:subClassOf veoibd:Biosample ;
+    dca:displayName "biospecimen" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component ;
+    dca:validationRules ( ) .
+
+veoibd:PaxGene a rdfs:Class ;
+    rdfs:label "PaxGene" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "pax_gene" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Pbmcs a rdfs:Class ;
+    rdfs:label "Pbmcs" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "pbmcs" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Biopsy a rdfs:Class ;
+    rdfs:label "Biopsy" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "biopsy" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Media ;
+    dca:validationRules ( ) .
+
+veoibd:Serum a rdfs:Class ;
+    rdfs:label "Serum" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "serum" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:WholeBlood a rdfs:Class ;
+    rdfs:label "WholeBlood" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "whole_blood" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Dna a rdfs:Class ;
+    rdfs:label "Dna" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "dna" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:EpithelialOrganoid a rdfs:Class ;
+    rdfs:label "EpithelialOrganoid" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "epithelial_organoid" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BmOrganoid a rdfs:Class ;
+    rdfs:label "BmOrganoid" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "bm_organoid" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ResectedTissue a rdfs:Class ;
+    rdfs:label "ResectedTissue" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "resected_tissue" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Plasma a rdfs:Class ;
+    rdfs:label "Plasma" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SampleType ;
+    dca:displayName "plasma" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BCH a rdfs:Class ;
+    rdfs:label "BCH" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Site, veoibd:DataGenerator ;
+    dca:displayName "BCH" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:LMU a rdfs:Class ;
+    rdfs:label "LMU" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Site, veoibd:DataGenerator ;
+    dca:displayName "LMU" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:HSC a rdfs:Class ;
+    rdfs:label "HSC" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Site, veoibd:DataGenerator ;
+    dca:displayName "HSC" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:OXF a rdfs:Class ;
+    rdfs:label "OXF" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Site, veoibd:DataGenerator ;
+    dca:displayName "OXF" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MSSM a rdfs:Class ;
+    rdfs:label "MSSM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataGenerator, veoibd:Site ;
+    dca:displayName "MSSM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/0> a rdfs:Class ;
+    rdfs:label "0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantId ;
+    dca:displayName "0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/1> a rdfs:Class ;
+    rdfs:label "1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataLevel, veoibd:ParticipantId ;
+    dca:displayName "1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/2> a rdfs:Class ;
+    rdfs:label "2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataLevel, veoibd:ParticipantId ;
+    dca:displayName "2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/3> a rdfs:Class ;
+    rdfs:label "3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataLevel, veoibd:ParticipantId ;
+    dca:displayName "3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/4> a rdfs:Class ;
+    rdfs:label "4" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataLevel, veoibd:ParticipantId ;
+    dca:displayName "4" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/5> a rdfs:Class ;
+    rdfs:label "5" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantId ;
+    dca:displayName "5" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/6> a rdfs:Class ;
+    rdfs:label "6" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantId ;
+    dca:displayName "6" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/7> a rdfs:Class ;
+    rdfs:label "7" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantId ;
+    dca:displayName "7" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/8> a rdfs:Class ;
+    rdfs:label "8" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantId ;
+    dca:displayName "8" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/9> a rdfs:Class ;
+    rdfs:label "9" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:ParticipantId ;
+    dca:displayName "9" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RC2 a rdfs:Class ;
+    rdfs:label "RC2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Project ;
+    dca:displayName "RC2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Munich a rdfs:Class ;
+    rdfs:label "Munich" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Project ;
+    dca:displayName "munich" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Inflamed a rdfs:Class ;
+    rdfs:label "Inflamed" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Inflammation ;
+    dca:displayName "inflamed" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Uninflamed a rdfs:Class ;
+    rdfs:label "Uninflamed" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Inflammation ;
+    dca:displayName "uninflamed" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:DMSO a rdfs:Class ;
+    rdfs:label "DMSO" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Media ;
+    dca:displayName "DMSO" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:FRZ a rdfs:Class ;
+    rdfs:label "FRZ" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Media ;
+    dca:displayName "FRZ" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:FORM a rdfs:Class ;
+    rdfs:label "FORM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Media ;
+    dca:displayName "FORM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TCM a rdfs:Class ;
+    rdfs:label "TCM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Media ;
+    dca:displayName "TCM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RNA a rdfs:Class ;
+    rdfs:label "RNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Media ;
+    dca:displayName "RNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ORG a rdfs:Class ;
+    rdfs:label "ORG" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Media ;
+    dca:displayName "ORG" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TransverseColon a rdfs:Class ;
+    rdfs:label "TransverseColon" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "transverse_colon" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TerminalIleum a rdfs:Class ;
+    rdfs:label "TerminalIleum" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "terminal_ileum" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SplenicFlexure a rdfs:Class ;
+    rdfs:label "SplenicFlexure" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "splenic_flexure" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SigmoidColon a rdfs:Class ;
+    rdfs:label "SigmoidColon" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "sigmoid_colon" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Rectum a rdfs:Class ;
+    rdfs:label "Rectum" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "rectum" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Pouch a rdfs:Class ;
+    rdfs:label "Pouch" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "pouch" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:LeftColon a rdfs:Class ;
+    rdfs:label "LeftColon" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "left_colon" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Duodenum a rdfs:Class ;
+    rdfs:label "Duodenum" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "duodenum" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:DescendingColon a rdfs:Class ;
+    rdfs:label "DescendingColon" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "descending_colon" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Cecum a rdfs:Class ;
+    rdfs:label "Cecum" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "cecum" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:AscendingColon a rdfs:Class ;
+    rdfs:label "AscendingColon" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "ascending_colon" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RightColon a rdfs:Class ;
+    rdfs:label "RightColon" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenAreaBiopsy ;
+    dca:displayName "right_colon" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PG a rdfs:Class ;
+    rdfs:label "PG" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "PG" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PB a rdfs:Class ;
+    rdfs:label "PB" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "PB" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BX a rdfs:Class ;
+    rdfs:label "BX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "BX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SM a rdfs:Class ;
+    rdfs:label "SM" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "SM" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:WB a rdfs:Class ;
+    rdfs:label "WB" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "WB" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:DN a rdfs:Class ;
+    rdfs:label "DN" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "DN" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:EO a rdfs:Class ;
+    rdfs:label "EO" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "EO" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:BO a rdfs:Class ;
+    rdfs:label "BO" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "BO" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RT a rdfs:Class ;
+    rdfs:label "RT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "RT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:PL a rdfs:Class ;
+    rdfs:label "PL" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "PL" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:UK a rdfs:Class ;
+    rdfs:label "UK" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:TypeKey ;
+    dca:displayName "UK" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:FileMetadata a rdfs:Class ;
+    rdfs:label "FileMetadata" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "FileMetadata" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Medication a rdfs:Class ;
+    rdfs:label "Medication" ;
+    rdfs:comment "Patient medication history, is a model component" ;
+    rdfs:subClassOf veoibd:Clinical ;
+    dca:displayName "medication" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component ;
+    dca:validationRules ( ) .
+
+veoibd:Demographics a rdfs:Class ;
+    rdfs:label "Demographics" ;
+    rdfs:comment "Patient demographics, is a model component" ;
+    rdfs:subClassOf veoibd:Patient ;
+    dca:displayName "demographics" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component ;
+    dca:validationRules ( ) .
+
+veoibd:IndividualOrganism a rdfs:Class ;
+    rdfs:label "IndividualOrganism" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "Individual Organism" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Biosample a rdfs:Class ;
+    rdfs:label "Biosample" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Thing ;
+    dca:displayName "Biosample" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MetadataFileAnnotations a rdfs:Class ;
+    rdfs:label "MetadataFileAnnotations" ;
+    rdfs:comment "Metadata files include clinical and biospecimen metadata" ;
+    rdfs:subClassOf veoibd:ManifestTemplate ;
+    dca:displayName "metadata_file_annotations" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:Component, veoibd:Filename, veoibd:FileFormat, veoibd:ResourceType, veoibd:MetadataType, veoibd:Site ;
+    dca:validationRules ( ) .
+
+veoibd:CSMC a rdfs:Class ;
+    rdfs:label "CSMC" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataGenerator ;
+    dca:displayName "CSMC" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ScRNASeq a rdfs:Class ;
+    rdfs:label "ScRNASeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Assay ;
+    dca:displayName "scRNASeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RNASeq a rdfs:Class ;
+    rdfs:label "RNASeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Assay ;
+    dca:displayName "RNASeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:WES a rdfs:Class ;
+    rdfs:label "WES" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Assay ;
+    dca:displayName "WES" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:WGS a rdfs:Class ;
+    rdfs:label "WGS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Assay ;
+    dca:displayName "WGS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/LC-MS/MS> a rdfs:Class ;
+    rdfs:label "LC-MS/MS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Assay ;
+    dca:displayName "LC-MS/MS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CyTOF a rdfs:Class ;
+    rdfs:label "CyTOF" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:Assay ;
+    dca:displayName "CyTOF" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NEBNextUltraIIDirectionalRNALibrary a rdfs:Class ;
+    rdfs:label "NEBNextUltraIIDirectionalRNALibrary" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "NEBNext Ultra II Directional RNA Library" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:QIAseqmiRNALibrary a rdfs:Class ;
+    rdfs:label "QIAseqmiRNALibrary" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "QIAseq miRNA Library" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SMART-Seqv4UltraLowInputRNA a rdfs:Class ;
+    rdfs:label "SMART-Seqv4UltraLowInputRNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "SMART-Seq v4 Ultra Low Input RNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NexteraXT a rdfs:Class ;
+    rdfs:label "NexteraXT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Nextera XT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SMARTerStrandedTotalRNAv2 a rdfs:Class ;
+    rdfs:label "SMARTerStrandedTotalRNAv2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "SMARTer Stranded Total RNA v2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NexteraXTDNA a rdfs:Class ;
+    rdfs:label "NexteraXTDNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Nextera XT DNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TruSeqStrandedmRNA a rdfs:Class ;
+    rdfs:label "TruSeqStrandedmRNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "TruSeq Stranded mRNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ChromiumSingleCellHumanTCRAmplificationKit a rdfs:Class ;
+    rdfs:label "ChromiumSingleCellHumanTCRAmplificationKit" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Chromium Single Cell Human TCR Amplification Kit" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ChromiumSingleCellHumanBCRAmplificationKit a rdfs:Class ;
+    rdfs:label "ChromiumSingleCellHumanBCRAmplificationKit" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Chromium Single Cell Human BCR Amplification Kit" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SMART-SeqHumanBCRwithUMI a rdfs:Class ;
+    rdfs:label "SMART-SeqHumanBCRwithUMI" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "SMART-Seq Human BCR with UMI" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:SMART-SeqHumanTCRwithUMI a rdfs:Class ;
+    rdfs:label "SMART-SeqHumanTCRwithUMI" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "SMART-Seq Human TCR with UMI" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TakaraHumanBCRprofilingforIllumina a rdfs:Class ;
+    rdfs:label "TakaraHumanBCRprofilingforIllumina" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Takara Human BCR profiling for Illumina" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TakaraHumanTCRprofilingforIllumina a rdfs:Class ;
+    rdfs:label "TakaraHumanTCRprofilingforIllumina" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Takara Human TCR profiling for Illumina" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TakaraHumanTCRv2profilingforIllumina a rdfs:Class ;
+    rdfs:label "TakaraHumanTCRv2profilingforIllumina" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Takara Human TCRv2 profiling for Illumina" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:TakaraHumanscTCRprofilingforIllumina a rdfs:Class ;
+    rdfs:label "TakaraHumanscTCRprofilingforIllumina" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Takara Human scTCR profiling for Illumina" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:NEBNextHumanImmuneSequencingKit a rdfs:Class ;
+    rdfs:label "NEBNextHumanImmuneSequencingKit" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "NEBNext Human Immune Sequencing Kit" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/10xChromium3GEX> a rdfs:Class ;
+    rdfs:label "10xChromium3GEX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "10x Chromium 3 GEX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/10xChromium3GEXv3.1> a rdfs:Class ;
+    rdfs:label "10xChromium3GEXv3.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "10x Chromium 3 GEX v3.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/10xChromium5GEX> a rdfs:Class ;
+    rdfs:label "10xChromium5GEX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "10x Chromium 5 GEX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/10xUniversal3GEX> a rdfs:Class ;
+    rdfs:label "10xUniversal3GEX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "10x Universal 3 GEX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/10xUniversal5GEX> a rdfs:Class ;
+    rdfs:label "10xUniversal5GEX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "10x Universal 5 GEX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/10xChromiumFlex> a rdfs:Class ;
+    rdfs:label "10xChromiumFlex" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "10x Chromium Flex" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:CEL-Seq2 a rdfs:Class ;
+    rdfs:label "CEL-Seq2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "CEL-Seq2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ChromiumscATACKitv2 a rdfs:Class ;
+    rdfs:label "ChromiumscATACKitv2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Chromium scATAC Kit v2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:In-houselibraryprep a rdfs:Class ;
+    rdfs:label "In-houselibraryprep" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "in-house library prep" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:ChromiumNextGEMChipG a rdfs:Class ;
+    rdfs:label "ChromiumNextGEMChipG" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Chromium Next GEM Chip G" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:FluidigmC1HT a rdfs:Class ;
+    rdfs:label "FluidigmC1HT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:LibraryPrepMethod ;
+    dca:displayName "Fluidigm C1 HT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/10xCellRangerHumanGRCh382024-A> a rdfs:Class ;
+    rdfs:label "10xCellRangerHumanGRCh382024-A" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:AlignmentReference ;
+    dca:displayName "10x Cell Ranger Human GRCh38 2024-A" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/10xCellRangerHumanGRCh382020-A> a rdfs:Class ;
+    rdfs:label "10xCellRangerHumanGRCh382020-A" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:AlignmentReference ;
+    dca:displayName "10x Cell Ranger Human GRCh38 2020-A" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Singlespecimen a rdfs:Class ;
+    rdfs:label "Singlespecimen" ;
+    rdfs:comment "An experimental data file that contains data points generated from a single biospecimen. Is a valid value of SpecimenModality that triggers conditional dependencies for other attributes." ;
+    rdfs:subClassOf veoibd:SpecimenModality ;
+    dca:displayName "single specimen" ;
+    dca:required false ;
+    dca:requiresDependency veoibd:SampleId ;
+    dca:validationRules ( ) .
+
+veoibd:Multispecimen a rdfs:Class ;
+    rdfs:label "Multispecimen" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SpecimenModality ;
+    dca:displayName "multispecimen" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv9.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv9.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v9.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv8.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv8.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v8.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv8.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv8.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v8.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv7.2.0> a rdfs:Class ;
+    rdfs:label "CellRangerv7.2.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v7.2.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv7.1.0> a rdfs:Class ;
+    rdfs:label "CellRangerv7.1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v7.1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv7.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv7.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v7.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv7.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv7.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v7.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv6.1.2> a rdfs:Class ;
+    rdfs:label "CellRangerv6.1.2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.1.2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv6.1.1> a rdfs:Class ;
+    rdfs:label "CellRangerv6.1.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.1.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv6.1.0> a rdfs:Class ;
+    rdfs:label "CellRangerv6.1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv6.0.2> a rdfs:Class ;
+    rdfs:label "CellRangerv6.0.2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.0.2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv6.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv6.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv6.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv6.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv5.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv5.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v5.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv5.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv5.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v5.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv4.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv4.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v4.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv3.1.0> a rdfs:Class ;
+    rdfs:label "CellRangerv3.1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v3.1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv3.0.2> a rdfs:Class ;
+    rdfs:label "CellRangerv3.0.2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v3.0.2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv3.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv3.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v3.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/VEOIBD/CellRangerv3.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv3.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v3.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:RawFeatureBcMatrix a rdfs:Class ;
+    rdfs:label "RawFeatureBcMatrix" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:CellrangerOutputClass ;
+    dca:displayName "raw_feature_bc_matrix" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:FilteredFeatureBcMatrix a rdfs:Class ;
+    rdfs:label "FilteredFeatureBcMatrix" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:CellrangerOutputClass ;
+    dca:displayName "filtered_feature_bc_matrix" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:MoleculeInfo a rdfs:Class ;
+    rdfs:label "MoleculeInfo" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:CellrangerOutputClass ;
+    dca:displayName "molecule_info" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Transcriptomics a rdfs:Class ;
+    rdfs:label "Transcriptomics" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataType ;
+    dca:displayName "transcriptomics" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Proteomics a rdfs:Class ;
+    rdfs:label "Proteomics" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataType ;
+    dca:displayName "proteomics" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Genomics a rdfs:Class ;
+    rdfs:label "Genomics" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataType ;
+    dca:displayName "genomics" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Metabolomics a rdfs:Class ;
+    rdfs:label "Metabolomics" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataType ;
+    dca:displayName "metabolomics" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Lipidomics a rdfs:Class ;
+    rdfs:label "Lipidomics" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataType ;
+    dca:displayName "lipidomics" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Microbiome a rdfs:Class ;
+    rdfs:label "Microbiome" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataType ;
+    dca:displayName "microbiome" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Cytometry a rdfs:Class ;
+    rdfs:label "Cytometry" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataType ;
+    dca:displayName "cytometry" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+veoibd:Functionalstudy a rdfs:Class ;
+    rdfs:label "Functionalstudy" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf veoibd:DataType ;
+    dca:displayName "functional study" ;
+    dca:required false ;
+    dca:validationRules ( ) .

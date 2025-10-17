@@ -1,0 +1,137 @@
+template_id,display_name,species,file_type,configured_template_role,description
+Patient,Patient,Not specified,N/A,N/A,HTAN patient
+Demographics,Demographics,Not specified,N/A,Record,Demographic attributes
+FamilyHistory,Family History,Not specified,N/A,Record,Family cancer history
+Exposure,Exposure,Not specified,N/A,Record,Exposure to carcinogens
+FollowUp,Follow Up,Not specified,N/A,Record,Follow up clinical visits
+Diagnosis,Diagnosis,Not specified,N/A,Record,Disease diagnosis
+Therapy,Therapy,Not specified,N/A,Record,Clinical therapy or treatment
+MolecularTest,Molecular Test,Not specified,N/A,Record,Clinical molecular test data
+CDSSequencingTemplate,CDS Sequencing Template,Not specified,Various,Annotation,"CDS compatible template file, includes attributes for Genomic Reference, Library Layout, Data Type, Sequencing Platform, Library Selection Method"
+CDNA,cDNA,Not specified,N/A,N/A,"Complementary DNA. A DNA copy of an mRNA or complex sample of mRNAs, made using reverse transcriptase"
+Biospecimen,Biospecimen,Not specified,N/A,Record,"HTAN biological entity; this can be tissue, blood, analyte and subsamples of those"
+ClinicalDataTier2,Clinical Data Tier 2,Not specified,N/A,Record,Tier 2 Cancer Data
+SRRSClinicalDataTier2,SRRS Clinical Data Tier 2,Not specified,N/A,Record,Cancer related clinical data specific to SRRS
+LungCancerTier3,Lung Cancer Tier 3,Not specified,N/A,Record,Lung cancer specific attributes in Clinical Data Tier 3
+ColorectalCancerTier3,Colorectal Cancer Tier 3,Not specified,N/A,Record,Colorectal cancer specific attributes in Clinical Data Tier 3
+BreastCancerTier3,Breast Cancer Tier 3,Not specified,N/A,Record,Breast cancer specific attributes in Clinical Data Tier 3
+NeuroblastomaandGliomaTier3,Neuroblastoma and Glioma Tier 3,Not specified,N/A,Record,Brain cancer specific attributes in Clinical Data Tier 3
+AcuteLymphoblasticLeukemiaTier3,Acute Lymphoblastic Leukemia Tier 3,Not specified,N/A,Record,Acute Lymphoblastic Leukemia attributes in Clinical Data Tier 3
+OvarianCancerTier3,Ovarian Cancer Tier 3,Not specified,N/A,Record,Ovarian cancer specific attributes in Clinical Data Tier 3
+ProstateCancerTier3,Prostate Cancer Tier 3,Not specified,N/A,Record,Prostate cancer specific attributes in Clinical Data Tier 3
+SarcomaTier3,Sarcoma Tier 3,Not specified,N/A,Record,Sarcoma specific attributes in Clinical Data Tier 3
+PancreaticCancerTier3,Pancreatic Cancer Tier 3,Not specified,N/A,Record,Pancreatic cancer specific attributes in Clinical Tier Data 3
+MelanomaTier3,Melanoma Tier 3,Not specified,N/A,Record,Melanoma specific attributes in Clinical Data Tier 3
+SRRSBiospecimen,SRRS Biospecimen,Not specified,N/A,Record,"SRRS-specific HTAN biological entity; this can be tissue, blood, analyte and subsamples of those, however it can be described via fewer attributes than a standard HTAN specimen"
+OtherAssay,Other Assay,Not specified,Various,Annotation,Metadata applying to any assay without standard descriptors. Can be used as a placeholder for minimal amount of metadata until the assay descriptors are standardized
+ExSeqMinimal,ExSeq Minimal,Not specified,Various,Annotation,Minimal metadata for the ExSeq assay
+ScRNA-seqLevel1,scRNA-seq Level 1,Not specified,FASTQ,Annotation,Single-cell RNA-seq [EFO_0008913]
+ScRNA-seqLevel2,scRNA-seq Level 2,Not specified,FASTQ,Annotation,Alignment workflows downstream of scRNA-seq Level 1
+ScRNA-seqLevel3,scRNA-seq Level 3,Not specified,FASTQ,Annotation,Gene and Isoform expression files
+ScRNA-seqLevel4,scRNA-seq Level 4,Not specified,FASTQ,Annotation,"Data represents the relationships between cells derived from Level 3 expression data and shown as tSNE or UMAP coordinates per cell, plus all other cell-specific meta information (e.g., cell type)"
+Slide-seqLevel1,Slide-seq Level 1,Not specified,Various,Annotation,Raw sequencing files for the Slide-seq assay.
+SpatialBarcodeandUMI,Spatial Barcode and UMI,Not specified,Document,N/A,Spot and transcript identifiers
+Slide-seqLevel2,Slide-seq Level 2,Not specified,Various,Annotation,Aligned sequencing files and QC for the Slide-seq assay.
+Slide-seqLevel3,Slide-seq Level 3,Not specified,Various,Annotation,Gene matrices with features and barcodes for Slide-seq as well as spatial information (bead location files).
+BulkRNA-seqLevel1,Bulk RNA-seq Level 1,Not specified,FASTQ,Annotation,Bulk RNA-seq [EFO_0003738]
+BulkRNA-seqLevel2,Bulk RNA-seq Level 2,Not specified,FASTQ,Annotation,Bulk RNA-seq alignment protocol description
+BulkRNA-seqLevel3,Bulk RNA-seq Level 3,Not specified,FASTQ,Annotation,Bulk RNA-seq gene expression matrices
+BulkWESLevel1,Bulk WES Level 1,Not specified,FASTQ,Annotation,Bulk Whole Exome Sequencing raw files
+BulkWESLevel2,Bulk WES Level 2,Not specified,FASTQ,Annotation,Bulk Whole Exome Sequencing aligned files and QC
+BulkWESLevel3,Bulk WES Level 3,Not specified,FASTQ,Annotation,Bulk Whole Exome Sequencing called variants
+MicroarrayLevel1,Microarray Level 1,Not specified,Various,Annotation,Microarray Level 1 refers to the raw text table of probe level intensities
+MicroarrayLevel2,Microarray Level 2,Not specified,Various,Annotation,Microarray Level 2 provides a normalized matrix of values.
+ScATAC-seqLevel1,scATAC-seq Level 1,Not specified,Various,Annotation,"scATAC-seq files containing sequence read information, with or without alignment, as FASTQ or BAM files"
+MedianFractionofReadsinPeaks,Median Fraction of Reads in Peaks,Not specified,N/A,N/A,Median fraction of reads in peaks (FRIP)
+MedianFractionofReadsinAnnotatedcisDNAElements,Median Fraction of Reads in Annotated cis DNA Elements,Not specified,N/A,N/A,Median fraction of reads in annotated cis-DNA elements (FRIADE)
+ScATAC-seqLevel2,scATAC-seq Level 2,Not specified,Various,Annotation,"scATAC-seq files containing aligned sequence data, as a BAM file"
+ScATAC-seqLevel3,scATAC-seq Level 3,Not specified,Various,Annotation,Processed data files containing peak information for cells
+ScmC-seqLevel1,scmC-seq Level 1,Not specified,Various,Annotation,Files contain raw scmC-seq data.
+ScmC-seqLevel2,scmC-seq Level 2,Not specified,Various,Annotation,"Files contain scmC-seq files containing aligned sequence data, as a BAM file."
+ScATAC-seqLevel4,scATAC-seq Level 4,Not specified,Various,Annotation,"Data represents the relationships between cells derived from Level 3 expression data and shown as tSNE or UMAP coordinates per cell, plus all other cell-specific meta information (e.g., cell type)"
+ScDNA-seqLevel1,scDNA-seq Level 1,Not specified,Various,Annotation,Single-cell DNA-seq
+ScDNA-seqLevel2,scDNA-seq Level 2,Not specified,Various,Annotation,Alignment workflows downstream of scDNA-seq Level 1
+MultiplexedCITE-seqLevel1,Multiplexed CITE-seq Level 1,Not specified,Various,Annotation,Raw sequencing files for the multiplexed CITE-seq assay
+MultiplexedCITE-seqLevel2,Multiplexed CITE-seq Level 2,Not specified,Various,Annotation,Alignment workflows downstream of Multiplexed CITE-seq Level 1
+MultiplexedCITE-seqLevel3,Multiplexed CITE-seq Level 3,Not specified,Various,Annotation,Gene and Isoform expression files
+MultiplexedCITE-seqLevel4,Multiplexed CITE-seq Level 4,Not specified,Various,Annotation,"Data represents the relationships between cells derived from Level 3 expression data and shown as tSNE or UMAP coordinates per cell, plus all other cell-specific meta information (e.g., cell type)"
+BulkMethylation-seqLevel1,Bulk Methylation-seq Level 1,Not specified,FASTQ,Annotation,"Raw data for bulk methylation sequencing, such as FASTQs and unaligned BAMs"
+BulkMethylationAssayType,Bulk Methylation Assay Type,Not specified,FASTQ,N/A,Assay types normally determine genomic coverage
+BulkMethylation-seqLevel2,Bulk Methylation-seq Level 2,Not specified,FASTQ,Annotation,"Aligned primary data for bulk methylation sequencing, such as gene expression matrix files, VCFs, etc."
+BulkMethylation-seqLevel3,Bulk Methylation-seq Level 3,Not specified,FASTQ,Annotation,"Sample level summary data for bulk methylation sequencing, such as t-SNE plot coordinates, etc."
+ImagingLevel1,Imaging Level 1,Not specified,Image files (DICOM/TIFF/etc.),Annotation,Raw imaging data
+ImagingLevel2,Imaging Level 2,Not specified,Image files (DICOM/TIFF/etc.),Annotation,Raw and pre-processed image data
+FOVX,FOVX,Not specified,N/A,N/A,Field of view X dimension. Floating point
+FOVY,FOVY,Not specified,N/A,N/A,Field  of view Y dimension. Floating point value
+PhysicalSizeX,PhysicalSizeX,Not specified,N/A,N/A,Physical size (X-dimension) of a pixel. Units are set by PhysicalSizeXUnit. Floating point value > 0.
+PhysicalSizeY,PhysicalSizeY,Not specified,N/A,N/A,Physical size (Y-dimension) of a pixel. Units are set by PhysicalSizeYUnit. Floating point value > 0.
+PhysicalSizeZ,PhysicalSizeZ,Not specified,N/A,N/A,Physical size (Z-dimension) of a pixel. Units are set by PhysicalSizeZUnit. Floating point value > 0.
+ImagingLevel3Segmentation,Imaging Level 3 Segmentation,Not specified,Image files (DICOM/TIFF/etc.),Annotation,Object segmentations
+ImagingLevel3Image,Imaging Level 3 Image,Not specified,Image files (DICOM/TIFF/etc.),Annotation,Quality controlled imaging data
+ImagingLevel3Channels,Imaging Level 3 Channels,Not specified,N/A,Record,Channel-level Metadata Attributes
+10xVisiumSpatialTranscriptomics-RNA-seqLevel1,10x Visium Spatial Transcriptomics - RNA-seq Level 1,Not specified,FASTQ,Annotation,Files contain raw RNA-seq data associated with spot/slide data.
+10xVisiumSpatialTranscriptomics-RNA-seqLevel2,10x Visium Spatial Transcriptomics - RNA-seq Level 2,Not specified,FASTQ,Annotation,Alignment workflows downstream of Spatial Transcriptomics RNA-seq Level 1.
+10xVisiumSpatialTranscriptomics-AuxiliaryFiles,10x Visium Spatial Transcriptomics - Auxiliary Files,Not specified,Various,Annotation,"Auxiliary data associated with spot/slide analysis (aligned Images, quality control files, etc)  from Spatial Transcriptomics."
+10xVisiumSpatialTranscriptomics-RNA-seqLevel3,10x Visium Spatial Transcriptomics - RNA-seq Level 3,Not specified,FASTQ,Annotation,Processed data files based on Spatial Transcriptomics RNA-seq Level 2 and Spatial Transcriptomics Auxiliary files.
+10xVisiumSpatialTranscriptomics-RNA-seqLevel4,10x Visium Spatial Transcriptomics - RNA-seq Level 4,Not specified,FASTQ,Annotation,Processed data files based on Spatial Transcriptomics RNA-seq Level 3.
+NanoStringGeoMxDSPSpatialTranscriptomicsLevel1,NanoString GeoMx DSP Spatial Transcriptomics Level 1,Not specified,Various,Annotation,Files contain raw data output from the NanoString GeoMx DSP Pipeline. These can include RCC or DCC Files.
+NanoStringGeoMxDSPROIRCCSegmentAnnotationMetadata,NanoString GeoMx DSP ROI RCC Segment Annotation Metadata,Not specified,N/A,Record,GeoMx ROI and Segment Metadata Attributes. The assayed biospecimen should be reported one per row with the associated ROI coordinates.
+NanoStringGeoMxDSPROIDCCSegmentAnnotationMetadata,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,Not specified,N/A,Record,GeoMx ROI and Segment Metadata Attributes. The assayed biospecimen should be reported one per row with the associated ROI coordinates.
+NanoStringGeoMxDSPSpatialTranscriptomicsLevel3,NanoString GeoMx DSP Spatial Transcriptomics Level 3,Not specified,Various,Annotation,Files contain processed data from the NanoString GeoMx DSP Pipeline. This level depends on GeoMx Level 1 and Imaging Level 2.
+HI-C-seqLevel1,HI-C-seq Level 1,Not specified,Various,Annotation,Unaligned sequence data
+HI-C-seqLevel2,HI-C-seq Level 2,Not specified,Various,Annotation,"Aligned read pairs, contact matrix"
+HI-C-seqLevel3,HI-C-seq Level 3,Not specified,Various,Annotation,Summary data for the HI-C-seq assay.
+ImagingLevel4,Imaging Level 4,Not specified,Image files (DICOM/TIFF/etc.),Annotation,Derived imaging data: Object-by-feature array
+SRRSImagingLevel2,SRRS Imaging Level 2,Not specified,Image files (DICOM/TIFF/etc.),Annotation,SRRS-specific HTAN raw and pre-processed image data
+10XGenomicsXeniumISSExperiment,10X Genomics Xenium ISS Experiment,Not specified,Various,Annotation,All data pertaining to the 10X Genomics Xenium In-Situ Hybridization experiment
+RPPALevel2,RPPA Level 2,Not specified,Various,Annotation,Array based protemics. Each dilution curve of spot intensities is fitted using the monotone increasing B-spline model in the SuperCurve R package. This fits a single curve using all the samples on a slide with the signal intensity as the response variable and the dilution steps as independent variables. The fitted curve is plotted with the signal intensities on the y-axis and the log2-concentration of proteins on the x-axis for diagnostic purposes.
+HTANRPPAAntibodyTable,HTAN RPPA Antibody Table,Multi-species,Various,Annotation,A table containing antibody level metadata for RPPA
+PhosphoSite,Phospho Site,Not specified,Document,N/A,The protein site for a phosphoprotein targeting antibody. Report AA and site (i.e. S442)
+RPPALevel3,RPPA Level 3,Not specified,Various,Annotation,Level 3 Reverse Phase Protein Array (RPPA) data contains intra-batch normalized intensities.
+RPPALevel4,RPPA Level 4,Not specified,Various,Annotation,Level 4 Reverse Phase Protein Array (RPPA) data contains intra-batch corrected intensities.
+NanostringCosMxSMIExperiment,Nanostring CosMx SMI Experiment,Not specified,Various,Annotation,RNA and Protein Panel assays applied as part of Nanostring CosMx Spatial Molecular Imager (SMI)
+MassSpectrometryLevel1,Mass Spectrometry Level 1,Not specified,Various,Annotation,"Mass Spectrometry derived data that includes proteomics, metabolomics, and lipidomics, level 1"
+MassSpectrometryLevel2,Mass Spectrometry Level 2,Not specified,Various,Annotation,"Mass Spectrometry derived data that includes proteomics, metabolomics, and lipidomics, level 2"
+MassSpectrometryAuxiliaryFile,Mass Spectrometry Auxiliary File,Not specified,N/A,N/A,"Auxiliary software parameter file used in mass spectrometry data processing, recorded as synapse ID (syn12345)."
+MassSpectrometryLevel3,Mass Spectrometry Level 3,Not specified,Various,Annotation,"Mass Spectrometry derived data that includes proteomics, metabolomics, and lipidomics, level 3"
+MassSpectrometryLevel4,Mass Spectrometry Level 4,Not specified,Various,Annotation,"Mass Spectrometry derived data that includes proteomics, metabolomics, and lipidomics, level 4"
+No-ChannelFailedQC,No - Channel Failed QC,Not specified,N/A,N/A,Channel failed QC
+Other/multiplechannelQCfaliuretypes,Other/multiple channel QC faliure types,Not specified,N/A,N/A,QC failure type not speficied
+No-ChannelsQC,No - Channels QC,Not specified,N/A,N/A,Not all channels passed QC
+ImagingObjectClassOther,Imaging Object Class Other,Not specified,Image files (DICOM/TIFF/etc.),N/A,Imaging Object Class Other
+CellBarcodeandUMI,Cell Barcode and UMI,Not specified,Document,N/A,Cell and transcript identifiers
+CEL-seq2,CEL-seq2,Not specified,Various,N/A,Highly-multiplexed plate-based single-cell RNA-Seq assay
+Featurebarcoding,Feature barcoding,Not specified,Various,N/A,A method for adding extra channels of information to cells by running single-cell gene expression in parallel with other assays [https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/feature-bc]
+ERCC,ERCC,Not specified,N/A,N/A,The External RNA Controls Consortium (ERCC) spike in set is commonly used in single-cell experiments for normalization
+Yes-AppliedHardTrimming,Yes - Applied Hard Trimming,Not specified,N/A,N/A,Hard Trimming was applied
+Yes-PseudoAlignmentUsed,Yes - Pseudo Alignment Used,Not specified,N/A,N/A,Pseudo aligner was used
+Yes-FusionGeneDetected,Yes - Fusion Gene Detected,Not specified,N/A,N/A,A fusion gene was detected
+OtherFusionGene,Other Fusion Gene,Not specified,N/A,N/A,Other fusion gene detected.
+TissueBiospecimenType,Tissue Biospecimen Type,Not specified,N/A,N/A,Tissue biospecimen
+BloodBiospecimenType,Blood Biospecimen Type,Not specified,N/A,N/A,Blood biospecimen
+AnalyteBiospecimenType,Analyte Biospecimen Type,Not specified,N/A,N/A,A molecular derivative (I.e. RNA / DNA / Protein Lysate) obtained from a specimen
+UrineBiospecimenType,Urine Biospecimen Type,Not specified,N/A,N/A,Urine biospecimen
+BoneMarrowBiospecimenType,Bone Marrow Biospecimen Type,Not specified,N/A,N/A,Bone Marrow biospecimen
+TotalVolume,Total Volume,Not specified,N/A,N/A,Numeric value for the total amount of sample or specimen
+BiospecimenDimension1,Biospecimen Dimension 1,Not specified,N/A,N/A,"First dimension of tissue fragment (number, up to one decimal place) measured in units as defined by the ""dimensions_unit"" CDE"
+OtherAcquisitionMethod,Other Acquisition Method,Not specified,N/A,N/A,A custom acquisition method
+Alive,Alive,Not specified,N/A,N/A,This indicates the participant is alive and defines further required metadata
+Dead,Dead,Not specified,N/A,N/A,This indicates the participant is dead and defines further required metadata
+MedicallyUnderservedArea-Yes,Medically Underserved Area - Yes,Not specified,N/A,N/A,Patient's zip code is in a medically underserved area
+Yes-CancerHistoryRelative,Yes - Cancer History Relative,Not specified,N/A,N/A,Individual has a relative with cancer history
+Yes-SmokingExposure,Yes - Smoking Exposure,Not specified,N/A,N/A,Individual has been exposed to smoke; requires additional metadata
+Yes-AlcoholExposure,Yes - Alcohol Exposure,Not specified,N/A,N/A,Individual has been exposed to alcohol
+Marijuanasmoke,Marijuana smoke,Not specified,N/A,N/A,Marijuana smoke exposure
+Yes-ProgressionorRecurrence,Yes - Progression or Recurrence,Not specified,N/A,N/A,The patient has had a new tumor event after initial treatment
+Yes-AnaplasiaPresent,Yes - Anaplasia Present,Not specified,N/A,N/A,Indicates anaplasia is present
+Yes-VascularInvasionPresent,Yes - Vascular Invasion Present,Not specified,N/A,N/A,Indicates venous invasion was detected by surgery or presence in a tumor specimen
+PublicationManifest,Publication Manifest,Not specified,N/A,Record,Publication specific attributes.
+AccessoryManifest,Accessory Manifest,Not specified,N/A,Record,Accessory specific attributes
+Yes-Islowestlevel,Yes - Is lowest level,Not specified,N/A,N/A,If manifest is lowest level require HTAN Parent Biospecimen ID
+ElectronMicroscopyLevel1,Electron Microscopy Level 1,Not specified,Various,Annotation,Raw electron microscopy data as one TIFF file per plane for a 3D image stack or per tile for a 2D large area montage
+ElectronMicroscopyLevel2,Electron Microscopy Level 2,Not specified,Various,Annotation,Processed electron microscopy data as one OME-TIFF image per plane or montage
+ElectronMicroscopyLevel3,Electron Microscopy Level 3,Not specified,Various,Annotation,Segmented electron microscopy data as .am or .tiff formats
+ElectronMicroscopyLevel4,Electron Microscopy Level 4,Not specified,Various,Annotation,Movies or other derived files from electron microscopy data
+ParticipantVitalStatusUpdate,Participant Vital Status Update,Not specified,N/A,Record,Updates to a participants vital status
+PrecancerDiagnosis,Precancer Diagnosis,Not specified,N/A,Record,Diagnosis of a precancerous condition
+Yes-PrecancerCase,Yes - Precancer Case,Not specified,N/A,N/A,Indicates that the participant is a precancer case

@@ -1,0 +1,2506 @@
+@prefix amp-aim: <https://dca.app.sagebionetworks.org/AMP-AIM/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+amp-aim:Component a rdfs:Class ;
+    rdfs:label "Component" ;
+    rdfs:comment "A high-level attribute grouping variable." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "Component" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:SDPTestTemplate a rdfs:Class ;
+    rdfs:label "SDPTestTemplate" ;
+    rdfs:comment "A component for use as a mock template for defining file annotation metadata for an SDP." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "SDP Test Template" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:Component, amp-aim:Filename, amp-aim:FileFormat, amp-aim:ResourceType, amp-aim:SampleManifestSynID ;
+    dca:validationRules ( ) .
+
+amp-aim:Filename a rdfs:Class ;
+    rdfs:label "Filename" ;
+    rdfs:comment "Name of a file. Must be included in DependsOn for all file manifest/annotation templates." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "Filename" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:FileFormat a rdfs:Class ;
+    rdfs:label "FileFormat" ;
+    rdfs:comment "Standard file format name or file extension" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "fileFormat" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:ResourceType a rdfs:Class ;
+    rdfs:label "ResourceType" ;
+    rdfs:comment "High level classification of a file’s content" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "resourceType" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:SampleManifestSynID a rdfs:Class ;
+    rdfs:label "SampleManifestSynID" ;
+    rdfs:comment "Synapse ID of SDP sample manifest that maps samples to each multi-specimen file." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "sampleManifestSynID" ;
+    dca:required true ;
+    dca:validationRules ( "regex search ^syn[0-9]{8} error" ) .
+
+amp-aim:CyTOFSDPAnnotationTemplate a rdfs:Class ;
+    rdfs:label "CyTOFSDPAnnotationTemplate" ;
+    rdfs:comment "A component for collecting file-level metadata, i.e., annotations, for AMP AIM CyTOF standard data package (SDP)." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "CyTOF SDP Annotation Template" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:Component, amp-aim:Filename, amp-aim:FileFormat, amp-aim:ResourceType, amp-aim:SampleManifestSynID, amp-aim:TargetPanel, amp-aim:TargetPanelSynID ;
+    dca:validationRules ( ) .
+
+amp-aim:TargetPanel a rdfs:Class ;
+    rdfs:label "TargetPanel" ;
+    rdfs:comment "Unique or established human-readable name assigned to the panel of targets profiled in the experimental data files" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "targetPanel" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:TargetPanelSynID a rdfs:Class ;
+    rdfs:label "TargetPanelSynID" ;
+    rdfs:comment "Synapse ID of TargetPanel metadata file." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "targetPanelSynID" ;
+    dca:required true ;
+    dca:validationRules ( "regex search ^syn[0-9]{8} error" ) .
+
+amp-aim:OlinkAssayMetadataTemplate a rdfs:Class ;
+    rdfs:label "OlinkAssayMetadataTemplate" ;
+    rdfs:comment "A component for collecting assay-level metadata that will be propagated to file-level annotations. Olink assay metadata should be provided for each data level." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "Olink Assay Metadata Template" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:Component, amp-aim:Assay, amp-aim:DataLevel, amp-aim:SampleManifestSynID, amp-aim:TargetPanel, amp-aim:TargetPanelSize, amp-aim:TargetPanelSynID, amp-aim:Platform, amp-aim:SoftwareAndVersion ;
+    dca:validationRules ( ) .
+
+amp-aim:Assay a rdfs:Class ;
+    rdfs:label "Assay" ;
+    rdfs:comment "The technology used to generate the data in this file. For multimodal datasets with concomitant profiling of biospecimen select all assays that apply. e.g., the GEX files from a CITE-seq experiment should be labeled with both 'scRNASeq' and 'CITESeq'." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "assay" ;
+    dca:required true ;
+    dca:validationRules ( "list like error" ) .
+
+amp-aim:DataLevel a rdfs:Class ;
+    rdfs:label "DataLevel" ;
+    rdfs:comment "The processing level of the data as defined for the SDP" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "dataLevel" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:TargetPanelSize a rdfs:Class ;
+    rdfs:label "TargetPanelSize" ;
+    rdfs:comment "The number of targets profiled in `targetPanel`." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "targetPanelSize" ;
+    dca:required false ;
+    dca:validationRules ( "int error" ) .
+
+amp-aim:Platform a rdfs:Class ;
+    rdfs:label "Platform" ;
+    rdfs:comment "The specific version (manufacturer, model, etc.) of a technology that is used to carry out a laboratory or computational experiment. Specify where applicable for experimental data files, else enter 'none'. In most cases only a single label is expected, however multiple selections can be provided in comma-delimited list where applicable e.g., for 10x Genomics fastq files please specify both the 10x instrument and the sequencing platform." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "platform" ;
+    dca:required true ;
+    dca:validationRules ( "list like error" ) .
+
+amp-aim:SoftwareAndVersion a rdfs:Class ;
+    rdfs:label "SoftwareAndVersion" ;
+    rdfs:comment "Relevant software and version used to generate the data file. If N/A please select 'none'." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "softwareAndVersion" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:OlinkFileAnnotationTemplate a rdfs:Class ;
+    rdfs:label "OlinkFileAnnotationTemplate" ;
+    rdfs:comment "A component for collecting file-level metadata, i.e., annotations, for AMP AIM Olink standard data packages (SDP)." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "Olink File Annotation Template" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:Component, amp-aim:Filename, amp-aim:FileFormat, amp-aim:ResourceType ;
+    dca:validationRules ( ) .
+
+amp-aim:Csv a rdfs:Class ;
+    rdfs:label "Csv" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "csv" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Tsv a rdfs:Class ;
+    rdfs:label "Tsv" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "tsv" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Txt a rdfs:Class ;
+    rdfs:label "Txt" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "txt" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Xlsx a rdfs:Class ;
+    rdfs:label "Xlsx" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "xlsx" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Xls a rdfs:Class ;
+    rdfs:label "Xls" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "xls" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Fcs a rdfs:Class ;
+    rdfs:label "Fcs" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "fcs" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Docx a rdfs:Class ;
+    rdfs:label "Docx" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "docx" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Erate a rdfs:Class ;
+    rdfs:label "Erate" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "erate" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Rec a rdfs:Class ;
+    rdfs:label "Rec" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "rec" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Info a rdfs:Class ;
+    rdfs:label "Info" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "info" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Vcf a rdfs:Class ;
+    rdfs:label "Vcf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "vcf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Dose a rdfs:Class ;
+    rdfs:label "Dose" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "dose" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Tbi a rdfs:Class ;
+    rdfs:label "Tbi" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "tbi" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Fam a rdfs:Class ;
+    rdfs:label "Fam" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "fam" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Bim a rdfs:Class ;
+    rdfs:label "Bim" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "bim" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Bed a rdfs:Class ;
+    rdfs:label "Bed" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "bed" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Bam a rdfs:Class ;
+    rdfs:label "Bam" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "bam" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:H5 a rdfs:Class ;
+    rdfs:label "H5" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "h5" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Mtx a rdfs:Class ;
+    rdfs:label "Mtx" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "mtx" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Bai a rdfs:Class ;
+    rdfs:label "Bai" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "bai" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Rds a rdfs:Class ;
+    rdfs:label "Rds" ;
+    rdfs:comment "Is a valid value of `fileFormat` that triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "rds" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:RObjectClass ;
+    dca:validationRules ( ) .
+
+amp-aim:Pdf a rdfs:Class ;
+    rdfs:label "Pdf" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "pdf" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Tgz a rdfs:Class ;
+    rdfs:label "Tgz" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "tgz" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Zip a rdfs:Class ;
+    rdfs:label "Zip" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "zip" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Fastq a rdfs:Class ;
+    rdfs:label "Fastq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "fastq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Parquet a rdfs:Class ;
+    rdfs:label "Parquet" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "parquet" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Geojson a rdfs:Class ;
+    rdfs:label "Geojson" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "geojson" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/Tar.gz> a rdfs:Class ;
+    rdfs:label "Tar.gz" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "tar.gz" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:H5ad a rdfs:Class ;
+    rdfs:label "H5ad" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "h5ad" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Omiq a rdfs:Class ;
+    rdfs:label "Omiq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:FileFormat ;
+    dca:displayName "omiq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:BiospecimenMetadataTemplate a rdfs:Class ;
+    rdfs:label "BiospecimenMetadataTemplate" ;
+    rdfs:comment "Metadata about biospecimens collected from study subjects" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "Biospecimen Metadata Template" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:Component, amp-aim:SubjectID, amp-aim:VisitID, amp-aim:ProjectSampleID, amp-aim:ParentProjectSampleID, amp-aim:BiospecimenType, amp-aim:BiospecimenSubtype ;
+    dca:validationRules ( ) .
+
+amp-aim:SubjectID a rdfs:Class ;
+    rdfs:label "SubjectID" ;
+    rdfs:comment "Unique identifier assigned to each study participant. Combination of disease team, site ID, and 3-digit ID" ;
+    rdfs:subClassOf amp-aim:Patient ;
+    dca:displayName "subjectID" ;
+    dca:required true ;
+    dca:validationRules ( "regex search [4-7][0-9]{2}-[0-9]{3} error" ) .
+
+amp-aim:VisitID a rdfs:Class ;
+    rdfs:label "VisitID" ;
+    rdfs:comment "ID associated with specific type of patient visit" ;
+    rdfs:subClassOf amp-aim:Clinical ;
+    dca:displayName "visitID" ;
+    dca:required true ;
+    dca:validationRules ( "regex search ^V0[0-9]|^VA[1-9]|^VE[1-9]|^VC[1-9] error" ) .
+
+amp-aim:ProjectSampleID a rdfs:Class ;
+    rdfs:label "ProjectSampleID" ;
+    rdfs:comment "Project Sample ID, aka PSID, is a unique biospecimen identifier, the format can vary depending on the specimen or container type." ;
+    rdfs:subClassOf amp-aim:Biospecimen ;
+    dca:displayName "projectSampleID" ;
+    dca:required true ;
+    dca:validationRules ( "regex search [0-9]{10}|[0-9]{15}|^K[0-9]{4}-[1-9][0-9]{3} error" ) .
+
+amp-aim:ParentProjectSampleID a rdfs:Class ;
+    rdfs:label "ParentProjectSampleID" ;
+    rdfs:comment "The parent PSID indicates the biospecimen from which child and slide biospecimen were derived allowing for biospecimen provenance to be described and tracked." ;
+    rdfs:subClassOf amp-aim:Biospecimen ;
+    dca:displayName "parentProjectSampleID" ;
+    dca:required false ;
+    dca:validationRules ( "regex search [0-9]{10}|[0-9]{15}|^K[0-9]{4}-[1-9][0-9]{3} error" ) .
+
+amp-aim:BiospecimenType a rdfs:Class ;
+    rdfs:label "BiospecimenType" ;
+    rdfs:comment "A label indicating the biological material collected for experimentation and data collection. Where applicable, provide all types in a comma-separated list." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "biospecimenType" ;
+    dca:required true ;
+    dca:validationRules ( "BiospecimenMetadataTemplate" "RASLEBiospecimenMetadataTemplate" "all_other_components" ) .
+
+amp-aim:BiospecimenSubtype a rdfs:Class ;
+    rdfs:label "BiospecimenSubtype" ;
+    rdfs:comment "Biospecimen status before experimental data collection." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "biospecimenSubtype" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ClinicalMetadataTemplate a rdfs:Class ;
+    rdfs:label "ClinicalMetadataTemplate" ;
+    rdfs:comment "A template outlining clinical metadata to collect for study subjects." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "Clinical Metadata Template" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:Component, amp-aim:SubjectID, amp-aim:VisitID, amp-aim:Diagnosis, amp-aim:Age, amp-aim:AgeUnits, amp-aim:Sex, amp-aim:Race, amp-aim:Ethnicity, amp-aim:Height, amp-aim:HeightUnits, amp-aim:Weight, amp-aim:WeightUnits, amp-aim:Comorbidities, amp-aim:PASI ;
+    dca:validationRules ( ) .
+
+amp-aim:Diagnosis a rdfs:Class ;
+    rdfs:label "Diagnosis" ;
+    rdfs:comment "A high-level classifier indicating the disease status of an individual." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "diagnosis" ;
+    dca:required true ;
+    dca:validationRules ( "regex search ^DOID error" ) .
+
+amp-aim:Age a rdfs:Class ;
+    rdfs:label "Age" ;
+    rdfs:comment "Age at which subject was enrolled in study or age at corresponding visit and data collection event." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "age" ;
+    dca:required true ;
+    dca:validationRules ( "num error" ) .
+
+amp-aim:AgeUnits a rdfs:Class ;
+    rdfs:label "AgeUnits" ;
+    rdfs:comment "The unit of measure used for `ageEnrollment` and `ageDiagnosis`" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "ageUnits" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:Sex a rdfs:Class ;
+    rdfs:label "Sex" ;
+    rdfs:comment "A textual description of a person's sex at birth." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "sex" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:Race a rdfs:Class ;
+    rdfs:label "Race" ;
+    rdfs:comment "A textual description of a person's race." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "race" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Ethnicity a rdfs:Class ;
+    rdfs:label "Ethnicity" ;
+    rdfs:comment "The ethnicity of a person." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "ethnicity" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Height a rdfs:Class ;
+    rdfs:label "Height" ;
+    rdfs:comment "Standing height of subject." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "height" ;
+    dca:required true ;
+    dca:validationRules ( "num error" ) .
+
+amp-aim:HeightUnits a rdfs:Class ;
+    rdfs:label "HeightUnits" ;
+    rdfs:comment "Unit of measure of value provided for `height`." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "heightUnits" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:Weight a rdfs:Class ;
+    rdfs:label "Weight" ;
+    rdfs:comment "Weight of subject." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "weight" ;
+    dca:required true ;
+    dca:validationRules ( "num error" ) .
+
+amp-aim:WeightUnits a rdfs:Class ;
+    rdfs:label "WeightUnits" ;
+    rdfs:comment "Abbreviated unit of measure of value provided for `weight`." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "weightUnits" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:Comorbidities a rdfs:Class ;
+    rdfs:label "Comorbidities" ;
+    rdfs:comment "Any diseases or medical condition that is simultaneously present in addition to `diagnosis`." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "comorbidities" ;
+    dca:required false ;
+    dca:validationRules ( "list like error" ) .
+
+amp-aim:PASI a rdfs:Class ;
+    rdfs:label "PASI" ;
+    rdfs:comment "Psoriasis Area and Severity Index, is a measurement of the discoloration, thickness, scaling, and coverage of psoriasis plaques." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "PASI" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Patient a rdfs:Class ;
+    rdfs:label "Patient" ;
+    rdfs:comment "Patient Component" ;
+    rdfs:subClassOf amp-aim:IndividualOrganism ;
+    dca:displayName "Patient" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:Component, amp-aim:SubjectID ;
+    dca:validationRules ( ) .
+
+amp-aim:Clinical a rdfs:Class ;
+    rdfs:label "Clinical" ;
+    rdfs:comment "Clinical Component" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "Clinical" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:Component, amp-aim:SubjectID, amp-aim:VisitID ;
+    dca:validationRules ( ) .
+
+amp-aim:IndividualOrganism a rdfs:Class ;
+    rdfs:label "IndividualOrganism" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "Individual Organism" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Biospecimen a rdfs:Class ;
+    rdfs:label "Biospecimen" ;
+    rdfs:comment "A patient biological sample" ;
+    rdfs:subClassOf amp-aim:Biosample ;
+    dca:displayName "Biospecimen" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:Component, amp-aim:ProjectSampleID ;
+    dca:validationRules ( ) .
+
+amp-aim:Biosample a rdfs:Class ;
+    rdfs:label "Biosample" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "Biosample" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Control a rdfs:Class ;
+    rdfs:label "Control" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "control" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SLE a rdfs:Class ;
+    rdfs:label "SLE" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "SLE" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:RA a rdfs:Class ;
+    rdfs:label "RA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "RA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:At-RiskRA a rdfs:Class ;
+    rdfs:label "At-RiskRA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "At-Risk RA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Vitiligo a rdfs:Class ;
+    rdfs:label "Vitiligo" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "vitiligo" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Dermatomyositis a rdfs:Class ;
+    rdfs:label "Dermatomyositis" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "dermatomyositis" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:PsO a rdfs:Class ;
+    rdfs:label "PsO" ;
+    rdfs:comment "A valid value of `diagnosis` that triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "PsO" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:PsoriasisType ;
+    dca:validationRules ( ) .
+
+amp-aim:PsA a rdfs:Class ;
+    rdfs:label "PsA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "PsA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Scleroderma a rdfs:Class ;
+    rdfs:label "Scleroderma" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "scleroderma" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SjD a rdfs:Class ;
+    rdfs:label "SjD" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "SjD" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:LN a rdfs:Class ;
+    rdfs:label "LN" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "LN" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:CLE a rdfs:Class ;
+    rdfs:label "CLE" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Diagnosis ;
+    dca:displayName "CLE" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Experimentaldata a rdfs:Class ;
+    rdfs:label "Experimentaldata" ;
+    rdfs:comment "Any file that contains machine or code generated data that is experimentally derived. Is a valid value of Resource Type and when selected triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:ResourceType ;
+    dca:displayName "experimental data" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:DataLevel, amp-aim:SpecimenModality ;
+    dca:validationRules ( ) .
+
+amp-aim:Metadata a rdfs:Class ;
+    rdfs:label "Metadata" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:ResourceType ;
+    dca:displayName "metadata" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Code a rdfs:Class ;
+    rdfs:label "Code" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:ResourceType ;
+    dca:displayName "code" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:None a rdfs:Class ;
+    rdfs:label "None" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType, amp-aim:TargetPanel, amp-aim:Platform, amp-aim:SoftwareAndVersion ;
+    dca:displayName "none" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Urine a rdfs:Class ;
+    rdfs:label "Urine" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "urine" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Stool a rdfs:Class ;
+    rdfs:label "Stool" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "stool" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Wholeblood a rdfs:Class ;
+    rdfs:label "Wholeblood" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "whole blood" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Serum a rdfs:Class ;
+    rdfs:label "Serum" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "serum" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Plasma a rdfs:Class ;
+    rdfs:label "Plasma" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "plasma" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:PBMCs a rdfs:Class ;
+    rdfs:label "PBMCs" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "PBMCs" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Totalleukocytes a rdfs:Class ;
+    rdfs:label "Totalleukocytes" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "total leukocytes" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Kidneybiopsy a rdfs:Class ;
+    rdfs:label "Kidneybiopsy" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "kidney biopsy" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Synovialfluid a rdfs:Class ;
+    rdfs:label "Synovialfluid" ;
+    rdfs:comment "Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "synovial fluid" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:SynovialCollectionProcedure, amp-aim:FMAID ;
+    dca:validationRules ( ) .
+
+amp-aim:Skinbiopsy a rdfs:Class ;
+    rdfs:label "Skinbiopsy" ;
+    rdfs:comment "Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "skin biopsy" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:SkinSiteStatus, amp-aim:FMAID ;
+    dca:validationRules ( ) .
+
+amp-aim:Salivarygland a rdfs:Class ;
+    rdfs:label "Salivarygland" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "salivary gland" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Saliva a rdfs:Class ;
+    rdfs:label "Saliva" ;
+    rdfs:comment "Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "saliva" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:SalivaCollectionProcedure ;
+    dca:validationRules ( ) .
+
+amp-aim:Skinswab a rdfs:Class ;
+    rdfs:label "Skinswab" ;
+    rdfs:comment "Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "skin swab" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:SkinSiteStatus, amp-aim:FMAID ;
+    dca:validationRules ( ) .
+
+amp-aim:Synovialtissue a rdfs:Class ;
+    rdfs:label "Synovialtissue" ;
+    rdfs:comment "Is a valid value of `biospecimenType` that triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "synovial tissue" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:SynovialCollectionProcedure, amp-aim:FMAID ;
+    dca:validationRules ( ) .
+
+amp-aim:Uvea a rdfs:Class ;
+    rdfs:label "Uvea" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenType ;
+    dca:displayName "uvea" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Nucleisuspension a rdfs:Class ;
+    rdfs:label "Nucleisuspension" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenSubtype ;
+    dca:displayName "nuclei suspension" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Cellsuspension a rdfs:Class ;
+    rdfs:label "Cellsuspension" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenSubtype ;
+    dca:displayName "cell suspension" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Freshtissue a rdfs:Class ;
+    rdfs:label "Freshtissue" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenSubtype ;
+    dca:displayName "fresh tissue" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Frozentissue a rdfs:Class ;
+    rdfs:label "Frozentissue" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenSubtype ;
+    dca:displayName "frozen tissue" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:FFPEtissue a rdfs:Class ;
+    rdfs:label "FFPEtissue" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenSubtype ;
+    dca:displayName "FFPE tissue" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Flow-sortedcells a rdfs:Class ;
+    rdfs:label "Flow-sortedcells" ;
+    rdfs:comment "A valid value of `biospecimenSubtype` that triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:BiospecimenSubtype ;
+    dca:displayName "flow-sorted cells" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:FACSPopulation, amp-aim:CellOntology ;
+    dca:validationRules ( ) .
+
+amp-aim:PFA-fixedtissue a rdfs:Class ;
+    rdfs:label "PFA-fixedtissue" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:BiospecimenSubtype ;
+    dca:displayName "PFA-fixed tissue" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:MetadataType a rdfs:Class ;
+    rdfs:label "MetadataType" ;
+    rdfs:comment "A label further classifying the content of the metadata file." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "metadataType" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:Samplemanifest a rdfs:Class ;
+    rdfs:label "Samplemanifest" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:MetadataType ;
+    dca:displayName "sample manifest" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Assaymetadata a rdfs:Class ;
+    rdfs:label "Assaymetadata" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:MetadataType ;
+    dca:displayName "assay metadata" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Protocol a rdfs:Class ;
+    rdfs:label "Protocol" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:MetadataType ;
+    dca:displayName "protocol" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Datastandarddocument a rdfs:Class ;
+    rdfs:label "Datastandarddocument" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:MetadataType ;
+    dca:displayName "data standard document" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Template a rdfs:Class ;
+    rdfs:label "Template" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:MetadataType ;
+    dca:displayName "template" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Projectdescription a rdfs:Class ;
+    rdfs:label "Projectdescription" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:MetadataType ;
+    dca:displayName "project description" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ScRNASeq a rdfs:Class ;
+    rdfs:label "ScRNASeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "scRNASeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:CyTOF a rdfs:Class ;
+    rdfs:label "CyTOF" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "CyTOF" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Xenium a rdfs:Class ;
+    rdfs:label "Xenium" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay, amp-aim:Platform ;
+    dca:displayName "Xenium" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:OlinkExploreHT a rdfs:Class ;
+    rdfs:label "OlinkExploreHT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "Olink Explore HT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:CITESeq a rdfs:Class ;
+    rdfs:label "CITESeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "CITESeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SnRNASeq a rdfs:Class ;
+    rdfs:label "SnRNASeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "snRNASeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SnATACSeq a rdfs:Class ;
+    rdfs:label "SnATACSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "snATACSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:RNASeq a rdfs:Class ;
+    rdfs:label "RNASeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "RNASeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:MultiplexedELISA a rdfs:Class ;
+    rdfs:label "MultiplexedELISA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "multiplexed ELISA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SNParray a rdfs:Class ;
+    rdfs:label "SNParray" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "SNP array" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Imagingmasscytometry a rdfs:Class ;
+    rdfs:label "Imagingmasscytometry" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "imaging mass cytometry" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/H&E> a rdfs:Class ;
+    rdfs:label "H&E" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "H&E" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ASAPSeq a rdfs:Class ;
+    rdfs:label "ASAPSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "ASAPSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:CosMX a rdfs:Class ;
+    rdfs:label "CosMX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "CosMX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SerialIHC a rdfs:Class ;
+    rdfs:label "SerialIHC" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "serial IHC" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Imagingmassspectrometry a rdfs:Class ;
+    rdfs:label "Imagingmassspectrometry" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "imaging mass spectrometry" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/LC-MS/MS> a rdfs:Class ;
+    rdfs:label "LC-MS/MS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "LC-MS/MS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:CE-MS a rdfs:Class ;
+    rdfs:label "CE-MS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "CE-MS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:VDJSeq a rdfs:Class ;
+    rdfs:label "VDJSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "VDJSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ScVDJSeq a rdfs:Class ;
+    rdfs:label "ScVDJSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "scVDJSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Featurebarcodesequencing a rdfs:Class ;
+    rdfs:label "Featurebarcodesequencing" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "feature barcode sequencing" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SomaScan a rdfs:Class ;
+    rdfs:label "SomaScan" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "SomaScan" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:WES a rdfs:Class ;
+    rdfs:label "WES" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "WES" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:WGS a rdfs:Class ;
+    rdfs:label "WGS" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "WGS" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Flowcytometry a rdfs:Class ;
+    rdfs:label "Flowcytometry" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "flow cytometry" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:NULISA a rdfs:Class ;
+    rdfs:label "NULISA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Assay ;
+    dca:displayName "NULISA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/1> a rdfs:Class ;
+    rdfs:label "1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:DataLevel ;
+    dca:displayName "1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/2> a rdfs:Class ;
+    rdfs:label "2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:DataLevel ;
+    dca:displayName "2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/3> a rdfs:Class ;
+    rdfs:label "3" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:DataLevel ;
+    dca:displayName "3" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/4> a rdfs:Class ;
+    rdfs:label "4" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:DataLevel ;
+    dca:displayName "4" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/5> a rdfs:Class ;
+    rdfs:label "5" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:DataLevel ;
+    dca:displayName "5" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:CyTOFXT a rdfs:Class ;
+    rdfs:label "CyTOFXT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "CyTOF XT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:HeliosMassCytometer a rdfs:Class ;
+    rdfs:label "HeliosMassCytometer" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Helios Mass Cytometer" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Hyperion a rdfs:Class ;
+    rdfs:label "Hyperion" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Hyperion" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:IlluminaNextSeq500 a rdfs:Class ;
+    rdfs:label "IlluminaNextSeq500" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Illumina NextSeq 500" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:IlluminaHiSeq2500 a rdfs:Class ;
+    rdfs:label "IlluminaHiSeq2500" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Illumina HiSeq 2500" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:IlluminaNovaSeq6000 a rdfs:Class ;
+    rdfs:label "IlluminaNovaSeq6000" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Illumina NovaSeq 6000" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:IlluminaMiSeq a rdfs:Class ;
+    rdfs:label "IlluminaMiSeq" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Illumina MiSeq" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:IlluminaNovaSeqX a rdfs:Class ;
+    rdfs:label "IlluminaNovaSeqX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Illumina NovaSeq X" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ChromiumX a rdfs:Class ;
+    rdfs:label "ChromiumX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Chromium X" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ChromiumiX a rdfs:Class ;
+    rdfs:label "ChromiumiX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Chromium iX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ChromiumXo a rdfs:Class ;
+    rdfs:label "ChromiumXo" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Chromium Xo" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ChromiumController a rdfs:Class ;
+    rdfs:label "ChromiumController" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Chromium Controller" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:VisiumCytAssist a rdfs:Class ;
+    rdfs:label "VisiumCytAssist" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Platform ;
+    dca:displayName "Visium CytAssist" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:OMIQ a rdfs:Class ;
+    rdfs:label "OMIQ" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "OMIQ" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv9.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv9.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v9.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv8.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv8.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v8.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv8.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv8.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v8.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv7.2.0> a rdfs:Class ;
+    rdfs:label "CellRangerv7.2.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v7.2.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv7.1.0> a rdfs:Class ;
+    rdfs:label "CellRangerv7.1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v7.1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv7.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv7.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v7.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv7.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv7.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v7.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv6.1.2> a rdfs:Class ;
+    rdfs:label "CellRangerv6.1.2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.1.2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv6.1.1> a rdfs:Class ;
+    rdfs:label "CellRangerv6.1.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.1.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv6.1.0> a rdfs:Class ;
+    rdfs:label "CellRangerv6.1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv6.0.2> a rdfs:Class ;
+    rdfs:label "CellRangerv6.0.2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.0.2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv6.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv6.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv6.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv6.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v6.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv5.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv5.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v5.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv5.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv5.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v5.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv4.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv4.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v4.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv3.1.0> a rdfs:Class ;
+    rdfs:label "CellRangerv3.1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v3.1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv3.0.2> a rdfs:Class ;
+    rdfs:label "CellRangerv3.0.2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v3.0.2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv3.0.1> a rdfs:Class ;
+    rdfs:label "CellRangerv3.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v3.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/CellRangerv3.0.0> a rdfs:Class ;
+    rdfs:label "CellRangerv3.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Cell Ranger v3.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/SpaceRanger3.1.2> a rdfs:Class ;
+    rdfs:label "SpaceRanger3.1.2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Space Ranger 3.1.2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/SpaceRanger3.1.1> a rdfs:Class ;
+    rdfs:label "SpaceRanger3.1.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Space Ranger 3.1.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/SpaceRanger3.1.0> a rdfs:Class ;
+    rdfs:label "SpaceRanger3.1.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Space Ranger 3.1.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/SpaceRanger3.0.1> a rdfs:Class ;
+    rdfs:label "SpaceRanger3.0.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Space Ranger 3.0.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/SpaceRanger3.0.0> a rdfs:Class ;
+    rdfs:label "SpaceRanger3.0.0" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Space Ranger 3.0.0" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:OMIQ2024-12 a rdfs:Class ;
+    rdfs:label "OMIQ2024-12" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "OMIQ 2024-12" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:OlinkNPX a rdfs:Class ;
+    rdfs:label "OlinkNPX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SoftwareAndVersion ;
+    dca:displayName "Olink NPX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SpecimenModality a rdfs:Class ;
+    rdfs:label "SpecimenModality" ;
+    rdfs:comment "Label assigned to experimental data files indicating whether the data contained corresponds to a single or multiple biospecimens" ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "specimenModality" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:Singlespecimen a rdfs:Class ;
+    rdfs:label "Singlespecimen" ;
+    rdfs:comment "An experimental data file that contains data points generated from a single biospecimen. Is a valid value of SpecimenModality that triggers conditional dependencies for other attributes." ;
+    rdfs:subClassOf amp-aim:SpecimenModality ;
+    dca:displayName "single specimen" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:ProjectSampleID ;
+    dca:validationRules ( ) .
+
+amp-aim:Multispecimen a rdfs:Class ;
+    rdfs:label "Multispecimen" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SpecimenModality ;
+    dca:displayName "multispecimen" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:MDIPA a rdfs:Class ;
+    rdfs:label "MDIPA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:TargetPanel ;
+    dca:displayName "MDIPA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:OlinkExploreHTv2024-10-31 a rdfs:Class ;
+    rdfs:label "OlinkExploreHTv2024-10-31" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:TargetPanel ;
+    dca:displayName "Olink Explore HT v2024-10-31" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:NucleicAcidSource a rdfs:Class ;
+    rdfs:label "NucleicAcidSource" ;
+    rdfs:comment "The source of the nucleic acid used as input for sequencing library fragments. Select all that apply, though in most cases only a single label is expected." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "nucleicAcidSource" ;
+    dca:required true ;
+    dca:validationRules ( "list like error" ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/Poly(A)RNA> a rdfs:Class ;
+    rdfs:label "Poly(A)RNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "poly(A) RNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:RRNA-depletedRNA a rdfs:Class ;
+    rdfs:label "RRNA-depletedRNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "rRNA-depleted RNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:GDNA a rdfs:Class ;
+    rdfs:label "GDNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "gDNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Surfaceproteinfeaturebarcode a rdfs:Class ;
+    rdfs:label "Surfaceproteinfeaturebarcode" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "surface protein feature barcode" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Intracellularproteinfeaturebarcode a rdfs:Class ;
+    rdfs:label "Intracellularproteinfeaturebarcode" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "intracellular protein feature barcode" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Antigencapturebarcode a rdfs:Class ;
+    rdfs:label "Antigencapturebarcode" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "antigen capture barcode" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Multiplexingoligo a rdfs:Class ;
+    rdfs:label "Multiplexingoligo" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "multiplexing oligo" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:BCRmRNA a rdfs:Class ;
+    rdfs:label "BCRmRNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "BCR mRNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:TCRmRNA a rdfs:Class ;
+    rdfs:label "TCRmRNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "TCR mRNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Tn5-accessiblegDNA a rdfs:Class ;
+    rdfs:label "Tn5-accessiblegDNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "Tn5-accessible gDNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Globin-depletedRNA a rdfs:Class ;
+    rdfs:label "Globin-depletedRNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "globin-depleted RNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:CRISPRprotospacerfeaturebarcode a rdfs:Class ;
+    rdfs:label "CRISPRprotospacerfeaturebarcode" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:NucleicAcidSource ;
+    dca:displayName "CRISPR protospacer feature barcode" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:LibraryID a rdfs:Class ;
+    rdfs:label "LibraryID" ;
+    rdfs:comment "A library label or name, unique within an experiment, used to distinguish sequencing libraries." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "libraryID" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Batch a rdfs:Class ;
+    rdfs:label "Batch" ;
+    rdfs:comment "A label or identifier that is unique within a given experiment or dataset used to group data related to sample processing, sample pooling, or data collection batches. These batches often introduce technical effects that can be important to account for in downstream analyses." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "batch" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:AlignmentReference a rdfs:Class ;
+    rdfs:label "AlignmentReference" ;
+    rdfs:comment "The genomic/transcriptomic reference used for performing read alignment against." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "alignmentReference" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/10xCellRangerHumanGRCh382024-A> a rdfs:Class ;
+    rdfs:label "10xCellRangerHumanGRCh382024-A" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:AlignmentReference ;
+    dca:displayName "10x Cell Ranger Human GRCh38 2024-A" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/10xCellRangerHumanGRCh382020-A> a rdfs:Class ;
+    rdfs:label "10xCellRangerHumanGRCh382020-A" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:AlignmentReference ;
+    dca:displayName "10x Cell Ranger Human GRCh38 2020-A" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:LibraryPrepMethod a rdfs:Class ;
+    rdfs:label "LibraryPrepMethod" ;
+    rdfs:comment "Sequencing library preparation method or kit used to create the library. If no commercially available kit was used, please select 'in-house library prep'." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "libraryPrepMethod" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:NEBNextUltraIIDirectionalRNALibrary a rdfs:Class ;
+    rdfs:label "NEBNextUltraIIDirectionalRNALibrary" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "NEBNext Ultra II Directional RNA Library" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:QIAseqmiRNALibrary a rdfs:Class ;
+    rdfs:label "QIAseqmiRNALibrary" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "QIAseq miRNA Library" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SMART-Seqv4UltraLowInputRNA a rdfs:Class ;
+    rdfs:label "SMART-Seqv4UltraLowInputRNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "SMART-Seq v4 Ultra Low Input RNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:NexteraXT a rdfs:Class ;
+    rdfs:label "NexteraXT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Nextera XT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SMARTerStrandedTotalRNAv2 a rdfs:Class ;
+    rdfs:label "SMARTerStrandedTotalRNAv2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "SMARTer Stranded Total RNA v2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:NexteraXTDNA a rdfs:Class ;
+    rdfs:label "NexteraXTDNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Nextera XT DNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:TruSeqStrandedmRNA a rdfs:Class ;
+    rdfs:label "TruSeqStrandedmRNA" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "TruSeq Stranded mRNA" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ChromiumSingleCellHumanTCRAmplificationKit a rdfs:Class ;
+    rdfs:label "ChromiumSingleCellHumanTCRAmplificationKit" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Chromium Single Cell Human TCR Amplification Kit" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ChromiumSingleCellHumanBCRAmplificationKit a rdfs:Class ;
+    rdfs:label "ChromiumSingleCellHumanBCRAmplificationKit" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Chromium Single Cell Human BCR Amplification Kit" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SMART-SeqHumanBCRwithUMI a rdfs:Class ;
+    rdfs:label "SMART-SeqHumanBCRwithUMI" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "SMART-Seq Human BCR with UMI" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SMART-SeqHumanTCRwithUMI a rdfs:Class ;
+    rdfs:label "SMART-SeqHumanTCRwithUMI" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "SMART-Seq Human TCR with UMI" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:TakaraHumanBCRprofilingforIllumina a rdfs:Class ;
+    rdfs:label "TakaraHumanBCRprofilingforIllumina" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Takara Human BCR profiling for Illumina" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:TakaraHumanTCRprofilingforIllumina a rdfs:Class ;
+    rdfs:label "TakaraHumanTCRprofilingforIllumina" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Takara Human TCR profiling for Illumina" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:TakaraHumanTCRv2profilingforIllumina a rdfs:Class ;
+    rdfs:label "TakaraHumanTCRv2profilingforIllumina" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Takara Human TCRv2 profiling for Illumina" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:TakaraHumanscTCRprofilingforIllumina a rdfs:Class ;
+    rdfs:label "TakaraHumanscTCRprofilingforIllumina" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Takara Human scTCR profiling for Illumina" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:NEBNextHumanImmuneSequencingKit a rdfs:Class ;
+    rdfs:label "NEBNextHumanImmuneSequencingKit" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "NEBNext Human Immune Sequencing Kit" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/10xChromium3GEX> a rdfs:Class ;
+    rdfs:label "10xChromium3GEX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "10x Chromium 3 GEX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/10xChromium3GEXv3.1> a rdfs:Class ;
+    rdfs:label "10xChromium3GEXv3.1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "10x Chromium 3 GEX v3.1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/10xChromium5GEX> a rdfs:Class ;
+    rdfs:label "10xChromium5GEX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "10x Chromium 5 GEX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/10xUniversal3GEX> a rdfs:Class ;
+    rdfs:label "10xUniversal3GEX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "10x Universal 3 GEX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/10xUniversal5GEX> a rdfs:Class ;
+    rdfs:label "10xUniversal5GEX" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "10x Universal 5 GEX" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/10xChromiumFlex> a rdfs:Class ;
+    rdfs:label "10xChromiumFlex" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "10x Chromium Flex" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:CEL-Seq2 a rdfs:Class ;
+    rdfs:label "CEL-Seq2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "CEL-Seq2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ChromiumscATACKitv2 a rdfs:Class ;
+    rdfs:label "ChromiumscATACKitv2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Chromium scATAC Kit v2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:In-houselibraryprep a rdfs:Class ;
+    rdfs:label "In-houselibraryprep" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "in-house library prep" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:ChromiumNextGEMChipG a rdfs:Class ;
+    rdfs:label "ChromiumNextGEMChipG" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Chromium Next GEM Chip G" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:FluidigmC1HT a rdfs:Class ;
+    rdfs:label "FluidigmC1HT" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:LibraryPrepMethod ;
+    dca:displayName "Fluidigm C1 HT" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:FMAID a rdfs:Class ;
+    rdfs:label "FMAID" ;
+    rdfs:comment "Functional Model of Anatomy ontology ID corresponding to the anatomical site and origin of the biospecimen. This is a conditionally dependent attribute triggered by a subset of `biospecimenType`." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "FMAID" ;
+    dca:required true ;
+    dca:validationRules ( "int error" ) .
+
+amp-aim:SkinSiteStatus a rdfs:Class ;
+    rdfs:label "SkinSiteStatus" ;
+    rdfs:comment "Disease manifestation status of skin biospecimen." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "skinSiteStatus" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:Lesional a rdfs:Class ;
+    rdfs:label "Lesional" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SkinSiteStatus ;
+    dca:displayName "lesional" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Lesionalproximal a rdfs:Class ;
+    rdfs:label "Lesionalproximal" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SkinSiteStatus ;
+    dca:displayName "lesional proximal" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Non-lesional a rdfs:Class ;
+    rdfs:label "Non-lesional" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SkinSiteStatus ;
+    dca:displayName "non-lesional" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Healthycontrol a rdfs:Class ;
+    rdfs:label "Healthycontrol" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SkinSiteStatus ;
+    dca:displayName "healthy control" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SalivaCollectionProcedure a rdfs:Class ;
+    rdfs:label "SalivaCollectionProcedure" ;
+    rdfs:comment "Classification of saliva collection procedure. This is a conditionally dependent attribute triggered for saliva `biospecimenType`." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "salivaCollectionProcedure" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:Stimulated a rdfs:Class ;
+    rdfs:label "Stimulated" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SalivaCollectionProcedure ;
+    dca:displayName "stimulated" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Unstimulated a rdfs:Class ;
+    rdfs:label "Unstimulated" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SalivaCollectionProcedure ;
+    dca:displayName "unstimulated" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SynovialCollectionProcedure a rdfs:Class ;
+    rdfs:label "SynovialCollectionProcedure" ;
+    rdfs:comment "Classification of procedure for synovial tissue collection." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "synovialCollectionProcedure" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:Biopsy a rdfs:Class ;
+    rdfs:label "Biopsy" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SynovialCollectionProcedure ;
+    dca:displayName "biopsy" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Arthroplasty a rdfs:Class ;
+    rdfs:label "Arthroplasty" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SynovialCollectionProcedure ;
+    dca:displayName "arthroplasty" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Synovectomy a rdfs:Class ;
+    rdfs:label "Synovectomy" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:SynovialCollectionProcedure ;
+    dca:displayName "synovectomy" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:PsoriasisType a rdfs:Class ;
+    rdfs:label "PsoriasisType" ;
+    rdfs:comment "General type classification of psoriasis disease manifestation." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "psoriasisType" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Guttate a rdfs:Class ;
+    rdfs:label "Guttate" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:PsoriasisType ;
+    dca:displayName "guttate" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Pustular a rdfs:Class ;
+    rdfs:label "Pustular" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:PsoriasisType ;
+    dca:displayName "pustular" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Plaque a rdfs:Class ;
+    rdfs:label "Plaque" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:PsoriasisType ;
+    dca:displayName "plaque" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Inverse a rdfs:Class ;
+    rdfs:label "Inverse" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:PsoriasisType ;
+    dca:displayName "inverse" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Erythrodermic a rdfs:Class ;
+    rdfs:label "Erythrodermic" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:PsoriasisType ;
+    dca:displayName "erythrodermic" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:AgeDiagnosis a rdfs:Class ;
+    rdfs:label "AgeDiagnosis" ;
+    rdfs:comment "Age at which subject was diagnosed with `diagnosis`. If providing this value be sure the unit matches that used for `age`." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "ageDiagnosis" ;
+    dca:required false ;
+    dca:validationRules ( "num error" ) .
+
+amp-aim:Years a rdfs:Class ;
+    rdfs:label "Years" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:AgeUnits ;
+    dca:displayName "years" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Months a rdfs:Class ;
+    rdfs:label "Months" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:AgeUnits ;
+    dca:displayName "months" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Female a rdfs:Class ;
+    rdfs:label "Female" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Sex ;
+    dca:displayName "female" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Male a rdfs:Class ;
+    rdfs:label "Male" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Sex ;
+    dca:displayName "male" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Intersex a rdfs:Class ;
+    rdfs:label "Intersex" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Sex ;
+    dca:displayName "intersex" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Unknown a rdfs:Class ;
+    rdfs:label "Unknown" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Ethnicity, amp-aim:DiabetesType, amp-aim:Sex, amp-aim:Race ;
+    dca:displayName "unknown" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Asian a rdfs:Class ;
+    rdfs:label "Asian" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Race ;
+    dca:displayName "Asian" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:BlackorAfricanAmerican a rdfs:Class ;
+    rdfs:label "BlackorAfricanAmerican" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Race ;
+    dca:displayName "Black or African American" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:White a rdfs:Class ;
+    rdfs:label "White" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Race ;
+    dca:displayName "White" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Hispanic a rdfs:Class ;
+    rdfs:label "Hispanic" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Race ;
+    dca:displayName "Hispanic" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:AmericanIndianorAlaskaNative a rdfs:Class ;
+    rdfs:label "AmericanIndianorAlaskaNative" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Race ;
+    dca:displayName "American Indian or Alaska Native" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:MixedRace a rdfs:Class ;
+    rdfs:label "MixedRace" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Race ;
+    dca:displayName "Mixed Race" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:NativeHawaiianorOtherPacificIslander a rdfs:Class ;
+    rdfs:label "NativeHawaiianorOtherPacificIslander" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Race ;
+    dca:displayName "Native Hawaiian or Other Pacific Islander" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Other a rdfs:Class ;
+    rdfs:label "Other" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Race, amp-aim:Comorbidities ;
+    dca:displayName "other" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:HispanicorLatino a rdfs:Class ;
+    rdfs:label "HispanicorLatino" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Ethnicity ;
+    dca:displayName "Hispanic or Latino" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:NotHispanicorLatino a rdfs:Class ;
+    rdfs:label "NotHispanicorLatino" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Ethnicity ;
+    dca:displayName "Not Hispanic or Latino" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Inches a rdfs:Class ;
+    rdfs:label "Inches" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:HeightUnits ;
+    dca:displayName "inches" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Centimeters a rdfs:Class ;
+    rdfs:label "Centimeters" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:HeightUnits ;
+    dca:displayName "centimeters" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Meters a rdfs:Class ;
+    rdfs:label "Meters" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:HeightUnits ;
+    dca:displayName "meters" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Feet a rdfs:Class ;
+    rdfs:label "Feet" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:HeightUnits ;
+    dca:displayName "feet" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Lb a rdfs:Class ;
+    rdfs:label "Lb" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:WeightUnits ;
+    dca:displayName "lb" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Kg a rdfs:Class ;
+    rdfs:label "Kg" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:WeightUnits ;
+    dca:displayName "kg" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:G a rdfs:Class ;
+    rdfs:label "G" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:WeightUnits ;
+    dca:displayName "g" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Oz a rdfs:Class ;
+    rdfs:label "Oz" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:WeightUnits ;
+    dca:displayName "oz" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Diabetes a rdfs:Class ;
+    rdfs:label "Diabetes" ;
+    rdfs:comment "A valid value of `comorbidities` that triggers conditional dependencies for additional attributes." ;
+    rdfs:subClassOf amp-aim:Comorbidities ;
+    dca:displayName "diabetes" ;
+    dca:required false ;
+    dca:requiresDependency amp-aim:DiabetesType ;
+    dca:validationRules ( ) .
+
+amp-aim:Cardiovasculardisease a rdfs:Class ;
+    rdfs:label "Cardiovasculardisease" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Comorbidities ;
+    dca:displayName "cardiovascular disease" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Pulmonarydisease a rdfs:Class ;
+    rdfs:label "Pulmonarydisease" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Comorbidities ;
+    dca:displayName "pulmonary disease" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Autoimmunethyroiddisease a rdfs:Class ;
+    rdfs:label "Autoimmunethyroiddisease" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Comorbidities ;
+    dca:displayName "autoimmune thyroid disease" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Inflammatoryboweldisease a rdfs:Class ;
+    rdfs:label "Inflammatoryboweldisease" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Comorbidities ;
+    dca:displayName "inflammatory bowel disease" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Psoriasis a rdfs:Class ;
+    rdfs:label "Psoriasis" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Comorbidities ;
+    dca:displayName "psoriasis" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Multiplesclerosis a rdfs:Class ;
+    rdfs:label "Multiplesclerosis" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Comorbidities ;
+    dca:displayName "multiple sclerosis" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Systemiclupuserythematosus a rdfs:Class ;
+    rdfs:label "Systemiclupuserythematosus" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Comorbidities ;
+    dca:displayName "systemic lupus erythematosus" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Rheumatoidarthritis a rdfs:Class ;
+    rdfs:label "Rheumatoidarthritis" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:Comorbidities ;
+    dca:displayName "rheumatoid arthritis" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:DiabetesType a rdfs:Class ;
+    rdfs:label "DiabetesType" ;
+    rdfs:comment "Type of diabetes mellitus." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "diabetesType" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Type1 a rdfs:Class ;
+    rdfs:label "Type1" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:DiabetesType ;
+    dca:displayName "type 1" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Type2 a rdfs:Class ;
+    rdfs:label "Type2" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:DiabetesType ;
+    dca:displayName "type 2" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Gestational a rdfs:Class ;
+    rdfs:label "Gestational" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:DiabetesType ;
+    dca:displayName "gestational" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:PercentCellViability a rdfs:Class ;
+    rdfs:label "PercentCellViability" ;
+    rdfs:comment "A measure of the proportion of viable cells within a cell suspension. Scale is 0-100." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "percentCellViability" ;
+    dca:required true ;
+    dca:validationRules ( "int" "inRange 50 100 error" ) .
+
+amp-aim:ExpectedCellCount a rdfs:Class ;
+    rdfs:label "ExpectedCellCount" ;
+    rdfs:comment "An estimate of the number of cells expected to be sequenced in a library. Software that process single-cell sequencing data often include options for users to specify this value to improve processing results." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "expectedCellCount" ;
+    dca:required true ;
+    dca:validationRules ( "int error" ) .
+
+amp-aim:TotalReads a rdfs:Class ;
+    rdfs:label "TotalReads" ;
+    rdfs:comment "Total number of reads sequenced from the library." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "totalReads" ;
+    dca:required true ;
+    dca:validationRules ( "int error" ) .
+
+amp-aim:SequencingSaturation a rdfs:Class ;
+    rdfs:label "SequencingSaturation" ;
+    rdfs:comment "A measure of the fraction of library complexity that was sequenced in a library. This metric quantifies the fraction of reads originating from an already-observed UMI. More specifically, this is the fraction of confidently mapped, valid cell-barcode, valid UMI reads that are non-unique. Scale is 0-1." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "sequencingSaturation" ;
+    dca:required false ;
+    dca:validationRules ( "float" "inRange 0 1 error" ) .
+
+amp-aim:FACSPopulation a rdfs:Class ;
+    rdfs:label "FACSPopulation" ;
+    rdfs:comment "A description of the marker gating strategy used to derive the population cells with FACS." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "FACSPopulation" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:CellOntology a rdfs:Class ;
+    rdfs:label "CellOntology" ;
+    rdfs:comment "Cell Ontology CL identifier that best describes a biopsecimen used to generate data." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "cellOntology" ;
+    dca:required false ;
+    dca:validationRules ( "regex search ^CL error" ) .
+
+amp-aim:RObjectClass a rdfs:Class ;
+    rdfs:label "RObjectClass" ;
+    rdfs:comment "Rds files store R objects, one per file. This label details the class of the R object saved to the Rds file or other similar file types." ;
+    rdfs:subClassOf amp-aim:Thing ;
+    dca:displayName "RObjectClass" ;
+    dca:required true ;
+    dca:validationRules ( ) .
+
+amp-aim:List a rdfs:Class ;
+    rdfs:label "List" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:RObjectClass ;
+    dca:displayName "list" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Vector a rdfs:Class ;
+    rdfs:label "Vector" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:RObjectClass ;
+    dca:displayName "vector" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Sparsematrix a rdfs:Class ;
+    rdfs:label "Sparsematrix" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:RObjectClass ;
+    dca:displayName "sparse matrix" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Seuratobject a rdfs:Class ;
+    rdfs:label "Seuratobject" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:RObjectClass ;
+    dca:displayName "Seurat object" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+<https://dca.app.sagebionetworks.org/AMP-AIM/Data.frame> a rdfs:Class ;
+    rdfs:label "Data.frame" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:RObjectClass ;
+    dca:displayName "data.frame" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:Matrix a rdfs:Class ;
+    rdfs:label "Matrix" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:RObjectClass ;
+    dca:displayName "matrix" ;
+    dca:required false ;
+    dca:validationRules ( ) .
+
+amp-aim:SummarizedExperiment a rdfs:Class ;
+    rdfs:label "SummarizedExperiment" ;
+    rdfs:comment "TBD" ;
+    rdfs:subClassOf amp-aim:RObjectClass ;
+    dca:displayName "SummarizedExperiment" ;
+    dca:required false ;
+    dca:validationRules ( ) .

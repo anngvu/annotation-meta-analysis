@@ -1,0 +1,18 @@
+template_id,display_name,species,file_type,configured_template_role,description
+AnalysisResultsMetadataTemplate,analysis_results_metadata_template,Not specified,Various,N/A,Template for analysis and results
+AssayRNAseqTemplate,assay_RNAseq_template,Not specified,FASTQ,Annotation,Template for RNAseq
+AssayBsSeqTemplate,assay_bsSeq_template,Not specified,Various,Annotation,Template for bsSeq
+AssayMetabolomicsTemplate,assay_metabolomics_template,Not specified,Various,Annotation,Template for Metabolomics
+AssayMetagenomicsTemplate,assay_metagenomics_template,Not specified,Various,Annotation,Template for Metagenomics
+AssayMicrobiomeTemplate,assay_microbiome_template,Not specified,Various,Annotation,Template for Microbiome
+AssayPhenotypeHumanTemplate,assay_phenotype_human_template,Human,Various,N/A,Template for Phenotype_human
+AssayProteomicsTemplate,assay_proteomics_template,Not specified,Mass spec data,Annotation,Template for Proteomics
+AssayScRNAseqTemplate,assay_scRNAseq_template,Not specified,FASTQ,Annotation,Template for scRNAseq
+AssayWholeGenomeSequencingTemplate,assay_whole_genome_sequencing_template,Not specified,Various,Annotation,Template for Whole_Genome_Sequencing
+BiospecimenHumanTemplate,biospecimen_human_template,Human,N/A,Record,Template for Biospecimen_human
+BiospecimenNonHumanTemplate,biospecimen_non_human_template,Animal model,N/A,Record,Template for Biospecimen_non_Human
+FileAnnotationTemplate,file_annotation_template,Multi-species,Various,Annotation,Base annotations for files in synapse
+GenotypingHumanTemplate,genotyping_human_template,Human,Various,Annotation,Template for Genotyping_Human
+IndividualHumanTemplate,individual_human_template,Human,N/A,Record,Template for Individual_Human
+IndividualNonHumanTemplate,individual_non_human_template,Animal model,N/A,Record,Template for Individual_non_Human
+StudyFolderTemplate,study_folder_template,Multi-species,Various,Annotation,Annotations for study folders

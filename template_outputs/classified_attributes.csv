@@ -1,0 +1,1287 @@
+Attribute,Classification
+10xVisiumAuxiliaryFiles Key,Green
+10xVisiumRNALevel2 Key,Green
+10xVisiumRNALevel3_id,Red
+10xVisiumRNALevel3 Key,Green
+10xVisiumRNALevel4_id,Red
+Ab Name Reported on Dataset,Red
+accessReqs,Green
+ackContext,Green
+acknowledgment,Green
+acquisitionBatchID,Red
+acquisitionBatchSize,Yellow
+acquisitionBatchSizeUnit,Yellow
+acquisitionMode,Green
+acquisitionSoftware,Yellow
+acquistionSoftwareVersion,Yellow
+adalimumab,Green
+adalimumab_change,Green
+adalimumab_use,Yellow
+Adapter Content,Green
+Adapter Name,Red
+AdapterName,Red
+adapters,Green
+Adapter Sequence,Yellow
+AdapterSequence,Yellow
+AdjacentSampleIDs,Red
+adjustedCovariates,Green
+ADNC,Green
+age,Red
+ageAssessment,Red
+ageAssessmentUnits,Red
+ageUnit,Red
+algorithm,Green
+alignedReadLength,Yellow
+Aligned Read Length,Yellow
+alignment_reference,Green
+Alignment Workflow Type,Yellow
+Alignment Workflow Url,Yellow
+aliquotID,Red
+alt_HS_S,Green
+alt_LEWY_full,Green
+AltSampleID,Red
+amoxicillin,Green
+amoxicillin_change,Green
+amoxicillin_use,Yellow
+AMY_A,Green
+AMY_ANY,Green
+AMY_THAL,Green
+analysisType,Yellow
+Analyte Type,Yellow
+antibody,Green
+antibodyAmount,Green
+antibodyAmountUnits,Yellow
+antibodyID,Red
+Antibody Name,Red
+AntibodyName,Red
+Antibody Notes,Green
+Antibody Role,Green
+appliedHardTrimming,Green
+Applied Hard Trimming,Green
+AppliedHardTrimming,Green
+arrayBatch,Yellow
+arrayInformation,Yellow
+arrayManufacturer,Yellow
+assay,Yellow
+assay_metadata_synID,Red
+assayTarget,Yellow
+Assay Type,Yellow
+assemblyName,Red
+assemblyQual,Green
+assemblySoftware,Yellow
+Associated mRNA Library Data File ID,Red
+associatedResource,Yellow
+Attribute,Green
+author,Green
+auxiliaryAsset,Green
+averageBaseQuality,Red
+Average Base Quality,Red
+averageInsertSize,Red
+Average Insert Size,Red
+averageReadLength,Red
+Average Read Length,Red
+avg_reads_cell,Yellow
+azathioprine,Green
+azathioprine_change,Green
+azathioprine_use,Yellow
+backgroundTrait,Green
+balsalazide,Red
+balsalazide_change,Red
+balsalazide_use,Red
+Barcode Folder File List,Red
+Barcode Folder Synapse ID,Red
+Base Caller Name,Red
+Base Caller Version,Green
+Basic Statistics,Green
+batch,Yellow
+batchChannel,Yellow
+Batch Correction Method,Yellow
+batchID,Red
+BatchID,Red
+batchLabel,Yellow
+batchSize,Yellow
+batchSizeUnit,Yellow
+Beadchip Array,Yellow
+Beads Total,Green
+bindingDensity,Green
+biospecimenID,Red
+Biospecimen Key,Yellow
+biospecimen_metadata_synID,Red
+Biotin Enrichment,Green
+Bisulfite Conversion,Green
+BisulfiteConversionKit,Yellow
+bisulfiteConversionKitID,Red
+Blacklist Ratio,Green
+Blacklist Region Fragments,Yellow
+bodySite,Yellow
+Braak,Green
+brainWeight,Green
+B_SCORE,Green
+Bulk Methylation Assay Type,Red
+BulkMethylationAssayType,Red
+Bulk Methylation Genomic Reference,Red
+captureArea,Green
+Capture Area,Green
+catalogNumber,Red
+Catalog Number,Red
+CatalogNumber,Red
+CDLB,Green
+CDNALength,Green
+CDNAOffset,Green
+CDS avg_read_length,Yellow
+CDS bases,Green
+CDS coverage,Red
+CDS custom_assembly_fasta_file_for_alignment,Green
+CDS design_description,Green
+CDS instrument_model,Yellow
+CDS library_id,Red
+CDS library_layout,Yellow
+CDS library_selection,Yellow
+CDS library_source,Yellow
+CDS library_strategy,Yellow
+CDS number_of_reads,Red
+CDS platform,Red
+CDS reference_genome_assembly,Green
+CDS sequence_alignment_software,Yellow
+Cell Barcode,Red
+Cell Barcode Length,Red
+CellBarcodeLength,Red
+Cell Barcode Offset,Red
+CellBarcodeOffset,Red
+Cell Barcode Tag,Red
+CellBarcodeTag,Red
+cell_count_1mL,Yellow
+cellID,Red
+Cell Median Number Genes,Red
+CellMedianNumberGenes,Red
+Cell Median Number Reads,Red
+CellMedianNumberReads,Red
+cellranger_output_class,Yellow
+Cell Total,Yellow
+CellTotal,Yellow
+cellType,Yellow
+CERAD,Green
+certolizumab,Green
+certolizumab_change,Green
+certolizumab_use,Yellow
+channel,Green
+Channel Antibody Catalog Number,Red
+Channel Antibody Clone,Red
+Channel Antibody Lot,Yellow
+Channel Antibody Name,Red
+Channel Antibody Role,Green
+Channel Antibody Vendor,Green
+Channel Cycle Number,Red
+Channel Emission Bandwidth,Red
+Channel Emission Wavelength,Green
+Channel Excitation Bandwidth,Red
+Channel Excitation Wavelength,Green
+Channel Fluorophore,Green
+Channel ID,Red
+ChannelID,Red
+Channel Identifier,Red
+Channel Metadata Filename,Red
+ChannelMetadataFilename,Red
+Channel Metal Isotope,Green
+Channel Metal Symbol,Green
+Channel Name,Red
+ChannelName,Red
+Channel Oligo Barcode Lower Strand,Red
+Channel Oligo Barcode Upper Strand,Red
+Channel Passed QC,Green
+ChannelPassedQC,Green
+Channel Probe Concentration,Green
+Channel Probe Dilution Ratio,Green
+Channel Resource ID,Red
+Channel Sub-cycle Number,Red
+Channel Target Name,Red
+checkSum,Green
+Checksum,Green
+Chimeric Read-Pairs,Yellow
+chipID,Red
+chipPosition,Green
+cholestyr,Green
+cholestyr_change,Green
+cholestyr_use,Yellow
+chromatinAmount,Green
+chromatinAmountUnits,Yellow
+chromosome,Green
+ciproflox,Green
+ciproflox_change,Green
+ciproflox_use,Yellow
+citation,Green
+Clonality,Red
+Clone,Red
+cohort,Yellow
+Comment,Green
+comments,Green
+Commit SHA,Green
+Component,Green
+compoundDose,Green
+compoundDoseUnit,Yellow
+compoundName,Red
+Concentration,Green
+concentrationMaterial,Green
+concentrationMaterialUnit,Yellow
+concentrationNaCl,Green
+concentrationNaClUnit,Yellow
+confident_exonic,Red
+confident_intergenic,Red
+confident_intronic,Red
+confident_reads,Red
+confident_transcriptome,Red
+conservationMethod,Yellow
+consortium,Green
+Contamination,Green
+Contamination Error,Green
+contrastAgent,Red
+controlType,Yellow
+conversionRatio,Green
+conversionRatioUnits,Yellow
+CosMx Assay Type,Yellow
+CosMx Bundle Contents,Green
+Crosslinking Condtion,Green
+Cryopreserved Cells in Sample,Yellow
+CryopreservedCellsinSample,Yellow
+CVD_ART,Green
+CVD_ART_ANY,Green
+CVD_ATH,Green
+CVD_ATH_ANY,Green
+CVD_CAA,Green
+CVD_CAA_ANY,Green
+CVD_S,Green
+Cycle Number,Red
+CycleNumber,Red
+cyclospa,Green
+cyclospa_change,Green
+cyclospa_use,Yellow
+databaseLibrary,Yellow
+databaseName,Red
+databaseSource,Yellow
+databaseVersion,Yellow
+databaseWeblink,Yellow
+Data Category,Yellow
+DataCategory,Yellow
+dataCollectionMode,Yellow
+Data Collection Mode,Yellow
+dataFile,Yellow
+dataFormat,Yellow
+data_generator,Yellow
+data_level,Yellow
+dataLevel,Yellow
+DatasetView Key,Yellow
+dataSubtype,Yellow
+data_type,Yellow
+dataType,Yellow
+dataTypeAll,Yellow
+Data Use Codes,Red
+Decoded Transcripts,Red
+DetailedSampleID,Red
+diagnosis,Yellow
+diagnosisStatus,Yellow
+digestion_cdna_date,Red
+digestionMethod,Yellow
+digestionReagent,Red
+Dilution,Green
+DimensionOrder,Green
+directionalBSseqLibrary,Yellow
+dissociationMethod,Yellow
+Dissociation Method,Yellow
+DissociationMethod,Yellow
+DMCallingTool,Green
+DMC Calling Tool,Green
+DMC Calling Workflow URL,Yellow
+DMC data file format,Yellow
+DMR Calling Tool,Green
+DMR Calling Workflow URL,Yellow
+DMR data file Format,Yellow
+dnaBatch,Yellow
+dnaBatchID,Red
+dnaBatchSize,Yellow
+dnaBatchSizeUnit,Yellow
+DNA Digestion Condition,Green
+DNAextraction,Yellow
+dnaExtractionMethod,Yellow
+DNA Input Amount,Green
+DNase Sensitive Region Fragments,Yellow
+documentation,Green
+Duplicate Read-Pairs,Yellow
+Duplicate Removal Software,Yellow
+DV200,Green
+EducationalResource Key,Yellow
+EM beam current,Green
+EM contrast type,Yellow
+EM dwell or exposure time,Red
+EM instrument,Yellow
+Emission Bandwidth,Red
+EmissionBandwidth,Red
+Emission Wavelength,Green
+EmissionWavelength,Green
+EM method,Yellow
+Empty Well Barcode,Red
+EM signal or contrast mech,Green
+EM signal processing,Green
+EM spot size,Green
+EM stage tilt,Red
+EM voltage,Red
+Encoding,Green
+endBias,Green
+End Bias,Green
+EndBias,Green
+Enhancer Region Fragments,Yellow
+enrichment,Green
+enrichmentMethod,Yellow
+enrichmentStrategy,Green
+entity,Green
+entityID,Red
+environment,Green
+ERStatus,Green
+estimated_cells,Yellow
+ethnicGroupCode,Red
+ethnicity,Red
+Excitation Bandwidth,Red
+ExcitationBandwidth,Red
+Excitation Wavelength,Green
+ExcitationWavelength,Green
+experimentalBatchSize,Yellow
+experimentalBatchSizeUnit,Yellow
+experimentalCondition,Yellow
+experimentalDesign,Yellow
+experimentalFactor,Yellow
+experimentalTimepoint,Red
+Experiment IF Channels,Yellow
+experimentType,Yellow
+expressionUnit,Yellow
+Expression Units,Yellow
+extractionMethod,Yellow
+familyStudyParticipant,Red
+Feature Barcode Library Type,Red
+featureReferenceID,Red
+Feature Reference Id,Red
+fieldStrength,Green
+File Alias,Green
+File Assay,Yellow
+File Description,Green
+File Design,Green
+file_format,Green
+fileFormat,Green
+File Format,Green
+FileFormat,Green
+File Level,Green
+File Longitudinal Event Type,Red
+File Longitudinal Group,Red
+File Longitudinal Sequence Identifier,Red
+File Longitudinal Sequential Time Elapsed,Red
+File Longitudinal Time Elapsed Unit,Red
+File Longitudinal Total Time Elapsed,Red
+Filename,Red
+File Species,Green
+File Tissue,Yellow
+File Tumor Type,Yellow
+File Url,Green
+FileView_id,Red
+fk506,Green
+fk506_change,Green
+fk506_use,Yellow
+Flow,Green
+Flow Cell Barcode,Red
+Fluorophore,Green
+format,Green
+FOV number,Red
+FOVnumber,Red
+FOVX,Green
+FOVXUnit,Yellow
+FOVY,Green
+FOVYUnit,Yellow
+fractionIdentifier,Red
+fragmentation,Yellow
+Fragment Maximum Length,Yellow
+Fragment Mean Length,Yellow
+Fragment Minimum Length,Yellow
+fragment_size_bp,Yellow
+Fragment Standard Deviation Length,Yellow
+Frame Averaging,Green
+FrameAveraging,Green
+Fusion Gene Detected,Green
+Fusion Gene Identity,Red
+gasFlowTemperature,Green
+gasFlowTemperatureUnit,Yellow
+gDNAconc,Green
+GENCODE Gene Symbol Target,Red
+genePerturbationTechnology,Green
+genePerturbationType,Yellow
+genePerturbed,Green
+geneRLF,Green
+genes_detected,Green
+geneticBackground,Green
+geneticMutations,Green
+Genome Annotation URL,Green
+GenomeAnnotationURL,Green
+genomicReference,Green
+Genomic Reference,Green
+GenomicReference,Green
+genomicReferenceLink,Green
+Genomic Reference URL,Green
+GenomicReferenceURL,Green
+genotypeTechnology,Yellow
+GeoMx DSP Assay Type,Red
+GeoMx DSP Genomic Reference,Red
+GeoMx DSP Library Preparation Kit Vendor,Red
+GeoMx DSP Library Preparation Kit Version,Red
+GeoMx DSP NGS Library Preparation Kit Name,Red
+GeoMx DSP NGS Library Selection Method,Red
+GeoMx DSP NGS Sequencing Platform,Red
+GeoMx DSP Unique Probe Count,Red
+GeoMx DSP Unique Target Count,Red
+GeoMx DSP Workflow Link,Red
+GeoMx DSP Workflow Parameter Description,Red
+GeoMx DSP Workflow Type,Red
+GeoMx Imaging Channel Names,Red
+Germline Variants Workflow Type,Yellow
+Germline Variants Workflow URL,Yellow
+gex_con_ng_uL,Green
+globinRemoval,Green
+golimumab,Green
+golimumab_change,Green
+golimumab_use,Yellow
+GQN,Green
+grant,Green
+grantNumber,Red
+hasAlgorithm,Green
+hasAssayControl,Yellow
+hasEnvironment,Green
+hasIonizationSource,Yellow
+hasLibrary,Yellow
+hasNotebook,Green
+hasOpertaingSystem,Yellow
+hasParameters,Green
+hasProgrammingLanguage,Red
+hasProtocol,Yellow
+hasScript,Green
+hasSettings,Green
+hasSoftware,Yellow
+HEMOR,Green
+HER2Status,Green
+HS_L,Green
+HS_S,Green
+HTAN Channel Metadata ID,Red
+HTAN Data File ID,Red
+HTAN Parent Biospecimen ID,Red
+HTAN Parent Channel Metadata ID,Red
+HTAN Parent Data File ID,Red
+HTAN Participant ID,Red
+HTAN RPPA Antibody Table,Green
+HTAN RPPA Antibody Table ID,Red
+i5_index,Green
+i7_index,Green
+Image Assay Type,Red
+Image Channel Size,Red
+Image Dimension Order,Red
+Image FOV Index,Red
+Image FOV Size X,Red
+Image FOV Size X Unit,Red
+Image FOV Size Y,Red
+Image FOV Size Y Unit,Red
+Image Frame Averaging,Red
+Image ID,Red
+ImageID,Red
+Image Identifier,Red
+Image Immersion Type,Red
+Image Lense Aperture,Red
+Image Nominal Magnification,Red
+Image Number of Features,Red
+Image Number of Objects,Red
+Image Number of Timepoints,Red
+Image Object Class,Red
+Image Object Class Description,Red
+Image Objective,Red
+Image Parameter file,Red
+Image Physical Size X,Red
+Image Physical Size X Unit,Red
+Image Physical Size Y,Red
+Image Physical Size Y Unit,Red
+Image Physical Size Z,Red
+Image Physical Size Z Unit,Red
+Image Pixels BigEndian,Red
+Image Pixel Type,Red
+Image Plane Count,Red
+Image Platform Manufacturer,Red
+Image Platform Model,Red
+Image Protocol Link,Red
+Image Pyramidal,Red
+imageReorientation,Red
+Image Re-orientation,Red
+Image Segmentation Data Type,Red
+Image Software,Red
+Image Summary Statistic,Red
+Image Timeseries,Red
+Image Working Distance,Red
+Image Working Distance Unit,Red
+Image X Pixels,Red
+Image Y Pixels,Red
+Image Z Pixels,Red
+Image Z stack,Red
+Imaging Assay Type,Yellow
+ImagingAssayType,Yellow
+ImagingChannel_id,Red
+ImagingChannel Key,Green
+ImagingLevel1_id,Red
+ImagingLevel1 Key,Green
+ImagingLevel2_id,Red
+ImagingLevel2 Key,Green
+ImagingLevel3Image Key,Red
+ImagingLevel3Segments_id,Red
+ImagingLevel3Segments Key,Green
+ImagingLevel4_id,Red
+Imaging Object Class,Green
+Imaging Object Class Description,Green
+Imaging Segmentation Data Type,Yellow
+Imaging Summary Statistic,Green
+immersion,Green
+Immersion,Green
+imputation,Green
+imputationPanel,Yellow
+imputationSoftware,Yellow
+Index File Name,Red
+individual_id,Red
+individualID,Red
+INFA,Green
+infliximab,Green
+infliximab_change,Green
+infliximab_use,Yellow
+Input Cells and Nuclei,Yellow
+InputCellsandNuclei,Yellow
+inputTotalRNA,Green
+instrumentModel,Yellow
+INT,Green
+Internal Ab ID,Red
+intrasterd,Green
+intrasterd_change,Green
+intrasterd_use,Yellow
+ionMode,Green
+ionProperty,Green
+isCellLine,Yellow
+isFeatured,Green
+isFilteredReads,Yellow
+Is lowest level,Green
+isModelSystem,Yellow
+isMultiSpecimen,Yellow
+isobaricLabelingReagent,Red
+isReleased,Green
+isStranded,Green
+Kmer Content,Green
+labelFreeQuantitation,Yellow
+labelQuantitation,Yellow
+lambdaDNAconc,Green
+Lambda methylation ratio,Red
+Lambdamethylationratio,Red
+Lane Number,Red
+LaneNumber,Red
+Laterality,Red
+LC Column Vendor and Model,Green
+LC Flow Rate,Green
+LC Gradient,Green
+LC ID Value,Red
+LC Instrument Vendor and Model,Yellow
+LC Length Value,Green
+LC Mobile Phase A,Green
+LC Mobile Phase B,Green
+LC Resin,Green
+LC Temp Value,Green
+lenalidomide,Red
+lenalidomide_change,Red
+lenalidomide_use,Red
+lensAperture,Green
+LensNA,Green
+lensVoltages,Red
+lensVoltagesUnit,Red
+LEWY_ANY,Green
+LEWY_full,Green
+LEWY_grp,Green
+libLayout,Green
+library,Yellow
+libraryBatch,Yellow
+libraryBatchID,Red
+Library Construction Method,Yellow
+LibraryConstructionMethod,Yellow
+library_date,Red
+libraryID,Red
+libraryKitID,Red
+Library Layout,Yellow
+LibraryLayout,Yellow
+libraryPrep,Yellow
+libraryPreparationDaysFromIndex,Yellow
+Library Preparation Days from Index,Yellow
+Library Preparation Kit Name,Red
+Library Preparation Kit Vendor,Yellow
+Library Preparation Kit Version,Yellow
+libraryPreparationMethod,Yellow
+LibraryPrepKitName,Red
+LibraryPrepKitVendor,Yellow
+LibraryPrepKitVersion,Yellow
+library_prep_method,Yellow
+Library Selection Method,Yellow
+LibrarySelectionMethod,Yellow
+libraryStrand,Yellow
+Library Strand,Yellow
+libraryType,Yellow
+libraryVersion,Yellow
+libReadsSeqd,Yellow
+libSize,Green
+libVector,Green
+License,Green
+ligand,Green
+Ligation Condition,Green
+Linked Matrices,Green
+LinkedMatrices,Green
+Loop Calling,Green
+Loop Window,Green
+Lot,Yellow
+lotNumber,Red
+LowMapQ,Green
+MACS2 End,Green
+MACS2 Fold Change,Green
+MACS2 Name,Red
+MACS2 Neg Log10 pvalue Summit,Green
+MACS2 Neg Log10 qvalue Summit,Green
+MACS2 Relative Summit Position,Red
+MACS2 Score,Green
+MACS2 Seqnames,Red
+MACS2 Start,Green
+MACS2 Strand,Green
+MACS2 Width,Red
+MapQ30,Green
+Mass Range High Value,Green
+Mass Range Low Value,Green
+Mass Spectrometry Auxiliary File,Green
+Matched Spatial Barcode Tag,Red
+materialType,Yellow
+Matrix Type,Yellow
+MatrixType,Yellow
+mayoDx,Green
+meanCoverage,Red
+Mean Coverage,Red
+meanGCContent,Green
+meanReadsPerSpatialSpot,Yellow
+Mean Reads per Spatial Spot,Yellow
+Mean Total Transcripts per Area,Green
+measurementTechnique,Green
+Median Fraction of Reads in Annotated cis DNA Elements,Yellow
+Median Fraction of Reads in Peaks,Yellow
+medianGenes,Green
+median_genes_cell,Yellow
+medianNumberGenesPerSpatialSpot,Red
+Median Number Genes per Spatial Spot,Red
+Median Passing Read Percentage,Red
+Median Percentage of Mitochondrial Reads per Nucleus,Red
+median_UMI_cell,Yellow
+medianUMICountsPerSpot,Green
+Median UMI Counts per Spot,Green
+medianUMIs,Green
+Median UMIs per Cell Number,Red
+MedianUMIsperCellNumber,Red
+mercap6,Green
+mercap6_change,Green
+mercap6_use,Yellow
+MERFISH Codebook File,Red
+MERFISH Positions File,Green
+mesalamine,Green
+mesalamine_change,Green
+mesalamine_use,Yellow
+metaboliteType,Yellow
+metadataType,Yellow
+Metal Isotope Element,Green
+MetalIsotopeElement,Green
+Metal Isotope Mass,Green
+MetalIsotopeMass,Green
+methods,Yellow
+methotrex,Green
+methotrex_change,Green
+methotrex_use,Yellow
+metronida,Red
+metronida_change,Red
+metronida_use,Red
+MICR,Green
+Microarray Label,Yellow
+Microarray Molecule,Yellow
+Microarray Platform ID,Red
+Microarray Protocol Auxiliary File,Yellow
+Microarray Value Definition,Yellow
+Micro-region Seq Platform,Red
+Microscope,Green
+mid,Red
+Mitochondrial Read-Pairs,Yellow
+modelSystemName,Red
+ModelSystemType,Yellow
+modelType,Yellow
+modificationParameters,Green
+MRISequence,Yellow
+MRItype,Yellow
+msAnalyteType,Yellow
+MS Assay Category,Yellow
+msAssayTechnique,Yellow
+MS-based Assay Type,Yellow
+MS-based Targeted,Yellow
+MS Batch ID,Red
+MS Instrument Metadata File,Yellow
+MS Instrument Vendor and Model,Yellow
+MSI Score,Green
+MSI Status,Green
+MSI Workflow Link,Yellow
+MS Labeling,Yellow
+MS Scan Mode,Yellow
+MS Source,Yellow
+msTarget,Yellow
+multiconsensusStudyFileID,Red
+Multiplex Barcode,Red
+nanostringBatch,Yellow
+NanoStringGeoMxAuxiliaryFiles Key,Red
+NanoStringGeoMxDSPImaging_id,Red
+NanoStringGeoMxDSPLevel1_id,Red
+NanoStringGeoMxDSPLevel1 Key,Red
+NanoStringGeoMxDSPLevel2_id,Red
+NanoStringGeoMxDSPLevel2 Key,Red
+NanoStringGeoMxDSPLevel3_id,Red
+NanoStringGeoMXROISegmentAnnotation Key,Red
+natalizumab,Green
+natalizumab_change,Green
+natalizumab_use,Yellow
+nCount Peaks,Green
+nCount RNA,Green
+newsRelease,Green
+nf1Genotype,Yellow
+nf2Genotype,Yellow
+nFeature Peaks,Green
+nFeature RNA,Green
+NGS Aligned reads,Yellow
+NGS Deduplicated reads,Yellow
+NGS Library Layout,Yellow
+NGS Library Preparation Days from Index,Yellow
+NGS Library Preparation Kit Name,Red
+NGS Library Preparation Kit Vendor,Yellow
+NGS Library Preparation Kit Version,Yellow
+NGS Library Selection Method,Yellow
+NGS Library Source,Yellow
+NGS Library Strategy,Yellow
+NGS MapQ30,Green
+NGS Matrix Type,Yellow
+NGS Raw reads,Yellow
+NGS Read Indicator,Yellow
+NGS Read Length,Yellow
+NGS RNA DV200,Green
+NGS RNA End Bias,Green
+NGS RNA Reverse Transcription Primer,Green
+NGS RNA RIN,Green
+NGS Sequencing Coverage,Red
+NGS Sequencing Design Description,Yellow
+NGS Sequencing Library Construction Days from Index,Yellow
+NGS Sequencing Platform,Red
+NGS Stitched reads,Yellow
+NGS Target Sequencing Depth,Yellow
+NGS Trimmed reads,Yellow
+NGS Unique Bases,Green
+NGS Unique Probe Count,Green
+NGS Unique Target Count,Yellow
+nominalMagnification,Green
+NominalMagnification,Green
+Normalization Method,Yellow
+notebook,Green
+nucleAcidExt,Red
+Nuclei Barcode Length,Red
+NucleiBarcodeLength,Red
+Nuclei Barcode Read,Red
+NucleiBarcodeRead,Red
+Nucleic Acid Capture Days from Index,Red
+nucleicAcidSource,Red
+Nucleic Acid Source,Red
+NucleicAcidSource,Red
+Nuclei Permeabilization Method,Yellow
+Nucleosome Percentile,Green
+Nucleosome Signal,Green
+Nucleus Identifier,Red
+NucleusIdentifier,Red
+numberCells,Red
+numberContig,Red
+numberIndividuals,Red
+Number of Features,Red
+Number of FOVs,Red
+Number of Objects,Red
+objective,Green
+Objective,Green
+Oligo Barcode Lower Strand,Red
+OligoBarcodeLowerStrand,Red
+Oligo Barcode Upper Strand,Red
+OligoBarcodeUpperStrand,Red
+olsalazine,Green
+olsalazine_change,Green
+olsalazine_use,Yellow
+omega3,Green
+omega3_change,Green
+omega3_use,Yellow
+On Target Fragments,Yellow
+operatingSystem,Yellow
+oralenteric,Green
+oralenteric_change,Green
+oralenteric_use,Yellow
+oralsterd,Green
+oralsterd_change,Green
+oralsterd_use,Yellow
+organ,Yellow
+Overrepresented Sequences,Yellow
+Pairs On Diff CHR,Green
+pairsOnDifferentChr,Green
+Panel Name,Red
+Parameter file,Green
+parameters,Green
+parentSpecimenID,Red
+ParticipantID,Red
+Passed Filters,Green
+Passed QC,Green
+PassedQC,Green
+pcrCycles,Green
+Pct Reads in Peaks,Yellow
+peakCallingAlgorithm,Green
+Peak Region Cutsites,Yellow
+Peak Region Fragments,Yellow
+Peaks Calling Software,Yellow
+Per Base N Content,Green
+Per Base Sequence Content,Yellow
+Per Base Sequence Quality,Yellow
+percent_cell_viability,Yellow
+Percent GC Content,Green
+Percent of Transcripts within Cells,Yellow
+permeabilizationOnTime,Red
+Permeabilization Time,Red
+Per Sequence GC Content,Yellow
+Per Sequence Quality Score,Yellow
+Per Tile Sequence Quality,Yellow
+pH,Green
+Phosphoprotein Flag,Yellow
+Phospho Site,Yellow
+PhysicalSizeX,Green
+PhysicalSizeXUnit,Yellow
+PhysicalSizeY,Green
+PhysicalSizeYUnit,Yellow
+PhysicalSizeZ,Green
+PhysicalSizeZUnit,Yellow
+Pixels BigEndian,Green
+PixelsBigEndian,Green
+PixelType,Yellow
+PlaneCount,Yellow
+plateName,Red
+plateWell,Red
+platform,Red
+platformLocation,Red
+PMI,Green
+pmiUnits,Yellow
+Polarity,Green
+Pre-processing Completed,Green
+Pre-processing Required,Green
+probiotic,Green
+probiotic_change,Green
+probiotic_use,Yellow
+processingBatchID,Red
+processingBatchSize,Yellow
+processingBatchSizeUnit,Yellow
+program,Green
+programmingLanguage,Red
+progressReportNumber,Red
+projectFullName,Red
+projectShortName,Red
+Promoter Region Fragments,Yellow
+Proportion Base Mismatch,Yellow
+proportionCoverage10x,Red
+Proportion Coverage 10x,Red
+proportionCoverage30x,Red
+Proportion Coverage 30X,Red
+Proportion Mitochondrial Reads,Yellow
+Proportion of Minimum CpG Coverage 10X,Red
+ProportionofMinimumCpGCoverage10X,Red
+Proportion Reads Duplicated,Yellow
+proportionReadsMapped,Yellow
+Proportion Reads Mapped,Yellow
+Proportion Reads Mapped to Transcriptome,Yellow
+Proportion Targets No Coverage,Red
+proteinExtractSource,Yellow
+protocol,Yellow
+protocolAssay,Yellow
+protocolLink,Yellow
+Protocol Link,Yellow
+ProtocolLink,Yellow
+protocolPurpose,Yellow
+PRStatus,Green
+Pseudo Alignment Used,Yellow
+PublicationView Key,Green
+pUC19 methylation ratio,Red
+PUC19methylationratio,Red
+Pyramid,Red
+Q30_bc,Green
+Q30_read,Yellow
+Q30_UMI,Green
+QC Workflow Link,Yellow
+QC Workflow Type,Yellow
+QC Workflow Version,Yellow
+quantationStrategy,Green
+race,Red
+ratio260over230,Green
+ratio260over280,Green
+Read1,Yellow
+Read2,Yellow
+ReadContent,Yellow
+readDepth,Yellow
+readIndicator,Yellow
+Read Indicator,Yellow
+ReadIndicator,Yellow
+readLength,Yellow
+Read Length,Yellow
+readLengthUnits,Yellow
+readmeFile,Yellow
+readPair,Yellow
+reads_antisense,Yellow
+readsDuplicatedPercent,Yellow
+reads_in_cells,Yellow
+reads_mapped,Yellow
+readsMappedPercent,Yellow
+readsMappedToTranscriptome,Yellow
+readStrandOrigin,Yellow
+REAG,Green
+reagentCatalogNumber,Red
+reagentContact,Red
+reagentIDs,Red
+reagentLotNumber,Red
+reagentManufacturer,Red
+reagentName,Red
+reagentWeblink,Red
+recordingSource,Red
+rectalstrd,Green
+rectalstrd_change,Green
+rectalstrd_use,Yellow
+referenceSet,Green
+referenceTranscriptID,Red
+registryAbbreviation,Green
+relatedStudies,Red
+Replicate Type,Yellow
+reportedTrait,Green
+reporterGene,Green
+reporterSubstance,Yellow
+repositoryName,Red
+resolution,Green
+Resolution,Green
+resource_type,Yellow
+resourceType,Yellow
+resultType,Yellow
+resultUnit,Yellow
+reverseTranscriptionPrimer,Green
+Reverse Transcription Primer,Green
+ReverseTranscriptionPrimer,Green
+ribosomalDepletion,Green
+rifampin,Green
+rifampin_change,Green
+rifampin_use,Yellow
+RIN,Green
+rnaBatch,Yellow
+rnaBatchID,Red
+rnaBatchSize,Yellow
+rnaBatchSizeUnit,Yellow
+ROI name,Red
+ROI Tag,Green
+RPPA Dilution,Green
+RPPA Validation Status,Red
+RRID identifier,Red
+RRIDidentifier,Red
+runID,Red
+Run ID,Red
+runtimePlatform,Red
+runType,Yellow
+sampleBarcode,Red
+sampleBatchID,Red
+sampleBatchSize,Yellow
+sampleBatchSizeUnit,Yellow
+sample_id,Red
+SampleID,Red
+sampleIntroduction,Yellow
+sampleManifestSynID,Red
+samplePreparation,Yellow
+samplePrepProtocol,Yellow
+SampleSite,Yellow
+sampleType,Yellow
+scanID,Red
+scATACseq Library Layout,Yellow
+scATAC-seq Object ID,Red
+scATACseq Read1,Yellow
+scATACseq Read2,Yellow
+scATACseq Read3,Yellow
+scATACseq Workflow Parameters Description,Yellow
+scATACseq Workflow Type,Yellow
+scmCseq Read1,Yellow
+scmCseq Read2,Yellow
+scmCseq Read3,Yellow
+script,Green
+scRNAseq Workflow Parameters Description,Yellow
+ScRNAseqWorkflowParametersDescription,Yellow
+scRNAseq Workflow Type,Yellow
+ScRNAseqWorkflowType,Yellow
+SentrixID,Red
+SentrixRowColumn,Green
+seqMethod,Yellow
+seqPlatform,Red
+sequenceAnalysis,Yellow
+Sequence Duplication Levels,Yellow
+Sequence Length Distribution,Yellow
+sequencingBatch,Yellow
+sequencingBatchID,Red
+Sequencing Batch ID,Red
+sequencingBatchSize,Yellow
+sequencingBatchSizeUnit,Yellow
+SequencingLevel1_id,Red
+SequencingLevel1 Key,Yellow
+SequencingLevel2_id,Red
+SequencingLevel2 Key,Yellow
+SequencingLevel3_id,Red
+sequencingLibraryConstructionDaysFromIndex,Yellow
+Sequencing Library Construction Days from Index,Yellow
+sequencingPlatform,Red
+Sequencing Platform,Red
+SequencingPlatform,Red
+SequencingRNALevel1_id,Red
+sequencing_saturation,Yellow
+sequencingSaturation,Yellow
+Sequencing Saturation,Yellow
+settings,Green
+Seurat Clusters,Green
+sex,Red
+Short Reads,Yellow
+Single Cell Barcode Method Applied,Red
+Single Cell Dissociation Days from Index,Yellow
+Single Cell Isolation Method,Red
+SingleCellIsolationMethod,Red
+Single Nucleus Buffer,Yellow
+SingleNucleusBuffer,Yellow
+Single Nucleus Capture,Yellow
+SizeC,Green
+Size Selection Range,Green
+SizeT,Green
+SizeX,Green
+SizeY,Green
+SizeZ,Green
+slideID,Red
+Slide ID,Red
+Slide-seq Bead File Type,Red
+Slide-seq Fragment Size,Red
+Slide-seq Workflow Parameter Description,Red
+Slide-seq Workflow Type,Red
+slideVersion,Red
+Slide Version,Red
+software,Yellow
+software_and_version,Yellow
+softwareAndVersion,Yellow
+Software and Version,Yellow
+SoftwareandVersion,Yellow
+softwareName,Red
+Somatic Variants Sample Type,Yellow
+Somatic Variants Workflow Type,Yellow
+Somatic Variants Workflow URL,Yellow
+sop,Green
+Source Key,Yellow
+sourceMatID,Red
+Spatial Barcode and UMI,Red
+spatialBarcodeLength,Red
+Spatial Barcode Length,Red
+spatialBarcodeOffset,Red
+Spatial Barcode Offset,Red
+spatialBarcodeTag,Red
+Spatial Barcode Tag,Red
+spatialLibraryConstructionMethod,Yellow
+Spatial Library Construction Method,Yellow
+spatialRead1,Yellow
+Spatial Read1,Yellow
+spatialRead2,Yellow
+Spatial Read2,Yellow
+species,Green
+Species,Green
+speciesGroup,Green
+specimenID,Red
+specimen_modality,Yellow
+specimenModality,Yellow
+specimenPreparationMethod,Yellow
+specimenType,Yellow
+spectrometerFrequency,Green
+Spike In,Green
+SpikeIn,Green
+Spike In Concentration,Green
+spotsUnderTissue,Yellow
+Spots under tissue,Yellow
+stage,Red
+statisticalModel,Green
+stockNumber,Red
+strainCommonName,Red
+strainOfficialName,Red
+Stripe Calling,Green
+Stripe Window,Green
+Structural Variant Workflow Type,Yellow
+Structural Variant Workflow URL,Yellow
+study,Yellow
+studyAbstract,Yellow
+studyDescription,Yellow
+studyFocus,Yellow
+studyKey,Yellow
+Study Key,Yellow
+studyMetadata,Yellow
+studyName,Red
+studyType,Yellow
+studyWiki,Yellow
+Sub Cycle Number,Red
+SubCycleNumber,Red
+sulfasa,Green
+sulfasa_change,Green
+sulfasa_use,Yellow
+summaryFile,Green
+summaryStatisticsAssembly,Green
+Surface area,Green
+Synapse ID of GeoMx DSP PKC File,Red
+Synapse ID of GeoMx DSP ROI Segment Annotation File,Red
+Synapse ID of GeoMx Lab Worksheet File,Red
+Target Capture Kit,Yellow
+targetCaptureKitID,Red
+targetDepth,Yellow
+Target Depth,Yellow
+TargetDepth,Yellow
+Targeted Genome,Yellow
+targetGene,Yellow
+Target Name,Red
+TargetName,Red
+targetPanel,Yellow
+targetPanelSize,Yellow
+targetPanelSynID,Red
+TDP_3,Green
+TDP43,Green
+TDP_5,Green
+Technical Replicate Group,Green
+TechnicalReplicateGroup,Green
+technologyPlatformVersion,Red
+Test Attribute,Yellow
+thalidomide,Red
+thalidomide_change,Red
+thalidomide_use,Red
+Threshold for Minimum Passing Reads,Yellow
+Tile overlap X,Green
+Tile overlap Y,Green
+timepointUnit,Red
+title,Green
+TMTType,Yellow
+tocilizumab,Green
+tocilizumab_change,Green
+tocilizumab_use,Yellow
+Tool,Green
+ToolView Key,Green
+Total DNA Input,Green
+Total Negative Probe Counts,Green
+Total Number of Cells,Red
+Total Number of Input Cells,Red
+TotalNumberofInputCells,Red
+Total Number of Passing Nuclei,Red
+Total Number of Targets,Red
+Total Read-Pairs,Yellow
+total_reads,Yellow
+totalReads,Yellow
+Total Reads,Yellow
+Total Uniquely Mapped,Green
+Total Unmapped reads,Yellow
+To Trim Adapter Sequence,Yellow
+Transcript Integrity Number,Red
+Transcripts per Cell,Yellow
+transcriptType,Yellow
+transposaseBatch,Yellow
+Transposition Reaction,Green
+TranspositionReaction,Green
+treatmentAmountUnit,Yellow
+treatmentAmountValue,Yellow
+treatmentDurationUnit,Yellow
+treatmentDurationValue,Yellow
+treatmentIDs,Red
+treatmentName,Red
+treatmentTemperatureUnit,Yellow
+treatmentTemperatureValue,Yellow
+trimethop,Green
+trimethop_change,Green
+trimethop_use,Yellow
+Trimmer,Green
+Tseries,Yellow
+TSS Enrichment,Green
+TSS Fragments,Yellow
+TSS Percentile,Green
+tumorType,Yellow
+UMI Barcode Length,Red
+UMIBarcodeLength,Red
+UMI Barcode Offset,Red
+UMIBarcodeOffset,Red
+UMI Tag,Green
+UMITag,Green
+UNIPROT Protein ID Target,Red
+Unique Genes,Green
+Unmapped Read-Pairs,Yellow
+ursodiol,Green
+ursodiol_change,Green
+ursodiol_use,Yellow
+useReadMeFile,Yellow
+useReagent,Red
+useSummaryFile,Yellow
+useTreatment,Yellow
+ustekinumab,Green
+ustekinumab_change,Green
+ustekinumab_use,Yellow
+vacuumPressure,Green
+vacuumPressureUnit,Yellow
+validBarcodeReads,Red
+Valid Barcodes Cell Number,Red
+ValidBarcodesCellNumber,Red
+valid_bc,Red
+validHiCContacts,Red
+valid_UMI,Red
+valueReported,Green
+vancomycin,Green
+vancomycin_change,Green
+vancomycin_use,Yellow
+variantCount,Green
+vedolizumab,Green
+vedolizumab_change,Green
+vedolizumab_use,Yellow
+vendor,Green
+Vendor,Green
+Visium Capture Area,Green
+Visium File Type,Yellow
+Visium Mean Reads per Spatial Spot,Yellow
+Visium Median Number Genes per Spatial Spot,Red
+Visium Median UMI Counts per Spot,Green
+Visium Proportion Reads Mapped,Yellow
+Visium Proportion Reads Mapped to Transcriptome,Yellow
+Visium Run ID,Red
+Visium Spots under tissue,Yellow
+Visium Workflow Parameters Description,Yellow
+Visium Workflow Type,Yellow
+WBVD,Green
+Well Index,Yellow
+Whitelist Cell Barcode File Link,Red
+WhitelistCellBarcodeFileLink,Red
+whitelistSpatialBarcodeFileLink,Red
+Whitelist Spatial Barcode File Link,Red
+WMR,Green
+WMRCAL,Green
+workflow,Yellow
+workflowFormat,Yellow
+workflowLink,Yellow
+Workflow Link,Yellow
+WorkflowLink,Yellow
+Workflow Parameter Description,Yellow
+Workflow Type,Yellow
+workflowVersion,Yellow
+Workflow Version,Yellow
+WorkflowVersion,Yellow
+workingDistance,Green
+WorkingDistance,Green
+workingDistanceUnit,Yellow
+WorkingDistanceUnit,Yellow
+Xenium Bundle Contents,Green
+Xenium HE image HTAN File ID,Red
+Xenium IF image HTAN File ID,Red
+Zstack,Green

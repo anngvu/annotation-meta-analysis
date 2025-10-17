@@ -1,0 +1,34 @@
+@prefix veoibd: <https://dca.app.sagebionetworks.org/VEOIBD/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+veoibd:ScRNASeqAssayMetadataTemplate a dca:UnconfiguredTemplate .
+veoibd:ScRNASeqAssayMetadataTemplate dca:fileType "FASTQ" .
+
+veoibd:ScRNASeqLevel3FileAnnotationsTemplate a dca:UnconfiguredTemplate .
+veoibd:ScRNASeqLevel3FileAnnotationsTemplate dca:fileType "FASTQ" .
+
+veoibd:ScRNASeqLevel1FileAnnotationsTemplate a dca:UnconfiguredTemplate .
+veoibd:ScRNASeqLevel1FileAnnotationsTemplate dca:fileType "FASTQ" .
+
+veoibd:MedicationHistoryMetadataTemplate a dca:RecordTemplate .
+
+veoibd:BiospecimenMetadataTemplate a dca:RecordTemplate .
+
+veoibd:ClinicalMetadataTemplate a dca:RecordTemplate .
+
+veoibd:Patient a dca:UnconfiguredTemplate .
+
+veoibd:Clinical a dca:UnconfiguredTemplate .
+
+veoibd:Biospecimen a dca:UnconfiguredTemplate .
+
+veoibd:Biopsy a dca:UnconfiguredTemplate .
+
+veoibd:Medication a dca:UnconfiguredTemplate .
+
+veoibd:Demographics a dca:UnconfiguredTemplate .
+
+veoibd:MetadataFileAnnotations a dca:UnconfiguredTemplate .
+
+veoibd:Singlespecimen a dca:UnconfiguredTemplate .

@@ -1,0 +1,58 @@
+@prefix el: <https://dca.app.sagebionetworks.org/EL/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+el:AnalysisResultsMetadataTemplate a dca:UnconfiguredTemplate .
+el:AnalysisResultsMetadataTemplate dca:fileType "Various" .
+
+el:AssayRNAseqTemplate a dca:AnnotationTemplate .
+el:AssayRNAseqTemplate dca:fileType "FASTQ" .
+
+el:AssayBsSeqTemplate a dca:AnnotationTemplate .
+el:AssayBsSeqTemplate dca:fileType "Various" .
+
+el:AssayMetabolomicsTemplate a dca:AnnotationTemplate .
+el:AssayMetabolomicsTemplate dca:fileType "Various" .
+
+el:AssayMetagenomicsTemplate a dca:AnnotationTemplate .
+el:AssayMetagenomicsTemplate dca:fileType "Various" .
+
+el:AssayMicrobiomeTemplate a dca:AnnotationTemplate .
+el:AssayMicrobiomeTemplate dca:fileType "Various" .
+
+el:AssayPhenotypeHumanTemplate a dca:UnconfiguredTemplate .
+el:AssayPhenotypeHumanTemplate dca:species "Human" .
+el:AssayPhenotypeHumanTemplate dca:fileType "Various" .
+
+el:AssayProteomicsTemplate a dca:AnnotationTemplate .
+el:AssayProteomicsTemplate dca:fileType "Mass spec data" .
+
+el:AssayScRNAseqTemplate a dca:AnnotationTemplate .
+el:AssayScRNAseqTemplate dca:fileType "FASTQ" .
+
+el:AssayWholeGenomeSequencingTemplate a dca:AnnotationTemplate .
+el:AssayWholeGenomeSequencingTemplate dca:fileType "Various" .
+
+el:BiospecimenHumanTemplate a dca:RecordTemplate .
+el:BiospecimenHumanTemplate dca:species "Human" .
+
+el:BiospecimenNonHumanTemplate a dca:RecordTemplate .
+el:BiospecimenNonHumanTemplate dca:species "Animal model" .
+
+el:FileAnnotationTemplate a dca:AnnotationTemplate .
+el:FileAnnotationTemplate dca:species "Multi-species" .
+el:FileAnnotationTemplate dca:fileType "Various" .
+
+el:GenotypingHumanTemplate a dca:AnnotationTemplate .
+el:GenotypingHumanTemplate dca:species "Human" .
+el:GenotypingHumanTemplate dca:fileType "Various" .
+
+el:IndividualHumanTemplate a dca:RecordTemplate .
+el:IndividualHumanTemplate dca:species "Human" .
+
+el:IndividualNonHumanTemplate a dca:RecordTemplate .
+el:IndividualNonHumanTemplate dca:species "Animal model" .
+
+el:StudyFolderTemplate a dca:AnnotationTemplate .
+el:StudyFolderTemplate dca:species "Multi-species" .
+el:StudyFolderTemplate dca:fileType "Various" .

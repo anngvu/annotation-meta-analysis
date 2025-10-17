@@ -1,0 +1,12 @@
+Project,Data Model URL,Template Config URL
+ADKP,https://raw.githubusercontent.com/adknowledgeportal/data-models/main/AD.model.jsonld,https://raw.githubusercontent.com/adknowledgeportal/data-models/main/dca-template-config.json
+AMP-AIM,https://raw.githubusercontent.com/AMP-AIM/data_models/refs/heads/main/ampaim.model.jsonld,https://raw.githubusercontent.com/AMP-AIM/data_models/refs/heads/main/dca-template-config.json
+BTC,https://raw.githubusercontent.com/Sage-Bionetworks/btc-data-models/main/btc.model.jsonld,https://raw.githubusercontent.com/Sage-Bionetworks/btc-data-models/main/dca-template-config.json
+CB,https://raw.githubusercontent.com/eliteportal/cohort_builder_data_dictionary/main/cohort-builder-model.jsonld,https://raw.githubusercontent.com/Sage-Bionetworks/data_curator_config/staging-update/CB/dca-template-config.json
+EL,https://raw.githubusercontent.com/eliteportal/data-models/main/EL.data.model.jsonld,https://raw.githubusercontent.com/eliteportal/data-models/main/dca-template-config.json
+GF,https://raw.githubusercontent.com/gf-dcc/data-model/main/GF.jsonld,https://raw.githubusercontent.com/gf-dcc/data-model/main/dca-template-config.json
+HTAN,https://raw.githubusercontent.com/ncihtan/data-models/v25.2.1/HTAN.model.jsonld,https://raw.githubusercontent.com/ncihtan/data-models/v25.2.1/dca-template-config.json
+HTAN2,https://raw.githubusercontent.com/ncihtan/data-models/v24.9.1/HTAN.model.jsonld,https://raw.githubusercontent.com/ncihtan/data-models/v24.9.1/dca-template-config.json
+MC2,https://raw.githubusercontent.com/mc2-center/data-models/v8.0.0/mc2.model.jsonld,https://raw.githubusercontent.com/mc2-center/data-models/v8.0.0/dca-template-config.json
+NF-OSI,https://raw.githubusercontent.com/nf-osi/nf-metadata-dictionary/v10.07.0/NF.jsonld,https://raw.githubusercontent.com/nf-osi/nf-metadata-dictionary/v10.07.0/dca-template-config.json
+VEOIBD,https://raw.githubusercontent.com/VEOIBD/data_models/main/veoibd.data.model.jsonld,https://raw.githubusercontent.com/VEOIBD/data_models/main/dca-template-config.json

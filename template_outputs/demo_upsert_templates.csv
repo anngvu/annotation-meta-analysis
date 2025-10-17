@@ -1,0 +1,12 @@
+template_id,display_name,species,data_type,file_type,configured_template_role,description
+Patient,Patient,Not specified,Clinical data,N/A,N/A,TBD
+Cancer,Cancer,Not specified,Unknown,N/A,N/A,TBD
+Biospecimen,Biospecimen,Not specified,Clinical data,N/A,N/A,TBD
+BulkRNA-seqAssay,Bulk RNA-seq Assay,Not specified,Metadata,FASTQ,N/A,TBD
+BAM,BAM,Not specified,Unknown,N/A,N/A,TBD
+CRAM,CRAM,Not specified,Unknown,N/A,N/A,TBD
+CSV/TSV,CSV/TSV,Not specified,Unknown,N/A,N/A,TBD
+MockComponent,MockComponent,Not specified,Unknown,N/A,N/A,Component to hold mock attributes for testing all validation rules
+MockRDB,MockRDB,Not specified,Clinical data,N/A,Record,TBD
+MockFilename,MockFilename,Not specified,Unknown,N/A,N/A,TBD
+JSONSchemaComponent,JSONSchemaComponent,Not specified,Unknown,N/A,N/A,Component to hold attributes for testing JSON Schemas

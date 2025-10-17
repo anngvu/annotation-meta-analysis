@@ -1,0 +1,47 @@
+@prefix amp-aim: <https://dca.app.sagebionetworks.org/AMP-AIM/> .
+@prefix dca: <https://dca.app.sagebionetworks.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+amp-aim:SDPTestTemplate a dca:UnconfiguredTemplate .
+amp-aim:SDPTestTemplate dca:fileType "Various" .
+
+amp-aim:CyTOFSDPAnnotationTemplate a dca:AnnotationTemplate .
+amp-aim:CyTOFSDPAnnotationTemplate dca:fileType "Various" .
+
+amp-aim:OlinkAssayMetadataTemplate a dca:RecordTemplate .
+
+amp-aim:OlinkFileAnnotationTemplate a dca:AnnotationTemplate .
+amp-aim:OlinkFileAnnotationTemplate dca:fileType "Various" .
+
+amp-aim:Rds a dca:UnconfiguredTemplate .
+
+amp-aim:BiospecimenMetadataTemplate a dca:UnconfiguredTemplate .
+
+amp-aim:ClinicalMetadataTemplate a dca:UnconfiguredTemplate .
+
+amp-aim:Patient a dca:UnconfiguredTemplate .
+
+amp-aim:Clinical a dca:UnconfiguredTemplate .
+
+amp-aim:Biospecimen a dca:UnconfiguredTemplate .
+
+amp-aim:PsO a dca:UnconfiguredTemplate .
+
+amp-aim:Experimentaldata a dca:UnconfiguredTemplate .
+amp-aim:Experimentaldata dca:fileType "Document" .
+
+amp-aim:Synovialfluid a dca:UnconfiguredTemplate .
+
+amp-aim:Skinbiopsy a dca:UnconfiguredTemplate .
+
+amp-aim:Saliva a dca:UnconfiguredTemplate .
+
+amp-aim:Skinswab a dca:UnconfiguredTemplate .
+
+amp-aim:Synovialtissue a dca:UnconfiguredTemplate .
+
+amp-aim:Flow-sortedcells a dca:UnconfiguredTemplate .
+
+amp-aim:Singlespecimen a dca:UnconfiguredTemplate .
+
+amp-aim:Diabetes a dca:UnconfiguredTemplate .

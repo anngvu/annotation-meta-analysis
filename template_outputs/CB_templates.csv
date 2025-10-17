@@ -1,0 +1,3 @@
+template_id,display_name,species,file_type,configured_template_role,description
+FiletoIndividualMap,File to Individual Map,Not specified,N/A,N/A,Template that maps each individual to a file in synapse
+IndividualMetadata,Individual Metadata,Not specified,N/A,N/A,Information related to the individual

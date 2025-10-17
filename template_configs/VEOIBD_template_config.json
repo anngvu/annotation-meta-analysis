@@ -1,0 +1,21 @@
+{
+  "manifest_schemas": [
+    {
+      "display_name": "Clinical Metadata Template",
+      "schema_name": "ClinicalMetadataTemplate",
+      "type": "record"
+    },
+    {
+      "display_name": "Medication History Metadata Template",
+      "schema_name": "MedicationHistoryMetadataTemplate",
+      "type": "record"
+    },
+    {
+      "display_name": "Biospecimen Metadata Template",
+      "schema_name": "BiospecimenMetadataTemplate",
+      "type": "record"
+    }
+  ],
+  "service_version": "v23.1.1",
+  "schema_version": ""
+}
