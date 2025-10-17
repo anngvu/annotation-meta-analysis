@@ -7527,8 +7527,54 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="For-DCC-Data-(Primary-Importance)">For DCC Data (Primary Importance)<a class="anchor-link" href="#For-DCC-Data-(Primary-Importance)">¶</a></h2><p>Annotation metadata in Synapse feed the DCC portals and are viewable to users in Synapse when browsing through projects they can see. Annotations are viewable by anonymous users for any data made public ("globe" icon) in Synapse, <em>even</em> controlled-access data (Figure 1). Given that annotations are exposed to third parties for improved findability when data is made public, <strong>annotations should indeed be low-risk, non-sensitive information</strong> suitable for the public domain. Formerly, the concept of third parties might include Google crawlers, but we are now facilitating annotation access to AI agents via MCP. AI exposure motivate another level of review especially for DCC data where Sage is most responsible, to confirm that <strong>DCC-managed data</strong> have annotations allowable for consumption.</p>
-<p>DCCs currently manage data with strong standards, and we currently depend on annotation safeguard through their operations. For DCCs, annotations are submitted to Synapse only after validation and potential data transformation (masking) through a curation application (DCA) that enforces the allowed attributes, values, and transformation rules defined in the maintained data model. These operations work per "template". An "Annotation Template" defines what <strong>annotations (keys and values)</strong> are placed on an Synapse entity such as a project, dataset, folder, file, etc. Another type of "Record Template" defines the <strong>internal content and format (columns, values)</strong> of a CSV file or a table uploaded to Synapse. This is an important distinction. Operationally, sensitive data/metadata must be submitted as a CSV file or Synapse table, so that AR can be applied on these entities (ARs cannot be applied on annotations). The DCC specifies this by using the "record" configuration for the appropriate template in the standard curation application (DCA) so that during curation workflow, values are submitted into a file or table (Figure 2). <strong>This means that, theoretically, no sensitive data end up as annotations, as long as the DCCs has defined their data model judiciously and the configuration correctly.</strong> Because the Synapse MCP currently does not enable any functionality with "download" scope, AI agents will not be able to pull any CSV file or Synapse table content (this requires <em>download</em> scope).</p>
+<p>DCCs currently manage data with strong standards, and we currently depend on annotation safeguard through their operations. For DCCs, annotations are submitted to Synapse only after validation and potential data transformation (masking) through a curation application (DCA) that enforces the allowed attributes, values, and transformation rules defined in the maintained data model. These operations work per "template". An "Annotation Template" defines what <strong>annotations (keys and values)</strong> are placed on an Synapse entity such as a project, dataset, folder, file, etc. Another type of "Record Template" defines the <strong>internal content and format (columns, values)</strong> of a CSV file or a table uploaded to Synapse. This is an important distinction. Operationally, sensitive data/metadata must be submitted as a CSV file or Synapse table, so that AR can be applied on these entities (ARs cannot be applied on annotations). The DCC specifies this by using the "record" configuration for the appropriate template in the standard curation application (DCA) so that during curation workflow, values are submitted into a file or table (Listing 1). <strong>This means that, theoretically, no sensitive data end up as annotations, as long as the DCCs has defined their data model judiciously and the configuration correctly.</strong> Because the Synapse MCP currently does not enable any functionality with "download" scope, AI agents will not be able to pull any CSV file or Synapse table content (this requires <em>download</em> scope).</p>
 <p>We do an analysis of all DCC Annotation Templates, since values submitted from these templates are transferred to Synapse as annotations. For all Annotation Templates, we can classify the present attributes, permissible values/range, and data transformation rules to judge how much of a risk the metadata would be as an annotation. If it is too sensitive, it should not be in the annotation pipeline.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Figure 1</strong>: Annotations are viewable by anonymous users for public data in Synapse.</p>
+<p><img alt="Figure 1: Annotation visibility in Synapse" src="notebook_data/screenshot.png"/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Listing 1</strong>: Sample production configuration from ADKP showing <code>"type": "record"</code> for most templates (biospecimen, assay metadata) and <code>"type": "file"</code> for the annotation template.</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"manifest_schemas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assay_rnaSeq_metadata_template"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AssayRnaSeqMetadataTemplate"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"record"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biospecimen_metadata_template"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BiospecimenMetadataTemplate"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"record"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"individual_human_metadata_template"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IndividualHumanMetadataTemplate"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"record"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file_annotation_template"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FileAnnotationTemplate"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </div>
 </div>
